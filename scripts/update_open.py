@@ -66,8 +66,18 @@ def run():
         st['ucl_patterns']={'n':0,'ht_n':0}
         ident=re.sub(r'[^a-z0-9]+','-',t.lower()).strip('-')
         item=catalogue.get(t.casefold(),{})
+        # League-level prior, adjusted by actual points/goals versus the team's peers.
+        # Reject stale, manually assigned club-level strength once match data exists.
+        prior=PRIOR.get(league,1480)
+        evidence=min(st['matches'],15)/15
+        last_n=old['matches']
+        season_points=(st.get('points') or 1.3)
+        goal_diff=(st.get('gf') or 1.37)-(st.get('ga') or 1.37)
+        last_effect=(last_n/15)*((old.get('points') or 1.3)-1.3)*42 if last_n else 0
+        current_effect=(season_points-1.3)*65+goal_diff*45
+        rating=round(prior+max(-180,min(180,evidence*current_effect+min(.55,max(0,1-evidence))*last_effect)))
         item.update(id=item.get('id',ident),name=t,league=league,stats=st,
-                    rating=item.get('rating',PRIOR.get(league,1480)),source='football-data.co.uk, score data',
+                    rating=rating,source='football-data.co.uk, score data',
                     competitions=list(dict.fromkeys([league]+[x for x in item.get('competitions',[]) if x!=league])))
         catalogue[t.casefold()]=item
     # A match score is not evidence of player-level injury, xG, assists or lineups.
