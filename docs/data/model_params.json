@@ -1,7 +1,7 @@
 {
   "validated": true,
-  "temperature": 0.8875,
-  "home_factor": 0.9945,
-  "away_factor": 0.9652,
+  "temperature": 0.94,
+  "home_factor": 0.9896,
+  "away_factor": 0.9796,
   "note": "Tuning derived only from prior outcomes; baseline beat required; no betting promise"
 }
