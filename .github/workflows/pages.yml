@@ -41,15 +41,17 @@ jobs:
         env:
           APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
         run: python scripts/update_api_football.py
+      - name: Check optional public xG and player xA source, obey robots restrictions
+        run: python scripts/update_understat.py
       - name: Validate model, Python and published UI
         run: |
-          python -m py_compile scripts/validate_walkforward.py scripts/update_cc0.py scripts/check_site.py
+          python -m py_compile scripts/validate_walkforward.py scripts/update_cc0.py scripts/update_understat.py scripts/check_site.py
           python scripts/check_site.py
       - name: Save a verified nonempty update
         run: |
           git config user.name "FUTSIM Data Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data/snapshot.json docs/data/model_validation.json docs/data/model_params.json docs/data/api_football.json
+          git add docs/data/snapshot.json docs/data/model_validation.json docs/data/model_params.json docs/data/api_football.json docs/data/xg_source.json
           if ! git diff --cached --quiet; then
             git commit -m "data: updated verified football results [skip ci]"
             git push || echo "::warning::Data commit rejected; site build still proceeds"
