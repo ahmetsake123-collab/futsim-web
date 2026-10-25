@@ -434,17 +434,20 @@ function renderCoupon(){
  $('couponNote').textContent=(actual?`Tüm fiyatlar kayıtlı · modelin teorik değer farkı %${fmt((p*odd-1)*100)}. `:'Bazı gerçek piyasa oranları eksik; tahmini fiyat uydurulmadı. ')+`Kombine olasılığı ${pc(p*100)} (farklı maçlar bağımsız varsayıldı). Verilerin hataları ve gerçek bahis riski bu oranı etkiler.`;
 }
 function mediumRiskTip(r,raw){
- let rows=couponKeys.filter(k=>Number.isFinite(r.markets[k])&&r.markets[k]>=53&&r.markets[k]<=82).map(k=>({k,p:r.markets[k],odd:selectedCouponOdds(raw,k)}));
- if(!rows.length){rows=couponKeys.filter(k=>Number.isFinite(r.markets[k])).map(k=>({k,p:r.markets[k],odd:selectedCouponOdds(raw,k)}));}
+ // A market should not be called good value without a sourced price,
+ // and uncalibrated probabilities warrant wider safety margins.
+ let rows=couponKeys.filter(k=>Number.isFinite(r.markets[k])&&r.markets[k]>=60&&r.markets[k]<=82)
+  .map(k=>({k,p:r.markets[k],odd:selectedCouponOdds(raw,k)}));
  rows.sort((a,b)=>{
-  const preference=x=>(x.odd?(x.p/100*x.odd-1)*25:0)-Math.abs(x.p-67)/3;
-  return preference(b)-preference(a);
+  const safety=x=>x.odd?((x.p/100*x.odd-1)*20):0;
+  return (safety(b)-Math.abs(b.p-72)/2)-(safety(a)-Math.abs(a.p-72)/2);
  });
  return rows[0]||null;
 }
 function renderCouponChoice(h,a,f,r){
  const odds=getMatchOdds(h,a,f);const candidate=mediumRiskTip(r,odds);
- $('autoPick').innerHTML=candidate?`<b>FUTSIM olsa: ${esc(marketLabel(candidate.k))}</b><div class="small">${esc(h.name)} – ${esc(a.name)} · Model ${pc(candidate.p)} · ${candidate.odd?'Kaynaklı fiyat '+fmt(candidate.odd):'Gerçek oran bulunamadı; model olasılığına göre öneri'} · Orta risk hedefi (garanti değil)</div>`:'<span class="small">Bu maç için uygun tercih oluşturulamadı.</span>';
+ const trust=confidenceOf(h,a,goalRates(h,a,$('competition').value));
+ $('autoPick').innerHTML=trust.value<45?'<span class="small">Veri güveni düşük: FUTSIM bu maç için bahis tercihi önermiyor. İstersen yalnızca olasılıkları inceleyebilirsin.</span>':candidate?`<b>FUTSIM olsa: ${esc(marketLabel(candidate.k))}</b><div class="small">${esc(h.name)} – ${esc(a.name)} · Model ${pc(candidate.p)} · ${candidate.odd?'Kaynaklı fiyat '+fmt(candidate.odd):'Gerçek oran bulunamadı; model olasılığına göre öneri'} · Orta risk hedefi (garanti değil)</div>`:'<span class="small">Bu maç için uygun tercih oluşturulamadı.</span>';
  const select=$('couponMarket'),old=select.value;
  select.innerHTML=couponKeys.filter(k=>r.markets[k]!=null).map(k=>`<option value="${esc(k)}">${esc(marketLabel(k))} · ${pc(r.markets[k])}${selectedCouponOdds(odds,k)?' · '+fmt(selectedCouponOdds(odds,k)):''}</option>`).join('');
  select.value=couponKeys.includes(old)?old:(candidate?.k||'1');if(!select.value&&candidate)select.value=candidate.k;
