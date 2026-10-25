@@ -1,0 +1,1 @@
+window.FUTSIM_MARKET_SEED=[];
