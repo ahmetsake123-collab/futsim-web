@@ -359,6 +359,42 @@ function futsimCornerPrediction(h,a) {
  const total=home+away;const tail=k=>{let p=Math.exp(-total),cum=p;for(let i=1;i<=k;i++){p*=total/i;cum+=p;}return 100*Math.max(0,Math.min(1,1-cum));};
  return {ok:true,n,home,away,total,over85:tail(8),over95:tail(9),over105:tail(10),source:'https://github.com/oladeeayo/open-matchday'};
 }
+function futsimApiIdentity(s){
+ let v=String(s||'').toLocaleLowerCase('tr-TR').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ı/g,'i');
+ v=v.replace(/\b(fc|afc|cfc|sc|cf|ac|fk|sk|ssc)\b/g,' ').replace(/[^a-z0-9]/g,' ').replace(/\s+/g,' ').trim();
+ const alias={'man utd':'manchester united','man city':'manchester city',
+  'brighton':'brighton hove albion','nott m forest':'nottingham forest',
+  'psg':'paris saint germain','bayern munchen':'bayern munich',
+  'internazionale':'inter','tottenham':'tottenham hotspur','hull':'hull city'};
+ return alias[v]||v;
+}
+function futsimApiPanel(home,away){
+ const data=window.FUTSIM_API_FOOTBALL;
+ const source='<a href="https://www.api-football.com/" target="_blank" rel="noopener" style="color:#72b6ff">API-Football</a>';
+ if(!data||data.status==='not_configured')return '<p style="color:#fcb969"><b>Ücretsiz API-Football:</b> Henüz etkin değil. GitHub Actions APISPORTS_KEY ayarı bekleniyor.</p>';
+ if(data.status!=='connected')return '<p style="color:#fcb969"><b>Ücretsiz API-Football:</b> Bu hesapta güncel sezon bilgileri şu anda doğrulanamadı. Kaynak erişimi/kota kontrol edilmeli; eski bilgi canlı gibi gösterilmez.</p>';
+ const age=(Date.now()-Date.parse(data.fetched_at_utc||''))/3600000;
+ if(!Number.isFinite(age)||age<0||age>40)return '<p style="color:#fcb969">API-Football verisi 40 saatten eski veya tarihi geçersiz; güncel sakatlık/kadro olarak gösterilmiyor.</p>';
+ const norm=futsimApiIdentity;
+ const row=(data.fixtures||[]).find(f=>norm(f.home)===norm(home.name)&&norm(f.away)===norm(away.name));
+ if(!row)return '<p><b>Ücretsiz API-Football:</b> Bağlı, ancak bu iki takımın bugün/yarın maçı veri kaynağında bulunmadı. Eşleşme doğrulanmadığından sakatlık veya ilk 11 atanmıyor.</p>';
+ const extra=(data.details||{})[String(row.id)]||{};
+ const injuries=extra.injuries_checked?(extra.injuries||[]):null;
+ const injuryText=injuries===null?'Sakatlık endpointi bu fikstür için doğrulanamadı.':
+  injuries.length?injuries.slice(0,12).map(x=>'<li>'+esc(x.team)+' — '+esc(x.player)+' · '+esc(x.type||x.reason||'bildirilen sakatlık')+'</li>').join(''):
+   'API bu fikstürde sakatlık kaydı döndürmedi (takımda hiç sakat yok anlamına gelmez).';
+ const lines=(extra.lineups||[]).map(t=>{
+  if(!t.confirmed)return '<p>'+esc(t.team)+': ilk 11 kesinleşmedi.</p>';
+  return '<p><b>'+esc(t.team)+'</b> ('+esc(t.formation||'diziliş bilinmiyor')+'): '+
+   t.starters.map(p=>esc(p.name)).join(', ')+'</p>';
+ }).join('')||'Doğrulanmış ilk 11 henüz yayınlanmadı.';
+ return '<p><b>API-Football eşleşmesi:</b> '+esc(row.home)+' – '+esc(row.away)+
+  ' · '+esc(row.date)+' · kaynak: '+source+' · veri yaşı '+Math.round(age)+' saat</p>'+
+  '<p><b>Sakatlık bilgisi:</b></p>'+(injuries?.length?'<ul class="bullet">'+injuryText+'</ul>':'<p>'+injuryText+'</p>')+
+  '<p><b>Onaylı ilk 11:</b></p><div>'+lines+'</div>'+
+  '<p style="color:#91a8b9">Bu bilgiler bilgi paneline eklendi; kadro ve sakatlık etkileri yeterince test edilmeden simülasyon yüzdeleri otomatik değiştirilmez.</p>';
+}
+
 function futsimEnhancePanel(h,a,confidence){
  let panel=document.getElementById('futsimExtraAnalysis');
  if(!panel){
@@ -375,7 +411,7 @@ function futsimEnhancePanel(h,a,confidence){
  <p><a style="color:#72b6ff" target="_blank" rel="noopener" href="${c.source}">Korner veri kaynağı: open-matchday (ticari olmayan kullanım)</a></p>`:
  `<p style="color:#fcb969">${c.reason} Korner oranı uydurulmadı.</p>`;
  panel.innerHTML=`<h3 style="font-size:16px;margin:0 0 8px">Korner / ileri istatistik / araştırma güveni</h3>
- ${extra}<p><b>Ölçülmüş xG / xA:</b> ${h.stats?.xg!=null&&a.stats?.xg!=null?'Kaynaklı veri mevcut':'Bu iki takım için doğrulanmış ölçüm yok'}. 
+ ${extra}<h3 style="font-size:15px;margin:15px 0 4px">API-Football ücretsiz kaynak durumu</h3>${futsimApiPanel(h,a)}<p><b>Ölçülmüş xG / xA:</b> ${h.stats?.xg!=null&&a.stats?.xg!=null?'Kaynaklı veri mevcut':'Bu iki takım için doğrulanmış ölçüm yok'}. 
  <b>Güncel sakatlıklar:</b> ${Array.isArray(h.injuries)&&Array.isArray(a.injuries)?'Kaynaklı liste var':'Doğrulanmış güncel sakatlık listesi yok'}.</p>
  <p style="color:#91a8b9">Sakatlık, xG, xA veya ilk 11 eksikliği yüksek güven anlamına gelmez; maç sonucunu garanti etmez. Model kalite puanı: ${confidence.value}/100 (kalibre edilmiş kazanma olasılığı değildir).</p>
  <p id="futsimTestStatus" style="color:#b8d7eb">Gerçek geçmiş maç testi yükleniyor…</p>`;
@@ -763,6 +799,7 @@ async function boot(){
  let seed=window.FUTSIM_SEED,latest=null;
  try{const res=await fetch('data/snapshot.json?t='+Date.now(),{cache:'no-store'});if(res.ok){const obj=await res.json();if(Array.isArray(obj.teams)&&obj.teams.length)latest=obj;}}catch{}
  data=latest||seed;data.market_records=window.FUTSIM_MARKET_SEED||[];try{const response=await fetch('data/mackolik_odds.json?t='+Date.now(),{cache:'no-store'});if(response.ok){const obj=await response.json();if(Array.isArray(obj))data.mackolik_odds=obj;}}catch{}
+ try{const res=await fetch('data/api_football.json?t='+Date.now(),{cache:'no-store'});if(res.ok){window.FUTSIM_API_FOOTBALL=await res.json();}}catch{}
  if(!data){$('healthTitle').textContent='Veri bulunamadı';$('health').textContent='data/seed.js kontrol edin';return;}
  initialize();
 }
