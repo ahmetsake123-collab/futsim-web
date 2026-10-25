@@ -53,7 +53,7 @@ def run():
     # records; never treat these names as verified current lineups or performance.
     try:
         page=(ROOT/'docs'/'index.html').read_text(encoding='utf-8')
-        match=re.search(r'window\\.FUTSIM_SEED\\s*=\\s*(\\{.*?\\})\\s*;',page,re.S)
+        match=re.search(r'window\.FUTSIM_SEED\s*=\s*(\{.*?\})\s*;',page,re.S)
         if match:
             initial=json.loads(match.group(1))
             for t in initial.get('teams',[]):
