@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "asof": "2026-10-26",
+  "source": "FootyStats, Galatasaray Süper Lig 2026/27 xG table",
+  "source_url": "https://footystats.org/clubs/galatasaray-187",
+  "status": "verified_manual",
+  "update_mode": "manual_source_review",
+  "description": "Manually checked published team xG statistics, not an automated or licensed API feed. Reviewed 26 October 2026. Values come from a single named provider; no xA is claimed.",
+  "teams": [
+    {
+      "team": "Galatasaray",
+      "league": "Süper Lig",
+      "matches": 8,
+      "season": "2026/27",
+      "xg_per_match": 2.29,
+      "xga_per_match": 1.16,
+      "xa_per_match": null,
+      "source_url": "https://footystats.org/clubs/galatasaray-187",
+      "reviewed_on": "2026-10-26",
+      "metric_scope": "league matches (8), before 26 Oct 2026",
+      "alternative_provider_note": "FootInsights independently reports xG 2.30 and xGA 1.05 for eight matches; do not mix xGA estimates between providers.",
+      "alternative_source_url": "https://footinsights.com/leagues/super-lig/"
+    }
+  ]
+}
