@@ -296,8 +296,8 @@ async function refreshPreviousSeasons(){
 }
 async function bootV42(){
  await boot();
- try{const ok=await refreshPublicData();if(ok)refreshPreviousSeasons().catch(()=>{});}
- catch(e){const s=$('liveFeedStatus');if(s)s.textContent='Canlı dosyalar okunurken hata: '+String(e.message||e).slice(0,140);}
+ const el=document.getElementById('liveFeedStatus');
+ if(el)el.textContent='Haftalık veriler Pazartesi GitHub üzerinde yenilenir. Maç seçerken çevrimiçi tarama yapılmaz.';
 }
 
 
@@ -594,6 +594,17 @@ function renderScenarios(h,a,p,r,ph,pa){
 }
 function teamCard(t){const s=t.stats||{},n=s.matches||t.given?.played||0;const gf=s.raw_gf??(t.given?.played?t.given.gf/t.given.played:null);const ga=s.raw_ga??(t.given?.played?t.given.ga/t.given.played:null);const form=(s.form||[]).map(x=>`${esc(x.opponent)} ${x.gf}-${x.ga}`).join(' · ');
  const v=x=>x==null?'veri yok':fmt(x);const d=s.season_change;const seasonInfo=d&&d.raw_gf!=null?`<br>2025/26 farkı: gol ${d.raw_gf>=0?'+':''}${fmt(d.raw_gf)} / maç; yenen gol ${d.raw_ga>=0?'+':''}${fmt(d.raw_ga)} / maç (en az 5+5 maç)`:'<br>Geçen sezonla güvenilir karşılaştırma için veri yetersiz';return `<h3>${esc(t.name)} <span class="pill">${esc(t.league)}</span></h3><p class="small">Maç: ${n} · Gol: ${v(gf)} · Yenen gol: ${v(ga)} · Şut: ${v(s.shots)} · İsabet: ${v(s.sot)} · Korner: ${v(s.corners)}<br>KG: ${s.btts==null?'—':pc(s.btts)} · 2,5 üst: ${s.over25==null?'—':pc(s.over25)} · Gol yememe: ${s.clean_sheets==null?'—':pc(s.clean_sheets)}<br>Son skorlar: ${form||'yeterli geçmiş yok'}${seasonInfo}</p>`;}
+function weeklyBrief(h,a){
+ const row=t=>{
+  const w=t.weekly_stats||{},st=t.stats||{},measured=Number.isFinite(st.xg);
+  const proxy=Number.isFinite(st.xg_proxy);
+  const name=measured?'Gerçek kaynaklı xG':proxy?'Şut temelli hücum göstergesi (xG değildir)':'xG veya şut verisi yok';
+  const val=measured?fmt(st.xg):proxy?fmt(st.xg_proxy):'—';
+  const info=w.last5_count?`${w.last5_count} maç: ${w.last5_wins}G ${w.last5_draws}B ${w.last5_losses}M`:'Form verisi yok';
+  return `<div class="tick small"><b>${esc(t.name)}</b><p>${esc(name)}: <b>${val}</b> · Takım xA: ${Number.isFinite(st.xa)?fmt(st.xa):'—'} · Gol/maç: ${Number.isFinite(st.gf)?fmt(st.gf):'—'}</p><p>${info} · Evinde son ${w.home_last5_count||0} maçta ${w.home_last5_wins||0} galibiyet</p></div>`;
+ };
+ return `<div class="small"><b>Haftalık arşiv (son kayıt: ${esc((data.weekly_meta?.generated_at_utc||'bilinmiyor').slice(0,10))})</b>${row(h)}${row(a)}<p style="color:#d5bb8a">Şut göstergesi ölçülmüş xG değildir. Veriler her Pazartesi yenilenir.</p></div>`;
+}
 function playerCard(t){
  const st=t.stats||{},source=t.advanced_source||'';
  const xg=Number.isFinite(st.xg)?fmt(st.xg):'—';
@@ -708,10 +719,10 @@ async function updateSources(h,a,f,r,p){
 }
 
 function renderUpcoming(){
- const all=(data.upcoming||[]).filter(x=>[0,1].includes(daysDiff(x.date))).sort((a,b)=>a.league.localeCompare(b.league,'tr')||(a.date+a.time).localeCompare(b.date+b.time));
- if(!all.length){$('fixtures').innerHTML='<p class="empty">Bugün ve yarın için doğrulanmış maç kaydı yok. Bu, hiç maç olmadığı anlamına gelmeyebilir.</p>';return;}
+ const all=(data.upcoming||[]).filter(x=>daysDiff(x.date)>=0&&daysDiff(x.date)<=7).sort((a,b)=>a.league.localeCompare(b.league,'tr')||(a.date+a.time).localeCompare(b.date+b.time));
+ if(!all.length){$('fixtures').innerHTML='<p class="empty">Önümüzdeki 7 gün için haftalık kayıtlı fikstür yok. Bu, hiç maç olmadığı anlamına gelmeyebilir.</p>';return;}
  const groups={};for(const item of all)(groups[item.league]??=[]).push(item);
- $('fixtures').innerHTML=Object.entries(groups).map(([league,rows],groupNo)=>`<details class="fixture-league" ${groupNo===0?'open':''}><summary>${esc(league)} <small>${rows.length} maç</small></summary>${rows.map(x=>`<div class="fixture-row"><button type="button" data-fixture="${all.indexOf(x)}">${esc(x.home)} – ${esc(x.away)}</button><span class="small">${daysDiff(x.date)===0?'Bugün':'Yarın'} ${esc(x.time||'')}</span></div>`).join('')}</details>`).join('');
+ $('fixtures').innerHTML=Object.entries(groups).map(([league,rows],groupNo)=>`<details class="fixture-league" ${groupNo===0?'open':''}><summary>${esc(league)} <small>${rows.length} maç</small></summary>${rows.map(x=>`<div class="fixture-row"><button type="button" data-fixture="${all.indexOf(x)}">${esc(x.home)} – ${esc(x.away)}</button><span class="small">${daysDiff(x.date)===0?'Bugün':daysDiff(x.date)===1?'Yarın':esc(x.date)} ${esc(x.time||'')}</span></div>`).join('')}</details>`).join('');
  [...$('fixtures').querySelectorAll('[data-fixture]')].forEach(btn=>btn.onclick=()=>{const x=all[Number(btn.dataset.fixture)];setPair(x.hid,x.aid,x.league);$('matchName').scrollIntoView({behavior:'smooth',block:'start'});});
 }
 
@@ -766,13 +777,11 @@ async function run(){
  try{
   // Give the loading state time to paint while reading the hosted snapshot.
   await new Promise(resolve=>setTimeout(resolve,180));
-  // Pull latest already-published snapshot from the app hosting server.
-  // This is NOT a real-time bookmaker or forum scraping API.
-  if(!data.seed){try{const ans=await fetch('data/snapshot.json?v='+Date.now(),{cache:'no-store'});if(ans.ok){const fresher=await ans.json();if(fresher.asof===data.asof){data.news=fresher.news||data.news;data.historical_market=fresher.historical_market||data.historical_market;data.upcoming=fresher.upcoming||data.upcoming;}}}catch{}}
+  // The weekly local snapshot was loaded at boot: no per-simulation requests.
   const beforeFixture=getChosenFixture(h,a);
-  showLoader(true,'Google Haberler: farklı kaynaklar ve maç beklentileri araştırılıyor (10 site hedefi)...');
-  await researchBefore(h,a,beforeFixture);
-  showLoader(true,'Tarihsel maçlar ve takım gücüyle 10.000 senaryo hesaplanıyor...');
+  $('researchStatus').textContent='Haftalık arşiv modu: maç seçerken canlı haber araştırması yapılmaz.';
+  $('researchSources').innerHTML='<div>Yalnızca Pazartesi arşivinde bulunan doğrulanmış bilgiler kullanılır.</div>';
+  showLoader(true,'Haftalık takım arşiviyle 10.000 senaryo hesaplanıyor...');
   const comp=$('competition').value;const p=goalRates(h,a,comp),ph=pattern(h,comp),pa=pattern(a,comp),r=simulate(p,ph,pa);
   const c=data.backtest||{};
   if(c.status==='gelişti'&&c.temperature&&c.temperature!==1){const keys=['1','X','2'],t=Number(c.temperature),adjust=keys.map(k=>(r.markets[k]/100)**(1/t)),total=adjust.reduce((x,y)=>x+y,0);keys.forEach((k,i)=>r.markets[k]=adjust[i]/total*100);r.markets['1X']=r.markets['1']+r.markets['X'];r.markets['X2']=r.markets['X']+r.markets['2'];}
@@ -788,7 +797,7 @@ async function run(){
   const confidence=confidenceOf(h,a,p);
   const corners=futsimCornerPrediction(h,a);
   if(corners.ok){r.markets['Korner 8,5 Üst']=corners.over85;r.markets['Korner 9,5 Üst']=corners.over95;r.markets['Korner 10,5 Üst']=corners.over105;}
-  futsimEnhancePanel(h,a,confidence);$('confidenceBadge').className='confidence '+confidence.color;$('confidenceBadge').textContent=`Veri kapsamı: %${confidence.value} · ${confidence.color==='high'?'Yüksek':confidence.color==='mid'?'Orta':'Düşük'} (tahmin isabeti değil)`;
+  futsimEnhancePanel(h,a,confidence);$('confidenceBadge').className='confidence '+confidence.color;$('confidenceBadge').textContent=`Veri kapsamı: %${confidence.value} · ${confidence.color==='high'?'Yüksek':confidence.color==='mid'?'Orta':'Düşük'} (tahmin isabeti değil)`;const e=document.getElementById('weeklyBrief')||document.getElementById('xgReadout');if(e)e.innerHTML=weeklyBrief(h,a);
   const reportAdvanced=t=>{
    const stats=t.stats||{},xg=Number.isFinite(stats.xg)?fmt(stats.xg):null,xa=Number.isFinite(stats.xa)?fmt(stats.xa):null;
    const provider=t.advanced_source?esc(t.advanced_source):'Doğrulanmış sağlayıcı yok';
@@ -804,7 +813,7 @@ async function run(){
   renderCouponChoice(h,a,f,r);
   $('teamstats').innerHTML=teamCard(h)+'<div class="tick">'+teamCard(a)+'</div>';
   $('players').innerHTML=playerCard(h)+'<div class="tick">'+playerCard(a)+'</div><p class="warn">Takım seviyesinde xG / xA yoksa gerçek ölçüm üretmeyiz; skor, şut ve korner verileriyle sınırlı analiz sunarız. Sakatlık ve kesin ilk 11 ayrı kaynak panelindedir.</p>';
-  renderScenarios(h,a,p,r,ph,pa);updateSources(h,a,f,r,p).then(()=>renderCouponChoice(h,a,f,r)).catch(()=>{});
+  renderScenarios(h,a,p,r,ph,pa);updateSources(h,a,f,r,p).catch(()=>{});
   renderCouponChoice(h,a,f,r);
   // Historical comparisons are already used in ratings and embedded in team cards.
   $('coaches').innerHTML=managerScouting(h)+managerScouting(a);
@@ -843,34 +852,25 @@ async function boot(){
  try{const res=await fetch('data/snapshot.json?t='+Date.now(),{cache:'no-store'});if(res.ok){const obj=await res.json();if(Array.isArray(obj.teams)&&obj.teams.length)latest=obj;}}catch{}
  data=latest||seed;data.market_records=window.FUTSIM_MARKET_SEED||[];try{const response=await fetch('data/mackolik_odds.json?t='+Date.now(),{cache:'no-store'});if(response.ok){const obj=await response.json();if(Array.isArray(obj))data.mackolik_odds=obj;}}catch{}
  try{const res=await fetch('data/api_football.json?t='+Date.now(),{cache:'no-store'});if(res.ok){window.FUTSIM_API_FOOTBALL=await res.json();}}catch{}
- // All xG/xA data is attached to teams, not player cards.
- // The latest provider metadata and sample size remain visible to users.
- for(const sourcePath of ['data/xg_source.json','data/striker_xg.json','data/fpl_xg.json']){
-  try{
-   const res=await fetch(sourcePath+'?t='+Date.now(),{cache:'no-store'});
-   if(!res.ok)continue;
-   const src=await res.json();
-   const age=(Date.now()-Date.parse(src.asof||''))/86400000;
-   if(!Number.isFinite(age)||age<0||age>8||!Array.isArray(src.teams)||!src.teams.length)continue;
-   if(src.status!=='verified'&&src.verified!==true)continue;
-   const byTeam=new Map((data.teams||[]).map(t=>[t.league+'|'+futsimApiIdentity(t.name),t]));
-   for(const rec of src.teams){
-    const league=rec.league||'Premier League';
-    const target=byTeam.get(league+'|'+futsimApiIdentity(rec.team));
-    if(!target)continue;
-    target.stats=target.stats||{};
-    const games=Number(rec.matches)||0;
-    const g=Number.isFinite(rec.xg_per_match)?rec.xg_per_match:
-      Number.isFinite(rec.xg_season)&&games>=3?rec.xg_season/games:null;
-    const xa=Number.isFinite(rec.xa_per_match)?rec.xa_per_match:
-      Number.isFinite(rec.xa_season)&&games>=3?rec.xa_season/games:null;
-    if(g!=null){target.stats.xg=+g.toFixed(3);target.stats.xg_total=Number.isFinite(rec.xg_season)?rec.xg_season:null;}
-    if(xa!=null){target.stats.xa=+xa.toFixed(3);target.stats.xa_total=Number.isFinite(rec.xa_season)?rec.xa_season:null;}
-    if(Number.isFinite(rec.xga_per_match))target.stats.xga=rec.xga_per_match;
-    if(g!=null||xa!=null){target.advanced_source=src.source||sourcePath;target.advanced_asof=src.asof;target.advanced_source_url=src.source_url||rec.source||'';}
+ // Only this static Monday snapshot is fetched. No source website calls.
+ try{
+  const r=await fetch('data/weekly_team_stats.json?t='+Date.now(),{cache:'no-store'});
+  if(r.ok){const w=await r.json();
+   if(Array.isArray(w.teams)&&w.teams.length>=100){
+    const ids=new Map((data.teams||[]).map(t=>[t.id,t]));
+    for(const x of w.teams){
+     const t=ids.get(x.id);if(!t)continue;
+     t.weekly_stats=x;t.stats=t.stats||{};
+     t.stats.xg=Number.isFinite(x.xg_per_match)?x.xg_per_match:null;
+     t.stats.xa=Number.isFinite(x.xa_per_match)?x.xa_per_match:null;
+     t.stats.xga=Number.isFinite(x.xga_per_match)?x.xga_per_match:null;
+     t.stats.xg_proxy=Number.isFinite(x.xg_proxy_per_match)?x.xg_proxy_per_match:null;
+     t.advanced_source=x.xg_source||null;t.advanced_asof=x.xg_source_asof||null;
+    }
+    data.weekly_meta={generated_at_utc:w.generated_at_utc,week_start_utc:w.week_start_utc,coverage:w.coverage};
    }
-  }catch(e){}
- }
+  }
+ }catch(e){}
  if(!data){$('healthTitle').textContent='Veri bulunamadı';$('health').textContent='data/seed.js kontrol edin';return;}
  initialize();
 }
