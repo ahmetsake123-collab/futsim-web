@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FUTSIM WEB • Maç Analizi</title>
+<style>
+:root{color-scheme:dark;--bg:#071018;--panel:#101f2b;--panel2:#132733;--line:#29404c;--text:#e9f4fb;--muted:#91a8b9;--green:#45e3ad;--orange:#fcb969;--red:#f88383;--blue:#72b6ff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -20%,#173949 0%,#071018 55%);color:var(--text);font-family:system-ui,-apple-system,'Segoe UI',sans-serif;min-height:100vh}button,select,input{font:inherit}button,select{color:var(--text);background:#172e3e;border:1px solid #365366;border-radius:10px;padding:11px 14px}button{cursor:pointer}button.primary{background:var(--green);color:#06221d;font-weight:800;border:0}button:hover{filter:brightness(1.13)}.wrap{max-width:1230px;margin:0 auto;padding:22px 20px 70px}.top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px}.logo{letter-spacing:1px;font-weight:900;font-size:24px}.logo em{color:var(--green);font-style:normal}.meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:12px}.tag{border:1px solid var(--line);padding:7px 10px;border-radius:999px;background:#10202c}.hero{display:grid;grid-template-columns:1.7fr 1fr;gap:15px}.card{border:1px solid var(--line);border-radius:16px;background:rgba(16,31,43,.9);padding:18px;min-width:0}.card h2{font-size:16px;margin:0 0 12px}.card h3{font-size:14px;margin:0 0 10px;color:#d4e5ef}.lead{color:var(--muted);font-size:13px;line-height:1.6;margin:3px 0 14px}.controls{display:grid;grid-template-columns:1fr 1fr;gap:14px}.controls label{font-size:12px;color:var(--muted);display:block;margin-bottom:5px}.controls select{width:100%;margin-bottom:10px}.controls button{width:100%;margin-top:11px}.status{line-height:1.55;color:var(--muted);font-size:13px}.small{font-size:12px;color:var(--muted)}.inline{display:flex;align-items:center;justify-content:space-between;gap:10px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:16px}.big{font-size:32px;font-weight:850;letter-spacing:-1px}.green{color:var(--green)}.blue{color:var(--blue)}.orange{color:var(--orange)}.pill{display:inline-block;border:1px solid var(--line);color:var(--muted);font-size:11px;border-radius:99px;padding:4px 9px}.bars{height:12px;border-radius:99px;overflow:hidden;background:#1b3a45;display:flex;margin:15px 0}.bars i{display:block;height:100%}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}.three>div{padding:12px 5px;background:#152a37;border-radius:10px}.three b{font-size:21px;display:block}.two{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:16px}.two .card{min-height:230px}.results{margin-top:16px}.markets{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.market{display:flex;justify-content:space-between;padding:10px;border-radius:9px;background:#152a37;gap:10px;font-size:13px}.market strong{white-space:nowrap}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:12px}td,th{padding:10px 8px;border-bottom:1px solid #2b4352;text-align:left}th{color:var(--muted);font-weight:600}td.right,th.right{text-align:right}.warn{border-left:3px solid var(--orange);background:#302b25;padding:10px;border-radius:8px;color:#ffe0ae;font-size:12px;line-height:1.5;margin-top:10px}.empty{color:var(--muted);font-size:13px;line-height:1.6}.bullet{padding-left:18px;color:var(--muted);line-height:1.65;font-size:13px}.feed a{color:#dceefa;text-decoration:none}.feed a:hover{text-decoration:underline}.feed li{margin:10px 0}.footer{color:var(--muted);font-size:12px;line-height:1.7;margin-top:22px}.footer a{color:var(--blue)}details{margin-top:12px}summary{cursor:pointer;color:var(--green)}.hide{display:none}.rowwin{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:12px 0}.progress{height:8px;border-radius:10px;background:#173340;overflow:hidden;flex:1}.progress span{height:100%;display:block;background:var(--green)}.side{display:flex;gap:8px;align-items:center}.num{font-variant-numeric:tabular-nums}.subtitle{font-size:11px;text-transform:uppercase;letter-spacing:1.8px;color:var(--green);font-weight:800}.tick{border-top:1px solid var(--line);margin-top:13px;padding-top:13px}.notice{background:#21303a;padding:11px 14px;border:1px solid #334952;border-radius:11px;color:#c3d7e0;font-size:12px;line-height:1.5}.mode{color:var(--orange)}@media(max-width:800px){.hero,.two{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.big{font-size:25px}}@media(max-width:460px){.controls{grid-template-columns:1fr}.markets{grid-template-columns:1fr}.wrap{padding:12px}.three b{font-size:17px}}
+
+.loadmask{position:fixed;inset:0;z-index:40;background:rgba(1,9,15,.85);display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(7px)}.loadmask[hidden]{display:none}.loadinner{background:#112634;padding:32px;border:1px solid #376577;max-width:420px;border-radius:18px;text-align:center}.spinner{height:36px;width:36px;border:4px solid #456474;border-top-color:#45e3ad;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 15px}@keyframes spin{to{transform:rotate(360deg)}}.full{width:100%}.valuetable td{font-variant-numeric:tabular-nums}
+
+.compact-fixtures{max-height:310px;overflow-y:auto;padding-right:6px;scrollbar-width:thin}
+.fixture-league{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:8px 0;background:#122532}
+.fixture-league summary{padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--text);font-weight:650;font-size:13px}
+.fixture-league summary small{color:var(--muted);font-weight:400}
+.fixture-row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 11px;border-top:1px solid #2b4352}
+.fixture-row button{text-align:left;flex:1;border:0;background:transparent;padding:5px 2px;color:var(--text);font-size:12px}
+.fixture-row .small{white-space:nowrap}
+.odds-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.odds-grid label{color:var(--muted);font-size:12px}
+.odds-grid input{width:100%;min-width:0;background:#102b3a;border:1px solid #365366;color:var(--text);border-radius:8px;padding:8px;margin-top:5px}
+.odds-entry a{color:var(--green);font-size:12px}
+.source-summary{background:#122a39;border-radius:12px;padding:12px;margin:8px 0;font-size:13px;line-height:1.6}
+.value-good{color:#45e3ad}.value-bad{color:#ffb7a1}
+@media(max-width:680px){.odds-grid{grid-template-columns:repeat(3,1fr)}}
+
+.value-grid{display:grid;gap:7px}.value-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 12px;background:#152a37;border-radius:10px;font-size:13px}
+.value-right{text-align:right}.value-row b{font-variant-numeric:tabular-nums}.source-summary a{color:var(--blue)}
+
+.confidence{display:inline-flex;border-radius:100px;margin:0 0 14px;padding:6px 12px;font-size:12px;font-weight:800;background:#332b2b;color:var(--red);border:1px solid currentColor}.confidence.high{color:var(--green);background:#103c33}.confidence.mid{color:#ffd078;background:#45391f}.confidence.low{color:var(--red);background:#462728}
+.fp-detail{margin:0}.fp-detail summary{padding:3px 0 12px;display:flex;align-items:center;justify-content:space-between;color:var(--text)}.fp-detail[open] .value-grid{padding-top:8px}
+.coupon-pick{display:grid;grid-template-columns:1.15fr .85fr;gap:12px;margin-bottom:12px}.coupon-selector{display:flex;flex-direction:column;gap:7px}.coupon-selector label{font-size:12px;color:var(--muted)}.coupon-selector button{min-height:44px}.coupon-rows{display:grid;gap:8px;margin:10px 0}.coupon-row{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:10px;padding:12px;background:var(--panel2);border-radius:10px}.coupon-row button{font-size:12px;padding:7px 10px}.coupon-total{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;padding:12px;background:#122936;border-radius:12px}.coupon-total .big{font-size:22px;margin-top:5px}.riskbar{height:12px;background:#213640;border-radius:20px;overflow:hidden;margin-top:12px}.riskbar span{display:block;height:100%;width:0%;background:var(--green);transition:width .2s}.research-sources{display:grid;gap:6px;margin-top:12px;max-height:240px;overflow:auto}.research-sources a{color:var(--blue);text-decoration:none}.research-sources>div{border-bottom:1px solid var(--line);padding-bottom:7px;font-size:12px}.muted-warning{color:var(--orange)}
+@media(max-width:720px){.coupon-pick{grid-template-columns:1fr}.coupon-total .big{font-size:17px}.coupon-row{grid-template-columns:1fr auto}}
+</style></head><body><div class="wrap">
+<header class="top"><div class="logo">FUTSIM <em>v5</em> <span class="pill">OPEN INTELLIGENCE</span></div><div class="meta"><span class="tag" id="updated">Veri bekleniyor</span><span class="tag" id="origin">Kaynak denetleniyor</span><span class="tag">10.000 maç</span></div></header>
+<div class="notice">Bu bir araştırma simülatörüdür. Veri eksikse lig gücü ve takım istatistikleriyle sınırlı bir tahmin üretir; ölçülmüş xG, kadro, sakatlık veya bahis hacmi bulunmuyorsa üretmiş gibi göstermez. Bahis garantisi değildir.</div>
+<div class="hero" style="margin-top:15px"><section class="card"><div class="subtitle">Maç laboratuvarı</div><h2 style="font-size:20px;margin-top:7px">İki takımı karşılaştır</h2><p class="lead">Aynı veya farklı liglerden takım seç. Maç türünü belirt: Avrupa maçlarında lig ve Şampiyonlar Ligi performansları ayrı tartılır. Eski skor örüntülerine göre maç akışı simüle edilir.</p><div class="controls"><div><label for="hleague">Ev sahibi ligi</label><select id="hleague"></select><label for="home">Ev sahibi</label><select id="home"></select></div><div><label for="aleague">Deplasman ligi</label><select id="aleague"></select><label for="away">Deplasman</label><select id="away"></select></div></div><div style="margin:12px 0"><label style="display:block;color:var(--muted);font-size:12px;margin-bottom:5px" for="competition">Maçın oynanacağı organizasyon</label><select id="competition" style="width:100%"><option value="Özel maç">Özel maç / karşılaştırma</option><option value="Şampiyonlar Ligi">Şampiyonlar Ligi</option><option value="Premier League">Premier League</option><option value="Bundesliga">Bundesliga</option><option value="La Liga">La Liga</option><option value="Süper Lig">Süper Lig</option><option value="Championship">Championship</option></select></div><div class="inline"><div class="small" id="dataLine">Veri kaynağı kontrol ediliyor...</div><button class="primary" id="run">10.000 simülasyon</button></div></section>
+<section class="card"><div class="subtitle">Canlı veri durumu</div><h2 id="healthTitle">Veri yükleniyor</h2><p class="status" id="health">Açık kaynak kayıtları okunuyor.</p><div class="tick"><div class="inline"><span class="small">Geçmiş tamamlanmış maçlar</span><b id="matches">—</b></div><div class="inline" style="margin-top:9px"><span class="small">Kayıtlı kulüpler</span><b id="clubs">—</b></div><div class="inline" style="margin-top:9px"><span class="small">Bağlantı / kaynak hatası</span><b id="errCount">—</b></div></div></section></div>
+<div class="notice" style="margin:14px 0" id="liveFeedStatus">Bugünün ve yarının maçları için açık fikstür aranıyor…</div>
+<div class="two"><section class="card"><h2>Bugün ve yarın • Liglere göre</h2><p class="small">Lig başlıklarını aç; bir maça basınca doğrudan analiz edilir.</p><div id="fixtures" class="empty compact-fixtures">Kaynak fikstürü yükleniyor.</div></section><section class="card"><h2>Modelin geçmiş doğruluğu</h2><div id="backtest" class="empty">Geçmiş maçlardan ileriye dönük doğrulama sonucu yükleniyor.</div><p class="small">Geçmişteki bir maçı tahmin ederken o maçın ve sonraki maçların skorları kullanılmaz. Kalibrasyon ancak ayrı test kümesinde iyileşme varsa geçerli olur.</p></section></div>
+
+<section class="grid"><div class="card"><div class="subtitle">Tahmini sonuç</div><h2 id="matchName">Bir maç seç</h2><div class="confidence" id="confidenceBadge">Veri güveni: hesaplanmadı</div><div class="three"><div><span class="small">1</span><b id="p1" class="green">—</b></div><div><span class="small">X</span><b id="px">—</b></div><div><span class="small">2</span><b id="p2" class="blue">—</b></div></div><div class="bars"><i id="bar1" style="background:#45e3ad;width:33%"></i><i id="barx" style="background:#9caeb7;width:34%"></i><i id="bar2" style="background:#72b6ff;width:33%"></i></div><span class="small" id="forecastNote">Model başlatılmadı.</span></div>
+<div class="card"><div class="subtitle">Skor dağılımı</div><div class="inline" style="margin:12px 0"><div><div class="small">1-X-2 ile uyumlu skor</div><div class="big" id="topscore">—</div></div><div><div class="small">Bu skorun ihtimali</div><div class="big green" id="toppct">—</div></div></div><div id="top5" class="small">Skor simülasyonu çalıştırılmadı.</div><p class="small" id="scoreClarifier"></p><div class="tick"><div class="subtitle">Beklenmedik ama olası skorlar</div><div class="inline"><b class="big" id="extremeScore">—</b><b class="green" id="extremePct">—</b></div><p class="small">Olasılığı en yüksek sıra dışı skorlar; farklı galibiyet şart değil.</p><div id="surpriseList" class="small"></div></div></div>
+<div class="card"><div class="subtitle">Lig ve maç gücü</div><div class="inline" style="margin-top:12px"><div><div class="small">Ev gücü</div><div class="big" id="eh">—</div></div><div><div class="small">Dep güç</div><div class="big" id="ea">—</div></div></div><div class="tick" id="lambdas" style="font-size:13px">Beklenen gol dağılımı hesaplanmadı.</div></div></section>
+<div class="two"><section class="card"><details class="fp-detail"><summary><strong>%50 üzeri • Oran / fiyat-performans</strong> <span class="pill">Aç / kapat</span></summary><div class="value-grid" id="markets"><span class="empty">Simülasyon sonrasında olasılıklar listelenir.</span></div><p class="small" id="valueSummary"></p><p class="small">Adil oran = 100 / model yüzdesi; gerçek site fiyatı değildir. Gerçek oran yoksa teorik avantaj hesaplanmaz.</p></details></section><section class="card"><h2>Takımların son formu ve ölçülebilen veriler</h2><div id="teamstats" class="empty">Maç seçildiğinde son maç, skor ortalaması, şut/isabet ve korner verileri gösterilir.</div></section></div>
+<section class="card results" id="couponLab"><div class="inline"><div><div class="subtitle">FUTSIM kupon laboratuvarı</div><h2 style="margin-top:8px">Kendi kombinen</h2></div><span class="pill">Her karşılaşmadan bir seçim</span></div><p class="small">Aşağıdaki karşılaşmada modelin orta riskli tercihini incele veya seçimini yapıp farklı maçlardan kupon oluştur. Yüzdeler model tahminidir, garanti değildir.</p>
+<div class="coupon-pick"><div class="notice" id="autoPick">Maç simülasyonu sonrasında FUTSIM önerisi burada çıkacak.</div><div class="coupon-selector"><label for="couponMarket">Seçim</label><select id="couponMarket"></select><button class="primary" id="couponAdd" type="button">Kupona ekle</button></div></div>
+<div id="couponRows" class="coupon-rows"><p class="empty">Henüz maç eklemedin.</p></div>
+<div class="coupon-total"><div><span class="small">Toplam model olasılığı</span><div class="big" id="couponProb">—</div></div><div><span class="small" id="couponOddLabel">Piyasa toplam oranı</span><div class="big" id="couponOdds">—</div></div><div><span class="small">Birleşik risk</span><div class="big" id="couponRisk">—</div></div></div><div class="riskbar"><span id="riskFill"></span></div><p id="couponNote" class="small">Farklı maçların bağımsız kabul edildiği yaklaşık hesap; model doğruluğu henüz kalibre değil.</p><button id="couponClear" type="button">Kuponu temizle</button></section>
+<div class="two"><section class="card"><h2>Teknik direktör ve oyun anlayışı</h2><div id="coaches" class="empty">Doğrulanmış teknik direktör ve takımın saha içi davranış sinyalleri karşılaştırılacak.</div></section><section class="card"><h2>Maç öncesi kaynak araştırması</h2><p class="small" id="researchStatus">Analiz öncesi Google Haberler'de maç beklentileri aranır, en az 10 farklı site hedeflenir.</p><div id="researchSources" class="research-sources"></div><p class="small">Yalnızca gerçekten erişilen yayınlar sayılır. Görüşler modelin istatistiksel olasılıklarını değiştirmez.</p></section></div>
+<div class="two"><section class="card"><h2>Ölçülen oyuncu verisi / tahmini 11</h2><div id="players" class="empty">Açık veri kaynaklarının sunduğu kapsam kontrol ediliyor.</div></section><section class="card"><h2>Geçmiş skorlardan türetilen maç senaryoları</h2><div id="scenarios" class="empty">Maç seçildiğinde takım seviyesine dayalı senaryolar üretilecek.</div></section></div>
+<div class="two"><section class="card"><h2>Forum ve yorumcu görüşlerinin özeti <span class="pill">Simülasyondan bağımsız</span></h2><div id="news" class="empty">Görüş kaynakları kontrol ediliyor.</div><p class="small">Bölüm model tahmininden bağımsızdır. Erişilebilir kaynaklarda yalnızca ilgili maç hakkındaki açık görüşler özetlenir; görüşler veri yokken icat edilmez.</p></section><section class="card"><h2>Seçili maçın piyasa oranları • değer karşılaştırması</h2><div class="warn">Maç tarihine özel İddaakolik Avrupa piyasası bülteni ve Football-Data açık CSV kaynağı denenir. Nesine/Oley otomatik erişimi doğrulanmadığından bu sitelerin oranları gibi sunulmaz. Oranlar ilk erişimde kaydedilir; fiyat bulunamazsa uydurulmaz.</div><div id="surprises" class="empty" style="margin-top:12px">Seçili maçın kaynaklı piyasa oranları kontrol ediliyor.</div>
+<details class="odds-entry"><summary>Oranı manuel aktar (kaynak belirtilmeden doğrulanmaz)</summary>
+<p class="small">Görebildiğin herhangi bir sitedeki aynı maçın 1, X, 2 ve varsa 2,5 alt/üst oranlarını kopyala. Veriler yalnızca bu tarayıcıda, bu karşılaşma için saklanır.</p>
+<div class="odds-grid"><label>1 <input id="odd1" inputmode="decimal" placeholder="2,10"></label><label>X <input id="oddX" inputmode="decimal" placeholder="3,25"></label><label>2 <input id="odd2" inputmode="decimal" placeholder="3,00"></label><label>2,5 Alt <input id="oddUnder" inputmode="decimal" placeholder="1,85"></label><label>2,5 Üst <input id="oddOver" inputmode="decimal" placeholder="1,85"></label></div>
+<div class="inline" style="margin-top:10px"><button id="saveMackolik" class="primary" type="button">Bu maça kaydet</button><button id="clearMackolik" type="button">Kayıt sil</button><a target="_blank" rel="noopener" href="https://www.mackolik.com/iddaa">Maçkolik İddaa</a></div><p id="oddsEntryStatus" class="small"></p>
+</details></section></div>
+<div class="footer">Kaynaklar: <a href="https://www.iddaakolik.com/iddaa-programi" target="_blank" rel="noopener">İddaakolik</a> (Avrupa piyasası, resmî İddaa oranı değil), <a href="https://github.com/oladeeayo/open-matchday" target="_blank" rel="noopener">open-matchday</a> (kişisel, ticari olmayan kullanım). Eksik gerçek xG/xA, bireysel hata, taktik, sakatlık ve canlı kadro verileri için yetkili ayrı veri kaynakları gerekir. <b>Beklenen gol parametresi ölçülmüş şut bazlı xG değildir.</b> Bu açık kaynak uygulama tahmin garantisi vermez.</div>
+</div><div class="loadmask" id="loadmask" hidden><div class="loadinner"><div class="spinner"></div><h2>Maç öncesi kaynaklar araştırılıyor</h2><p class="status" id="loadmsg">Fikstür, geçmiş skorlar, haber başlıkları ve mevcut oran kayıtları okunuyor...</p></div></div><script>
+window.FUTSIM_SEED={"version":4,"seed":true,"asof":"2026-10-25","teams":[{"id":"manchester city","name":"Manchester City","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":19,"ga":7,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League","Şampiyonlar Ligi"]},{"id":"arsenal","name":"Arsenal","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":11,"ga":5,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League","Şampiyonlar Ligi"]},{"id":"brighton hove albion","name":"Brighton & Hove Albion","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":23,"ga":5,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League"]},{"id":"chelsea","name":"Chelsea","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":17,"ga":13,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League"]},{"id":"liverpool","name":"Liverpool","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":9,"ga":8,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League","Şampiyonlar Ligi"]},{"id":"brentford","name":"Brentford","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":13,"ga":8,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League"]},{"id":"leeds united","name":"Leeds United","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":9,"ga":6,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League"]},{"id":"everton","name":"Everton","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":8,"ga":7,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League"]},{"id":"hull city","name":"Hull City","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":8,"ga":7,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League"]},{"id":"ipswich town","name":"Ipswich Town","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":11,"ga":15,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League"]},{"id":"newcastle united","name":"Newcastle United","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":10,"ga":14,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League"]},{"id":"aston villa","name":"Aston Villa","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":7,"ga":11,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League","Şampiyonlar Ligi"]},{"id":"manchester united","name":"Manchester United","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":10,"ga":10,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League","Şampiyonlar Ligi"]},{"id":"crystal palace","name":"Crystal Palace","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":9,"ga":17,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League"]},{"id":"bournemouth","name":"Bournemouth","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":9,"ga":13,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League"]},{"id":"tottenham hotspur","name":"Tottenham Hotspur","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":6,"ga":10,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League"]},{"id":"coventry city","name":"Coventry City","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":6,"ga":14,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League"]},{"id":"fulham","name":"Fulham","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":7,"ga":10,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League"]},{"id":"nottingham forest","name":"Nottingham Forest","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":5,"ga":9,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League"]},{"id":"sunderland","name":"Sunderland","league":"Premier League","rating":1580,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":6,"ga":14,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Premier League"]},{"id":"bayern munich","name":"Bayern München","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":22,"ga":5,"played":6},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga","Şampiyonlar Ligi"]},{"id":"borussia dortmund","name":"Borussia Dortmund","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":12,"ga":4,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga","Şampiyonlar Ligi"]},{"id":"freiburg","name":"SC Freiburg","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":15,"ga":6,"played":6},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga"]},{"id":"bayer leverkusen","name":"Bayer Leverkusen","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":16,"ga":9,"played":6},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga"]},{"id":"rb leipzig","name":"RB Leipzig","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":20,"ga":11,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga","Şampiyonlar Ligi"]},{"id":"werder bremen","name":"Werder Bremen","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":15,"ga":14,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga"]},{"id":"mainz 05","name":"Mainz 05","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":16,"ga":13,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga"]},{"id":"sv elversberg","name":"SV Elversberg","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":12,"ga":15,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga"]},{"id":"augsburg","name":"Augsburg","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":17,"ga":13,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga"]},{"id":"hamburger sv","name":"Hamburger SV","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":6,"ga":16,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga"]},{"id":"koln","name":"Köln","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":8,"ga":11,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga"]},{"id":"paderborn","name":"Paderborn","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":6,"ga":9,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga"]},{"id":"eintracht frankfurt","name":"Eintracht Frankfurt","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":10,"ga":17,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga"]},{"id":"hoffenheim","name":"Hoffenheim","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":11,"ga":14,"played":6},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga"]},{"id":"vfb stuttgart","name":"VfB Stuttgart","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":10,"ga":13,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga"]},{"id":"schalke 04","name":"Schalke 04","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":4,"ga":7,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga"]},{"id":"union berlin","name":"Union Berlin","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":6,"ga":18,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga"]},{"id":"borussia monchengladbach","name":"Borussia Mönchengladbach","league":"Bundesliga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":11,"ga":22,"played":7},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Bundesliga"]},{"id":"barcelona","name":"Barcelona","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":39,"ga":9,"played":9},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga","Şampiyonlar Ligi"]},{"id":"atletico madrid","name":"Atlético Madrid","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":19,"ga":8,"played":10},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga","Şampiyonlar Ligi"]},{"id":"real madrid","name":"Real Madrid","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":23,"ga":9,"played":9},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga","Şampiyonlar Ligi"]},{"id":"real betis","name":"Real Betis","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":16,"ga":14,"played":9},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga","Şampiyonlar Ligi"]},{"id":"real sociedad","name":"Real Sociedad","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":17,"ga":17,"played":9},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga"]},{"id":"sevilla","name":"Sevilla","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":14,"ga":16,"played":9},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga"]},{"id":"alaves","name":"Alavés","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":14,"ga":11,"played":10},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga"]},{"id":"villarreal","name":"Villarreal","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":15,"ga":14,"played":10},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga","Şampiyonlar Ligi"]},{"id":"deportivo la coruna","name":"Deportivo La Coruña","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":13,"ga":12,"played":10},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga"]},{"id":"celta vigo","name":"Celta Vigo","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":10,"ga":7,"played":9},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga"]},{"id":"osasuna","name":"Osasuna","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":10,"ga":18,"played":9},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga"]},{"id":"racing santander","name":"Racing Santander","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":15,"ga":26,"played":10},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga"]},{"id":"levante","name":"Levante","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":15,"ga":17,"played":9},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga"]},{"id":"elche","name":"Elche","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":14,"ga":17,"played":10},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga"]},{"id":"athletic bilbao","name":"Athletic Bilbao","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":8,"ga":9,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga"]},{"id":"getafe","name":"Getafe","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":5,"ga":11,"played":9},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga"]},{"id":"rayo vallecano","name":"Rayo Vallecano","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":12,"ga":20,"played":9},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga"]},{"id":"espanyol","name":"Espanyol","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":12,"ga":14,"played":10},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga"]},{"id":"valencia","name":"Valencia","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":7,"ga":17,"played":10},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga"]},{"id":"malaga","name":"Málaga","league":"La Liga","rating":1550,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":7,"ga":19,"played":10},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["La Liga"]},{"id":"galatasaray","name":"Galatasaray","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":17,"ga":11,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig","Şampiyonlar Ligi"]},{"id":"amedspor","name":"Amedspor","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":18,"ga":9,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig"]},{"id":"fenerbahce","name":"Fenerbahçe","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":22,"ga":6,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig","Şampiyonlar Ligi"]},{"id":"trabzonspor","name":"Trabzonspor","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":18,"ga":5,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig"]},{"id":"besiktas","name":"Beşiktaş","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":16,"ga":10,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig"]},{"id":"kocaelispor","name":"Kocaelispor","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":11,"ga":9,"played":9},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig"]},{"id":"corum","name":"Çorum FK","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":18,"ga":13,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig"]},{"id":"kasimpasa","name":"Kasımpaşa","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":12,"ga":9,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig"]},{"id":"alanyaspor","name":"Alanyaspor","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":9,"ga":11,"played":9},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig"]},{"id":"basaksehir","name":"Başakşehir","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":12,"ga":12,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig"]},{"id":"erzurumspor","name":"Erzurumspor","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":5,"ga":11,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig"]},{"id":"caykur rizespor","name":"Çaykur Rizespor","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":8,"ga":11,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig"]},{"id":"goztepe","name":"Göztepe","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":17,"ga":16,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig"]},{"id":"gaziantep","name":"Gaziantep FK","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":8,"ga":12,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig"]},{"id":"genclerbirligi","name":"Gençlerbirliği","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":7,"ga":16,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig"]},{"id":"konyaspor","name":"Konyaspor","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":4,"ga":9,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig"]},{"id":"samsunspor","name":"Samsunspor","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":7,"ga":19,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig"]},{"id":"eyupspor","name":"Eyüpspor","league":"Süper Lig","rating":1440,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":2,"ga":22,"played":8},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Süper Lig"]},{"id":"lask","name":"LASK","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"sabah","name":"Sabah FK","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"club brugge","name":"Club Brugge","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"slavia prague","name":"Slavia Prag","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"lens","name":"Lens","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"lille","name":"Lille","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"psg","name":"Paris Saint-Germain","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"aek athens","name":"AEK Atina","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"como","name":"Como","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"inter","name":"Inter","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"napoli","name":"Napoli","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"roma","name":"Roma","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"feyenoord","name":"Feyenoord","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"psv","name":"PSV Eindhoven","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"bodo glimt","name":"Bodø/Glimt","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"viking","name":"Viking FK","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"porto","name":"Porto","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"sporting","name":"Sporting CP","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"slovan bratislava","name":"Slovan Bratislava","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"shakhtar donetsk","name":"Shakhtar Donetsk","league":"Şampiyonlar Ligi","rating":1560,"stats":{"matches":0,"score_patterns":{"n":0,"ht_n":0},"ucl_patterns":{"n":0,"ht_n":0}},"given":{"gf":null,"ga":null,"played":null},"known_scorers":[],"source":"eski katalog; güncel teyit yok","competitions":["Şampiyonlar Ligi"]},{"id":"stuttgart","name":"Stuttgart","league":"Şampiyonlar Ligi","rating":1490,"stats":{"matches":0,"score_patterns":{"n":0},"ucl_patterns":{"n":0}},"competitions":["Şampiyonlar Ligi"],"source":"UEFA roster only; no form data"}],"coverage":{},"upcoming":[],"news":[],"recent_surprises":[],"backtest":{"n":0,"status":"henüz doğrulanmadı"},"data_health":{"finished_matches_count":0,"errors":[]},"meta":{"warning":"Eski kataloğun istatistikleri yeni sürümde doğrulanmış değildir; canlı kaynak senkronizasyonunu başlatın."},"ucl_roster":["aek athens","arsenal","aston villa","atletico madrid","barcelona","bayern munich","bodo glimt","borussia dortmund","club brugge","como","fenerbahce","feyenoord","galatasaray","inter","lask","rb leipzig","lens","lille","liverpool","manchester city","manchester united","napoli","psg","porto","psv","real betis","real madrid","roma","sabah","shakhtar donetsk","slavia prague","slovan bratislava","sporting","stuttgart","viking","villarreal"],"ucl_roster_source":"https://www.uefa.com/uefachampionsleague/news/02a8-2171a88881a0-c70193b972c6-1000--meet-the-2026-27-champions-league-league-phase-teams/"};
+
+</script><script>
+// Published, dated odds snapshots manually verified from public web results on 2026-10-25.
+// These are *European-market* prices reported by İddaakolik, NOT Nesine/Oley/Turkish İddaa.
+window.FUTSIM_MARKET_SEED = [
+ {date:'2026-10-25',home:'Crystal Palace',away:'Newcastle United',markets:{'1':2.67,'X':3.35,'2':2.32,'2,5 Alt':2.11,'2,5 Üst':1.65}},
+ {date:'2026-10-25',home:'Hull City',away:'Brentford',markets:{'1':3.81,'X':3.54,'2':1.78,'2,5 Alt':2.02,'2,5 Üst':1.72}},
+ {date:'2026-10-25',home:'Liverpool',away:'Brighton & Hove Albion',markets:{'1':2.13,'X':3.35,'2':2.93,'2,5 Alt':2.17,'2,5 Üst':1.61}},
+ {date:'2026-10-25',home:'Manchester United',away:'Bournemouth',markets:{'1':2.02,'X':3.45,'2':3.10,'2,5 Alt':2.05,'2,5 Üst':1.70}},
+ {date:'2026-10-25',home:'Sunderland',away:'Leeds United',markets:{'1':2.87,'X':3.12,'2':2.32,'2,5 Alt':1.77,'2,5 Üst':1.97}},
+ {date:'2026-10-25',home:'Barcelona',away:'Real Madrid',markets:{'1':1.74,'X':4.19,'2':3.48,'2,5 Alt':3.50,'2,5 Üst':1.26}},
+ {date:'2026-10-25',home:'Hoffenheim',away:'Bayer Leverkusen',markets:{'1':2.56,'X':3.54,'2':2.32,'2,5 Alt':2.38,'2,5 Üst':1.51}},
+ {date:'2026-10-25',home:'Konyaspor',away:'Gençlerbirliği',markets:{'1':1.93,'X':3.28,'2':3.56,'2,5 Alt':1.82,'2,5 Üst':1.92}},
+ {date:'2026-10-25',home:'Göztepe',away:'Çorum FK',markets:{'1':2.09,'X':3.45,'2':2.93,'2,5 Alt':2.02,'2,5 Üst':1.72}},
+ {date:'2026-10-26',home:'Galatasaray',away:'Fenerbahçe',kickoff:'21:30',source:'Nesine',source_type:'İddaa sayfasında yayımlanmış fiyat',source_url:'https://www.nesine.com/Iddaa/Mac-Merkezi/20261026/3241596/1/2329184',markets:{'1':1.95,'X':3.38,'2':2.63,'2,5 Alt':2.33,'2,5 Üst':1.32}},
+ {date:'2026-10-26',home:'Çaykur Rizespor',away:'Trabzonspor',kickoff:'19:00',source:'Nesine',source_type:'İddaa sayfasında yayımlanmış fiyat',source_url:'https://www.nesine.com/Iddaa/Mac-Merkezi/20261026/3241582/1/2329182',markets:{'1':3.24,'X':3.39,'2':1.72,'2,5 Alt':2.13,'2,5 Üst':1.40}}
+].map(x=>({source:'İddaakolik',source_type:'Avrupa piyasası, İddaa resmi oranı değil',source_mode:'published_snapshot',captured_at:'2026-10-25 (tarihli yayımlanmış sayfa)',source_url:`https://www.iddaakolik.com/iddaa-programi/${x.date.split('-').reverse().join('-')}`,...x}));
+window.FUTSIM_COMMENT_SEED = [
+ {date:'2026-10-25',home:'Crystal Palace',away:'Newcastle United',items:[
+   {source:'TNT Sports • maç önü yorum',title:'Crystal Palace lehine 2–1 skor beklentisi',excerpt:'Palace’ın son haftalardaki gol üretimi ve Newcastle’ın deplasmanda yediği goller nedeniyle ev sahibinin iki gol bulabileceği görüşü öne çıkıyor.',url:'https://www.tntsports.co.uk/betting/tips/crystal-palace-vs-newcastle-united-prediction-tips-and-odds-premier-league-25-10-26/'},
+   {source:'Reddit /r/NUFC • taraftar tartışması',title:'Taraftarlarda karışık beklenti',excerpt:'Newcastle taraftarlarının bazıları savunma hatalarından ve Mateta karşısında endişeleniyor; bazıları beraberliği kabul edebileceğini, bazıları ise mutlak galibiyet gerektiğini yazıyor. Ortak bir skor beklentisi yok.',url:'https://www.reddit.com/r/NUFC/comments/1xei66c/pre_match_thread_newcastle_united_vs_crystal/'}
+ ]}
+];
+
+// Confirmed kickoff from publicly reported Turkish Football Federation fixtures; no odds claimed.
+window.FUTSIM_EXTRA_FIXTURES=[{date:'2026-10-26',time:'19:00',home:'Beşiktaş',away:'Başakşehir',league:'Süper Lig',source:'AA / 2026-10-22 fikstür haberi',source_url:'https://www.aa.com.tr/tr/spor/trendyol-super-ligde-7-16-haftalarin-programi-aciklandi/4057906'}];
+
+</script><script>
+'use strict';
+/* FUTSIM 4.2: on-open public CSV refresh. Source is a daily-updated, no-key,
+   personal/non-commercial research dataset. It never invents optional values. */
+const LIVE_FOLDERS={
+ 'Premier League':'ENG_1_premier-league','Bundesliga':'GER_1_bundesliga',
+ 'La Liga':'ESP_1_la-liga','Süper Lig':'TUR_1_super-lig',
+ 'Şampiyonlar Ligi':'UEFA_1_champions-league','Championship':'ENG_2_championship',
+ 'Serie A':'ITA_1_serie-a','Ligue 1':'FRA_1_ligue-1',
+ 'Eredivisie':'NED_1_eredivisie','Primeira Liga':'POR_1_primeira-liga',
+ 'Belgian Pro League':'BEL_1_pro-league','Greek Super League':'GRE_1_super-league',
+ 'Austrian Bundesliga':'AUT_1_bundesliga','Norwegian Eliteserien':'NOR_1_eliteserien',
+ 'Czech First League':'CZE_1_chance-liga','Slovak Nike Liga':'SVK_1_nike-liga',
+ 'Ukrainian Premier League':'UKR_1_premier-league'
+};
+const LIVE_BASE='https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/';
+const LIVE_CDN='https://cdn.jsdelivr.net/gh/oladeeayo/open-matchday@master/data/';
+const liveAlias={'man utd':'manchester united','man united':'manchester united',
+ 'newcastle':'newcastle united','man city':'manchester city','fc barcelona':'barcelona',
+ 'bayern munchen':'bayern munich','bayern munich':'bayern munich',
+ 'atletico de madrid':'atletico madrid','leipzig':'rb leipzig',
+ 'psv eindhoven':'psv','paris saint germain':'psg','paris sg':'psg',
+ 'sporting cp':'sporting','slavia praha':'slavia prague','bod glimt':'bodo glimt',
+ 'internazionale':'inter','inter milan':'inter','sabah fk':'sabah','aston villa fc':'aston villa',
+ 'galatasaray sk':'galatasaray','fenerbahce sk':'fenerbahce',
+ 'corum fk':'corum','slavia prag':'slavia prague',
+ 'b dortmund':'borussia dortmund'};
+function canonicalJS(name){
+ let v=String(name||'').toLowerCase().replace(/ı/g,'i').replace(/ß/g,'ss')
+  .normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ')
+  .replace(/\b(fc|afc|cf|sc|sk|fk|as|club|football|futbol|spor|calcio)\b/g,'').replace(/\s+/g,' ').trim();
+ return liveAlias[v]||v;
+}
+function parseCSV(text){
+ const lines=[];let cells=[],field='',quote=false;
+ for(let i=0;i<text.length;i++){
+  const c=text[i];if(c==='"'){if(quote&&text[i+1]==='"'){field+='"';i++;}else quote=!quote;}
+  else if(c===','&&!quote){cells.push(field);field='';}
+  else if((c==='\n'||c==='\r')&&!quote){if(c==='\r'&&text[i+1]==='\n')i++;cells.push(field);field='';if(cells.some(x=>x.length))lines.push(cells);cells=[];}
+  else field+=c;
+ }
+ cells.push(field);if(cells.some(x=>x.length))lines.push(cells);
+ if(!lines.length)return [];
+ const head=lines.shift().map(x=>x.replace(/^\ufeff/,'').trim());
+ return lines.map(cols=>Object.fromEntries(head.map((k,i)=>[k,(cols[i]||'').trim()])));
+}
+function numberOrNull(raw){if(raw===''||raw==null)return null;let n=Number(raw);return Number.isFinite(n)?n:null;}
+async function publicCSV(path){
+ for(const base of [LIVE_BASE,LIVE_CDN]){
+  const abort=new AbortController(),timer=setTimeout(()=>abort.abort(),7500);
+  try{const r=await fetch(base+path,{cache:'no-store',signal:abort.signal});
+   if(!r.ok)throw Error('HTTP '+r.status);const csv=await r.text();
+   if(csv.length<30||!csv.includes(','))throw Error('Geçersiz CSV');return parseCSV(csv);
+  }catch(_){/* Try the secondary public mirror. */}
+  finally{clearTimeout(timer);}
+ }
+ throw Error('CSV kaynağına bağlantı kurulamadı: '+path);
+}
+function readCSVFixture(row,league,played){
+ if(!/^20\d\d-\d\d-\d\d$/.test(row.date||''))return null;
+ const home=(row.home||'').trim(),away=(row.away||'').trim();if(!home||!away)return null;
+ const hid=canonicalJS(home),aid=canonicalJS(away);if(!hid||hid===aid)return null;
+ const hg=played?numberOrNull(row.ft_home):null,ag=played?numberOrNull(row.ft_away):null;
+ if(played&&(!Number.isInteger(hg)||!Number.isInteger(ag)))return null;
+ // The upstream fixture clock uses a fixed UTC+1 convention; TSİ is UTC+3.
+ // Only adjust fixture day/time, not historic results or played-before filtering.
+ let localDay=row.date,localTime=row.time||'';
+ if(!played && /^\d{2}:\d{2}$/.test(localTime)){
+  const [hh,mm]=localTime.split(':').map(Number);
+  if(hh<24&&mm<60){const instant=new Date(row.date+'T00:00:00Z');instant.setUTCHours(hh+2,mm,0,0);
+   localDay=instant.toISOString().slice(0,10);localTime=String(instant.getUTCHours()).padStart(2,'0')+':'+String(instant.getUTCMinutes()).padStart(2,'0');}
+ }
+ const m={date:localDay,time:localTime,home,away,hid,aid,league,hg,ag,source:'open-matchday',time_zone:'Europe/Istanbul (kaynak UTC+1 varsayımı)'};
+ if(played){m.ht_home=numberOrNull(row.ht_home);m.ht_away=numberOrNull(row.ht_away);
+  for(const key of ['shots','corners','fouls','yellow','red']){m[key+'_home']=numberOrNull(row['home_'+key]);m[key+'_away']=numberOrNull(row['away_'+key]);}
+  m.sot_home=numberOrNull(row.home_target);m.sot_away=numberOrNull(row.away_target);
+ }
+ return m;
+}
+function weightedMean(items,key){const available=items.map((it,i)=>[it[key],.89**i]).filter(([v])=>Number.isFinite(v));return available.length?available.reduce((s,[v,w])=>s+v*w,0)/available.reduce((s,[v,w])=>s+w,0):null;}
+function computeLiveStats(id,matches,side){
+ const arr=matches.filter(m=>(m.hid===id||m.aid===id)&&(!side||(side==='home' ? m.hid===id:m.aid===id)))
+  .sort((a,b)=>b.date.localeCompare(a.date)).slice(0,15)
+  .map(m=>{const h=m.hid===id;return {m,gf:h?m.hg:m.ag,ga:h?m.ag:m.hg,side:h?'home':'away',
+   shots:m['shots_'+(h?'home':'away')],sot:m['sot_'+(h?'home':'away')],
+   corners:m['corners_'+(h?'home':'away')],yellow:m['yellow_'+(h?'home':'away')],
+   red:m['red_'+(h?'home':'away')],ht_for:h?m.ht_home:m.ht_away,ht_against:h?m.ht_away:m.ht_home,
+   fouls:m['fouls_'+(h?'home':'away')],points:(h?m.hg:m.ag)>(h?m.ag:m.hg)?3:m.hg===m.ag?1:0};});
+ const n=arr.length;if(!n)return {matches:0,form:[],score_patterns:{n:0,ht_n:0},ucl_patterns:{n:0,ht_n:0}};
+ const weightedFreq=fn=>100*arr.reduce((s,x,i)=>s+(fn(x)?.89**i:0),0)/arr.reduce((s,x,i)=>s+.89**i,0);
+ const gf=weightedMean(arr,'gf'),ga=weightedMean(arr,'ga');
+ const result={matches:n,gf,ga,raw_gf:gf,raw_ga:ga,shots:weightedMean(arr,'shots'),sot:weightedMean(arr,'sot'),corners:weightedMean(arr,'corners'),fouls:weightedMean(arr,'fouls'),yellow:weightedMean(arr,'yellow'),red:weightedMean(arr,'red'),points:weightedMean(arr,'points'),
+  btts:weightedFreq(x=>x.gf>0&&x.ga>0),over25:weightedFreq(x=>x.gf+x.ga>=3),clean_sheets:weightedFreq(x=>x.ga===0),
+  form:arr.slice(0,6).map(x=>({date:x.m.date,opponent:x.side==='home'?x.m.away:x.m.home,gf:x.gf,ga:x.ga,h:x.side==='home'}))};
+ const ht=arr.filter(x=>Number.isInteger(x.ht_for)&&Number.isInteger(x.ht_against));
+ result.goals_2h=ht.length?weightedMean(ht.map(x=>({v:x.gf-x.ht_for})),'v'):null;
+ result.score_patterns={n,ht_n:ht.length,scored_3plus:weightedFreq(x=>x.gf>=3),won_3plus:weightedFreq(x=>x.gf-x.ga>=3),goalless:weightedFreq(x=>x.gf===0),high_score:weightedFreq(x=>x.gf+x.ga>=4),
+  comeback_from_ht:ht.length?100*ht.filter(x=>x.ht_for<x.ht_against&&x.gf>=x.ga).length/ht.length:null,
+  second_half_more_goals:ht.length?100*ht.filter(x=>x.gf+x.ga-x.ht_for-x.ht_against>x.ht_for+x.ht_against).length/ht.length:null,
+  last_results:result.form};
+ return result;
+}
+function putUnique(list,value){if(!list.includes(value))list.push(value);}
+function hydrateMatches(finished,upcoming){
+ const today=istanbulDay();
+ const current=Array.isArray(data.teams)?data.teams:[];
+ const catalogue=new Map(current.map(t=>[t.id,{...t,competitions:[...(t.competitions||[t.league])]}]));
+ function ensure(id,name,league){let t=catalogue.get(id);if(!t){t={id,name,league:league==='Şampiyonlar Ligi'?'Şampiyonlar Ligi':league,competitions:[],stats:{matches:0}};catalogue.set(id,t);}
+  if(league!=='Şampiyonlar Ligi'&&(t.league==='Şampiyonlar Ligi'||!t.league))t.league=league;
+  putUnique(t.competitions,league);return t;}
+ for(const m of [...finished,...upcoming]){ensure(m.hid,m.home,m.league);ensure(m.aid,m.away,m.league);}
+ for(const name of officialUCL){const id=canonicalJS(name);ensure(id,name,'Şampiyonlar Ligi');}
+ data.raw_current_season=finished;
+ const ordered=finished.filter(m=>m.date<today).sort((a,b)=>a.date.localeCompare(b.date));
+ const ratings=new Map();function rating(id){if(!ratings.has(id))ratings.set(id,prior[catalogue.get(id)?.league]||1490);return ratings.get(id);}
+ for(const m of ordered){const rh=rating(m.hid),ra=rating(m.aid),expected=1/(1+10**((ra-rh-65)/400)),outcome=m.hg>m.ag?1:m.hg===m.ag?.5:0;
+  const change=20*(1+Math.min(4,Math.abs(m.hg-m.ag))*.1)*(outcome-expected);
+  ratings.set(m.hid,rh+change);ratings.set(m.aid,ra-change);
+ }
+ for(const t of catalogue.values()){
+  const prev=t.stats?.last_season,shift=t.stats?.season_change,oldcoach=t.coach;
+  const live=computeLiveStats(t.id,ordered),home=computeLiveStats(t.id,ordered,'home'),away=computeLiveStats(t.id,ordered,'away');
+  if(live.matches){live.home=home;live.away=away;
+   live.ucl_form=computeLiveStats(t.id,ordered.filter(x=>x.league==='Şampiyonlar Ligi'));
+   live.ucl_patterns=live.ucl_form.score_patterns;
+   if(prev){live.last_season=prev;
+    if(live.matches>=5&&prev.matches>=5){live.season_change=Object.fromEntries(['raw_gf','raw_ga','points','shots','sot','corners'].map(k=>[k,live[k]!=null&&prev[k]!=null?live[k]-prev[k]:null]));}
+    else live.season_change=null;
+   }
+   t.stats=live;t.rating=Math.round(ratings.get(t.id)??(prior[t.league]||1490));t.coach=oldcoach||null;
+   t.given=null;t.source='open-matchday güncel CSV; 2026/27';
+  }else if(!t.stats?.matches){t.source='sadece kulüp listesi; güncel maç verisi yok';t.given=null;}
+ }
+ const keys=new Set();const deduped=[];
+ for(const m of upcoming){if(m.date<today)continue;const key=m.date+'|'+m.hid+'|'+m.aid+'|'+m.league;if(keys.has(key))continue;keys.add(key);deduped.push(m);}
+ data.teams=[...catalogue.values()];data.upcoming=deduped;
+ data.asof=today;data.seed=false;data.updated_at_utc=new Date().toISOString();
+ data.data_health={...(data.data_health||{}),finished_matches_count:ordered.length};
+ data.coverage=Object.fromEntries(Object.keys(LIVE_FOLDERS).map(l=>[l,{teams:data.teams.filter(x=>x.competitions.includes(l)).length,finished_matches:ordered.filter(x=>x.league===l).length}]));
+ return {clubs:catalogue.size,results:ordered.length,fixtures:deduped.length};
+}
+async function refreshPublicData(){
+ const status=$('liveFeedStatus');if(status)status.textContent='Açık fikstür kaynaklarına bağlanılıyor…';
+ const parts=await Promise.all(Object.entries(LIVE_FOLDERS).flatMap(([league,folder])=>
+  ['results','fixtures'].map(async kind=>{
+   const path=folder+'/'+kind+'_2627.csv';
+   try{return {league,kind,rows:await publicCSV(path)};}
+   catch(e){return {league,kind,error:String(e.message||e)};}
+  })));
+ const good=parts.filter(p=>p.rows);
+ if(!good.length){if(status)status.textContent='İnternetten fikstür alınamadı. Çevrimdışı katalog çalışıyor; bugün-yarın maçları doğrulanamıyor.';return null;}
+ const done=[],future=[];
+ for(const p of good){for(const row of p.rows){const m=readCSVFixture(row,p.league,p.kind==='results');if(m)(p.kind==='results'?done:future).push(m);}}
+ if(!done.length&&!future.length){if(status)status.textContent='Kaynağa ulaşıldı ama maç satırı okunamadı.';return null;}
+ const currentHome=$('home').value,currentAway=$('away').value,currentComp=$('competition').value;
+ const summary=hydrateMatches(done,future);
+ initialize();
+ // Preserve user's match selection across automatic refresh.
+ if(byId[currentHome]&&byId[currentAway]&&currentHome!==currentAway)setPair(currentHome,currentAway,currentComp);
+ if(status)status.innerHTML=`<b>Çevrimiçi CSV yüklendi.</b> ${summary.results} tamamlanmış karşılaşma, ${summary.fixtures} yaklaşan fikstür, ${summary.clubs} kulüp. ${parts.length-good.length} dosyaya erişilemedi. Kaynak: open-matchday. (Yayımlanma gecikmesi olabilir.)`;
+ return summary;
+}
+const PREV_CODES={'Premier League':'E0','Bundesliga':'D1','La Liga':'SP1','Süper Lig':'T1','Championship':'E1','Serie A':'I1','Ligue 1':'F1','Eredivisie':'N1','Primeira Liga':'P1'};
+async function previousCSV(code){
+ const url=`https://www.football-data.co.uk/mmz4281/2526/${code}.csv`;
+ const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),5500);
+ try{const response=await fetch(url,{signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);
+  return parseCSV(await response.text());}
+ catch{return [];}finally{clearTimeout(timeout);}
+}
+function parseOldRow(row,league){
+ const home=(row.HomeTeam||'').trim(),away=(row.AwayTeam||'').trim();if(!home||!away)return null;
+ const hg=numberOrNull(row.FTHG),ag=numberOrNull(row.FTAG);if(!Number.isInteger(hg)||!Number.isInteger(ag))return null;
+ let date=(row.Date||'').trim();
+ if(date.includes('/')){const p=date.split('/');if(p.length!==3)return null;let y=Number(p[2]);if(y<100)y+=2000;date=[y,p[1].padStart(2,'0'),p[0].padStart(2,'0')].join('-');}
+ if(!/^20\d\d-\d\d-\d\d$/.test(date))return null;
+ return {home,away,hid:canonicalJS(home),aid:canonicalJS(away),hg,ag,date,league,
+  ht_home:numberOrNull(row.HTHG),ht_away:numberOrNull(row.HTAG),
+  shots_home:numberOrNull(row.HS),shots_away:numberOrNull(row.AS),
+  sot_home:numberOrNull(row.HST),sot_away:numberOrNull(row.AST),
+  corners_home:numberOrNull(row.HC),corners_away:numberOrNull(row.AC),source:'football-data.co.uk 2025/26'};
+}
+async function refreshPreviousSeasons(){
+ const parts=await Promise.all(Object.entries(PREV_CODES).map(async([l,code])=>({league:l,rows:await previousCSV(code)})));
+ const previous=parts.flatMap(({league,rows})=>rows.map(r=>parseOldRow(r,league)).filter(Boolean));
+ if(previous.length===0){const old=$('seasonSourceStatus');if(old)old.textContent='Geçen sezonun açık CSV kaynaklarına tarayıcıdan erişilemedi; GitHub/Windows senkronizasyonuyla eklenebilir.';return;}
+ for(const t of data.teams||[]){
+  const last=computeLiveStats(t.id,previous);const s=t.stats||{};
+  if(last.matches){s.last_season={matches:last.matches,raw_gf:last.raw_gf,raw_ga:last.raw_ga,points:last.points,shots:last.shots,sot:last.sot,corners:last.corners,form:last.form};
+   if(s.matches>=5 && last.matches>=5){s.season_change=Object.fromEntries(['raw_gf','raw_ga','points','shots','sot','corners'].map(k=>[k,s[k]!=null&&last[k]!=null?s[k]-last[k]:null]));}
+  }
+ }
+ // Elo across previous and current seasons to retain strength across July.
+ const merged=[...previous,...(data.raw_current_season||[]).filter(m=>m.date<istanbulDay())].sort((a,b)=>a.date.localeCompare(b.date));
+ const score=new Map();const teamList=new Map(data.teams.map(t=>[t.id,t]));
+ const value=id=>{if(!score.has(id))score.set(id,prior[teamList.get(id)?.league]||1490);return score.get(id);};
+ for(const m of merged){const a=value(m.hid),b=value(m.aid),exp=1/(1+10**((b-a-65)/400)),outcome=m.hg>m.ag?1:m.hg===m.ag?.5:0;
+  const delta=19*(1+.1*Math.min(4,Math.abs(m.hg-m.ag)))*(outcome-exp);score.set(m.hid,a+delta);score.set(m.aid,b-delta);}
+ for(const t of data.teams)if(score.has(t.id))t.rating=Math.round(score.get(t.id));
+ data.previous_season={source:'football-data.co.uk 2025/26',matches:previous.length};
+ const el=$('seasonSourceStatus');if(el)el.textContent=`2025/26: ${previous.length} oynanmış maç yüklendi, ${parts.filter(x=>!x.rows.length).length} ligde arşive erişilemedi. Ligler arası form geçmiş sezon Elo ile yenilendi.`;
+ const h=byId[$('home').value],a=byId[$('away').value];if(h&&a&&h.id!==a.id)run();
+}
+async function bootV42(){
+ await boot();
+ try{const ok=await refreshPublicData();if(ok)refreshPreviousSeasons().catch(()=>{});}
+ catch(e){const s=$('liveFeedStatus');if(s)s.textContent='Canlı dosyalar okunurken hata: '+String(e.message||e).slice(0,140);}
+}
+
+
+</script><script>
+'use strict';
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=x=>Number(x).toLocaleString('tr-TR',{maximumFractionDigits:2});
+const pc=x=>fmt(x)+'%';
+const clamp=(x,a,b)=>Math.min(b,Math.max(a,x));
+const prior={'Premier League':1580,'Bundesliga':1550,'La Liga':1550,'Süper Lig':1440,'Şampiyonlar Ligi':1490,'Championship':1450,'1. Lig':1340,'Serie A':1530,'Ligue 1':1515,'Eredivisie':1480,'Primeira Liga':1475,'Belgian Pro League':1450,'Greek Super League':1420,'Austrian Bundesliga':1430,'Norwegian Eliteserien':1390,'Czech First League':1410,'Slovak Nike Liga':1370,'Ukrainian Premier League':1415};
+let data,teams=[],byId={},busy=false,queuedRun=false,currentAnalysis=null,activeResearch=null;
+let coupon=[];try{coupon=JSON.parse(localStorage.getItem('futsim-v5-coupon')||'[]');if(!Array.isArray(coupon))coupon=[];}catch{coupon=[];}
+const officialUCL=['AEK Athens','Arsenal','Aston Villa','Atlético de Madrid','Barcelona','Bayern München','Bodø/Glimt','Borussia Dortmund','Club Brugge','Como','Fenerbahçe','Feyenoord','Galatasaray','Inter','LASK','Leipzig','Lens','Lille','Liverpool','Manchester City','Manchester United','Napoli','Paris Saint-Germain','Porto','PSV Eindhoven','Real Betis','Real Madrid','Roma','Sabah','Shakhtar','Slavia Praha','Slovan Bratislava','Sporting CP','Stuttgart','Viking','Villarreal'];
+const safeURL=u=>{try{let u2=new URL(u);return ['http:','https:'].includes(u2.protocol)?u2.href:'#';}catch{return '#';}};
+// Date comparisons always use Turkey's calendar day, not device locale.
+function istanbulDay(date=new Date()){
+ const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Istanbul',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(date);
+ const by=Object.fromEntries(parts.map(x=>[x.type,x.value]));return by.year+'-'+by.month+'-'+by.day;
+}
+const dayString=d=>istanbulDay(d);
+const daysDiff=(ymd)=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(ymd||''))return NaN;
+ const a=new Date(istanbulDay()+'T12:00:00Z'),b=new Date(ymd+'T12:00:00Z');return Math.round((b-a)/86400000);};
+function available(league){return teams.filter(t=>(t.competitions||[t.league]).includes(league)).sort((a,b)=>a.name.localeCompare(b.name,'tr'));}
+function selectLeague(lSel,tSel){let old=tSel.value;let f=available(lSel.value);tSel.innerHTML=f.map(t=>`<option value="${esc(t.id)}">${esc(t.name)}</option>`).join('');if(f.some(t=>t.id===old))tSel.value=old;}
+function setPair(hid,aid,comp){const h=byId[hid],a=byId[aid];if(!h||!a)return;const hl=(h.competitions||[h.league]).find(l=>l!=='Şampiyonlar Ligi')||'Şampiyonlar Ligi';const al=(a.competitions||[a.league]).find(l=>l!=='Şampiyonlar Ligi')||'Şampiyonlar Ligi';$('hleague').value=hl;$('aleague').value=al;selectLeague($('hleague'),$('home'));selectLeague($('aleague'),$('away'));$('home').value=h.id;$('away').value=a.id;$('competition').value=comp||'Özel maç';run();}
+function overallStats(t){return t.stats||{};}
+function pattern(t,comp){let s=overallStats(t);return comp==='Şampiyonlar Ligi' && (s.ucl_patterns?.n||0)>=3?s.ucl_patterns:(s.score_patterns||{n:0,ht_n:0});}
+function goalRates(h,a,comp){
+ const hs=overallStats(h),as=overallStats(a),nh=hs.matches||h.given?.played||0,na=as.matches||a.given?.played||0;
+ const gf=t=>t.stats?.gf??(t.given?.played?t.given.gf/t.given.played:null);
+ const ga=t=>t.stats?.ga??(t.given?.played?t.given.ga/t.given.played:null);
+ const smooth=(x,n)=>(x==null?1.37:(x*Math.min(20,n)+10.96)/(Math.min(20,n)+8));
+ const eh=h.rating??prior[h.league]??1490,ea=a.rating??prior[a.league]??1490;
+ const elo=clamp(eh-ea+62,-550,550);
+ const venue=(side,base,n)=>!side?.matches||side.gf==null?1:clamp(smooth(side.gf,side.matches)/smooth(base,n),.75,1.3);
+ const vh=venue(hs.home,gf(h),nh),va=venue(as.away,gf(a),na);
+ let lh=1.33*Math.sqrt(smooth(gf(h),nh)*smooth(ga(a),na))/1.37*Math.exp(elo/520)*vh**.2;
+ let la=1.33*Math.sqrt(smooth(gf(a),na)*smooth(ga(h),nh))/1.37*Math.exp(-elo/520)*va**.2;
+ let wh=0,wa=0;
+ if(comp==='Şampiyonlar Ligi'){
+   let hh=hs.ucl_form||{},aa=as.ucl_form||{};
+   let sample=Math.min(hh.matches||0,aa.matches||0);
+   const weight=Math.min(.38,sample/(sample+8));
+   const factor=(atk,con)=>clamp(Math.sqrt(clamp((atk||1.37)/1.40,.45,2.2)*clamp((con||1.37)/1.40,.45,2.2)),.72,1.38);
+   lh*=1-weight+weight*factor(hh.gf,aa.ga);la*=1-weight+weight*factor(aa.gf,hh.ga);wh=wa=weight;
+ }
+ lh=clamp(lh,.12,4.5);la=clamp(la,.12,4.5);
+ const mn=Math.min(nh,na);const quality=mn<5?'Düşük':mn<12?'Orta':'Görece yüksek veri kapsamı';
+ return {lh,la,eh,ea,nh,na,mn,quality,wh,wa,competition:comp};
+}
+function rng(seed){let a=seed>>>0;return()=>{a=(a+0x6D2B79F5)|0;let x=Math.imul(a^(a>>>15),1|a);x^=x+Math.imul(x^(x>>>7),61|x);return((x^(x>>>14))>>>0)/4294967296;};}
+function gauss(r){return Math.sqrt(-2*Math.log(Math.max(1e-10,r())))*Math.cos(2*Math.PI*r());}
+function poisson(r,lambda){let p=1,n=0,t=Math.exp(-lambda);do{p*=r();n++;}while(p>t&&n<32);return n-1;}
+function halfShare(p){if(!p?.ht_n||p.ht_n<4)return .54;return clamp(.54+((p.second_half_more_goals??50)-50)/100*.045*Math.min(1,p.ht_n/16),.48,.60);}
+function simulate(p,ph,pa,n=10000){
+ let rand=rng(4041),score={},half={},freq={},hshare=halfShare(ph),ashare=halfShare(pa);
+ for(let i=0;i<n;i++){
+  let tempo=Math.exp(.14*gauss(rand)-.0098);
+  let h0=poisson(rand,p.lh*tempo*(1-hshare)*Math.exp(.07*gauss(rand)-.00245));
+  let a0=poisson(rand,p.la*tempo*(1-ashare)*Math.exp(.07*gauss(rand)-.00245));
+  let hm=1,am=1;
+  if(h0<a0){hm=1.12;am=.95;}else if(h0>a0){hm=.95;am=1.12;}
+  let h1=poisson(rand,p.lh*tempo*hshare*hm*Math.exp(.09*gauss(rand)-.00405));
+  let a1=poisson(rand,p.la*tempo*ashare*am*Math.exp(.09*gauss(rand)-.00405));
+  let h=h0+h1,a=a0+a1,s=h+'-'+a,ht=h0+'-'+a0;
+  score[s]=(score[s]||0)+1;half[ht]=(half[ht]||0)+1;
+  let flags={'1':h>a,'X':h===a,'2':h<a,'1X':h>=a,'X2':h<=a,'KG Var':h>0&&a>0,
+  '1,5 Üst':h+a>=2,'2,5 Üst':h+a>=3,'2,5 Alt':h+a<=2,'3,5 Alt':h+a<=3,'4,5 Alt':h+a<=4,
+  'Ev gol':h>0,'Dep gol':a>0,'Ev 3+ gol':h>=3,'Dep 3+ gol':a>=3,
+  'İlk yarı gol':h0+a0>=1,'İlk yarı berabere':h0===a0,'İkinci yarı daha gollü':h1+a1>h0+a0,
+  'Geriden dönüp yenilmeme':h0<a0&&h>=a||h0>a0&&a>=h,'3+ farklı galibiyet':Math.abs(h-a)>=3,'Golsüz maç':h===0&&a===0};
+  for(const [k,flag] of Object.entries(flags))if(flag)freq[k]=(freq[k]||0)+1;
+ }
+ return {n,markets:Object.fromEntries(Object.keys({'1':1,'X':1,'2':1,'1X':1,'X2':1,'KG Var':1,'1,5 Üst':1,'2,5 Üst':1,'2,5 Alt':1,'3,5 Alt':1,'4,5 Alt':1,'Ev gol':1,'Dep gol':1,'Ev 3+ gol':1,'Dep 3+ gol':1,'İlk yarı gol':1,'İlk yarı berabere':1,'İkinci yarı daha gollü':1,'Geriden dönüp yenilmeme':1,'3+ farklı galibiyet':1,'Golsüz maç':1}).map(k=>[k,(freq[k]||0)*100/n])),
+ scores:Object.entries(score).sort((a,b)=>b[1]-a[1]).slice(0,10).map(([k,v])=>({score:k,p:v*100/n,number:v})),
+ allScores:Object.entries(score).sort((a,b)=>b[1]-a[1]).map(([k,v])=>({score:k,p:v*100/n,number:v})),
+ surprises:(()=>{
+  const rows=Object.entries(score).map(([key,count])=>{const [h,a]=key.split('-').map(Number);return {score:key,h,a,p:count*100/n,number:count};});
+  const fav=p.eh-p.ea,explain=x=>x.h===x.a&&x.h>=2?'Gollü beraberlik':fav>=100&&x.a>x.h?'Deplasmanın sürpriz galibiyeti':fav<=-100&&x.h>x.a?'Ev sahibinin sürpriz galibiyeti':x.h+x.a>=6?'Yüksek toplam gol':x.h+x.a>=5?'Gollü maç':'Beklenmeyen skor';
+  const sorted=rows.filter(x=>x.p>=.1 && ((x.h===x.a&&x.h>=2)||(x.h+x.a>=5)||(fav>=100&&x.a>x.h)||(fav<=-100&&x.h>x.a)))
+    .map(x=>({...x,reason:explain(x)})).sort((a,b)=>b.p-a.p);
+  return sorted.slice(0,6);
+ })(),
+ extreme:null,
+ halves:Object.entries(half).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([k,v])=>({score:k,p:v*100/n}))};
+}
+
+function resultOfScore(score){const [x,y]=score.split('-').map(Number);return x>y?'1':x<y?'2':'X';}
+function matchOutcome(k,h,a){const v=h+a;return ({'1':h>a,'X':h===a,'2':h<a,'1X':h>=a,'X2':h<=a,'KG Var':h>0&&a>0,'1,5 Üst':v>=2,'2,5 Üst':v>=3,'2,5 Alt':v<=2,'3,5 Alt':v<=3,'4,5 Alt':v<=4,'Ev gol':h>=1,'Dep gol':a>=1,'Ev 3+ gol':h>=3,'Dep 3+ gol':a>=3})[k];}
+function reconcileScoreOutcome(r){
+ const raw={1:0,X:0,2:0};for(const x of r.allScores)raw[resultOfScore(x.score)]+=x.p;
+ const weighted=r.allScores.map(x=>({...x,p:x.p*(r.markets[resultOfScore(x.score)]/Math.max(.001,raw[resultOfScore(x.score)]))}));
+ const total=weighted.reduce((a,b)=>a+b.p,0);for(const x of weighted)x.p=x.p/total*100;
+ weighted.sort((a,b)=>b.p-a.p);r.allScores=weighted;r.scores=weighted.slice(0,10);
+ const names=['1','X','2','1X','X2','KG Var','1,5 Üst','2,5 Üst','2,5 Alt','3,5 Alt','4,5 Alt','Ev gol','Dep gol','Ev 3+ gol','Dep 3+ gol'];
+ for(const k of names){r.markets[k]=weighted.reduce((sum,x)=>{const [h,a]=x.score.split('-').map(Number);return sum+(matchOutcome(k,h,a)?x.p:0);},0);}
+ // Surprises now reflect calibrated score probabilities as well.
+ const lookup=Object.fromEntries(weighted.map(x=>[x.score,x.p]));for(const x of r.surprises)x.p=lookup[x.score]??x.p;
+ r.surprises.sort((a,b)=>b.p-a.p);
+ return r;
+}
+function resultAlignedScore(r){
+ const favorite=['1','X','2'].sort((x,y)=>r.markets[y]-r.markets[x])[0];
+ const representative=r.allScores.find(x=>resultOfScore(x.score)===favorite)||r.scores[0];
+ return {representative,favorite,modal:r.allScores[0]};
+}
+function confidenceOf(h,a,p){
+ const hs=h.stats||{},as=a.stats||{};
+ const sample=Math.min(p.nh,p.na);let c=22+Math.min(sample,15)/15*43;
+ if(hs.shots!=null&&as.shots!=null)c+=9;
+ if(hs.form?.length>=5&&as.form?.length>=5)c+=7;
+ if(hs.last_season?.matches>=5&&as.last_season?.matches>=5)c+=7;
+ if(p.wh>0)c+=Math.min(7,20*p.wh);
+ if(!data.seed&&data.asof&&Number.isFinite(daysDiff(data.asof))&&Math.abs(daysDiff(data.asof))<=10)c+=7;
+ if(data.seed)c=Math.min(c,44);
+ const value=Math.round(clamp(c,12,91));return {value,color:value>=75?'high':value>=45?'mid':'low'};
+}
+
+const couponKeys=['1','X','2','1X','X2','1,5 Üst','2,5 Üst','2,5 Alt','KG Var','3,5 Alt','4,5 Alt','Ev gol','Dep gol'];
+const marketLabel=k=>({'1':'MS 1','X':'MS X','2':'MS 2','1X':'1X','X2':'X2','Ev gol':'Ev sahibi gol atar','Dep gol':'Deplasman gol atar'})[k]||k;
+function selectedCouponOdds(odds,key){let v=Number(odds?.markets?.[key]);return Number.isFinite(v)&&v>=1.01?v:null;}
+function couponSave(){try{localStorage.setItem('futsim-v5-coupon',JSON.stringify(coupon));}catch{}}
+function renderCoupon(){
+ $('couponRows').innerHTML=coupon.length?coupon.map((x,i)=>`<div class="coupon-row"><div><b>${esc(x.home)} – ${esc(x.away)}</b><div class="small">${esc(marketLabel(x.market))} · Model ${pc(x.prob)} · ${x.odd?`Piyasa ${fmt(x.odd)} (${esc(x.source||'kayıt')})`:'Gerçek oran yok'}</div></div><span class="small">${esc(x.date||'Özel eşleşme')}</span><button type="button" data-removepick="${i}" aria-label="Seçimi kaldır">Kaldır</button></div>`).join(''):'<p class="empty">Henüz seçim eklemedin. Maç seçip kuponuna ekleyebilirsin.</p>';
+ [...$('couponRows').querySelectorAll('[data-removepick]')].forEach(btn=>btn.onclick=()=>{coupon.splice(Number(btn.dataset.removepick),1);couponSave();renderCoupon();});
+ if(!coupon.length){$('couponProb').textContent='—';$('couponOdds').textContent='—';$('couponRisk').textContent='—';$('riskFill').style.width='0%';$('couponNote').textContent='Farklı maçları ekledikçe toplam gerçekleşme olasılığı düşer. Piyasa oranı yalnızca doğrulanabilen fiyatlarla hesaplanır.';return;}
+ // A coupon is constrained to one selection per fixture, avoiding same-game dependence.
+ const p=coupon.reduce((v,x)=>v*(x.prob/100),1),risk=100*(1-p);
+ const actual=coupon.every(x=>x.odd!=null),odd=actual?coupon.reduce((v,x)=>v*x.odd,1):null;
+ $('couponProb').textContent=pc(100*p);$('couponOdds').textContent=odd?fmt(odd):'—';$('couponOddLabel').textContent='Piyasa toplam oranı';
+ $('couponRisk').textContent=risk<40?'Düşük':risk<72?'Orta':risk<89?'Yüksek':'Çok yüksek';
+ $('riskFill').style.width=clamp(risk,0,100)+'%';$('riskFill').style.background=risk<45?'var(--green)':risk<75?'var(--orange)':'var(--red)';
+ $('couponNote').textContent=(actual?`Tüm fiyatlar kayıtlı · modelin teorik değer farkı %${fmt((p*odd-1)*100)}. `:'Bazı gerçek piyasa oranları eksik; tahmini fiyat uydurulmadı. ')+`Kombine olasılığı ${pc(p*100)} (farklı maçlar bağımsız varsayıldı). Verilerin hataları ve gerçek bahis riski bu oranı etkiler.`;
+}
+function mediumRiskTip(r,raw){
+ let rows=couponKeys.filter(k=>Number.isFinite(r.markets[k])&&r.markets[k]>=53&&r.markets[k]<=82).map(k=>({k,p:r.markets[k],odd:selectedCouponOdds(raw,k)}));
+ if(!rows.length){rows=couponKeys.filter(k=>Number.isFinite(r.markets[k])).map(k=>({k,p:r.markets[k],odd:selectedCouponOdds(raw,k)}));}
+ rows.sort((a,b)=>{
+  const preference=x=>(x.odd?(x.p/100*x.odd-1)*25:0)-Math.abs(x.p-67)/3;
+  return preference(b)-preference(a);
+ });
+ return rows[0]||null;
+}
+function renderCouponChoice(h,a,f,r){
+ const odds=getMatchOdds(h,a,f);const candidate=mediumRiskTip(r,odds);
+ $('autoPick').innerHTML=candidate?`<b>FUTSIM olsa: ${esc(marketLabel(candidate.k))}</b><div class="small">${esc(h.name)} – ${esc(a.name)} · Model ${pc(candidate.p)} · ${candidate.odd?'Kaynaklı fiyat '+fmt(candidate.odd):'Gerçek oran bulunamadı; model olasılığına göre öneri'} · Orta risk hedefi (garanti değil)</div>`:'<span class="small">Bu maç için uygun tercih oluşturulamadı.</span>';
+ const select=$('couponMarket'),old=select.value;
+ select.innerHTML=couponKeys.filter(k=>r.markets[k]!=null).map(k=>`<option value="${esc(k)}">${esc(marketLabel(k))} · ${pc(r.markets[k])}${selectedCouponOdds(odds,k)?' · '+fmt(selectedCouponOdds(odds,k)):''}</option>`).join('');
+ select.value=couponKeys.includes(old)?old:(candidate?.k||'1');if(!select.value&&candidate)select.value=candidate.k;
+ $('couponAdd').onclick=()=>{
+   const key=select.value,pct=r.markets[key];if(!key||pct==null)return;
+   const date=f?.date||'',id=(date||'özel')+'|'+h.id+'|'+a.id;
+   const quote=selectedCouponOdds(getMatchOdds(h,a,f),key);
+   const obj={id,home:h.name,away:a.name,date,competition:$('competition').value,market:key,prob:pct,odd:quote,source:quote?getMatchOdds(h,a,f)?.source:'',added:new Date().toISOString()};
+   coupon=coupon.filter(x=>x.id!==id);coupon.push(obj);couponSave();renderCoupon();
+ };
+ renderCoupon();
+}
+function showResearch(result,h,a){
+ if(!result){$('researchStatus').textContent='Araştırma kaynağına ulaşılamadı.';$('researchSources').innerHTML='';return;}
+ const items=(result.items||[]).slice(0,16);
+ $('researchStatus').textContent=`Google Haberler: ${result.read_count||0}/10 farklı site makalesi okundu; ${result.headline_count||0} ilgili yayın başlığı bulundu. ${result.reason||''}`;
+ $('researchSources').innerHTML=items.map(x=>`<div><b>${esc(x.site)}</b> · <span class="${x.read?'green':'muted-warning'}">${x.read?'Makale okundu':'Yalnızca başlık'}</span><p style="margin:5px 0">${esc(x.read?x.summary:x.title)}</p><a href="${esc(safeURL(x.url))}" rel="noopener" target="_blank">Kaynak</a></div>`).join('')||'<div>Bu eşleşme için doğrulanmış haber kaynağı bulunamadı.</div>';
+}
+async function researchBefore(h,a,f){
+ $('researchStatus').textContent='"'+h.name+' '+a.name+' bu maç ne olur" araması yapılıyor: 10 farklı site hedefleniyor...';$('researchSources').innerHTML='';
+ if(!['localhost','127.0.0.1'].includes(location.hostname)){
+  showResearch({read_count:0,headline_count:0,reason:'Tek HTML sürümünde sunucu bağlantısı yok. 10 kaynak araştırması için tam paketi çalıştır.',items:[]},h,a);return;
+ }
+ const qs=new URLSearchParams({home:h.name,away:a.name,date:f?.date||''});
+ try{
+  const response=await fetch('/api/research?'+qs,{cache:'no-store',signal:AbortSignal.timeout(22000)});
+  if(!response.ok)throw Error('HTTP '+response.status);
+  const out=await response.json();activeResearch=out;showResearch(out,h,a);
+ }catch{
+  showResearch({read_count:0,headline_count:0,reason:'Google Haberler araştırmasına ulaşılamadı. Hesaplama eldeki doğrulanmış istatistiklerle devam etti.',items:[]},h,a);
+ }
+}
+
+function displayPatterns(t,comp){let p=pattern(t,comp);if(!p.n)return `<h3>${esc(t.name)}</h3><p class="empty">Oynanmış maç skorları yetersiz; bu bölüm lig güçleriyle sınırlı tahmin yapar.</p>`;
+ let examples=(p.last_results||[]).slice(0,5).map(x=>`${esc(x.opponent)} ${x.gf}-${x.ga}`).join(' · ');
+ let item=(n,v)=>v==null?'':`${n}: <b>${pc(v)}</b> · `;
+ return `<h3>${esc(t.name)}</h3><p class="small">Son ${p.n} gerçek maç${comp==='Şampiyonlar Ligi'&&p===t.stats?.ucl_patterns?' (Şampiyonlar Ligi)':' (tüm turnuvalar)'}; ilk yarı verisi: ${p.ht_n||0} maç</p><p class="small">${item('3+ gol atma',p.scored_3plus)}${item('3+ farkla kazanma',p.won_3plus)}${item('Gol atamama',p.goalless)}${item('4+ toplam gol',p.high_score)}</p><p class="small">${item('İlk yarıda gerideyken yenilmeme',p.comeback_from_ht)}${item('İkinci yarı daha gollü',p.second_half_more_goals)}</p><p class="small">Örnek eski skorlar: ${examples||'kaydedilmemiş'}</p>`;
+}
+function renderScenarios(h,a,p,r,ph,pa){
+ const favorite=p.eh-p.ea;const intro=favorite>100?`${h.name} lig ve rakip kalitesi açısından üstün.`:favorite< -100?`${a.name} lig ve rakip kalitesi açısından üstün.`:'Güç puanları yakın; maçın gidişatı yüksek belirsizlik taşıyor.';
+ const stats=['Ev 3+ gol','Dep 3+ gol','3+ farklı galibiyet','Geriden dönüp yenilmeme','İkinci yarı daha gollü','İlk yarı berabere'];
+ const predictions=stats.map(k=>`<div class="inline tick"><span>${esc(k)}</span><b>${pc(r.markets[k])}</b></div>`).join('');
+ const ht=r.halves.slice(0,3).map(x=>`${x.score} (${pc(x.p)})`).join(' · ');
+ $('scenarios').innerHTML=`<p class="lead">${esc(intro)} ${p.competition==='Şampiyonlar Ligi'?'Bu bir Şampiyonlar Ligi simülasyonudur: yerel lig temeli + mevcutsa Avrupa maçlarının farklı örüntüsü kullanılır.':'Yerel liglerdeki skorlar, rakip seviyesi ve saha etkisi temel alındı.'}</p>${displayPatterns(h,p.competition)}<div class="tick">${displayPatterns(a,p.competition)}</div><h3 class="tick">10.000 olası maç gidişatı</h3>${predictions}<p class="small">En sık ilk yarı skorları: ${ht}. Geriye düşen takımın ikinci yarı risk artırması bir model varsayımıdır, gözlemlenmiş oyuncu davranışı değildir.</p>`;
+}
+function teamCard(t){const s=t.stats||{},n=s.matches||t.given?.played||0;const gf=s.raw_gf??(t.given?.played?t.given.gf/t.given.played:null);const ga=s.raw_ga??(t.given?.played?t.given.ga/t.given.played:null);const form=(s.form||[]).map(x=>`${esc(x.opponent)} ${x.gf}-${x.ga}`).join(' · ');
+ const v=x=>x==null?'veri yok':fmt(x);const d=s.season_change;const seasonInfo=d&&d.raw_gf!=null?`<br>2025/26 farkı: gol ${d.raw_gf>=0?'+':''}${fmt(d.raw_gf)} / maç; yenen gol ${d.raw_ga>=0?'+':''}${fmt(d.raw_ga)} / maç (en az 5+5 maç)`:'<br>Geçen sezonla güvenilir karşılaştırma için veri yetersiz';return `<h3>${esc(t.name)} <span class="pill">${esc(t.league)}</span></h3><p class="small">Maç: ${n} · Gol: ${v(gf)} · Yenen gol: ${v(ga)} · Şut: ${v(s.shots)} · İsabet: ${v(s.sot)} · Korner: ${v(s.corners)}<br>KG: ${s.btts==null?'—':pc(s.btts)} · 2,5 üst: ${s.over25==null?'—':pc(s.over25)} · Gol yememe: ${s.clean_sheets==null?'—':pc(s.clean_sheets)}<br>Son skorlar: ${form||'yeterli geçmiş yok'}${seasonInfo}</p>`;}
+function playerCard(t){const sc=t.known_scorers||[];return `<h3>${esc(t.name)}</h3>${sc.length?`<div class="small">Kaynakta adı geçen golcüler: ${sc.map(x=>esc(x.name)+' ('+x.goals+')').join(' · ')}</div>`:'<p class="small">Doğrulanmış bireysel gol kayıtları yok; takımın sonuçları kullanılıyor.</p>'}`;}
+function getChosenFixture(h,a){return (data.upcoming||[]).find(x=>x.hid===h.id&&x.aid===a.id&&daysDiff(x.date)>=0&&daysDiff(x.date)<=7);}
+function talkSummary(h,a,f){
+ if(!f)return '<p class="empty">Bu karşılaşma önümüzdeki 7 gün içinde doğrulanamadı; maç hakkında güncel görüş özeti yapılmadı.</p>';
+ const relevant=(data.news||[]).filter(x=>{
+  const ids=x.teams||[];const title=String(x.title||'').toLowerCase();
+  return (ids.includes(h.id)&&ids.includes(a.id))||(title.includes(h.name.toLowerCase())&&title.includes(a.name.toLowerCase()));
+ }).slice(0,12);
+ const opinion=relevant.filter(x=>x.kind==='commentary');
+ if(!opinion.length)return '<p class="empty">Bu maçla doğrudan eşleşen, okunabilir forum/yorumcu görüşü henüz yok. Genel takım haberlerini maç beklentisiymiş gibi yorumlamıyorum.</p>';
+ const topics=[['Kadro ve eksikler',/injur|sakat|absence|lineup|starting xi|takım kadro|suspens|cezal/i],
+               ['Gol ve hücum beklentisi',/goal|score|gol|atak|attac|finishing|strik|forvet/i],
+               ['Sonuç ve oyun beklentisi',/win|draw|victor|tahmin|predic|beraber|maç sonucu/i],
+               ['Savunma ve taktik',/defen|pres|tactic|savunma|takti|kanat|formation/i]];
+ const bucket=topics.map(([label,re])=>({label,n:opinion.filter(x=>re.test(x.title||'')).length})).filter(x=>x.n);
+ const categories=bucket.length?bucket.slice(0,3).map(x=>`${x.n} görüş başlığında ${x.label.toLowerCase()} konuşuluyor`).join('; '):`${opinion.length} doğrudan ilgili yorum başlığı bulundu, açık tahmin yönü sınıflandırılamadı`;
+ return `<div class="source-summary"><b>${opinion.length} ilgili yorum başlığı</b><p class="small">${esc(categories)}. Başlıklar içerikteki iddiaları kanıtlamaz; oy oranı veya taraftar yüzdesi değildir.</p><p class="small">Kaynaklar: ${esc([...new Set(opinion.map(x=>x.source))].slice(0,3).join(', '))}. Görüşler simülasyona katılmadı.</p></div>`;
+}
+function oddsFixtureKey(h,a,f){return f?`${f.date}|${f.league}|${f.hid}|${f.aid}`:null;}
+let activeMarket=null,activeComments=null;
+function fixtureEquivalent(rec,h,a,f){return Boolean(f&&rec?.date===f.date&&canonicalJS(rec.home)===h.id&&canonicalJS(rec.away)===a.id);}
+function storedOdds(h,a,f){
+ const key=oddsFixtureKey(h,a,f);if(!key)return null;
+ try{const x=JSON.parse(localStorage.getItem('futsim-mackolik-v43-'+key)||'null');return x?.markets?x:null;}catch{return null;}
+}
+function officialPublishedOdds(h,a,f){
+ if(!f)return null;
+ return (data.auto_records||[]).find(x=>fixtureEquivalent(x,h,a,f))
+  ||(data.market_records||[]).find(x=>fixtureEquivalent(x,h,a,f))
+  ||(data.mackolik_odds||[]).find(x=>fixtureEquivalent(x,h,a,f));
+}
+function getMatchOdds(h,a,f){return officialPublishedOdds(h,a,f)||storedOdds(h,a,f);}
+function parseTurkishOdd(s){let v=Number(String(s||'').replace(',','.'));return Number.isFinite(v)&&v>=1.01&&v<=500?v:null;}
+function render50Market(r,raw,quality){
+ const entries=Object.entries(r.markets).filter(([_,v])=>v>50);
+ const conf=quality==='Düşük'?.35:quality==='Orta'?.55:.72;
+ const rows=entries.map(([k,p])=>{
+   const odd=Number(raw?.markets?.[k]);const have=Number.isFinite(odd)&&odd>=1.01;
+   const edge=have?(p/100*odd-1):null;
+   return {k,p,odd:have?odd:null,edge,score:edge===null?-999:edge*conf};
+ }).sort((a,b)=>(b.edge!==null)-(a.edge!==null)||b.score-a.score||b.p-a.p);
+ $('markets').innerHTML=rows.map(o=>`<div class="value-row"><div><b>${esc(o.k)}</b><div class="small">%${fmt(o.p)} olasılık · adil ${fmt(100/o.p)}</div></div><div class="value-right"><b>${o.odd?fmt(o.odd):'—'}</b><div class="small ${o.edge!=null?(o.edge>0?'value-good':'value-bad'):''}">${o.edge===null?'Piyasa oranı yok':`Teorik fark ${o.edge>=0?'+':''}${fmt(o.edge*100)}%`}</div></div></div>`).join('')||'<p class="empty">%50 üstü olay bulunamadı.</p>';
+ const priced=rows.filter(x=>x.odd);
+ $('valueSummary').innerHTML=priced.length?`<b>Fiyat-performans kıyaslaması</b> · ${priced.length} fiyatlı pazar. ${priced.some(x=>x.edge>0)?'Pozitif farklar yeşil gösterilir.':'Modelin daha yüksek değer bulduğu fiyat yok.'}<br>Fark = model olasılığı × piyasa oranı − 1. Güven: ${esc(quality)}; modelin kârlılığı bağımsız doğrulanmadı.`:'Gerçek bir fiyat bulunmadan fiyat-performans sıralaması üretilemez. Yalnızca teorik adil oran gösterilir.';
+}
+function bindOddsEditor(h,a,f,r,p){
+ const fields=[['1','odd1'],['X','oddX'],['2','odd2'],['2,5 Alt','oddUnder'],['2,5 Üst','oddOver']];
+ const old=getMatchOdds(h,a,f);for(const [k,id] of fields)$(id).value=old?.markets?.[k]??'';
+ const button=$('saveMackolik'),reset=$('clearMackolik');button.disabled=!f;reset.disabled=!f;
+ $('oddsEntryStatus').textContent=f?'Yalnızca '+f.date+' karşılaşmasına kaydedilir.':'Önümüzdeki 7 günde doğrulanmış maç yok.';
+ button.onclick=()=>{if(!f)return;let markets={};for(const [k,id] of fields){const raw=$(id).value.trim();if(!raw)continue;const val=parseTurkishOdd(raw);if(val===null){$('oddsEntryStatus').textContent='Hatalı sayı: '+id;return;}markets[k]=val;}
+  if(!Object.keys(markets).length)return;
+  const record={source:'Kullanıcının aktardığı fiyat',source_mode:'user_entry_unverified',date:f.date,home:f.home,away:f.away,captured_at:new Date().toISOString(),markets};
+  try{localStorage.setItem('futsim-mackolik-v43-'+oddsFixtureKey(h,a,f),JSON.stringify(record));$('oddsEntryStatus').textContent='Kaydedildi (bağımsız doğrulama yok).';renderMarketOdds(h,a,f,r,p);}catch{$('oddsEntryStatus').textContent='Tarayıcı yazmayı reddetti.';}
+ };
+ reset.onclick=()=>{if(!f)return;try{localStorage.removeItem('futsim-mackolik-v43-'+oddsFixtureKey(h,a,f));}catch{}for(const [,id] of fields)$(id).value='';renderMarketOdds(h,a,f,r,p);};
+}
+function renderMarketOdds(h,a,f,r,p){
+ const raw=getMatchOdds(h,a,f);
+ render50Market(r,raw,p.quality);
+ if(!f){$('surprises').innerHTML='<p class="empty">Gelecek 7 günde doğrulanmış maç yok. Piyasa oranı gösterilemez.</p>';return;}
+ if(!raw){$('surprises').innerHTML='<p class="empty">Bu maç için okunabilir gerçek oran bulunamadı. Yerel sunucuda erişim denemesi yapılıyor olabilir; teorik adil oran gerçek fiyat değildir.</p>';return;}
+ const known=raw.source_mode==='user_entry_unverified';
+ const name=known?'Kullanıcıdan aktarılmış, doğrulanmamış fiyat':`${raw.source||'Açık kaynak'} · ${raw.source_type||'tarihli kayıt'}`;
+ const keys=['1','X','2','2,5 Alt','2,5 Üst'];const rows=keys.filter(k=>raw.markets?.[k]!=null).map(k=>{
+  const quote=Number(raw.markets[k]),pp=r.markets[k],edge=pp==null?null:pp/100*quote-1;
+  return `<tr><td>${esc(k)}</td><td class="right"><b>${fmt(quote)}</b></td><td class="right">${pp==null?'—':pc(pp)}</td><td class="right">${pp?fmt(100/pp):'—'}</td><td class="right ${edge!=null&&edge>0?'value-good':'value-bad'}">${edge===null?'—':`${edge>=0?'+':''}${fmt(edge*100)}%`}</td></tr>`;
+ }).join('');
+ $('surprises').innerHTML=`<p class="small"><b>${esc(name)}</b><br>Kayıt: ${esc(raw.captured_at||'tarihi bilinmiyor')} · <a target="_blank" rel="noopener" href="${esc(safeURL(raw.source_url))}">kaynak</a></p><div class="tablewrap"><table><thead><tr><th>Pazar</th><th class="right">Piyasa oranı</th><th class="right">Model %</th><th class="right">Adil oran</th><th class="right">Fark</th></tr></thead><tbody>${rows}</tbody></table></div><p class="small">Bu tarihte kaydedilen fiyatlar güncel olmayabilir. Model/kaynak uyuşmazlığı garanti edilmiş bahis avantajı değildir; bahis hacmi bilinmiyor.</p>`;
+}
+function renderCommentary(h,a,f){
+ if(!f){$('news').innerHTML='<p class="empty">Önümüzdeki 7 günde doğrulanmış maç yok; yorum özeti üretilemez.</p>';return;}
+ const seeded=(window.FUTSIM_COMMENT_SEED||[]).find(x=>fixtureEquivalent(x,h,a,f));
+ const real=activeComments&&activeComments.date===f.date&&activeComments.home===h.id&&activeComments.away===a.id?activeComments.items:null;
+ const entries=(real&&real.length?real:seeded?.items||[]).slice(0,4);
+ if(!entries.length){$('news').innerHTML='<p class="empty">Bu eşleşmeye özel doğrulanmış yorum bulunamadı. Taraftar görüşü veya yorumcu tahmini uydurulmadı.</p>';return;}
+ $('news').innerHTML=entries.map(x=>`<div class="source-summary"><b>${esc(x.source||'Kaynaklı yorum')}</b><p style="margin:6px 0">${esc(x.excerpt||x.title||'')}</p><p class="small" style="margin:0">${esc(x.title||'')} · <a target="_blank" rel="noopener" href="${esc(safeURL(x.url))}">kaynağı doğrula</a></p></div>`).join('')+'<p class="small">Gerçek yayımlanmış görüşlerden kısa özet · istatistiksel simülasyona dahil edilmez. Az sayıda görüş genel taraftar yüzdesi değildir.</p>';
+}
+async function updateSources(h,a,f,r,p){
+ renderCommentary(h,a,f);renderMarketOdds(h,a,f,r,p);bindOddsEditor(h,a,f,r,p);
+ if(!f||!['localhost','127.0.0.1'].includes(location.hostname))return;
+ const params=new URLSearchParams({home:f.home,away:f.away,date:f.date});
+ const result=await Promise.allSettled([
+  fetch('/api/odds?'+params,{cache:'no-store'}).then(x=>x.ok?x.json():null),
+  fetch('/api/comments?'+params,{cache:'no-store'}).then(x=>x.ok?x.json():null)
+ ]);
+ // Avoid inserting results for a stale selection when users change fixture mid-fetch.
+ if(byId[$('home').value]?.id!==h.id||byId[$('away').value]?.id!==a.id)return;
+ if(result[0].status==='fulfilled'&&result[0].value?.status==='ok'){
+  const rec=result[0].value.record;
+  data.auto_records=(data.auto_records||[]).filter(x=>!fixtureEquivalent(x,h,a,f));data.auto_records.unshift(rec);
+  renderMarketOdds(h,a,f,r,p);bindOddsEditor(h,a,f,r,p);
+ }
+ if(result[1].status==='fulfilled'&&result[1].value?.items?.length){
+  activeComments={date:f.date,home:h.id,away:a.id,items:result[1].value.items};renderCommentary(h,a,f);
+ }
+ const warning=result[0].status==='fulfilled'&&result[0].value?.reason;
+ if(warning&&!getMatchOdds(h,a,f))$('surprises').innerHTML='<p class="empty">'+esc(warning)+'</p>';
+}
+
+function renderUpcoming(){
+ const all=(data.upcoming||[]).filter(x=>[0,1].includes(daysDiff(x.date))).sort((a,b)=>a.league.localeCompare(b.league,'tr')||(a.date+a.time).localeCompare(b.date+b.time));
+ if(!all.length){$('fixtures').innerHTML='<p class="empty">Bugün ve yarın için doğrulanmış maç kaydı yok. Bu, hiç maç olmadığı anlamına gelmeyebilir.</p>';return;}
+ const groups={};for(const item of all)(groups[item.league]??=[]).push(item);
+ $('fixtures').innerHTML=Object.entries(groups).map(([league,rows],groupNo)=>`<details class="fixture-league" ${groupNo===0?'open':''}><summary>${esc(league)} <small>${rows.length} maç</small></summary>${rows.map(x=>`<div class="fixture-row"><button type="button" data-fixture="${all.indexOf(x)}">${esc(x.home)} – ${esc(x.away)}</button><span class="small">${daysDiff(x.date)===0?'Bugün':'Yarın'} ${esc(x.time||'')}</span></div>`).join('')}</details>`).join('');
+ [...$('fixtures').querySelectorAll('[data-fixture]')].forEach(btn=>btn.onclick=()=>{const x=all[Number(btn.dataset.fixture)];setPair(x.hid,x.aid,x.league);$('matchName').scrollIntoView({behavior:'smooth',block:'start'});});
+}
+
+
+function verifiedMarketFixtures(){
+ const results=[];
+ for(const x of (window.FUTSIM_MARKET_SEED||[])){
+  const diff=daysDiff(x.date);if(diff<0||diff>7)continue;
+  const h=canonicalJS(x.home),a=canonicalJS(x.away);const ht=byId[h],at=byId[a];
+  if(!ht||!at||!x.source_url||x.source_mode!=='published_snapshot')continue;
+  // A dated public odds bulletin records a published matchup, not an official kickoff confirmation.
+  const lg=(ht.competitions||[ht.league]).find(l=>l!=='Şampiyonlar Ligi')||ht.league;
+  results.push({date:x.date,time:x.kickoff||'',home:ht.name,away:at.name,hid:h,aid:a,league:lg,source:'İddaakolik tarihli bülten (başlama saati teyitsiz)'});
+ }
+ return results;
+}
+function mergePublishedFixtures(){
+ const indexed=new Map();
+ for(const x of verifiedMarketFixtures())indexed.set(x.date+'|'+x.hid+'|'+x.aid,x);
+ for(const x of (window.FUTSIM_EXTRA_FIXTURES||[])){
+   const h=canonicalJS(x.home),a=canonicalJS(x.away);
+   if(byId[h]&&byId[a])indexed.set(x.date+'|'+h+'|'+a,{...x,hid:h,aid:a});
+ }
+ for(const x of (data.upcoming||[]))indexed.set(x.date+'|'+x.hid+'|'+x.aid,x);
+ data.upcoming=[...indexed.values()];
+}
+function initialize(){
+ teams=data.teams||[];byId=Object.fromEntries(teams.map(t=>[t.id,t]));
+ const leagues=[...new Set(teams.flatMap(t=>t.competitions||[t.league]))].sort((a,b)=>(Object.keys(prior).indexOf(a)-Object.keys(prior).indexOf(b)));
+ $('hleague').innerHTML=leagues.map(l=>`<option>${esc(l)}</option>`).join('');$('aleague').innerHTML=$('hleague').innerHTML;
+ $('hleague').value=leagues.includes('Premier League')?'Premier League':leagues[0];$('aleague').value=leagues.includes('Süper Lig')?'Süper Lig':leagues[0];
+ for(const [l,t] of [['hleague','home'],['aleague','away']]){$(l).onchange=()=>{selectLeague($(l),$(t));run();};$(t).onchange=()=>run();}
+ $('competition').onchange=run;
+ selectLeague($('hleague'),$('home'));selectLeague($('aleague'),$('away'));
+ $('run').onclick=run; $('couponClear').onclick=()=>{coupon=[];couponSave();renderCoupon();};renderCoupon();
+ $('updated').textContent='Veri tarihi: '+(data.asof||'başlangıç');$('origin').textContent=data.seed?'Çevrimdışı takım kataloğu · tarihli piyasa kayıtları ayrı':'Açık kaynak veri arşivi';
+ $('matches').textContent=fmt(data.data_health?.finished_matches_count||0);$('clubs').textContent=fmt(teams.length);$('errCount').textContent=fmt(data.data_health?.errors?.length||0);
+ $('healthTitle').textContent=data.seed?'Eski örnek katalog':'Veri yüklendi';$('health').textContent=data.seed?'Gerçek sezon verisi bulunmuyor. Tam paket için ilk internet senkronizasyonunu yap.':'Güncelleme: '+(data.updated_at_utc||data.asof||'bilinmiyor')+'. Bazı liglerde sadece sonuç ve fikstür verisi vardır.';
+
+ $('dataLine').textContent='Tarih: '+(data.asof||'veri yok');
+ let b=data.backtest||{};$('backtest').innerHTML=b.n?`<p>${fmt(b.n)} geriye dönük maç tahmini</p><p class="small">Holdout Brier: ${b.holdout_brier??'—'} · Kalibrasyon: ${esc(b.status)}</p>`:'<p class="small">Tarihsel test için veri yetersiz.</p>';
+ mergePublishedFixtures();renderUpcoming();
+ const h=teams.find(t=>t.name?.toLowerCase().includes('aston villa'));const a=teams.find(t=>t.name?.toLowerCase().includes('galatasaray'));
+ if(h&&a){setPair(h.id,a.id,'Şampiyonlar Ligi');}else run();
+}
+function showLoader(b,message){$('loadmask').hidden=!b;if(message)$('loadmsg').textContent=message;}
+async function run(){
+ if(!data)return;
+ if(busy){queuedRun=true;return;}
+ const h=byId[$('home').value],a=byId[$('away').value];if(!h||!a||h.id===a.id){$('matchName').textContent='Farklı iki takım seç';return;}
+ busy=true;showLoader(true,'Önümüzdeki 7 günlük fikstür, geçmiş maçlar ve açık forum/piyasa kayıtları inceleniyor...');
+ try{
+  // Give the loading state time to paint while reading the hosted snapshot.
+  await new Promise(resolve=>setTimeout(resolve,180));
+  // Pull latest already-published snapshot from the app hosting server.
+  // This is NOT a real-time bookmaker or forum scraping API.
+  if(!data.seed){try{const ans=await fetch('data/snapshot.json?v='+Date.now(),{cache:'no-store'});if(ans.ok){const fresher=await ans.json();if(fresher.asof===data.asof){data.news=fresher.news||data.news;data.historical_market=fresher.historical_market||data.historical_market;data.upcoming=fresher.upcoming||data.upcoming;}}}catch{}}
+  const beforeFixture=getChosenFixture(h,a);
+  showLoader(true,'Google Haberler: farklı kaynaklar ve maç beklentileri araştırılıyor (10 site hedefi)...');
+  await researchBefore(h,a,beforeFixture);
+  showLoader(true,'Tarihsel maçlar ve takım gücüyle 10.000 senaryo hesaplanıyor...');
+  const comp=$('competition').value;const p=goalRates(h,a,comp),ph=pattern(h,comp),pa=pattern(a,comp),r=simulate(p,ph,pa);
+  const c=data.backtest||{};
+  if(c.status==='gelişti'&&c.temperature&&c.temperature!==1){const keys=['1','X','2'],t=Number(c.temperature),adjust=keys.map(k=>(r.markets[k]/100)**(1/t)),total=adjust.reduce((x,y)=>x+y,0);keys.forEach((k,i)=>r.markets[k]=adjust[i]/total*100);r.markets['1X']=r.markets['1']+r.markets['X'];r.markets['X2']=r.markets['X']+r.markets['2'];}
+  reconcileScoreOutcome(r);
+  $('matchName').textContent=h.name+' – '+a.name;
+  for(const [key,node] of [['1','p1'],['X','px'],['2','p2']])$(node).textContent=pc(r.markets[key]);
+  for(const [key,node] of [['1','bar1'],['X','barx'],['2','bar2']])$(node).style.width=r.markets[key]+'%';
+  const chosen=resultAlignedScore(r);$('topscore').textContent=chosen.representative.score;$('toppct').textContent=pc(chosen.representative.p);
+  $('scoreClarifier').textContent=`${chosen.favorite==='1'?'Ev sahibi galibiyeti':chosen.favorite==='2'?'Deplasman galibiyeti':'Beraberlik'} toplam %${fmt(r.markets[chosen.favorite])}; ${chosen.representative.score} bu sonuca ait en olası tekil skordur. Mutlak en sık skor: ${chosen.modal.score} (%${fmt(chosen.modal.p)}).`;
+  $('extremeScore').textContent=r.surprises?.[0]?.score||'—';$('extremePct').textContent=r.surprises?.[0]?pc(r.surprises[0].p):'—';$('surpriseList').innerHTML=(r.surprises||[]).map(x=>`<div class="inline tick"><span><b>${esc(x.score)}</b> <span class="small">${esc(x.reason)}</span></span><b>${pc(x.p)}</b></div>`).join('')||'<p class="empty">Anlamlı sayıda sıradışı skor örneği çıkmadı.</p>'; 
+  $('top5').innerHTML='<span class="small">Yakın alternatifler: '+r.scores.filter(x=>x.score!==chosen.representative.score).slice(0,2).map(x=>`${x.score} (${pc(x.p)})`).join(' · ')+'</span>';
+  $('eh').textContent=fmt(p.eh);$('ea').textContent=fmt(p.ea);$('lambdas').innerHTML=`<b>${fmt(p.lh)} – ${fmt(p.la)}</b><p class="small">Skor-temelli gol yoğunluğu; ölçülmüş xG değildir</p>`;
+  const confidence=confidenceOf(h,a,p);$('confidenceBadge').className='confidence '+confidence.color;$('confidenceBadge').textContent=`Veri güveni: %${confidence.value} · ${confidence.color==='high'?'Yüksek':confidence.color==='mid'?'Orta':'Düşük'}`;
+  const f=getChosenFixture(h,a);$('forecastNote').textContent=(f?`${f.date} ${f.league} fikstürü eşleşti. `:'Önümüzdeki 7 günde bu eşleşme doğrulanamadı. ')+`10.000 adet iki yarılı skor simülasyonu · ${comp}.`;
+  render50Market(r,getMatchOdds(h,a,f),p.quality);
+  renderCouponChoice(h,a,f,r);
+  $('teamstats').innerHTML=teamCard(h)+'<div class="tick">'+teamCard(a)+'</div>';
+  $('players').innerHTML=playerCard(h)+'<div class="tick">'+playerCard(a)+'</div><p class="warn">Oyuncu hata/ısı haritası/gerçek xG-xA/11 doğrulanamadıysa bunların yerine yalnızca skor-temelli takım modeli kullanılır.</p>';
+  renderScenarios(h,a,p,r,ph,pa);updateSources(h,a,f,r,p).then(()=>renderCouponChoice(h,a,f,r)).catch(()=>{});
+  renderCouponChoice(h,a,f,r);
+  // Historical comparisons are already used in ratings and embedded in team cards.
+  $('coaches').innerHTML=managerScouting(h)+managerScouting(a);
+ }finally{showLoader(false);busy=false;if(queuedRun){queuedRun=false;run();}}
+}
+function seasonComparison(t){
+ const s=t.stats||{},prev=s.last_season||{},d=s.season_change;
+ let text='<p class="small">2025/26 karşılaştırması için doğrulanmış yeterli geçmiş bulunamadı. Bu sezon verisi varsa yine kullanılıyor.</p>';
+ if(prev.matches>=5 && s.matches>=5 && d){
+ const trend=(v,rev=false)=>v==null?'veri yok':(v>0?'+':'')+fmt(v)+(rev?' (daha fazla gol yemek olumsuz olabilir)':'');
+ text=`<div class="small">2025/26: ${fmt(prev.matches)} maç · gol ${fmt(prev.raw_gf)} · yenen ${fmt(prev.raw_ga)}<br>
+ 2026/27: ${fmt(s.matches)} maç · gol ${fmt(s.raw_gf)} · yenen ${fmt(s.raw_ga)}</div>
+ <div class="inline tick small"><span>Maç başına atılan gol farkı</span><b>${trend(d.raw_gf)}</b></div>
+ <div class="inline tick small"><span>Maç başına yenilen gol farkı</span><b>${trend(d.raw_ga,true)}</b></div>
+ <div class="inline tick small"><span>Puan ortalaması farkı</span><b>${trend(d.points)}</b></div>
+ <div class="inline tick small"><span>Şut değişimi</span><b>${trend(d.shots)}</b></div>
+ <p class="small">Farklar rakip kalitesi, transferler veya teknik direktör değişimini tek başına açıklamaz; takımların seviyeleri ve oyun koşulları farklıdır.</p>`;
+ } else if(prev.matches>=1) text=`<p class="small">Geçen sezondan ${prev.matches} maç bulundu; bu sezonla güvenilir kıyas için her dönemde en az 5 maç gerekli.</p>`;
+ return `<div class="tick"><h3>${esc(t.name)} · Sezon değişimi</h3>${text}</div>`;
+}
+function managerScouting(t){
+ const s=t.stats||{},coach=t.coach,stats=[];
+ if(s.shots!=null)stats.push(`Hücum hacmi: maç başına ${fmt(s.shots)} şut${s.sot!=null?', '+fmt(s.sot)+' isabet':''}`);
+ if(s.corners!=null)stats.push(`Kanat / duran top için proxy: ${fmt(s.corners)} korner (taktik kanıtı değil)`);
+ if(s.clean_sheets!=null)stats.push(`Savunma sonuçları: %${fmt(s.clean_sheets)} gol yemeden maç`);
+ if(s.goals_2h!=null)stats.push(`İkinci yarı gol ortalaması: ${fmt(s.goals_2h)}`);
+ const name=coach?.name?`<p class="small">Doğrulanmış teknik direktör: <b>${esc(coach.name)}</b> · <a href="${esc(safeURL(coach.source_url))}" target="_blank" rel="noopener">kaynak</a> · ${esc(coach.verified_at||'')}</p>`:'<p class="small">Güncel teknik direktör kimliği doğrulanmış kaynakta bulunamadı; isim veya şahsi taktik atfedilmez.</p>';
+ const style=coach?.style?`<p class="small">Kaynaklı oyun anlayışı: ${esc(coach.style)}</p>`:'';
+ const changed=coach?.previous_name?`<p class="small">Önceki teknik direktör: ${esc(coach.previous_name)}. Değişimin etkisi geçmiş maçlardan ayrıca ölçülmeli.</p>`:'';
+ return `<div class="tick"><h3>${esc(t.name)} · Teknik direktör / oyun profili</h3>${name}${style}${changed}
+ ${stats.length?'<ul class="bullet">'+stats.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'<p class="small">Oyun tarzı çıkarımı için takım düzeyinde ölçüm eksik. Rastgele pres, diziliş ve topa sahip olma verisi eklenmedi.</p>'}
+ <p class="small">Sayılar takımın oyun eğilimine dair göstergedir; teknik direktörün gerçek pres, diziliş veya duran top şablonlarını kanıtlamaz.</p></div>`;
+}
+async function boot(){
+ let seed=window.FUTSIM_SEED,latest=null;
+ try{const res=await fetch('data/snapshot.json?t='+Date.now(),{cache:'no-store'});if(res.ok){const obj=await res.json();if(Array.isArray(obj.teams)&&obj.teams.length)latest=obj;}}catch{}
+ data=latest||seed;data.market_records=window.FUTSIM_MARKET_SEED||[];try{const response=await fetch('data/mackolik_odds.json?t='+Date.now(),{cache:'no-store'});if(response.ok){const obj=await response.json();if(Array.isArray(obj))data.mackolik_odds=obj;}}catch{}
+ if(!data){$('healthTitle').textContent='Veri bulunamadı';$('health').textContent='data/seed.js kontrol edin';return;}
+ initialize();
+}
+bootV42();
+
+</script></body></html>
