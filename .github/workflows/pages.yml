@@ -37,7 +37,7 @@ jobs:
           python -m py_compile scripts/update_api_football.py
           python scripts/update_api_football.py --self-test
       - name: Get optional free API-Football injuries and lineups
-        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && contains(github.event.head_commit.message, '[test-api-once]'))
         env:
           APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
         run: python scripts/update_api_football.py
