@@ -165,6 +165,56 @@ def metrics(rows):
     return {'n':n,'brier':y('brier'),'log_loss':y('log_loss'),
             'accuracy':round(sum(x['predicted']==x['truth'] for x in rows)/n,4),
             'correct':sum(x['predicted']==x['truth'] for x in rows)}
+def corner_walkforward(all_corners):
+    """Separate 2026/27 corner forecast validation, one match at a time.
+    Match outcome is NOT seen before prediction, and no same-day corners are used."""
+    sample=[{'league':key[0],'date':key[1],'home':key[2],'away':key[3],'hc':v[0],'ac':v[1]}
+            for key,v in all_corners.items() if 0<=v[0]<=25 and 0<=v[1]<=25]
+    sample.sort(key=lambda m:(m['date'],m['league'],m['home']))
+    ledger=[];past=[];factor=1.0
+    for idx,m in enumerate(sample):
+        hist=[x for x in past if x['date']<m['date'] and x['league']==m['league']]
+        h=[x for x in hist if m['home'] in (x['home'],x['away'])]
+        a=[x for x in hist if m['away'] in (x['home'],x['away'])]
+        def stats(team,rows):
+            last=rows[-12:]
+            own=[x['hc'] if x['home']==team else x['ac'] for x in last]
+            conceded=[x['ac'] if x['home']==team else x['hc'] for x in last]
+            return len(last),sum(own)/len(last) if last else None,sum(conceded)/len(last) if last else None
+        nh,hfor,hagainst=stats(m['home'],h)
+        na,afor,aagainst=stats(m['away'],a)
+        if min(nh,na)>=3:
+            # Small-sample shrinkage to 4.7 corners per club; no xG substitute.
+            ah=(hfor*nh+4.7*6)/(nh+6)
+            aa=(afor*na+4.7*6)/(na+6)
+            dah=(aagainst*na+4.7*6)/(na+6)
+            daa=(hagainst*nh+4.7*6)/(nh+6)
+            expected=max(5,min(15,(ah+dah+aa+daa)/2*factor))
+            raw=1-sum(poiss(k,expected) for k in range(9))
+            # Regression towards 50% compensates some unmodelled corner variance.
+            prob=max(.06,min(.94,.5+.8*(raw-.5)))
+            label=int(m['hc']+m['ac']>=9)
+            previous=[int(x['hc']+x['ac']>=9) for x in hist]
+            baseline=(sum(previous)+5)/(len(previous)+10)
+            result={'date':m['date'],'league':m['league'],'home':m['home'],'away':m['away'],
+                    'total_corners':m['hc']+m['ac'],'actual_over85':label,'pred_over85':round(prob,4),
+                    'pred_total':round(expected,2),'brier':round((prob-label)**2,5),
+                    'baseline_brier':round((baseline-label)**2,5)}
+            ledger.append(result)
+            # Update for subsequent dates ONLY. Do not learn from this match within its own forecast.
+            ratio=(m['hc']+m['ac'])/max(3,expected)
+            factor=max(.93,min(1.07,factor*.992+.008*max(.7,min(1.3,ratio))))
+        past.append(m)
+    if not ledger:return {'n':0,'brier':None,'baseline_brier':None,'source_matches':len(sample)}
+    n=len(ledger)
+    return {'n':n,'brier':round(sum(x['brier'] for x in ledger)/n,5),
+            'baseline_brier':round(sum(x['baseline_brier'] for x in ledger)/n,5),
+            'mean_absolute_corner_error':round(sum(abs(x['pred_total']-x['total_corners']) for x in ledger)/n,3),
+            'actual_over85_frequency':round(sum(x['actual_over85'] for x in ledger)/n,3),
+            'predicted_over85_mean':round(sum(x['pred_over85'] for x in ledger)/n,3),
+            'source_matches':len(sample),'examples':ledger[:4]+ledger[-4:],
+            'warning':'Noncommercial attribution dataset; corner forecasts uncertain and do not imply positive betting value.'}
+
 def run():
     historical=[];fresh=[];errors=[]
     cutoff=dt.datetime.now(dt.timezone.utc).date().isoformat()
@@ -220,8 +270,7 @@ def run():
         if subset:pred_bins.append({'range':f'{lower:.1f}-{upper:.1f}','n':len(subset),
                                     'avg_confidence':round(statistics.mean(x['confidence'] for x in subset),3),
                                     'accuracy':round(sum(x['predicted']==x['truth'] for x in subset)/len(subset),3)})
-    corner_metrics={'n':len(corner_eval),'brier':round(statistics.mean(x['brier'] for x in corner_eval),4) if corner_eval else None,
-                    'warning':'Small and incomplete corner source coverage; no strong bet claims.'}
+    corner_metrics=corner_walkforward(corner_rows)
     report={'run_utc':dt.datetime.now(dt.timezone.utc).isoformat(),'method':'At least 100 next-match chronological walk-forward tests; 2025/26 prehistory, 2026/27 out-of-sample. After each prediction error, adjust using past ONLY; same-day excluded.',
             'source_results':'https://github.com/openfootball (public domain)','source_corners':'https://github.com/oladeeayo/open-matchday (informational non-commercial, attribution)',
             'training_matches':len(history),'available_test_matches':len(testing),'iterations':len(rolling),
