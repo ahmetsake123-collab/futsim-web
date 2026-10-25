@@ -411,9 +411,12 @@ function futsimEnhancePanel(h,a,confidence){
  <p><a style="color:#72b6ff" target="_blank" rel="noopener" href="${c.source}">Korner veri kaynağı: open-matchday (ticari olmayan kullanım)</a></p>`:
  `<p style="color:#fcb969">${c.reason} Korner oranı uydurulmadı.</p>`;
  panel.innerHTML=`<h3 style="font-size:16px;margin:0 0 8px">Korner / ileri istatistik / araştırma güveni</h3>
- ${extra}<h3 style="font-size:15px;margin:15px 0 4px">API-Football ücretsiz kaynak durumu</h3>${futsimApiPanel(h,a)}<p><b>Takım başına ölçülen xG:</b> ${h.stats?.xg!=null&&a.stats?.xg!=null?esc(h.name)+' '+fmt(h.stats.xg)+' / '+esc(a.name)+' '+fmt(a.stats.xg)+' (maç başına, kaynak: '+esc(h.advanced_source||'açık veri')+')':'Her iki takım için doğrulanmış maç başına xG verisi yok'}. <b>Oyuncu xA:</b> ${(h.advanced_players||[]).length&& (a.advanced_players||[]).length?'Sezon toplamları oyuncu kartlarında':'En az bir takımda doğrulanmış xA bulunmuyor'}. 
- <b>Güncel sakatlıklar:</b> ${Array.isArray(h.injuries)&&Array.isArray(a.injuries)?'Kaynaklı liste var':'Doğrulanmış güncel sakatlık listesi yok'}.</p>
- <p style="color:#91a8b9">Sakatlık, xG, xA veya ilk 11 eksikliği yüksek güven anlamına gelmez; maç sonucunu garanti etmez. Model kalite puanı: ${confidence.value}/100 (kalibre edilmiş kazanma olasılığı değildir).</p>
+ ${extra}<h3 style="font-size:15px;margin:15px 0 4px">API-Football ücretsiz kaynak durumu</h3>${futsimApiPanel(h,a)}<p><b>Takım seviyesinde ileri ölçümler:</b></p>
+ <p> ${esc(h.name)} — xG/maç ${Number.isFinite(h.stats?.xg)?fmt(h.stats.xg):'veri yok'}, xA/maç ${Number.isFinite(h.stats?.xa)?fmt(h.stats.xa):'veri yok'}.
+ <br>${esc(a.name)} — xG/maç ${Number.isFinite(a.stats?.xg)?fmt(a.stats.xg):'veri yok'}, xA/maç ${Number.isFinite(a.stats?.xa)?fmt(a.stats.xa):'veri yok'}.</p>
+ <p style="color:#91a8b9">Kaynaklar: ${esc(h.advanced_source||'erişilemiyor')} / ${esc(a.advanced_source||'erişilemiyor')}.
+ <b>Sakatlıklar:</b> doğrulanmış fikstür kapsamı dışında sakatlık ataması yapılmaz. Eksik xA yerine xG veya asist sayısı yazılmaz.</p>
+ <p style="color:#91a8b9">Sakatlık, xG, xA veya ilk 11 eksikliği yüksek güven anlamına gelmez; maç sonucunu garanti etmez. Veri kapsam puanı: ${confidence.value}/100 (maçın kazanılma olasılığı değildir).</p>
  <p id="futsimTestStatus" style="color:#b8d7eb">Gerçek geçmiş maç testi yükleniyor…</p>`;
  const dest=document.getElementById('futsimTestStatus');
  if(window.FUTSIM_BACKTEST){
@@ -481,26 +484,23 @@ function resultAlignedScore(r){
  return {representative,favorite,modal:r.allScores[0]};
 }
 function confidenceOf(h,a,p){
- const hs=h.stats||{},as=a.stats||{};
- const sample=Math.min(p.nh,p.na);let c=22+Math.min(sample,15)/15*43;
- if(hs.shots!=null&&as.shots!=null)c+=9;
+ const hs=h.stats||{},as=a.stats||{},n=Math.min(Number(p.nh)||0,Number(p.na)||0);
+ let c=15+Math.min(n,15)/15*28;
  if(hs.form?.length>=5&&as.form?.length>=5)c+=7;
- if(hs.last_season?.matches>=5&&as.last_season?.matches>=5)c+=7;
- if(p.wh>0)c+=Math.min(7,20*p.wh);
- if(!data.seed&&data.asof&&Number.isFinite(daysDiff(data.asof))&&Math.abs(daysDiff(data.asof))<=10)c+=7;
- if((hs.corner_matches||0)>=5&&(as.corner_matches||0)>=5)c+=4;
- if(h.stats?.xg!=null&&a.stats?.xg!=null)c+=6;
- if((h.advanced_players||[]).length>=5&&(a.advanced_players||[]).length>=5)c+=4;
- // Count a confirmed source response only for the exact fixture and within 30h.
- const api=window.FUTSIM_API_FOOTBALL||{},dage=(Date.now()-Date.parse(api.fetched_at_utc||''))/3600000;
- const f=(api.fixtures||[]).find(f=>futsimApiIdentity(f.home)===futsimApiIdentity(h.name)&&futsimApiIdentity(f.away)===futsimApiIdentity(a.name));
- const chk=f&&(api.details||{})[String(f.id)];
- if(Number.isFinite(dage)&&dage>=0&&dage<=30&&chk?.injuries_checked)c+=5;
- if(Number.isFinite(dage)&&dage>=0&&dage<=30&&chk?.lineups?.length===2&&chk.lineups.every(t=>t.confirmed))c+=7;
+ if(hs.last_season?.matches>=5&&as.last_season?.matches>=5)c+=6;
+ if(Number.isFinite(hs.shots)&&Number.isFinite(as.shots))c+=10;
+ if((hs.corner_matches||0)>=5&&(as.corner_matches||0)>=5)c+=8;
+ if(!data.seed&&data.asof&&Number.isFinite(daysDiff(data.asof))&&Math.abs(daysDiff(data.asof))<=3)c+=7;
+ if(Number.isFinite(hs.xg)&&Number.isFinite(as.xg))c+=9;
+ if(Number.isFinite(hs.xa)&&Number.isFinite(as.xa))c+=6;
+ const api=window.FUTSIM_API_FOOTBALL||{},age=(Date.now()-Date.parse(api.fetched_at_utc||''))/3600000;
+ const fix=(api.fixtures||[]).find(f=>futsimApiIdentity(f.home)===futsimApiIdentity(h.name)&&futsimApiIdentity(f.away)===futsimApiIdentity(a.name));
+ const x=fix&&(api.details||{})[String(fix.id)];
+ if(Number.isFinite(age)&&age>=0&&age<=30&&x?.injuries_checked)c+=3;
+ if(Number.isFinite(age)&&age>=0&&age<=30&&x?.lineups?.length===2&&x.lineups.every(t=>t.confirmed))c+=6;
  if(data.seed)c=Math.min(c,44);
- // Coverage score, not a historical hit-rate or a bet's chance of success.
- c=Math.min(c,91);
- const value=Math.round(clamp(c,12,91));return {value,color:value>=75?'high':value>=45?'mid':'low'};
+ const value=Math.round(clamp(c,10,95));
+ return {value,color:value>=80?'high':value>=50?'mid':'low'};
 }
 
 const couponKeys=['1','X','2','1X','X2','1,5 Üst','2,5 Üst','2,5 Alt','KG Var','3,5 Alt','4,5 Alt','Ev gol','Dep gol','Korner 8,5 Üst','Korner 9,5 Üst','Korner 10,5 Üst'];
@@ -586,12 +586,18 @@ function renderScenarios(h,a,p,r,ph,pa){
 function teamCard(t){const s=t.stats||{},n=s.matches||t.given?.played||0;const gf=s.raw_gf??(t.given?.played?t.given.gf/t.given.played:null);const ga=s.raw_ga??(t.given?.played?t.given.ga/t.given.played:null);const form=(s.form||[]).map(x=>`${esc(x.opponent)} ${x.gf}-${x.ga}`).join(' · ');
  const v=x=>x==null?'veri yok':fmt(x);const d=s.season_change;const seasonInfo=d&&d.raw_gf!=null?`<br>2025/26 farkı: gol ${d.raw_gf>=0?'+':''}${fmt(d.raw_gf)} / maç; yenen gol ${d.raw_ga>=0?'+':''}${fmt(d.raw_ga)} / maç (en az 5+5 maç)`:'<br>Geçen sezonla güvenilir karşılaştırma için veri yetersiz';return `<h3>${esc(t.name)} <span class="pill">${esc(t.league)}</span></h3><p class="small">Maç: ${n} · Gol: ${v(gf)} · Yenen gol: ${v(ga)} · Şut: ${v(s.shots)} · İsabet: ${v(s.sot)} · Korner: ${v(s.corners)}<br>KG: ${s.btts==null?'—':pc(s.btts)} · 2,5 üst: ${s.over25==null?'—':pc(s.over25)} · Gol yememe: ${s.clean_sheets==null?'—':pc(s.clean_sheets)}<br>Son skorlar: ${form||'yeterli geçmiş yok'}${seasonInfo}</p>`;}
 function playerCard(t){
- const sc=t.known_scorers||[],players=(t.advanced_players||[]).filter(p=>Number.isFinite(p.xg)&&Number.isFinite(p.xa));
- const info=players.length?`<div class="small"><b>Oyuncu xG / xA (${esc(t.advanced_source||'kaynak')}, sezon toplamları):</b></div>
- <div class="small">${players.slice(0,8).map(p=>`<div style="padding:5px 0;border-bottom:1px solid #334756">${esc(p.name)} · xG <b>${fmt(p.xg)}</b> · xA <b>${fmt(p.xa)}</b> · ${fmt(p.minutes||0)} dk</div>`).join('')}</div>
- <p class="small">Bu ölçümler sezon toplamıdır; oyuncunun maçta ilk 11'de olacağını kanıtlamaz.</p>`:
- `<p class="small">Bu lig/takım için erişim izni olan kaynakta doğrulanmış oyuncu xG ve xA verisi henüz yok. Gol olasılığı skora ve doğrulanmış takım istatistiklerine dayanır.</p>`;
- return `<h3>${esc(t.name)}</h3>${info}${sc.length?`<div class="small">Kaynaklı golcüler: ${sc.map(x=>esc(x.name)+' ('+x.goals+')').join(' · ')}</div>`:''}`;
+ const st=t.stats||{},source=t.advanced_source||'';
+ const xg=Number.isFinite(st.xg)?fmt(st.xg):'—';
+ const xa=Number.isFinite(st.xa)?fmt(st.xa):'—';
+ const seasonG=Number.isFinite(st.xg_total)?fmt(st.xg_total):'—';
+ const seasonA=Number.isFinite(st.xa_total)?fmt(st.xa_total):'—';
+ const xga=Number.isFinite(st.xga)?fmt(st.xga):'—';
+ const any=Number.isFinite(st.xg)||Number.isFinite(st.xa);
+ return `<h3>${esc(t.name)}</h3>
+ <p class="small"><b>Takım düzeyi ileri istatistikler</b> · xG (maç başına): ${xg} · xA (maç başına): ${xa} · xGA (maç başına): ${xga}</p>
+ <p class="small">Sezon toplamı xG: ${seasonG} · sezon toplamı xA: ${seasonA}</p>
+ <p class="small">${any?'Kaynak: '+esc(source)+' · veri: '+esc(t.advanced_asof||'tarih yok'):'Bu takım için doğrulanmış xG/xA henüz bulunmuyor. Sonuç, şut ve korner verileri kullanılmaya devam ediyor.'}</p>
+ <p class="small">xA, bir takımın oluşturduğu asist ihtimalinin toplamını temsil eder; xG ile aynı şey değildir. Kullanılan sağlayıcıların ölçüm yöntemleri farklı olabilir.</p>`;
 }
 function getChosenFixture(h,a){return (data.upcoming||[]).find(x=>x.hid===h.id&&x.aid===a.id&&daysDiff(x.date)>=0&&daysDiff(x.date)<=7);}
 function talkSummary(h,a,f){
@@ -818,19 +824,31 @@ async function boot(){
  try{const res=await fetch('data/snapshot.json?t='+Date.now(),{cache:'no-store'});if(res.ok){const obj=await res.json();if(Array.isArray(obj.teams)&&obj.teams.length)latest=obj;}}catch{}
  data=latest||seed;data.market_records=window.FUTSIM_MARKET_SEED||[];try{const response=await fetch('data/mackolik_odds.json?t='+Date.now(),{cache:'no-store'});if(response.ok){const obj=await response.json();if(Array.isArray(obj))data.mackolik_odds=obj;}}catch{}
  try{const res=await fetch('data/api_football.json?t='+Date.now(),{cache:'no-store'});if(res.ok){window.FUTSIM_API_FOOTBALL=await res.json();}}catch{}
- for(const sourcePath of ['data/xg_source.json','data/fpl_xg.json']){
-  try{const res=await fetch(sourcePath+'?t='+Date.now(),{cache:'no-store'});if(!res.ok)continue;
-   const x=await res.json();const age=(Date.now()-Date.parse(x.asof||''))/86400000;
-   if(!Number.isFinite(age)||age<0||age>3||!Array.isArray(x.teams)||!x.teams.length||!Array.isArray(x.players))continue;
-   const teamMap=new Map((data.teams||[]).map(t=>[t.league+'|'+futsimApiIdentity(t.name),t]));
-   for(const t of x.teams){
-    const key=(t.league||'Premier League')+'|'+futsimApiIdentity(t.team);
-    const target=teamMap.get(key);if(!target)continue;
-    if(Number.isFinite(t.xg_per_match)&&t.matches>=3){target.stats.xg=t.xg_per_match;target.stats.xga=t.xga_per_match;}
-    else if(Number.isFinite(t.xg_season)&&target.stats?.matches>=3){target.stats.xg=+(t.xg_season/target.stats.matches).toFixed(3);}
-    target.advanced_source=x.source||sourcePath;
-    const clubKey=futsimApiIdentity(t.team);
-    target.advanced_players=(x.players||[]).filter(p=>futsimApiIdentity(p.team)===clubKey).sort((a,b)=>(b.xg||0)-(a.xg||0)).slice(0,20);
+ // All xG/xA data is attached to teams, not player cards.
+ // The latest provider metadata and sample size remain visible to users.
+ for(const sourcePath of ['data/xg_source.json','data/striker_xg.json','data/fpl_xg.json']){
+  try{
+   const res=await fetch(sourcePath+'?t='+Date.now(),{cache:'no-store'});
+   if(!res.ok)continue;
+   const src=await res.json();
+   const age=(Date.now()-Date.parse(src.asof||''))/86400000;
+   if(!Number.isFinite(age)||age<0||age>8||!Array.isArray(src.teams)||!src.teams.length)continue;
+   if(src.status!=='verified'&&src.verified!==true)continue;
+   const byTeam=new Map((data.teams||[]).map(t=>[t.league+'|'+futsimApiIdentity(t.name),t]));
+   for(const rec of src.teams){
+    const league=rec.league||'Premier League';
+    const target=byTeam.get(league+'|'+futsimApiIdentity(rec.team));
+    if(!target)continue;
+    target.stats=target.stats||{};
+    const games=Number(rec.matches)||Number(target.stats.matches)||0;
+    const g=Number.isFinite(rec.xg_per_match)?rec.xg_per_match:
+      Number.isFinite(rec.xg_season)&&games>=3?rec.xg_season/games:null;
+    const xa=Number.isFinite(rec.xa_per_match)?rec.xa_per_match:
+      Number.isFinite(rec.xa_season)&&games>=3?rec.xa_season/games:null;
+    if(g!=null){target.stats.xg=+g.toFixed(3);target.stats.xg_total=Number.isFinite(rec.xg_season)?rec.xg_season:null;}
+    if(xa!=null){target.stats.xa=+xa.toFixed(3);target.stats.xa_total=Number.isFinite(rec.xa_season)?rec.xa_season:null;}
+    if(Number.isFinite(rec.xga_per_match))target.stats.xga=rec.xga_per_match;
+    if(g!=null||xa!=null){target.advanced_source=src.source||sourcePath;target.advanced_asof=src.asof;}
    }
   }catch(e){}
  }
