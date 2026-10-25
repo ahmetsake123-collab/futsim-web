@@ -1,0 +1,497 @@
+{
+  "period_train": "2024/25",
+  "period_test": "2025/26",
+  "run_utc": "2026-10-25T23:56:44.254305+00:00",
+  "disjoint_from_original_2026_27": true,
+  "n": 500,
+  "training_available": 2246,
+  "holdout_available": 2156,
+  "metrics": {
+    "n": 500,
+    "brier": 0.60552,
+    "log_loss": 1.01432,
+    "accuracy": 0.506,
+    "correct": 253
+  },
+  "baseline": {
+    "n": 500,
+    "brier": 0.64488,
+    "log_loss": 1.06708,
+    "accuracy": 0.454,
+    "correct": 227
+  },
+  "per_league": {
+    "Premier League": {
+      "n": 77,
+      "brier": 0.60969,
+      "log_loss": 1.01982,
+      "accuracy": 0.5325,
+      "correct": 41
+    },
+    "Bundesliga": {
+      "n": 61,
+      "brier": 0.61066,
+      "log_loss": 1.0171,
+      "accuracy": 0.5246,
+      "correct": 32
+    },
+    "La Liga": {
+      "n": 85,
+      "brier": 0.6014,
+      "log_loss": 1.00811,
+      "accuracy": 0.5176,
+      "correct": 44
+    },
+    "Serie A": {
+      "n": 63,
+      "brier": 0.63879,
+      "log_loss": 1.06283,
+      "accuracy": 0.4444,
+      "correct": 28
+    },
+    "Ligue 1": {
+      "n": 67,
+      "brier": 0.5868,
+      "log_loss": 0.98747,
+      "accuracy": 0.5224,
+      "correct": 35
+    },
+    "Eredivisie": {
+      "n": 77,
+      "brier": 0.57604,
+      "log_loss": 0.97379,
+      "accuracy": 0.5584,
+      "correct": 43
+    },
+    "Süper Lig": {
+      "n": 70,
+      "brier": 0.62187,
+      "log_loss": 1.04002,
+      "accuracy": 0.4286,
+      "correct": 30
+    }
+  },
+  "mistake_types": {
+    "draw_undervalued": 126,
+    "correct": 253,
+    "unexpected_home": 21,
+    "unexpected_away": 100
+  },
+  "wrong": 247,
+  "highest_errors": [
+    {
+      "i": 139,
+      "date": "2025-08-30",
+      "league": "Eredivisie",
+      "home": "PSV",
+      "away": "Telstar 1963",
+      "actual": "0-2",
+      "guess": 0,
+      "truth": 2,
+      "probs": [
+        0.6829,
+        0.175,
+        0.1421
+      ],
+      "brier": 1.2330431535930868,
+      "log_loss": 1.9514054605730233,
+      "predicted": 0,
+      "confidence": 0.6829198278484965,
+      "type": "unexpected_away",
+      "min_sample": 3
+    },
+    {
+      "i": 248,
+      "date": "2025-09-14",
+      "league": "Serie A",
+      "home": "AS Roma",
+      "away": "Torino",
+      "actual": "0-1",
+      "guess": 0,
+      "truth": 2,
+      "probs": [
+        0.608,
+        0.2459,
+        0.1461
+      ],
+      "brier": 1.159218918465398,
+      "log_loss": 1.9232736265957027,
+      "predicted": 0,
+      "confidence": 0.6080056176146263,
+      "type": "unexpected_away",
+      "min_sample": 15
+    },
+    {
+      "i": 87,
+      "date": "2025-08-23",
+      "league": "Premier League",
+      "home": "Manchester City",
+      "away": "Tottenham Hotspur",
+      "actual": "0-2",
+      "guess": 0,
+      "truth": 2,
+      "probs": [
+        0.6219,
+        0.2164,
+        0.1617
+      ],
+      "brier": 1.1362617747251151,
+      "log_loss": 1.8218595696404467,
+      "predicted": 0,
+      "confidence": 0.6218734705775031,
+      "type": "unexpected_away",
+      "min_sample": 15
+    },
+    {
+      "i": 184,
+      "date": "2025-08-31",
+      "league": "Serie A",
+      "home": "FC Internazionale Milano",
+      "away": "Udinese",
+      "actual": "1-2",
+      "guess": 0,
+      "truth": 2,
+      "probs": [
+        0.5968,
+        0.2238,
+        0.1794
+      ],
+      "brier": 1.079571438366663,
+      "log_loss": 1.718027617760391,
+      "predicted": 0,
+      "confidence": 0.5967618106426478,
+      "type": "unexpected_away",
+      "min_sample": 1
+    },
+    {
+      "i": 232,
+      "date": "2025-09-14",
+      "league": "Eredivisie",
+      "home": "FC Utrecht",
+      "away": "FC Groningen",
+      "actual": "0-1",
+      "guess": 0,
+      "truth": 2,
+      "probs": [
+        0.6065,
+        0.1994,
+        0.1941
+      ],
+      "brier": 1.0570691781911024,
+      "log_loss": 1.639301951654109,
+      "predicted": 0,
+      "confidence": 0.606528142401005,
+      "type": "unexpected_away",
+      "min_sample": 15
+    },
+    {
+      "i": 436,
+      "date": "2025-10-04",
+      "league": "Süper Lig",
+      "home": "Galatasaray",
+      "away": "Beşiktaş",
+      "actual": "1-1",
+      "guess": 0,
+      "truth": 1,
+      "probs": [
+        0.6257,
+        0.2108,
+        0.1635
+      ],
+      "brier": 1.0410255078538162,
+      "log_loss": 1.5568275512039325,
+      "predicted": 0,
+      "confidence": 0.6256603193282323,
+      "type": "draw_undervalued",
+      "min_sample": 15
+    },
+    {
+      "i": 414,
+      "date": "2025-10-04",
+      "league": "Bundesliga",
+      "home": "Borussia Dortmund",
+      "away": "RB Leipzig",
+      "actual": "1-1",
+      "guess": 0,
+      "truth": 1,
+      "probs": [
+        0.5973,
+        0.2069,
+        0.1958
+      ],
+      "brier": 1.0241391606392207,
+      "log_loss": 1.5756057320181576,
+      "predicted": 0,
+      "confidence": 0.5972893071746758,
+      "type": "draw_undervalued",
+      "min_sample": 15
+    },
+    {
+      "i": 303,
+      "date": "2025-09-21",
+      "league": "Eredivisie",
+      "home": "PSV",
+      "away": "AFC Ajax",
+      "actual": "2-2",
+      "guess": 0,
+      "truth": 1,
+      "probs": [
+        0.5537,
+        0.2074,
+        0.2388
+      ],
+      "brier": 0.9918539192910076,
+      "log_loss": 1.5730156731145737,
+      "predicted": 0,
+      "confidence": 0.553733191732421,
+      "type": "draw_undervalued",
+      "min_sample": 15
+    },
+    {
+      "i": 299,
+      "date": "2025-09-21",
+      "league": "Bundesliga",
+      "home": "Eintracht Frankfurt",
+      "away": "Union Berlin",
+      "actual": "3-4",
+      "guess": 0,
+      "truth": 2,
+      "probs": [
+        0.577,
+        0.2071,
+        0.216
+      ],
+      "brier": 0.9904878779785805,
+      "log_loss": 1.532639071376017,
+      "predicted": 0,
+      "confidence": 0.5769789716186025,
+      "type": "unexpected_away",
+      "min_sample": 3
+    },
+    {
+      "i": 403,
+      "date": "2025-09-30",
+      "league": "La Liga",
+      "home": "Valencia CF",
+      "away": "Real Oviedo",
+      "actual": "1-2",
+      "guess": 0,
+      "truth": 2,
+      "probs": [
+        0.5476,
+        0.241,
+        0.2114
+      ],
+      "brier": 0.9797730286938503,
+      "log_loss": 1.553900939225214,
+      "predicted": 0,
+      "confidence": 0.5475687336649909,
+      "type": "unexpected_away",
+      "min_sample": 6
+    },
+    {
+      "i": 309,
+      "date": "2025-09-21",
+      "league": "Ligue 1",
+      "home": "Le Havre",
+      "away": "FC Lorient",
+      "actual": "1-1",
+      "guess": 0,
+      "truth": 1,
+      "probs": [
+        0.5354,
+        0.2103,
+        0.2543
+      ],
+      "brier": 0.9750543204884162,
+      "log_loss": 1.559414017311029,
+      "predicted": 0,
+      "confidence": 0.5354382026870133,
+      "type": "draw_undervalued",
+      "min_sample": 4
+    },
+    {
+      "i": 373,
+      "date": "2025-09-28",
+      "league": "Bundesliga",
+      "home": "SC Freiburg",
+      "away": "TSG 1899 Hoffenheim",
+      "actual": "1-1",
+      "guess": 0,
+      "truth": 1,
+      "probs": [
+        0.5277,
+        0.2096,
+        0.2627
+      ],
+      "brier": 0.9722264810303548,
+      "log_loss": 1.5626025827833676,
+      "predicted": 0,
+      "confidence": 0.5276895051453679,
+      "type": "draw_undervalued",
+      "min_sample": 15
+    }
+  ],
+  "overconfidence": {
+    "n": 63,
+    "correct": 50,
+    "mean_confidence": 0.5922,
+    "actual_accuracy": 0.7937
+  },
+  "caveats": [
+    "Categories describe what went wrong numerically; they DO NOT prove why a team won",
+    "No fixture, injury, xG, xA or postmatch info from 2025/26 is leaked into forecasts",
+    "This is a separate simple test model, not validation of site Monte Carlo predictions",
+    "Baseline is a fixed home/draw/away probability not an optimized bookmaker benchmark"
+  ],
+  "errors": [],
+  "examples": [
+    {
+      "i": 1,
+      "date": "2025-08-08",
+      "league": "Eredivisie",
+      "home": "Fortuna Sittard",
+      "away": "Go Ahead Eagles",
+      "actual": "2-2",
+      "guess": 0,
+      "truth": 1,
+      "probs": [
+        0.4021,
+        0.2631,
+        0.3348
+      ],
+      "brier": 0.8168528434671378,
+      "log_loss": 1.3353098450348402,
+      "predicted": 0,
+      "confidence": 0.4021425853641157,
+      "type": "draw_undervalued",
+      "min_sample": 15
+    },
+    {
+      "i": 2,
+      "date": "2025-08-08",
+      "league": "Süper Lig",
+      "home": "Gaziantep FK",
+      "away": "Galatasaray",
+      "actual": "0-3",
+      "guess": 2,
+      "truth": 2,
+      "probs": [
+        0.2618,
+        0.2572,
+        0.481
+      ],
+      "brier": 0.40411307409813635,
+      "log_loss": 0.7319693842526046,
+      "predicted": 2,
+      "confidence": 0.4809608600365702,
+      "type": "correct",
+      "min_sample": 15
+    },
+    {
+      "i": 3,
+      "date": "2025-08-09",
+      "league": "Eredivisie",
+      "home": "Feyenoord Rotterdam",
+      "away": "NAC Breda",
+      "actual": "2-0",
+      "guess": 0,
+      "truth": 0,
+      "probs": [
+        0.623,
+        0.2117,
+        0.1652
+      ],
+      "brier": 0.2142253711977403,
+      "log_loss": 0.47314041390157924,
+      "predicted": 0,
+      "confidence": 0.6230425811957211,
+      "type": "correct",
+      "min_sample": 15
+    },
+    {
+      "i": 497,
+      "date": "2025-10-18",
+      "league": "Premier League",
+      "home": "Sunderland",
+      "away": "Wolverhampton Wanderers",
+      "actual": "2-0",
+      "guess": 0,
+      "truth": 0,
+      "probs": [
+        0.5188,
+        0.2522,
+        0.229
+      ],
+      "brier": 0.34760883797503805,
+      "log_loss": 0.6562471471863153,
+      "predicted": 0,
+      "confidence": 0.518794645676243,
+      "type": "correct",
+      "min_sample": 7
+    },
+    {
+      "i": 498,
+      "date": "2025-10-18",
+      "league": "Serie A",
+      "home": "Lecce",
+      "away": "Sassuolo",
+      "actual": "0-0",
+      "guess": 0,
+      "truth": 1,
+      "probs": [
+        0.4022,
+        0.2571,
+        0.3407
+      ],
+      "brier": 0.8296995474573202,
+      "log_loss": 1.3582217619902326,
+      "predicted": 0,
+      "confidence": 0.4021668310828089,
+      "type": "draw_undervalued",
+      "min_sample": 6
+    },
+    {
+      "i": 499,
+      "date": "2025-10-18",
+      "league": "Serie A",
+      "home": "Pisa",
+      "away": "Hellas Verona",
+      "actual": "0-0",
+      "guess": 0,
+      "truth": 1,
+      "probs": [
+        0.4271,
+        0.2887,
+        0.2842
+      ],
+      "brier": 0.7690799983045804,
+      "log_loss": 1.2422675409930775,
+      "predicted": 0,
+      "confidence": 0.4271193750376116,
+      "type": "draw_undervalued",
+      "min_sample": 6
+    },
+    {
+      "i": 500,
+      "date": "2025-10-18",
+      "league": "Serie A",
+      "home": "AS Roma",
+      "away": "FC Internazionale Milano",
+      "actual": "0-1",
+      "guess": 0,
+      "truth": 2,
+      "probs": [
+        0.4658,
+        0.2642,
+        0.27
+      ],
+      "brier": 0.8196575308087646,
+      "log_loss": 1.3093231137274184,
+      "predicted": 0,
+      "confidence": 0.4657794878609248,
+      "type": "unexpected_away",
+      "min_sample": 15
+    }
+  ]
+}
