@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Optional, no-key FPL player expected goals and expected assists.
+"""No-key FPL *team aggregate* expected goals and expected assists.
 
-Use the public read-only Fantasy Premier League JSON endpoint. Check robots,
-avoid evasion and limit to one request per scheduled job. May be unavailable
-if permissions change. FPL expected_goals & expected_assists are season totals.
+Use public read-only Fantasy Premier League JSON. Aggregate team xG/xA from
+individual player season totals internally; no player performance stored or
+published. Inspect robots; no evasion. FPL data may change without notice.
 """
 import datetime as dt
 import json
@@ -26,7 +26,8 @@ def flt(v):
 def run():
     now=dt.datetime.now(dt.timezone.utc)
     base={'asof':now.date().isoformat(),'source':'Fantasy Premier League',
-          'source_url':URL,'teams':[],'players':[],'status':'not_accessible'}
+          'source_url':URL,'teams':[],'players':[],'status':'not_accessible',
+          'method':'Sum of FPL player season xG and xA, shown ONLY as team totals. Different providers may define xA differently.'}
     parser=urllib.robotparser.RobotFileParser()
     parser.set_url(ROBOTS)
     try:
@@ -41,26 +42,24 @@ def run():
             if isinstance(t.get('id'),int) and t.get('name')}
         if len(team_map)<15:raise ValueError('unexpected team coverage')
         grouped={}
+        checked_player_count=0
         for p in obj.get('elements',[]):
             club=team_map.get(p.get('team'))
             if not club:continue
             g=flt(p.get('expected_goals'));a=flt(p.get('expected_assists'))
             mins=p.get('minutes')
             if not isinstance(mins,(int,float)) or g is None or a is None:continue
-            item={'team':club,'name':str(p.get('first_name','')+' '+p.get('second_name','')).strip()[:85],
-                  'xg':g,'xa':a,'minutes':int(mins),'goals':int(p.get('goals_scored') or 0),
-                  'assists':int(p.get('assists') or 0),
-                  'availability_status':str(p.get('status',''))[:12],
-                  'availability_news':str(p.get('news',''))[:150],
-                  'season':'2026/27'}
-            if item['minutes']>=60:base['players'].append(item)
-            grouped.setdefault(club,[]).append(item)
-        for club,players in grouped.items():
+            # Only the team aggregates will leave this process. All players
+            # with valid season metrics count (including brief substitutes).
+            grouped.setdefault(club,[]).append((g,a))
+            checked_player_count+=1
+        for club,values in grouped.items():
             base['teams'].append({'team':club,'league':'Premier League','matches':None,
-              'xg_season':round(sum(x['xg'] for x in players),3),
-              'xa_season':round(sum(x['xa'] for x in players),3),
-              'source':URL})
-        if len(base['players'])<100:raise ValueError('missing player coverage')
+              'xg_season':round(sum(xg for xg,xa in values),3),
+              'xa_season':round(sum(xa for xg,xa in values),3),
+              'source':URL,'metric_scope':'2026/27 season totals, squad aggregate'})
+        base['sampled_player_count']=checked_player_count
+        if checked_player_count<100 or len(base['teams'])!=20:raise ValueError('missing Premier League coverage')
         base['status']='verified'
     except (PermissionError,urllib.error.URLError,TimeoutError,ValueError,OSError) as e:
         base['reason']=str(e)[:130] if not isinstance(e,urllib.error.URLError) else type(e).__name__
@@ -73,5 +72,5 @@ def run():
             except (OSError,ValueError,KeyError):pass
     OUT.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(json.dumps(base,ensure_ascii=False,indent=2),encoding='utf-8')
-    print('FPL xG/xA source:',base['status'],len(base['teams']),'teams',len(base['players']),'players')
+    print('FPL team xG/xA source:',base['status'],len(base['teams']),'teams',base.get('sampled_player_count',0),'player rows used only internally')
 if __name__=='__main__':run()
