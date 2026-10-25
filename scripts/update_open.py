@@ -49,10 +49,25 @@ def run():
     if not matches:
         raise RuntimeError('No current-season verified match records; last published data preserved. '+'; '.join(errors))
     catalogue={}
+    # Carry all competition entries from initial selection catalogue as unknown-data
+    # records; never treat these names as verified current lineups or performance.
     try:
-        s=(ROOT/'docs'/'data'/'snapshot.json').read_text(encoding='utf-8')
-        prev_state=json.loads(s)
-        for t in prev_state.get('teams',[]):catalogue[t['name'].casefold()]=dict(t)
+        page=(ROOT/'docs'/'index.html').read_text(encoding='utf-8')
+        match=re.search(r'window\\.FUTSIM_SEED\\s*=\\s*(\\{.*?\\})\\s*;',page,re.S)
+        if match:
+            initial=json.loads(match.group(1))
+            for t in initial.get('teams',[]):
+                row=dict(t); row['stats']={'matches':0,'form':[], 'score_patterns':{'n':0,'ht_n':0},'ucl_patterns':{'n':0,'ht_n':0}}
+                row['given']={'gf':0,'ga':0,'played':0}
+                row['source']='Eski takım kataloğu; güncel maç verisi doğrulanmadı'
+                catalogue[row['name'].casefold()]=row
+    except (ValueError,OSError):pass
+    try:
+        state=json.loads((ROOT/'docs'/'data'/'snapshot.json').read_text(encoding='utf-8'))
+        for t in state.get('teams',[]):
+            key=t['name'].casefold()
+            if key not in catalogue or (t.get('stats',{}).get('matches',0)>0):
+                catalogue[key]=dict(t)
     except (ValueError,OSError):pass
     membership={}
     for m in matches:
