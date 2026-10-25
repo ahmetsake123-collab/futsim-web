@@ -171,8 +171,14 @@ def corner_walkforward(all_corners):
     sample=[{'league':key[0],'date':key[1],'home':key[2],'away':key[3],'hc':v[0],'ac':v[1]}
             for key,v in all_corners.items() if 0<=v[0]<=25 and 0<=v[1]<=25]
     sample.sort(key=lambda m:(m['date'],m['league'],m['home']))
-    ledger=[];past=[];factor=1.0
+    ledger=[];past=[];factor=1.0;pending=[];previous_day=None
     for idx,m in enumerate(sample):
+        if previous_day is not None and m['date']!=previous_day:
+            for actual_total,expected in pending:
+                ratio=actual_total/max(3,expected)
+                factor=max(.93,min(1.07,factor*.992+.008*max(.7,min(1.3,ratio))))
+            pending=[]
+        previous_day=m['date']
         hist=[x for x in past if x['date']<m['date'] and x['league']==m['league']]
         h=[x for x in hist if m['home'] in (x['home'],x['away'])]
         a=[x for x in hist if m['away'] in (x['home'],x['away'])]
@@ -202,8 +208,7 @@ def corner_walkforward(all_corners):
                     'baseline_brier':round((baseline-label)**2,5)}
             ledger.append(result)
             # Update for subsequent dates ONLY. Do not learn from this match within its own forecast.
-            ratio=(m['hc']+m['ac'])/max(3,expected)
-            factor=max(.93,min(1.07,factor*.992+.008*max(.7,min(1.3,ratio))))
+            pending.append((m['hc']+m['ac'],expected))
         past.append(m)
     if not ledger:return {'n':0,'brier':None,'baseline_brier':None,'source_matches':len(sample)}
     n=len(ledger)
@@ -255,7 +260,17 @@ def run():
     # 100 consecutive matches, with all prior dates available; same-day scores excluded.
     rolling=[];archive=[];seen=[];corner_eval=[]
     home_factor=1.;away_factor=1.;temperature=1.
+    pending=[];previous_day=None
     for idx,m in enumerate(testing[:500]):
+        # IMPORTANT: same-day fixtures never train the model for other games
+        # on that day, even if they appear earlier in sort order.
+        if previous_day is not None and m['date']!=previous_day:
+            for raw_old,truth_old,hg_old,ag_old,lh_old,la_old in pending:
+                archive.append({'raw':raw_old,'truth':truth_old})
+                home_factor=max(.89,min(1.12,home_factor*.99+.01*max(.75,min(1.25,hg_old/max(.5,lh_old)))))
+                away_factor=max(.89,min(1.12,away_factor*.99+.01*max(.75,min(1.25,ag_old/max(.5,la_old)))))
+            temperature=choose_temp(archive);pending=[]
+        previous_day=m['date']
         actual_hist=history+[x for x in seen if x['date']<m['date']]
         pred=forecast(m,actual_hist,home_factor,away_factor,temperature)
         actual=outcome(m)
@@ -274,11 +289,7 @@ def run():
             corner_eval.append(row['corner_over85'])
         rolling.append(row);seen.append(m)
         raw=poisson_markets(pred['lh'],pred['la'])
-        archive.append({'raw':raw,'truth':actual})
-        temperature=choose_temp(archive)
-        # Tiny, bounded update from past errors only; learns after scoring.
-        home_factor=max(.89,min(1.12,home_factor*.99+.01*max(.75,min(1.25,m['hg']/max(.5,pred['lh'])))))
-        away_factor=max(.89,min(1.12,away_factor*.99+.01*max(.75,min(1.25,m['ag']/max(.5,pred['la'])))))
+        pending.append((raw,actual,m['hg'],m['ag'],pred['lh'],pred['la']))
     baseline=[{'brier':brier([.43,.27,.30],x['truth']),'log_loss':logloss([.43,.27,.30],x['truth']),
                'predicted':0,'truth':x['truth']} for x in rolling]
     acc=metrics(rolling);base=metrics(baseline)
