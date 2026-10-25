@@ -61,7 +61,7 @@ def from_matchday(today):
                 except (TypeError,ValueError):return None
             h=normalized(m.get('home') or '');a=normalized(m.get('away') or '')
             if not h or not a:continue
-            row={'date':date,'home':h,'away':a,'hc':n('home_corners'),'ac':n('away_corners'),
+            row={'date':date,'home':h,'away':a,'hg':n('ft_home'),'ag':n('ft_away'),'hc':n('home_corners'),'ac':n('away_corners'),
                 'hs':n('home_shots'),'as':n('away_shots'),'hst':n('home_target'),'ast':n('away_target'),
                 'hc1':n('home_corners_1h'),'ac1':n('away_corners_1h'),
                 'home_label':m.get('home'),'away_label':m.get('away')}
@@ -108,6 +108,16 @@ def run():
     if len(current)<100:raise RuntimeError(f'Current-season openfootball data unavailable ({len(current)}); preserving last snapshot')
     matchday,fixtures,source_errors,shot_coverage=from_matchday(today)
     errors.extend(source_errors)
+    # Extend public-domain historical results with more recent fully scored
+    # matches from the attributed NON-COMMERCIAL compilation; do not duplicate.
+    keys={(m['league'],m['date'],m['home'],m['away']) for m in current}
+    extra_count=0
+    for lg,rows in matchday.items():
+        for m in rows:
+            if m.get('hg') is None or m.get('ag') is None or m['hg']<0 or m['ag']<0:continue
+            key=(lg,m['date'],m['home'],m['away'])
+            if key in keys:continue
+            current.append({**m,'league':lg});keys.add(key);extra_count+=1
     teams=[];seen=set();matches_per_league=collections.defaultdict(int)
     roster=collections.defaultdict(set)
     for m in current:
@@ -159,7 +169,7 @@ def run():
           'n':val.get('iterations',0),'status':'walk-forward' if val.get('iterations',0)>=100 else 'unvalidated',
           'holdout_brier':val.get('model_metrics',{}).get('brier'),
           'baseline_brier':val.get('baseline',{}).get('brier')},
-       'coverage':coverage,'data_health':{'finished_matches_count':len(current),
+       'coverage':coverage,'recent_verified_matches_added':extra_count,'data_health':{'finished_matches_count':len(current),
           'errors':errors},'source_errors':errors,'xg_coverage':'unavailable',
        'xa_coverage':'unavailable','injury_coverage':'unavailable'}
     DATA.mkdir(exist_ok=True,parents=True)
