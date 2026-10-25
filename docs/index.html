@@ -45,7 +45,7 @@
 <div id="couponRows" class="coupon-rows"><p class="empty">Henüz maç eklemedin.</p></div>
 <div class="coupon-total"><div><span class="small">Toplam model olasılığı</span><div class="big" id="couponProb">—</div></div><div><span class="small" id="couponOddLabel">Piyasa toplam oranı</span><div class="big" id="couponOdds">—</div></div><div><span class="small">Birleşik risk</span><div class="big" id="couponRisk">—</div></div></div><div class="riskbar"><span id="riskFill"></span></div><p id="couponNote" class="small">Farklı maçların bağımsız kabul edildiği yaklaşık hesap; model doğruluğu henüz kalibre değil.</p><button id="couponClear" type="button">Kuponu temizle</button></section>
 <div class="two"><section class="card"><h2>Teknik direktör ve oyun anlayışı</h2><div id="coaches" class="empty">Doğrulanmış teknik direktör ve takımın saha içi davranış sinyalleri karşılaştırılacak.</div></section><section class="card"><h2>Maç öncesi kaynak araştırması</h2><p class="small" id="researchStatus">Analiz öncesi Google Haberler'de maç beklentileri aranır, en az 10 farklı site hedeflenir.</p><div id="researchSources" class="research-sources"></div><p class="small">Yalnızca gerçekten erişilen yayınlar sayılır. Görüşler modelin istatistiksel olasılıklarını değiştirmez.</p></section></div>
-<div class="two"><section class="card"><h2>Ölçülen oyuncu verisi / tahmini 11</h2><div id="players" class="empty">Açık veri kaynaklarının sunduğu kapsam kontrol ediliyor.</div></section><section class="card"><h2>Geçmiş skorlardan türetilen maç senaryoları</h2><div id="scenarios" class="empty">Maç seçildiğinde takım seviyesine dayalı senaryolar üretilecek.</div></section></div>
+<div class="two"><section class="card"><h2>Takım bazında xG / xA analizi</h2><div id="players" class="empty">Açık veri kaynaklarının sunduğu kapsam kontrol ediliyor.</div></section><section class="card"><h2>Geçmiş skorlardan türetilen maç senaryoları</h2><div id="scenarios" class="empty">Maç seçildiğinde takım seviyesine dayalı senaryolar üretilecek.</div></section></div>
 <div class="two"><section class="card"><h2>Forum ve yorumcu görüşlerinin özeti <span class="pill">Simülasyondan bağımsız</span></h2><div id="news" class="empty">Görüş kaynakları kontrol ediliyor.</div><p class="small">Bölüm model tahmininden bağımsızdır. Erişilebilir kaynaklarda yalnızca ilgili maç hakkındaki açık görüşler özetlenir; görüşler veri yokken icat edilmez.</p></section><section class="card"><h2>Seçili maçın piyasa oranları • değer karşılaştırması</h2><div class="warn">Maç tarihine özel İddaakolik Avrupa piyasası bülteni ve Football-Data açık CSV kaynağı denenir. Nesine/Oley otomatik erişimi doğrulanmadığından bu sitelerin oranları gibi sunulmaz. Oranlar ilk erişimde kaydedilir; fiyat bulunamazsa uydurulmaz.</div><div id="surprises" class="empty" style="margin-top:12px">Seçili maçın kaynaklı piyasa oranları kontrol ediliyor.</div>
 <details class="odds-entry"><summary>Oranı manuel aktar (kaynak belirtilmeden doğrulanmaz)</summary>
 <p class="small">Görebildiğin herhangi bir sitedeki aynı maçın 1, X, 2 ve varsa 2,5 alt/üst oranlarını kopyala. Veriler yalnızca bu tarayıcıda, bu karşılaşma için saklanır.</p>
@@ -365,7 +365,7 @@ function futsimApiIdentity(s){
  const alias={'man utd':'manchester united','man city':'manchester city',
   'brighton':'brighton hove albion','nott m forest':'nottingham forest',
   'psg':'paris saint germain','bayern munchen':'bayern munich',
-  'internazionale':'inter','tottenham':'tottenham hotspur','hull':'hull city'};
+  'internazionale':'inter','tottenham':'tottenham hotspur','spurs':'tottenham hotspur','hull':'hull city'};
  return alias[v]||v;
 }
 function futsimApiPanel(home,away){
@@ -784,7 +784,7 @@ async function run(){
   render50Market(r,getMatchOdds(h,a,f),p.quality);
   renderCouponChoice(h,a,f,r);
   $('teamstats').innerHTML=teamCard(h)+'<div class="tick">'+teamCard(a)+'</div>';
-  $('players').innerHTML=playerCard(h)+'<div class="tick">'+playerCard(a)+'</div><p class="warn">Oyuncu hata/ısı haritası/gerçek xG-xA/11 doğrulanamadıysa bunların yerine yalnızca skor-temelli takım modeli kullanılır.</p>';
+  $('players').innerHTML=playerCard(h)+'<div class="tick">'+playerCard(a)+'</div><p class="warn">Takım seviyesinde xG / xA yoksa gerçek ölçüm üretmeyiz; skor, şut ve korner verileriyle sınırlı analiz sunarız. Sakatlık ve kesin ilk 11 ayrı kaynak panelindedir.</p>';
   renderScenarios(h,a,p,r,ph,pa);updateSources(h,a,f,r,p).then(()=>renderCouponChoice(h,a,f,r)).catch(()=>{});
   renderCouponChoice(h,a,f,r);
   // Historical comparisons are already used in ratings and embedded in team cards.
@@ -840,7 +840,7 @@ async function boot(){
     const target=byTeam.get(league+'|'+futsimApiIdentity(rec.team));
     if(!target)continue;
     target.stats=target.stats||{};
-    const games=Number(rec.matches)||Number(target.stats.matches)||0;
+    const games=Number(rec.matches)||0;
     const g=Number.isFinite(rec.xg_per_match)?rec.xg_per_match:
       Number.isFinite(rec.xg_season)&&games>=3?rec.xg_season/games:null;
     const xa=Number.isFinite(rec.xa_per_match)?rec.xa_per_match:
