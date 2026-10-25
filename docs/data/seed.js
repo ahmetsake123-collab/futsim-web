@@ -1,0 +1,12 @@
+(()=>{const leagues={
+"Premier League":"Manchester City,Arsenal,Brighton & Hove Albion,Chelsea,Liverpool,Brentford,Leeds United,Everton,Hull City,Ipswich Town,Newcastle United,Aston Villa,Manchester United,Crystal Palace,Bournemouth,Tottenham Hotspur,Coventry City,Fulham,Nottingham Forest,Sunderland",
+"Bundesliga":"Bayern München,Borussia Dortmund,SC Freiburg,Bayer Leverkusen,RB Leipzig,Werder Bremen,Mainz 05,SV Elversberg,Augsburg,Hamburger SV,Köln,Paderborn,Eintracht Frankfurt,Hoffenheim,VfB Stuttgart,Schalke 04,Union Berlin,Borussia Mönchengladbach",
+"La Liga":"Barcelona,Atlético Madrid,Real Madrid,Real Betis,Real Sociedad,Sevilla,Alavés,Villarreal,Deportivo La Coruña,Celta Vigo,Osasuna,Racing Santander,Levante,Elche,Athletic Bilbao,Getafe,Rayo Vallecano,Espanyol,Valencia,Málaga",
+"Süper Lig":"Galatasaray,Amedspor,Fenerbahçe,Trabzonspor,Beşiktaş,Kocaelispor,Çorum FK,Kasımpaşa,Alanyaspor,Başakşehir,Erzurumspor,Çaykur Rizespor,Göztepe,Gaziantep FK,Gençlerbirliği,Konyaspor,Samsunspor,Eyüpspor",
+"Şampiyonlar Ligi":"LASK,Sabah FK,Club Brugge,Slavia Prag,Lens,Lille,Paris Saint-Germain,AEK Atina,Como,Inter,Napoli,Roma,Feyenoord,PSV Eindhoven,Bodø/Glimt,Viking FK,Porto,Sporting CP,Slovan Bratislava,Shakhtar Donetsk,Stuttgart"};
+const teams=[],keys=new Map();for(const [league,list] of Object.entries(leagues)){for(const name of list.split(",")){let id=name.toLocaleLowerCase("tr-TR").trim();if(keys.has(id)){let t=keys.get(id);if(!t.competitions.includes(league))t.competitions.push(league);continue;}let rating=league==="Premier League"?1580:league==="Bundesliga"||league==="La Liga"?1550:league==="Süper Lig"?1460:1530;
+if(/Barcelona|Real Madrid|Bayern München|Manchester City|Liverpool|Paris Saint-Germain|Arsenal/.test(name))rating+=125;
+if(/Gençlerbirliği|Çorum FK|Amedspor|Erzurumspor|Paderborn|Elversberg/.test(name))rating-=90;
+let t={id,name,league,rating,stats:{matches:0,score_patterns:{n:0,ht_n:0},ucl_patterns:{n:0,ht_n:0}},given:{gf:0,ga:0,played:0},known_scorers:[],source:"Başlangıç kataloğu; istatistik doğrulanmadı",competitions:[league]};teams.push(t);keys.set(id,t);}}
+window.FUTSIM_SEED={version:4,seed:true,asof:"2026-10-25",teams,coverage:{},upcoming:[],news:[],recent_surprises:[],backtest:{},data_health:{},meta:{note:"Takım isimleri başlangıç verisi, güncel istatistikler doğrulanmadı."},ucl_roster:teams.filter(t=>t.competitions.includes("Şampiyonlar Ligi")).map(t=>t.name),ucl_roster_source:"Geçici statik katalog"};
+})();
