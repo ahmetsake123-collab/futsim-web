@@ -1,12 +1,11 @@
-name: FUTSIM Daily Football Data & Pages
+name: FUTSIM Weekly Monday Data & Pages
 on:
   push:
     branches: [main]
     paths-ignore:
       - "docs/data/snapshot.json"
   schedule:
-    - cron: "17 4 * * *"
-    - cron: "37 9 * * 1"
+    - cron: "17 5 * * 1"
   workflow_dispatch:
 permissions:
   contents: write
@@ -30,6 +29,8 @@ jobs:
           python-version: "3.12"
       - name: Test 100+ unseen chronological matches first
         run: python scripts/validate_walkforward.py || echo "::warning::Backtest source unavailable; earlier validation preserved"
+      - name: Run second disjoint 500 historical predictions
+        run: python scripts/validate_second500.py
       - name: Update CC0 public results and attributed corners
         run: python scripts/update_cc0.py || echo "::warning::Source unavailable; preserving last confirmed snapshot"
       - name: Verify free API-Football integration without credentials
@@ -45,16 +46,18 @@ jobs:
         run: python scripts/update_understat.py
       - name: Test free Premier League FPL xG and xA player feed
         run: python scripts/update_fpl_xg.py
+      - name: Materialize all-team Monday offline statistics
+        run: python scripts/build_weekly.py
       - name: Validate model, Python and published UI
         run: |
-          python -m py_compile scripts/validate_walkforward.py scripts/update_cc0.py scripts/update_understat.py scripts/update_fpl_xg.py scripts/check_site.py
+          python -m py_compile scripts/validate_walkforward.py scripts/update_cc0.py scripts/update_understat.py scripts/update_fpl_xg.py scripts/build_weekly.py scripts/validate_second500.py scripts/check_site.py
           python scripts/check_site.py
           node scripts/test_xg_preserve.cjs
       - name: Save a verified nonempty update
         run: |
           git config user.name "FUTSIM Data Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data/snapshot.json docs/data/model_validation.json docs/data/model_params.json docs/data/api_football.json docs/data/xg_source.json docs/data/fpl_xg.json
+          git add docs/data/snapshot.json docs/data/model_validation.json docs/data/model_params.json docs/data/api_football.json docs/data/xg_source.json docs/data/fpl_xg.json docs/data/weekly_team_stats.json docs/data/validation_second500.json
           if ! git diff --cached --quiet; then
             git commit -m "data: updated verified football results [skip ci]"
             git push || echo "::warning::Data commit rejected; site build still proceeds"
