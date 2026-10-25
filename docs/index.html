@@ -349,6 +349,45 @@ function goalRates(h,a,comp){
  // A model without verified injuries, lineups, shot-quality and coaches is never labelled validated.
  return {lh,la,eh,ea,nh,na,mn,quality,wh,wa,competition:comp};
 }
+function futsimCornerPrediction(h,a) {
+ const hs=h.stats||{},as=a.stats||{};
+ const n=Math.min(Number(hs.corner_matches)||0,Number(as.corner_matches)||0);
+ if(n<4 || !Number.isFinite(hs.corners)||!Number.isFinite(as.corners)||!Number.isFinite(hs.corners_against)||!Number.isFinite(as.corners_against))
+   return {ok:false,n,reason:'Korner tahmini için iki takımda doğrulanmış en az 4 kornerli maç gerekli.'};
+ const home=Math.max(.5,Math.min(12,(hs.corners+as.corners_against)/2));
+ const away=Math.max(.5,Math.min(12,(as.corners+hs.corners_against)/2));
+ const total=home+away;const tail=k=>{let p=Math.exp(-total),cum=p;for(let i=1;i<=k;i++){p*=total/i;cum+=p;}return 100*Math.max(0,Math.min(1,1-cum));};
+ return {ok:true,n,home,away,total,over85:tail(8),over95:tail(9),over105:tail(10),source:'https://github.com/oladeeayo/open-matchday'};
+}
+function futsimEnhancePanel(h,a,confidence){
+ let panel=document.getElementById('futsimExtraAnalysis');
+ if(!panel){
+  panel=document.createElement('div');panel.id='futsimExtraAnalysis';
+  panel.style.cssText='background:#102432;border:1px solid #385265;border-radius:14px;padding:16px;margin:18px 0;font-size:13px;line-height:1.65';
+  const el=document.getElementById('lambdas')||document.getElementById('confidenceBadge');
+  if(el){(el.closest('.card')||el.parentElement).appendChild(panel);}
+  else document.querySelector('.wrap')?.appendChild(panel);
+ }
+ const c=futsimCornerPrediction(h,a);
+ const extra=c.ok?`<p><b>Beklenen korner:</b> ${c.total.toFixed(1)} (ev: ${c.home.toFixed(1)} / dep: ${c.away.toFixed(1)}); iki takımda en az ${c.n} maçlık doğrulanmış veri.</p>
+ <p><b>Korner 8,5 üst:</b> %${c.over85.toFixed(1)} · <b>9,5 üst:</b> %${c.over95.toFixed(1)} · <b>10,5 üst:</b> %${c.over105.toFixed(1)}</p>
+ <p style="color:#fcb969">Bunlar Poisson tabanlı ham simülasyon olasılıklarıdır; yeterli geriye dönük doğrulama olmadan yüksek güvenli bahis olarak değerlendirilmez.</p>
+ <p><a style="color:#72b6ff" target="_blank" rel="noopener" href="${c.source}">Korner veri kaynağı: open-matchday (ticari olmayan kullanım)</a></p>`:
+ `<p style="color:#fcb969">${c.reason} Korner oranı uydurulmadı.</p>`;
+ panel.innerHTML=`<h3 style="font-size:16px;margin:0 0 8px">Korner / ileri istatistik / araştırma güveni</h3>
+ ${extra}<p><b>Ölçülmüş xG / xA:</b> ${h.stats?.xg!=null&&a.stats?.xg!=null?'Kaynaklı veri mevcut':'Bu iki takım için doğrulanmış ölçüm yok'}. 
+ <b>Güncel sakatlıklar:</b> ${Array.isArray(h.injuries)&&Array.isArray(a.injuries)?'Kaynaklı liste var':'Doğrulanmış güncel sakatlık listesi yok'}.</p>
+ <p style="color:#91a8b9">Sakatlık, xG, xA veya ilk 11 eksikliği yüksek güven anlamına gelmez; maç sonucunu garanti etmez. Model kalite puanı: ${confidence.value}/100 (kalibre edilmiş kazanma olasılığı değildir).</p>
+ <p id="futsimTestStatus" style="color:#b8d7eb">Gerçek geçmiş maç testi yükleniyor…</p>`;
+ const dest=document.getElementById('futsimTestStatus');
+ if(window.FUTSIM_BACKTEST){
+  const v=window.FUTSIM_BACKTEST;const mm=v.model_metrics||{},base=v.baseline||{},co=v.corners||{};
+  dest.textContent=`Zaman sıralı test: ${v.iterations||0} maç · sonuç isabeti %${(100*(mm.accuracy||0)).toFixed(1)} · Brier ${mm.brier??'—'} (referans ${base.brier??'—'}) · doğrulanmış korner testi: ${co.n||0} · bu test ayrı basit modelindir.`;
+ } else fetch('data/model_validation.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(v=>{
+   if(!v)return;window.FUTSIM_BACKTEST=v;const p=document.getElementById('futsimTestStatus');
+   if(p){const mm=v.model_metrics||{},base=v.baseline||{},co=v.corners||{};p.textContent=`Zaman sıralı test: ${v.iterations||0} maç · sonuç isabeti %${(100*(mm.accuracy||0)).toFixed(1)} · Brier ${mm.brier??'—'} (referans ${base.brier??'—'}) · korner test sayısı ${co.n||0}. Ayrı test modelinin performansıdır.`; }
+ }).catch(()=>{dest.textContent='Test raporuna şu an erişilemiyor.';});
+}
 function rng(seed){let a=seed>>>0;return()=>{a=(a+0x6D2B79F5)|0;let x=Math.imul(a^(a>>>15),1|a);x^=x+Math.imul(x^(x>>>7),61|x);return((x^(x>>>14))>>>0)/4294967296;};}
 function gauss(r){return Math.sqrt(-2*Math.log(Math.max(1e-10,r())))*Math.cos(2*Math.PI*r());}
 function poisson(r,lambda){let p=1,n=0,t=Math.exp(-lambda);do{p*=r();n++;}while(p>t&&n<32);return n-1;}
@@ -413,7 +452,7 @@ function confidenceOf(h,a,p){
  if(hs.last_season?.matches>=5&&as.last_season?.matches>=5)c+=7;
  if(p.wh>0)c+=Math.min(7,20*p.wh);
  if(!data.seed&&data.asof&&Number.isFinite(daysDiff(data.asof))&&Math.abs(daysDiff(data.asof))<=10)c+=7;
- if(data.seed)c=Math.min(c,44);
+ if(data.seed)c=Math.min(c,44);if(h.stats?.xg==null||a.stats?.xg==null||!Array.isArray(h.injuries)||!Array.isArray(a.injuries))c=Math.min(c,68);
  const value=Math.round(clamp(c,12,91));return {value,color:value>=75?'high':value>=45?'mid':'low'};
 }
 
@@ -437,7 +476,8 @@ function mediumRiskTip(r,raw){
  // A market should not be called good value without a sourced price,
  // and uncalibrated probabilities warrant wider safety margins.
  let rows=couponKeys.filter(k=>Number.isFinite(r.markets[k])&&r.markets[k]>=60&&r.markets[k]<=82)
-  .map(k=>({k,p:r.markets[k],odd:selectedCouponOdds(raw,k)}));
+  .map(k=>({k,p:r.markets[k],odd:selectedCouponOdds(raw,k)}))
+  .filter(x=>x.odd&&((x.p/100-.085)*x.odd)>1.04);
  rows.sort((a,b)=>{
   const safety=x=>x.odd?((x.p/100*x.odd-1)*20):0;
   return (safety(b)-Math.abs(b.p-72)/2)-(safety(a)-Math.abs(a.p-72)/2);
@@ -447,7 +487,7 @@ function mediumRiskTip(r,raw){
 function renderCouponChoice(h,a,f,r){
  const odds=getMatchOdds(h,a,f);const candidate=mediumRiskTip(r,odds);
  const trust=confidenceOf(h,a,goalRates(h,a,$('competition').value));
- $('autoPick').innerHTML=trust.value<45?'<span class="small">Veri güveni düşük: FUTSIM bu maç için bahis tercihi önermiyor. İstersen yalnızca olasılıkları inceleyebilirsin.</span>':candidate?`<b>FUTSIM olsa: ${esc(marketLabel(candidate.k))}</b><div class="small">${esc(h.name)} – ${esc(a.name)} · Model ${pc(candidate.p)} · ${candidate.odd?'Kaynaklı fiyat '+fmt(candidate.odd):'Gerçek oran bulunamadı; model olasılığına göre öneri'} · Orta risk hedefi (garanti değil)</div>`:'<span class="small">Bu maç için uygun tercih oluşturulamadı.</span>';
+ $('autoPick').innerHTML=trust.value<45?'<span class="small">Veri güveni düşük: FUTSIM bu maç için bahis tercihi önermiyor. İstersen yalnızca olasılıkları inceleyebilirsin.</span>':candidate?`<b>FUTSIM olsa: ${esc(marketLabel(candidate.k))}</b><div class="small">${esc(h.name)} – ${esc(a.name)} · Model ${pc(candidate.p)} · ${candidate.odd?'Kaynaklı fiyat '+fmt(candidate.odd):'Gerçek oran bulunamadı; model olasılığına göre öneri'} · Orta risk hedefi (garanti değil)</div>`:'<span class="small">Doğrulanmış oranla ve belirsizlik tamponuyla pozitif beklenen değer gösterilemedi. Bu maç için otomatik kupon önerilmiyor.</span>';
  const select=$('couponMarket'),old=select.value;
  select.innerHTML=couponKeys.filter(k=>r.markets[k]!=null).map(k=>`<option value="${esc(k)}">${esc(marketLabel(k))} · ${pc(r.markets[k])}${selectedCouponOdds(odds,k)?' · '+fmt(selectedCouponOdds(odds,k)):''}</option>`).join('');
  select.value=couponKeys.includes(old)?old:(candidate?.k||'1');if(!select.value&&candidate)select.value=candidate.k;
@@ -673,7 +713,7 @@ async function run(){
   $('extremeScore').textContent=r.surprises?.[0]?.score||'—';$('extremePct').textContent=r.surprises?.[0]?pc(r.surprises[0].p):'—';$('surpriseList').innerHTML=(r.surprises||[]).map(x=>`<div class="inline tick"><span><b>${esc(x.score)}</b> <span class="small">${esc(x.reason)}</span></span><b>${pc(x.p)}</b></div>`).join('')||'<p class="empty">Anlamlı sayıda sıradışı skor örneği çıkmadı.</p>'; 
   $('top5').innerHTML='<span class="small">Yakın alternatifler: '+r.scores.filter(x=>x.score!==chosen.representative.score).slice(0,2).map(x=>`${x.score} (${pc(x.p)})`).join(' · ')+'</span>';
   $('eh').textContent=fmt(p.eh);$('ea').textContent=fmt(p.ea);$('lambdas').innerHTML=`<b>${fmt(p.lh)} – ${fmt(p.la)}</b><p class="small">Skor-temelli gol yoğunluğu; ölçülmüş xG değildir</p>`;
-  const confidence=confidenceOf(h,a,p);$('confidenceBadge').className='confidence '+confidence.color;$('confidenceBadge').textContent=`Veri güveni: %${confidence.value} · ${confidence.color==='high'?'Yüksek':confidence.color==='mid'?'Orta':'Düşük'}`;
+  const confidence=confidenceOf(h,a,p);futsimEnhancePanel(h,a,confidence);$('confidenceBadge').className='confidence '+confidence.color;$('confidenceBadge').textContent=`Veri güveni: %${confidence.value} · ${confidence.color==='high'?'Yüksek':confidence.color==='mid'?'Orta':'Düşük'}`;
   const f=getChosenFixture(h,a);$('forecastNote').textContent=(f?`${f.date} ${f.league} fikstürü eşleşti. `:'Önümüzdeki 7 günde bu eşleşme doğrulanamadı. ')+`10.000 adet iki yarılı skor simülasyonu · ${comp}.`;
   render50Market(r,getMatchOdds(h,a,f),p.quality);
   renderCouponChoice(h,a,f,r);
