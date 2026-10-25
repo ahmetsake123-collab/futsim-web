@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "status": "not_configured",
+  "source": "https://www.api-football.com/",
+  "fetched_at_utc": null,
+  "fixtures": [],
+  "details": {},
+  "notes": [
+    "API-Football ücretsiz entegrasyon hazır, GitHub Actions APISPORTS_KEY secret bekleniyor.",
+    "Ücretsiz paketlerin erişebildiği sezonlar sınırlıdır.",
+    "xG/xA ve sakatlıklar doğrulanmadıkça tahmine eklenmez."
+  ],
+  "measured_xg": false,
+  "measured_xa": false
+}
