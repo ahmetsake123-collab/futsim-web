@@ -110,9 +110,12 @@ class Client:
                 self.messages.append(f"{route}: no supported response")
                 return None
             return results
+        except urllib.error.HTTPError as exc:
+            # Numeric HTTP response codes are safe diagnostics; never log headers.
+            self.messages.append(f"{route}: HTTP {exc.code} / access restricted or unavailable")
+            return None
         except (urllib.error.URLError, ValueError, TimeoutError) as exc:
-            # Never include URL headers or key in logs.
-            self.messages.append(f"{route}: HTTP/network error ({type(exc).__name__})")
+            self.messages.append(f"{route}: network response unavailable ({type(exc).__name__})")
             return None
 
 def assemble(client, now):
@@ -139,8 +142,19 @@ def assemble(client, now):
                 "notes": ["API-Football ücretsiz hesapta 2026/27 erişimi veya uygun fikstür doğrulanamadı."],
                 "successful_dates": successful_days}
 
-    selected = [f for f in fixtures if f["date"] in (
-        today.isoformat(), (today + dt.timedelta(days=1)).isoformat())][:MAX_SELECTED_FIXTURES]
+    # Ignore completed matches when spending limited free-tier calls.
+    # Spread coverage across leagues before selecting a second match per league.
+    scheduled = [f for f in fixtures if f["status"] in ("NS", "TBD", "PST", "SUSP")]
+    scheduled.sort(key=lambda f: (f["kickoff"], f["id"]))
+    preferred = []
+    leagues_seen = set()
+    for f in scheduled:
+        if f["league"] not in leagues_seen:
+            preferred.append(f)
+            leagues_seen.add(f["league"])
+    chosen_ids = {f["id"] for f in preferred}
+    preferred.extend(f for f in scheduled if f["id"] not in chosen_ids)
+    selected = preferred[:MAX_SELECTED_FIXTURES]
 
     by_id = {}
     for f in selected:
@@ -158,7 +172,14 @@ def assemble(client, now):
 
     # Only inspect lineups on today's fixtures; official lineups are
     # usually announced shortly before kickoff.
-    lineups_due = [f for f in selected if f["date"] == today.isoformat()][:4]
+    def soon(f):
+        try:
+            t = dt.datetime.fromisoformat(f["kickoff"].replace("Z", "+00:00"))
+            if t.tzinfo is None:return False
+            minutes=(t-now).total_seconds()/60
+            return -20 <= minutes <= 130
+        except (TypeError,ValueError):return False
+    lineups_due = [f for f in selected if f["status"] in ("NS", "TBD") and soon(f)][:4]
     for f in lineups_due:
         rows = client.get("fixtures/lineups", fixture=f["id"])
         if rows is not None:
