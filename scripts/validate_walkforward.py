@@ -228,10 +228,29 @@ def run():
                 store.extend([r for r in data if r['date']<cutoff])
             except Exception as e:errors.append({'league':league,'season':season,'error':str(e)[:150]})
     history=sorted(historical,key=lambda x:(x['date'],x['league']))
+    corner_rows,corner_status=fetch_corners(cutoff)
+    # Add verified current-season results from the attributed compilation when
+    # openfootball's public-domain archive has not yet incorporated a match.
+    lookup={(m['league'],m['date'],m['home'],m['away']) for m in fresh}
+    score_added=0
+    for league,folder in CORNER_SOURCES.items():
+        try:
+            rows=csv.DictReader(io.StringIO(fetch(f'{BASE}oladeeayo/open-matchday/master/data/{folder}/results_2627.csv')))
+            for r in rows:
+                day=(r.get('date') or '')[:10]
+                if not day or day>=cutoff:continue
+                home=normalized(r.get('home') or '');away=normalized(r.get('away') or '')
+                try: hg=int(r.get('ft_home') or '');ag=int(r.get('ft_away') or '')
+                except ValueError:continue
+                key=(league,day,home,away)
+                if not home or not away or key in lookup:continue
+                fresh.append(dict(date=day,league=league,home=home,away=away,
+                                  home_label=r['home'],away_label=r['away'],hg=hg,ag=ag,hc=None,ac=None))
+                lookup.add(key);score_added+=1
+        except Exception as e: errors.append({'league':league,'source':'open-matchday','error':str(e)[:125]})
     testing=sorted(fresh,key=lambda x:(x['date'],x['league'],x['home']))
     if len(testing)<100 or len(history)<400:
         raise RuntimeError(f'Insufficient ACTUAL historical matches. training={len(history)},test={len(testing)},errors={errors}')
-    corner_rows,corner_status=fetch_corners(cutoff)
     joined=join_corners(testing,corner_rows)
     # 100 consecutive matches, with all prior dates available; same-day scores excluded.
     rolling=[];archive=[];seen=[];corner_eval=[]
@@ -273,7 +292,7 @@ def run():
     corner_metrics=corner_walkforward(corner_rows)
     report={'run_utc':dt.datetime.now(dt.timezone.utc).isoformat(),'method':'At least 100 next-match chronological walk-forward tests; 2025/26 prehistory, 2026/27 out-of-sample. After each prediction error, adjust using past ONLY; same-day excluded.',
             'source_results':'https://github.com/openfootball (public domain)','source_corners':'https://github.com/oladeeayo/open-matchday (informational non-commercial, attribution)',
-            'training_matches':len(history),'available_test_matches':len(testing),'iterations':len(rolling),
+            'training_matches':len(history),'available_test_matches':len(testing),'extra_current_matches_from_attributed_source':score_added,'iterations':len(rolling),
             'final_temperature':round(temperature,4),'goal_factors':{'home':round(home_factor,4),'away':round(away_factor,4)},
             'model_metrics':acc,'baseline':base,
             'improved_over_baseline_brier':acc['brier']<base['brier'],
