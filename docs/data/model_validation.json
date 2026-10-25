@@ -1,0 +1,499 @@
+{
+  "run_utc": "2026-10-25T18:18:25.374557+00:00",
+  "method": "100 next-match chronological walk-forward tests; 2025/26 prehistory, 2026/27 out-of-sample. After each prediction error, adjust using past ONLY; same-day excluded.",
+  "source_results": "https://github.com/openfootball (public domain)",
+  "source_corners": "https://github.com/oladeeayo/open-matchday (informational non-commercial, attribution)",
+  "training_matches": 404,
+  "available_test_matches": 288,
+  "iterations": 100,
+  "final_temperature": 1.0,
+  "goal_factors": {
+    "home": 0.9984,
+    "away": 1.0123
+  },
+  "model_metrics": {
+    "n": 100,
+    "brier": 0.64006,
+    "log_loss": 1.0581,
+    "accuracy": 0.45,
+    "correct": 45
+  },
+  "baseline": {
+    "n": 100,
+    "brier": 0.6596,
+    "log_loss": 1.08675,
+    "accuracy": 0.39,
+    "correct": 39
+  },
+  "improved_over_baseline_brier": true,
+  "corners": {
+    "n": 0,
+    "brier": null,
+    "warning": "Small and incomplete corner source coverage; no strong bet claims."
+  },
+  "corner_records_matched": 87,
+  "corner_coverage_status": {
+    "Premier League": 75,
+    "Bundesliga": 61,
+    "La Liga": 94,
+    "Serie A": 75,
+    "Ligue 1": 65,
+    "Eredivisie": 85,
+    "Süper Lig": 76
+  },
+  "calibration_bins": [
+    {
+      "range": "0.0-0.4",
+      "n": 7,
+      "avg_confidence": 0.393,
+      "accuracy": 0.143
+    },
+    {
+      "range": "0.4-0.5",
+      "n": 83,
+      "avg_confidence": 0.447,
+      "accuracy": 0.482
+    },
+    {
+      "range": "0.5-0.6",
+      "n": 8,
+      "avg_confidence": 0.549,
+      "accuracy": 0.5
+    },
+    {
+      "range": "0.6-0.7",
+      "n": 2,
+      "avg_confidence": 0.613,
+      "accuracy": 0.0
+    }
+  ],
+  "errors": [
+    {
+      "league": "Premier League",
+      "season": "2025-26",
+      "error": "parsed zero completed fixtures"
+    },
+    {
+      "league": "Bundesliga",
+      "season": "2025-26",
+      "error": "parsed zero completed fixtures"
+    },
+    {
+      "league": "La Liga",
+      "season": "2025-26",
+      "error": "parsed zero completed fixtures"
+    },
+    {
+      "league": "Serie A",
+      "season": "2025-26",
+      "error": "parsed zero completed fixtures"
+    },
+    {
+      "league": "Ligue 1",
+      "season": "2025-26",
+      "error": "parsed zero completed fixtures"
+    },
+    {
+      "league": "Süper Lig",
+      "season": "2026-27",
+      "error": "parsed zero completed fixtures"
+    }
+  ],
+  "samples": [
+    {
+      "test": 1,
+      "date": "2026-08-07",
+      "league": "Eredivisie",
+      "home": "SC Cambuur-Leeuwarden",
+      "away": "SBV Excelsior",
+      "actual_score": "0-4",
+      "prob_1x2": [
+        0.4316,
+        0.2473,
+        0.3211
+      ],
+      "predicted": 0,
+      "truth": 2,
+      "brier": 0.7082634764046392,
+      "log_loss": 1.135900798784434,
+      "confidence": 0.4315539185669202,
+      "temperature_used": 1.0,
+      "status": "miss",
+      "prediction_lambdas": [
+        1.556,
+        1.31
+      ]
+    },
+    {
+      "test": 2,
+      "date": "2026-08-08",
+      "league": "Eredivisie",
+      "home": "AZ",
+      "away": "ADO Den Haag",
+      "actual_score": "2-0",
+      "prob_1x2": [
+        0.478,
+        0.2448,
+        0.2771
+      ],
+      "predicted": 0,
+      "truth": 0,
+      "brier": 0.4092089136876466,
+      "log_loss": 0.7380938006582941,
+      "confidence": 0.4780242571233497,
+      "temperature_used": 1.0,
+      "status": "correct",
+      "prediction_lambdas": [
+        1.633,
+        1.185
+      ]
+    },
+    {
+      "test": 3,
+      "date": "2026-08-08",
+      "league": "Eredivisie",
+      "home": "Go Ahead Eagles",
+      "away": "Willem II Tilburg",
+      "actual_score": "4-1",
+      "prob_1x2": [
+        0.4633,
+        0.2464,
+        0.2903
+      ],
+      "predicted": 0,
+      "truth": 0,
+      "brier": 0.4329991154020438,
+      "log_loss": 0.7693316288416069,
+      "confidence": 0.4633226363336911,
+      "temperature_used": 1.0,
+      "status": "correct",
+      "prediction_lambdas": [
+        1.604,
+        1.219
+      ]
+    },
+    {
+      "test": 4,
+      "date": "2026-08-08",
+      "league": "Eredivisie",
+      "home": "NEC",
+      "away": "Telstar 1963",
+      "actual_score": "1-2",
+      "prob_1x2": [
+        0.4609,
+        0.2378,
+        0.3013
+      ],
+      "predicted": 0,
+      "truth": 2,
+      "brier": 0.7572248701271558,
+      "log_loss": 1.1997437229918375,
+      "confidence": 0.4609268518721363,
+      "temperature_used": 1.0,
+      "status": "miss",
+      "prediction_lambdas": [
+        1.692,
+        1.327
+      ]
+    },
+    {
+      "test": 5,
+      "date": "2026-08-08",
+      "league": "Eredivisie",
+      "home": "PSV",
+      "away": "Fortuna Sittard",
+      "actual_score": "2-2",
+      "prob_1x2": [
+        0.6178,
+        0.1906,
+        0.1916
+      ],
+      "predicted": 0,
+      "truth": 1,
+      "brier": 1.0735525080234476,
+      "log_loss": 1.6576929775021962,
+      "confidence": 0.6177917710388386,
+      "temperature_used": 1.0,
+      "status": "miss",
+      "prediction_lambdas": [
+        2.336,
+        1.242
+      ]
+    },
+    {
+      "test": 6,
+      "date": "2026-08-09",
+      "league": "Eredivisie",
+      "home": "FC Groningen",
+      "away": "FC Utrecht",
+      "actual_score": "2-1",
+      "prob_1x2": [
+        0.3953,
+        0.2487,
+        0.356
+      ],
+      "predicted": 0,
+      "truth": 0,
+      "brier": 0.5543285181028437,
+      "log_loss": 0.9282134781379207,
+      "confidence": 0.395259219216787,
+      "temperature_used": 1.0,
+      "status": "correct",
+      "prediction_lambdas": [
+        1.482,
+        1.394
+      ]
+    },
+    {
+      "test": 7,
+      "date": "2026-08-09",
+      "league": "Eredivisie",
+      "home": "PEC Zwolle",
+      "away": "AFC Ajax",
+      "actual_score": "0-2",
+      "prob_1x2": [
+        0.3243,
+        0.2489,
+        0.4268
+      ],
+      "predicted": 2,
+      "truth": 2,
+      "brier": 0.4956930519084576,
+      "log_loss": 0.8514609603232282,
+      "confidence": 0.42679095160784014,
+      "temperature_used": 1.0,
+      "status": "correct",
+      "prediction_lambdas": [
+        1.306,
+        1.534
+      ]
+    },
+    {
+      "test": 8,
+      "date": "2026-08-09",
+      "league": "Eredivisie",
+      "home": "SC Heerenveen",
+      "away": "FC Twente '65",
+      "actual_score": "1-0",
+      "prob_1x2": [
+        0.434,
+        0.2385,
+        0.3275
+      ],
+      "predicted": 0,
+      "truth": 0,
+      "brier": 0.4845315989735194,
+      "log_loss": 0.834759970167582,
+      "confidence": 0.4339786367517515,
+      "temperature_used": 1.0,
+      "status": "correct",
+      "prediction_lambdas": [
+        1.651,
+        1.406
+      ]
+    },
+    {
+      "test": 93,
+      "date": "2026-08-29",
+      "league": "Serie A",
+      "home": "ACF Fiorentina",
+      "away": "Frosinone Calcio",
+      "actual_score": "0-3",
+      "prob_1x2": [
+        0.4028,
+        0.262,
+        0.3352
+      ],
+      "predicted": 0,
+      "truth": 2,
+      "brier": 0.6727839435025835,
+      "log_loss": 1.0929364398207027,
+      "confidence": 0.4027641226788712,
+      "temperature_used": 1.041,
+      "status": "miss",
+      "prediction_lambdas": [
+        1.409,
+        1.256
+      ]
+    },
+    {
+      "test": 94,
+      "date": "2026-08-29",
+      "league": "Serie A",
+      "home": "Juventus FC",
+      "away": "Parma Calcio 1913",
+      "actual_score": "2-0",
+      "prob_1x2": [
+        0.4588,
+        0.2668,
+        0.2744
+      ],
+      "predicted": 0,
+      "truth": 0,
+      "brier": 0.43944670808643804,
+      "log_loss": 0.7792373758490089,
+      "confidence": 0.4587557361377563,
+      "temperature_used": 1.083,
+      "status": "correct",
+      "prediction_lambdas": [
+        1.475,
+        1.049
+      ]
+    },
+    {
+      "test": 95,
+      "date": "2026-08-29",
+      "league": "Serie A",
+      "home": "US Sassuolo Calcio",
+      "away": "Torino FC",
+      "actual_score": "2-1",
+      "prob_1x2": [
+        0.4442,
+        0.254,
+        0.3018
+      ],
+      "predicted": 0,
+      "truth": 0,
+      "brier": 0.4644583271802034,
+      "log_loss": 0.8114087110818152,
+      "confidence": 0.44423183093107765,
+      "temperature_used": 1.042,
+      "status": "correct",
+      "prediction_lambdas": [
+        1.546,
+        1.218
+      ]
+    },
+    {
+      "test": 96,
+      "date": "2026-08-30",
+      "league": "Bundesliga",
+      "home": "FC Augsburg",
+      "away": "FC Schalke 04",
+      "actual_score": "3-0",
+      "prob_1x2": [
+        0.4473,
+        0.2553,
+        0.2974
+      ],
+      "predicted": 0,
+      "truth": 0,
+      "brier": 0.4590874287203518,
+      "log_loss": 0.8045059228546492,
+      "confidence": 0.44730887706463446,
+      "temperature_used": 1.042,
+      "status": "correct",
+      "prediction_lambdas": [
+        1.538,
+        1.194
+      ]
+    },
+    {
+      "test": 97,
+      "date": "2026-08-30",
+      "league": "Bundesliga",
+      "home": "SC Freiburg",
+      "away": "SV Werder Bremen",
+      "actual_score": "4-1",
+      "prob_1x2": [
+        0.454,
+        0.2519,
+        0.2941
+      ],
+      "predicted": 0,
+      "truth": 0,
+      "brier": 0.4481048765420615,
+      "log_loss": 0.7897100339730753,
+      "confidence": 0.45397641393603116,
+      "temperature_used": 1.0,
+      "status": "correct",
+      "prediction_lambdas": [
+        1.541,
+        1.191
+      ]
+    },
+    {
+      "test": 98,
+      "date": "2026-08-30",
+      "league": "Eredivisie",
+      "home": "FC Utrecht",
+      "away": "PSV",
+      "actual_score": "1-6",
+      "prob_1x2": [
+        0.3702,
+        0.2208,
+        0.409
+      ],
+      "predicted": 2,
+      "truth": 2,
+      "brier": 0.5350632911672679,
+      "log_loss": 0.8940138933837432,
+      "confidence": 0.4090107280289323,
+      "temperature_used": 1.0,
+      "status": "correct",
+      "prediction_lambdas": [
+        1.728,
+        1.823
+      ]
+    },
+    {
+      "test": 99,
+      "date": "2026-08-30",
+      "league": "Eredivisie",
+      "home": "Feyenoord Rotterdam",
+      "away": "ADO Den Haag",
+      "actual_score": "2-2",
+      "prob_1x2": [
+        0.6079,
+        0.2073,
+        0.1848
+      ],
+      "predicted": 0,
+      "truth": 1,
+      "brier": 1.0320059347508985,
+      "log_loss": 1.5734152449099017,
+      "confidence": 0.6079110081665626,
+      "temperature_used": 0.956,
+      "status": "miss",
+      "prediction_lambdas": [
+        1.995,
+        1.036
+      ]
+    },
+    {
+      "test": 100,
+      "date": "2026-08-30",
+      "league": "Eredivisie",
+      "home": "SC Cambuur-Leeuwarden",
+      "away": "FC Twente '65",
+      "actual_score": "1-4",
+      "prob_1x2": [
+        0.3172,
+        0.2299,
+        0.4528
+      ],
+      "predicted": 2,
+      "truth": 2,
+      "brier": 0.45287955446940725,
+      "log_loss": 0.7922046015446363,
+      "confidence": 0.45284535043927104,
+      "temperature_used": 1.0,
+      "status": "correct",
+      "prediction_lambdas": [
+        1.456,
+        1.776
+      ]
+    }
+  ],
+  "result_distribution": {
+    "1": 39,
+    "X": 22,
+    "2": 39
+  },
+  "limitations": [
+    "100 tests are not 100 independent model designs",
+    "No guaranteed profit; unverified bookmaker prices excluded",
+    "Injuries, xG and xA not verified by these sources",
+    "Corner coverage limited; Poisson corner assumptions not validated on every league"
+  ]
+}
