@@ -36,7 +36,7 @@
 <div class="notice" style="margin:14px 0" id="liveFeedStatus">Bugünün ve yarının maçları için açık fikstür aranıyor…</div>
 <div class="two"><section class="card"><h2>Bugün ve yarın • Liglere göre</h2><p class="small">Lig başlıklarını aç; bir maça basınca doğrudan analiz edilir.</p><div id="fixtures" class="empty compact-fixtures">Kaynak fikstürü yükleniyor.</div></section><section class="card"><h2>Modelin geçmiş doğruluğu</h2><div id="backtest" class="empty">Geçmiş maçlardan ileriye dönük doğrulama sonucu yükleniyor.</div><p class="small">Geçmişteki bir maçı tahmin ederken o maçın ve sonraki maçların skorları kullanılmaz. Kalibrasyon ancak ayrı test kümesinde iyileşme varsa geçerli olur.</p></section></div>
 
-<section class="grid"><div class="card"><div class="subtitle">Tahmini sonuç</div><h2 id="matchName">Bir maç seç</h2><div class="confidence" id="confidenceBadge">Veri güveni: hesaplanmadı</div><div class="three"><div><span class="small">1</span><b id="p1" class="green">—</b></div><div><span class="small">X</span><b id="px">—</b></div><div><span class="small">2</span><b id="p2" class="blue">—</b></div></div><div class="bars"><i id="bar1" style="background:#45e3ad;width:33%"></i><i id="barx" style="background:#9caeb7;width:34%"></i><i id="bar2" style="background:#72b6ff;width:33%"></i></div><span class="small" id="forecastNote">Model başlatılmadı.</span></div>
+<section class="grid"><div class="card"><div class="subtitle">Tahmini sonuç</div><h2 id="matchName">Bir maç seç</h2><div class="confidence" id="confidenceBadge">Veri kapsamı hesaplanıyor</div><div id="xgReadout" class="small" style="line-height:1.65;border:1px solid #2d4c59;border-radius:10px;padding:10px;margin:10px 0;background:#0e2733">xG/xA kaynak kontrolü yapılıyor…</div><div class="three"><div><span class="small">1</span><b id="p1" class="green">—</b></div><div><span class="small">X</span><b id="px">—</b></div><div><span class="small">2</span><b id="p2" class="blue">—</b></div></div><div class="bars"><i id="bar1" style="background:#45e3ad;width:33%"></i><i id="barx" style="background:#9caeb7;width:34%"></i><i id="bar2" style="background:#72b6ff;width:33%"></i></div><span class="small" id="forecastNote">Model başlatılmadı.</span></div>
 <div class="card"><div class="subtitle">Skor dağılımı</div><div class="inline" style="margin:12px 0"><div><div class="small">1-X-2 ile uyumlu skor</div><div class="big" id="topscore">—</div></div><div><div class="small">Bu skorun ihtimali</div><div class="big green" id="toppct">—</div></div></div><div id="top5" class="small">Skor simülasyonu çalıştırılmadı.</div><p class="small" id="scoreClarifier"></p><div class="tick"><div class="subtitle">Beklenmedik ama olası skorlar</div><div class="inline"><b class="big" id="extremeScore">—</b><b class="green" id="extremePct">—</b></div><p class="small">Olasılığı en yüksek sıra dışı skorlar; farklı galibiyet şart değil.</p><div id="surpriseList" class="small"></div></div></div>
 <div class="card"><div class="subtitle">Lig ve maç gücü</div><div class="inline" style="margin-top:12px"><div><div class="small">Ev gücü</div><div class="big" id="eh">—</div></div><div><div class="small">Dep güç</div><div class="big" id="ea">—</div></div></div><div class="tick" id="lambdas" style="font-size:13px">Beklenen gol dağılımı hesaplanmadı.</div></div></section>
 <div class="two"><section class="card"><details class="fp-detail"><summary><strong>%50 üzeri • Oran / fiyat-performans</strong> <span class="pill">Aç / kapat</span></summary><div class="value-grid" id="markets"><span class="empty">Simülasyon sonrasında olasılıklar listelenir.</span></div><p class="small" id="valueSummary"></p><p class="small">Adil oran = 100 / model yüzdesi; gerçek site fiyatı değildir. Gerçek oran yoksa teorik avantaj hesaplanmaz.</p></details></section><section class="card"><h2>Takımların son formu ve ölçülebilen veriler</h2><div id="teamstats" class="empty">Maç seçildiğinde son maç, skor ortalaması, şut/isabet ve korner verileri gösterilir.</div></section></div>
@@ -185,6 +185,15 @@ function computeLiveStats(id,matches,side){
  return result;
 }
 function putUnique(list,value){if(!list.includes(value))list.push(value);}
+// Invariant: external observed metrics survive each live CSV recomputation.
+function preserveAdvancedTeamMetrics(previous,recomputed){
+ const out={...recomputed},fields=['xg','xa','xga','xg_total','xa_total'];
+ for(const key of fields){
+   const v=previous?.[key];
+   if(typeof v==='number'&&Number.isFinite(v)&&v>=0)out[key]=v;
+ }
+ return out;
+}
 function hydrateMatches(finished,upcoming){
  const today=istanbulDay();
  const current=Array.isArray(data.teams)?data.teams:[];
@@ -211,7 +220,7 @@ function hydrateMatches(finished,upcoming){
     if(live.matches>=5&&prev.matches>=5){live.season_change=Object.fromEntries(['raw_gf','raw_ga','points','shots','sot','corners'].map(k=>[k,live[k]!=null&&prev[k]!=null?live[k]-prev[k]:null]));}
     else live.season_change=null;
    }
-   t.stats=live;t.rating=Math.round(ratings.get(t.id)??(prior[t.league]||1490));t.coach=oldcoach||null;
+   t.stats=preserveAdvancedTeamMetrics(t.stats,live);t.rating=Math.round(ratings.get(t.id)??(prior[t.league]||1490));t.coach=oldcoach||null;
    t.given=null;t.source='open-matchday güncel CSV; 2026/27';
   }else if(!t.stats?.matches){t.source='sadece kulüp listesi; güncel maç verisi yok';t.given=null;}
  }
@@ -780,6 +789,16 @@ async function run(){
   const corners=futsimCornerPrediction(h,a);
   if(corners.ok){r.markets['Korner 8,5 Üst']=corners.over85;r.markets['Korner 9,5 Üst']=corners.over95;r.markets['Korner 10,5 Üst']=corners.over105;}
   futsimEnhancePanel(h,a,confidence);$('confidenceBadge').className='confidence '+confidence.color;$('confidenceBadge').textContent=`Veri kapsamı: %${confidence.value} · ${confidence.color==='high'?'Yüksek':confidence.color==='mid'?'Orta':'Düşük'} (tahmin isabeti değil)`;
+  const reportAdvanced=t=>{
+   const stats=t.stats||{},xg=Number.isFinite(stats.xg)?fmt(stats.xg):null,xa=Number.isFinite(stats.xa)?fmt(stats.xa):null;
+   const provider=t.advanced_source?esc(t.advanced_source):'Doğrulanmış sağlayıcı yok';
+   const when=t.advanced_asof?' · '+esc(t.advanced_asof):'';
+   const info=xg!=null||xa!=null?'xG/maç '+(xg??'—')+' · xA/maç '+(xa??'—')+' · '+provider+when:
+      'xG ve xA: henüz doğrulanmış kaynak yok';
+   return '<div><b>'+esc(t.name)+'</b>: '+info+'</div>';
+  };
+  $('xgReadout').innerHTML='<b>Takım bazlı xG / xA veri kontrolü</b>'+reportAdvanced(h)+reportAdvanced(a)+
+    '<div style="color:#fcb969;margin-top:4px">Maç sonucu simülasyonu henüz xG/xA ile kalibre edilmedi; aşağıdaki yüzdeler skor ve takım gücü temellidir. Veri kapsam puanı, tahmin isabet oranı değildir.</div>';
   const f=getChosenFixture(h,a);$('forecastNote').textContent=(f?`${f.date} ${f.league} fikstürü eşleşti. `:'Önümüzdeki 7 günde bu eşleşme doğrulanamadı. ')+`10.000 adet iki yarılı skor simülasyonu · ${comp}.`;
   render50Market(r,getMatchOdds(h,a,f),p.quality);
   renderCouponChoice(h,a,f,r);
@@ -848,7 +867,7 @@ async function boot(){
     if(g!=null){target.stats.xg=+g.toFixed(3);target.stats.xg_total=Number.isFinite(rec.xg_season)?rec.xg_season:null;}
     if(xa!=null){target.stats.xa=+xa.toFixed(3);target.stats.xa_total=Number.isFinite(rec.xa_season)?rec.xa_season:null;}
     if(Number.isFinite(rec.xga_per_match))target.stats.xga=rec.xga_per_match;
-    if(g!=null||xa!=null){target.advanced_source=src.source||sourcePath;target.advanced_asof=src.asof;}
+    if(g!=null||xa!=null){target.advanced_source=src.source||sourcePath;target.advanced_asof=src.asof;target.advanced_source_url=src.source_url||rec.source||'';}
    }
   }catch(e){}
  }
