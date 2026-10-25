@@ -1,0 +1,9 @@
+{
+  "asof": null,
+  "source": "StrikerAPI",
+  "source_url": "https://strikerapi.com",
+  "status": "not_configured",
+  "teams": [],
+  "players": [],
+  "note": "Optional second free provider for team-level xG; separate STRIKER_KEY GitHub secret required"
+}
