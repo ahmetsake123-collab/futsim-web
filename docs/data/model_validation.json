@@ -1,5 +1,5 @@
 {
-  "run_utc": "2026-10-25T18:26:45.623612+00:00",
+  "run_utc": "2026-10-25T18:29:06.982938+00:00",
   "method": "At least 100 next-match chronological walk-forward tests; 2025/26 prehistory, 2026/27 out-of-sample. After each prediction error, adjust using past ONLY; same-day excluded.",
   "source_results": "https://github.com/openfootball (public domain)",
   "source_corners": "https://github.com/oladeeayo/open-matchday (informational non-commercial, attribution)",
@@ -27,9 +27,112 @@
   },
   "improved_over_baseline_brier": true,
   "corners": {
-    "n": 1,
-    "brier": 0.1855,
-    "warning": "Small and incomplete corner source coverage; no strong bet claims."
+    "n": 331,
+    "brier": 0.2318,
+    "baseline_brier": 0.239,
+    "mean_absolute_corner_error": 2.655,
+    "actual_over85_frequency": 0.622,
+    "predicted_over85_mean": 0.594,
+    "source_matches": 531,
+    "examples": [
+      {
+        "date": "2026-08-28",
+        "league": "Eredivisie",
+        "home": "groningen",
+        "away": "fortuna sittard",
+        "total_corners": 9,
+        "actual_over85": 1,
+        "pred_over85": 0.6174,
+        "pred_total": 9.82,
+        "brier": 0.14635,
+        "baseline_brier": 0.14619
+      },
+      {
+        "date": "2026-08-29",
+        "league": "Eredivisie",
+        "home": "az",
+        "away": "go ahead eagles",
+        "total_corners": 12,
+        "actual_over85": 1,
+        "pred_over85": 0.6565,
+        "pred_total": 10.26,
+        "brier": 0.11797,
+        "baseline_brier": 0.13796
+      },
+      {
+        "date": "2026-08-30",
+        "league": "Eredivisie",
+        "home": "feyenoord",
+        "away": "ado den haag",
+        "total_corners": 14,
+        "actual_over85": 1,
+        "pred_over85": 0.6181,
+        "pred_total": 9.83,
+        "brier": 0.14586,
+        "baseline_brier": 0.11704
+      },
+      {
+        "date": "2026-08-30",
+        "league": "Eredivisie",
+        "home": "utrecht",
+        "away": "psv",
+        "total_corners": 13,
+        "actual_over85": 1,
+        "pred_over85": 0.5992,
+        "pred_total": 9.63,
+        "brier": 0.16066,
+        "baseline_brier": 0.11704
+      },
+      {
+        "date": "2026-10-24",
+        "league": "Serie A",
+        "home": "napoli",
+        "away": "roma",
+        "total_corners": 13,
+        "actual_over85": 1,
+        "pred_over85": 0.564,
+        "pred_total": 9.28,
+        "brier": 0.19006,
+        "baseline_brier": 0.22009
+      },
+      {
+        "date": "2026-10-24",
+        "league": "Süper Lig",
+        "home": "eyupspor",
+        "away": "kasimpasa",
+        "total_corners": 11,
+        "actual_over85": 1,
+        "pred_over85": 0.6064,
+        "pred_total": 9.71,
+        "brier": 0.15491,
+        "baseline_brier": 0.1678
+      },
+      {
+        "date": "2026-10-24",
+        "league": "Süper Lig",
+        "home": "gaziantep",
+        "away": "erzurumspor",
+        "total_corners": 7,
+        "actual_over85": 0,
+        "pred_over85": 0.4855,
+        "pred_total": 8.54,
+        "brier": 0.23567,
+        "baseline_brier": 0.34853
+      },
+      {
+        "date": "2026-10-24",
+        "league": "Süper Lig",
+        "home": "samsunspor",
+        "away": "amedspor",
+        "total_corners": 10,
+        "actual_over85": 1,
+        "pred_over85": 0.5958,
+        "pred_total": 9.59,
+        "brier": 0.16341,
+        "baseline_brier": 0.1678
+      }
+    ],
+    "warning": "Noncommercial attribution dataset; corner forecasts uncertain and do not imply positive betting value."
   },
   "corner_records_matched": 162,
   "corner_coverage_status": {
