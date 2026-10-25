@@ -110,14 +110,18 @@ def run():
     errors.extend(source_errors)
     # Extend public-domain historical results with more recent fully scored
     # matches from the attributed NON-COMMERCIAL compilation; do not duplicate.
-    keys={(m['league'],m['date'],m['home'],m['away']) for m in current}
+    # Choose one current-season score provider for each league to avoid
+    # duplicated games from different club name conventions.
+    current_by_league=collections.defaultdict(list)
+    for m in current:current_by_league[m['league']].append(m)
     extra_count=0
     for lg,rows in matchday.items():
-        for m in rows:
-            if m.get('hg') is None or m.get('ag') is None or m['hg']<0 or m['ag']<0:continue
-            key=(lg,m['date'],m['home'],m['away'])
-            if key in keys:continue
-            current.append({**m,'league':lg});keys.add(key);extra_count+=1
+        scored=[{**m,'league':lg} for m in rows if m.get('hg') is not None and m.get('ag') is not None
+                and m['hg']>=0 and m['ag']>=0]
+        if len(scored)>=10:
+            current_by_league[lg]=scored
+            extra_count+=len(scored)
+    current=[m for rows in current_by_league.values() for m in rows]
     teams=[];seen=set();matches_per_league=collections.defaultdict(int)
     roster=collections.defaultdict(set)
     for m in current:
@@ -144,6 +148,9 @@ def run():
         teams.append(item);seen.add(key)
     for key,old in base.items():
         if key in seen:continue
+        # Active domestic clubs all come from this season's verified roster;
+        # obsolete/renamed catalogue entries should not appear as duplicates.
+        if old.get('league') in SOURCES and 'Şampiyonlar Ligi' not in old.get('competitions',[]):continue
         t=dict(old)
         t['stats']={'matches':0,'form':[],'score_patterns':{'n':0,'ht_n':0},'ucl_patterns':{'n':0,'ht_n':0}}
         t['given']={'played':0,'gf':0,'ga':0}
