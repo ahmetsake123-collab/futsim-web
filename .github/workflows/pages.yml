@@ -49,6 +49,7 @@ jobs:
         run: |
           python -m py_compile scripts/validate_walkforward.py scripts/update_cc0.py scripts/update_understat.py scripts/update_fpl_xg.py scripts/check_site.py
           python scripts/check_site.py
+          node scripts/test_xg_preserve.cjs
       - name: Save a verified nonempty update
         run: |
           git config user.name "FUTSIM Data Bot"
