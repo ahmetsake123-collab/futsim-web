@@ -238,6 +238,7 @@ def run():
     # openfootball's public-domain archive has not yet incorporated a match.
     lookup={(m['league'],m['date'],m['home'],m['away']) for m in fresh}
     score_added=0
+    source_league=collections.defaultdict(list)
     for league,folder in CORNER_SOURCES.items():
         try:
             rows=csv.DictReader(io.StringIO(fetch(f'{BASE}oladeeayo/open-matchday/master/data/{folder}/results_2627.csv')))
@@ -248,11 +249,16 @@ def run():
                 try: hg=int(r.get('ft_home') or '');ag=int(r.get('ft_away') or '')
                 except ValueError:continue
                 key=(league,day,home,away)
-                if not home or not away or key in lookup:continue
-                fresh.append(dict(date=day,league=league,home=home,away=away,
+                if not home or not away:continue
+                source_league[league].append(dict(date=day,league=league,home=home,away=away,
                                   home_label=r['home'],away_label=r['away'],hg=hg,ag=ag,hc=None,ac=None))
-                lookup.add(key);score_added+=1
+                score_added+=1
         except Exception as e: errors.append({'league':league,'source':'open-matchday','error':str(e)[:125]})
+    # One authoritative current-season feed per league: never double count
+    # matches caused by club naming differences between two providers.
+    fresh=[x for x in fresh if len(source_league[x['league']])<10]
+    for league,rows in source_league.items():
+        if len(rows)>=10:fresh.extend(rows)
     testing=sorted(fresh,key=lambda x:(x['date'],x['league'],x['home']))
     if len(testing)<100 or len(history)<400:
         raise RuntimeError(f'Insufficient ACTUAL historical matches. training={len(history)},test={len(testing)},errors={errors}')
