@@ -6,182 +6,222 @@
     {
       "team": "Arsenal",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 13.92,
       "xa_season": 10.72,
+      "xg_per_match": 1.989,
+      "xa_per_match": 1.531,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Aston Villa",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 9.07,
       "xa_season": 4.39,
+      "xg_per_match": 1.296,
+      "xa_per_match": 0.627,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Bournemouth",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 14.57,
       "xa_season": 7.94,
+      "xg_per_match": 2.081,
+      "xa_per_match": 1.134,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Brentford",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 13.95,
       "xa_season": 8.88,
+      "xg_per_match": 1.993,
+      "xa_per_match": 1.269,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Brighton",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 16.61,
       "xa_season": 7.94,
+      "xg_per_match": 2.373,
+      "xa_per_match": 1.134,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Chelsea",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 10.45,
       "xa_season": 6.23,
+      "xg_per_match": 1.493,
+      "xa_per_match": 0.89,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Coventry City",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 7.69,
       "xa_season": 5.1,
+      "xg_per_match": 1.099,
+      "xa_per_match": 0.729,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Crystal Palace",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 11.12,
       "xa_season": 5.76,
+      "xg_per_match": 1.589,
+      "xa_per_match": 0.823,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Everton",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 9.88,
       "xa_season": 6.28,
+      "xg_per_match": 1.411,
+      "xa_per_match": 0.897,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Fulham",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 11.57,
       "xa_season": 9.39,
+      "xg_per_match": 1.653,
+      "xa_per_match": 1.341,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Hull City",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 8.67,
       "xa_season": 4.32,
+      "xg_per_match": 1.239,
+      "xa_per_match": 0.617,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Ipswich Town",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 11.21,
       "xa_season": 5.76,
+      "xg_per_match": 1.601,
+      "xa_per_match": 0.823,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Leeds",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 10.54,
       "xa_season": 4.29,
+      "xg_per_match": 1.506,
+      "xa_per_match": 0.613,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Liverpool",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 11.83,
       "xa_season": 6.93,
+      "xg_per_match": 1.69,
+      "xa_per_match": 0.99,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Man City",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 16.93,
       "xa_season": 13.5,
+      "xg_per_match": 2.419,
+      "xa_per_match": 1.929,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Man Utd",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 13.18,
       "xa_season": 8.97,
+      "xg_per_match": 1.883,
+      "xa_per_match": 1.281,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Newcastle",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 9.13,
       "xa_season": 6.15,
+      "xg_per_match": 1.304,
+      "xa_per_match": 0.879,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Nott'm Forest",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 14.05,
       "xa_season": 8.74,
+      "xg_per_match": 2.007,
+      "xa_per_match": 1.249,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Spurs",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 8.25,
       "xa_season": 6.24,
+      "xg_per_match": 1.179,
+      "xa_per_match": 0.891,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     },
     {
       "team": "Sunderland",
       "league": "Premier League",
-      "matches": null,
+      "matches": 7,
       "xg_season": 11.54,
       "xa_season": 6.26,
+      "xg_per_match": 1.649,
+      "xa_per_match": 0.894,
       "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
-      "metric_scope": "2026/27 season totals, squad aggregate"
+      "metric_scope": "2026/27 season team sum; match rates require FPL finished fixtures"
     }
   ],
   "players": [],
