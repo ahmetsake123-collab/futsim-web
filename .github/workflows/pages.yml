@@ -32,6 +32,15 @@ jobs:
         run: python scripts/validate_walkforward.py || echo "::warning::Backtest source unavailable; earlier validation preserved"
       - name: Update CC0 public results and attributed corners
         run: python scripts/update_cc0.py || echo "::warning::Source unavailable; preserving last confirmed snapshot"
+      - name: Verify free API-Football integration without credentials
+        run: |
+          python -m py_compile scripts/update_api_football.py
+          python scripts/update_api_football.py --self-test
+      - name: Get optional free API-Football injuries and lineups
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        env:
+          APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
+        run: python scripts/update_api_football.py
       - name: Validate model, Python and published UI
         run: |
           python -m py_compile scripts/validate_walkforward.py scripts/update_cc0.py scripts/check_site.py
@@ -40,7 +49,7 @@ jobs:
         run: |
           git config user.name "FUTSIM Data Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data/snapshot.json docs/data/model_validation.json docs/data/model_params.json
+          git add docs/data/snapshot.json docs/data/model_validation.json docs/data/model_params.json docs/data/api_football.json
           if ! git diff --cached --quiet; then
             git commit -m "data: updated verified football results [skip ci]"
             git push || echo "::warning::Data commit rejected; site build still proceeds"
