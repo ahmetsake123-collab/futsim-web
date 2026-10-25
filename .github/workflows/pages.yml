@@ -1,25 +1,44 @@
-name: FUTSIM Web Deploy
+name: FUTSIM Daily Football Data & Pages
 on:
   push:
     branches: [main]
-  workflow_dispatch:
+    paths-ignore:
+      - "docs/data/snapshot.json"
   schedule:
-    - cron: '17 4 * * *'
+    - cron: "17 4 * * *"
+    - cron: "37 9 * * 1"
+  workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 concurrency:
   group: futsim-pages
   cancel-in-progress: false
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Update from public score records (keep previous on failure)
+        run: python scripts/update_open.py || echo "::warning::Source unavailable; preserving last confirmed snapshot"
+      - name: Save a verified nonempty update
+        run: |
+          git config user.name "FUTSIM Data Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/snapshot.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: updated verified football results [skip ci]"
+            git push || echo "::warning::Data commit rejected; site build still proceeds"
+          fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
