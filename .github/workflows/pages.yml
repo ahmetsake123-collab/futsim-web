@@ -28,10 +28,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Update from public score records (keep previous on failure)
-        run: python scripts/update_open.py || echo "::warning::Source unavailable; preserving last confirmed snapshot"
-      - name: Test 100 unseen chronological matches
+      - name: Test 100+ unseen chronological matches first
         run: python scripts/validate_walkforward.py || echo "::warning::Backtest source unavailable; earlier validation preserved"
+      - name: Update CC0 public results and attributed corners
+        run: python scripts/update_cc0.py || echo "::warning::Source unavailable; preserving last confirmed snapshot"
       - name: Save a verified nonempty update
         run: |
           git config user.name "FUTSIM Data Bot"
