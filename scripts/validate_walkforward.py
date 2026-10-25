@@ -23,7 +23,8 @@ CORNER_SOURCES={'Premier League':'ENG_1_premier-league','Bundesliga':'GER_1_bund
  'Eredivisie':'NED_1_eredivisie','Süper Lig':'TUR_1_super-lig'}
 MONTH={x:i for i,x in enumerate('Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(),1)}
 DATE=re.compile(r'^\s*(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+([A-Za-z]{3})\s+(\d\d?)(?:\s+(\d{4}))?\s*$')
-MATCH=re.compile(r'^\s*(?:(?:\d{1,2}:\d{2})\s+)?(.+?)\s{2,}v\s+(.+?)\s{2,}(\d+)-(\d+)(?:\s+\((\d+)-(\d+)\))?\s*
+MATCH=re.compile(r'^\s*(?:(?:\d{1,2}:\d{2})\s+)?(.+?)\s{2,}v\s+(.+?)\s{2,}(\d+)-(\d+)(?:\s+\((\d+)-(\d+)\))?\s*$')
+OLD_MATCH=re.compile(r'^\s*(?:(?:\d{1,2}:\d{2})\s+)?(.+?)\s{2,}(\d+)-(\d+)(?:\s+\(\d+-\d+\))?\s{2,}(.+?)\s*$')
 def fetch(url):
     req=urllib.request.Request(url,headers={'User-Agent':'FUTSIM-personal-research/1.0 (source cited)'})
     with urllib.request.urlopen(req,timeout=26) as r:return r.read().decode('utf-8-sig','replace')
