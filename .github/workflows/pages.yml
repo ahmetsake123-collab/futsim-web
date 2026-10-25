@@ -30,11 +30,13 @@ jobs:
           python-version: "3.12"
       - name: Update from public score records (keep previous on failure)
         run: python scripts/update_open.py || echo "::warning::Source unavailable; preserving last confirmed snapshot"
+      - name: Test 100 unseen chronological matches
+        run: python scripts/validate_walkforward.py || echo "::warning::Backtest source unavailable; earlier validation preserved"
       - name: Save a verified nonempty update
         run: |
           git config user.name "FUTSIM Data Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data/snapshot.json
+          git add docs/data/snapshot.json docs/data/model_validation.json docs/data/model_params.json
           if ! git diff --cached --quiet; then
             git commit -m "data: updated verified football results [skip ci]"
             git push || echo "::warning::Data commit rejected; site build still proceeds"
