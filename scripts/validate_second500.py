@@ -56,13 +56,28 @@ def run():
         if a:perleague[lg]=metrics(a)
     misses=[x for x in ledger if x['guess']!=x['truth']]
     counts=dict(collections.Counter(x['type'] for x in ledger))
+    # Classifier error versus probabilistic calibration are DIFFERENT.
+    # A 25% draw frequency does not imply draw probabilities were underforecast
+    # unless the aggregate predicted probability is below the observed rate.
+    calibration={
+        lab:{'predicted_average':round(sum(row['probs'][idx] for row in ledger)/len(ledger),4),
+             'observed_rate':round(sum(row['truth']==idx for row in ledger)/len(ledger),4)}
+        for idx,lab in enumerate(('home','draw','away'))
+    }
+    by_sample={
+        'fewer_than_5':metrics([x for x in ledger if x['min_sample']<5]),
+        '5_to_9':metrics([x for x in ledger if 5<=x['min_sample']<10]),
+        '10_or_more':metrics([x for x in ledger if x['min_sample']>=10])}
+    biggest_favorites=[x for x in misses if x['confidence']>=.60]
     poor=sorted(misses,key=lambda x:x['brier'],reverse=True)[:12]
     overconf=[x for x in ledger if x['confidence']>=.55]
     report={'period_train':'2024/25','period_test':'2025/26','run_utc':dt.datetime.now(dt.timezone.utc).isoformat(),
         'disjoint_from_original_2026_27':True,'n':len(ledger),
         'training_available':len(previous),'holdout_available':len(holdout),
         'metrics':metrics(ledger),'baseline':metrics(baseline),
-        'per_league':perleague,'mistake_types':counts,
+        'per_league':perleague,'calibration_by_outcome':calibration,
+        'performance_by_minimum_sample':by_sample,
+        'big_favorite_wrong_count':len(biggest_favorites),'mistake_types':counts,
         'wrong':len(misses),'highest_errors':poor,
         'overconfidence':{'n':len(overconf),'correct':sum(x['guess']==x['truth'] for x in overconf),
           'mean_confidence':round(statistics.mean(x['confidence'] for x in overconf),4) if overconf else None,
