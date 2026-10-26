@@ -559,10 +559,66 @@ function mediumRiskTip(r,raw){
  });
  return rows[0]||null;
 }
+function futsimModelLean(h,a,r,p,f){
+ const sample=Math.min(Number(h.stats?.matches)||0,Number(a.stats?.matches)||0);
+ const pickKeys=['1X','X2','2,5 Üst','2,5 Alt','KG Var','3,5 Alt','Korner 8,5 Üst','1','2','Ev gol','Dep gol'];
+ const ranked=pickKeys.map(k=>({k,p:Number(r.markets[k])}))
+  .filter(x=>Number.isFinite(x.p)&&x.p>=57&&x.p<=84)
+  .sort((x,y)=>{
+    const score=t=>Math.abs(t.p-72)+(t.k.startsWith('Korner')?4:0)+(t.k==='1X'||t.k==='X2'?1.2:0);
+    return score(x)-score(y);
+  });
+ const pick=ranked[0]||null;
+ const why=[];
+ const fmtGoal=n=>Number.isFinite(n)?fmt(n):null;
+ if(Number.isFinite(h.stats?.gf)&&Number.isFinite(a.stats?.ga))
+  why.push(esc(h.name)+' maç başına '+fmtGoal(h.stats.gf)+' gol atıyor; '+esc(a.name)+' '+fmtGoal(a.stats.ga)+' gol yiyor');
+ if(Number.isFinite(a.stats?.gf)&&Number.isFinite(h.stats?.ga))
+  why.push(esc(a.name)+' maç başına '+fmtGoal(a.stats.gf)+' gol atıyor; '+esc(h.name)+' '+fmtGoal(h.stats.ga)+' gol yiyor');
+ const form=t=>t.weekly_stats?.form_last5;
+ if(form(h)&&form(a)){
+  const wins=t=>t.weekly_stats?.last5_wins;
+  why.push('Son 5 maç galibiyeti: '+esc(h.name)+' '+wins(h)+'/5, '+esc(a.name)+' '+wins(a)+'/5');
+ }
+ const hx=h.stats?.xg,ax=a.stats?.xg;
+ if(Number.isFinite(hx)&&Number.isFinite(ax))
+  why.push('Ölçülmüş xG/maç: '+esc(h.name)+' '+fmt(hx)+' · '+esc(a.name)+' '+fmt(ax));
+ else if(Number.isFinite(hx)||Number.isFinite(ax))
+  why.push('Ölçülmüş xG yalnızca '+esc(Number.isFinite(hx)?h.name:a.name)+' için mevcut; diğer takımın xG değerini uydurmuyoruz');
+ if(pick?.k.startsWith('Korner')&&Number.isFinite(h.stats?.corners)&&Number.isFinite(a.stats?.corners))
+  why.push('Korner ortalaması '+esc(h.name)+' '+fmt(h.stats.corners)+', '+esc(a.name)+' '+fmt(a.stats.corners));
+ const sourceStamp=data.weekly_meta?.week_start_utc||data.asof||'tarih yok';
+ why.push('Kaydedilmiş takım verileri: '+esc(sourceStamp)+' · en az '+sample+' lig maçı');
+ return {pick,reasons:why.slice(0,4)};
+}
 function renderCouponChoice(h,a,f,r){
- const odds=getMatchOdds(h,a,f);const candidate=mediumRiskTip(r,odds);
+ const odds=getMatchOdds(h,a,f),candidate=mediumRiskTip(r,odds);
  const trust=confidenceOf(h,a,goalRates(h,a,$('competition').value));
- $('autoPick').innerHTML=trust.value<45?'<span class="small">Veri güveni düşük: FUTSIM bu maç için bahis tercihi önermiyor. İstersen yalnızca olasılıkları inceleyebilirsin.</span>':candidate?`<b>FUTSIM olsa: ${esc(marketLabel(candidate.k))}</b><div class="small">${esc(h.name)} – ${esc(a.name)} · Model ${pc(candidate.p)} · ${candidate.odd?'Kaynaklı fiyat '+fmt(candidate.odd):'Gerçek oran bulunamadı; model olasılığına göre öneri'} · Orta risk hedefi (garanti değil)</div>`:'<span class="small">Doğrulanmış oranla ve belirsizlik tamponuyla pozitif beklenen değer gösterilemedi. Bu maç için otomatik kupon önerilmiyor.</span>';
+ const p=goalRates(h,a,$('competition').value);
+ const context=futsimModelLean(h,a,r,p,f),lean=context.pick;
+ const prices=Boolean(odds&&selectedCouponOdds(odds,candidate?.k));
+ const genuineFixture=Boolean(f?.date);
+ let label='',caption='',reason='',fallback=false;
+ if(!lean || trust.value<44 || Math.min(h.stats?.matches||0,a.stats?.matches||0)<3){
+  label='Yeterli veri yok · bahis tercihi önerilmiyor';
+  caption='Eksik maç verilerinde güvenilir bahis avantajı hesaplanmaz.';
+ }else if(!genuineFixture){
+  label='Model eğilimi: '+marketLabel(lean.k)+' · '+pc(lean.p);
+  caption='Bu iki takımın önümüzdeki 7 günde gerçek karşılaşması doğrulanmadı. Sadece örnek simülasyon; bahis önerisi değil.';
+  fallback=true;
+ }else{
+  const chosen=candidate||lean;
+  label='Model tercihi: '+marketLabel(chosen.k)+' · '+pc(chosen.p);
+  caption=candidate&&prices?'Kayıtlı oran '+fmt(candidate.odd)+' · tarihi ve piyasası doğrulanmadıkça kâr avantajı sayılmaz.':
+   'Güncel doğrulanmış bahis oranı yok. Olasılığa dayalı tercih; kârlılık/pozitif değer iddiası yok.';
+  fallback=true;
+ }
+ reason=context.reasons.length?'Neden? '+context.reasons.join(' · '):'Yalnızca sınırlı istatistik var.';
+ const box=$('betSummary');
+ if(box)box.innerHTML='<div class="bet-eyebrow">'+(genuineFixture?'FUTSIM BAHİS ANALİZİ':'FUTSIM ÖRNEK ANALİZ')+'</div>'+
+  '<div class="bet-name">'+esc(label)+'</div><div class="bet-explain">'+reason+'</div>'+
+  '<div class="bet-meta">'+esc(caption)+' · Veri kapsamı '+fmt(trust.value)+'/100</div>';
+ $('autoPick').innerHTML='<b>'+esc(label)+'</b><p class="small" style="margin:5px 0">'+reason+'</p><p class="small">'+esc(caption)+'</p>';
  const select=$('couponMarket'),old=select.value;
  select.innerHTML=couponKeys.filter(k=>r.markets[k]!=null).map(k=>`<option value="${esc(k)}">${esc(marketLabel(k))} · ${pc(r.markets[k])}${selectedCouponOdds(odds,k)?' · '+fmt(selectedCouponOdds(odds,k)):''}</option>`).join('');
  select.value=couponKeys.includes(old)?old:(candidate?.k||'1');if(!select.value&&candidate)select.value=candidate.k;
