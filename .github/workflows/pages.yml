@@ -46,6 +46,8 @@ jobs:
         run: python scripts/update_understat.py
       - name: Test free Premier League FPL xG and xA player feed
         run: python scripts/update_fpl_xg.py
+      - name: Probe official public xG table access policy once
+        run: python scripts/probe_public_xg.py
       - name: Materialize all-team Monday offline statistics
         run: python scripts/build_weekly.py
       - name: Validate model, Python and published UI
