@@ -20,6 +20,6 @@ const r={markets:{'1X':70,'X2':71,'2,5 Üst':73,'3,5 Alt':58,'Korner 8,5 Üst':n
 const item=fn(h,a,r,{},null);
 assert.equal(item.pick.k,'2,5 Üst');
 assert(item.reasons.some(v=>v.includes('3/5')&&v.includes('4/5')),'Last-5 form missing from rationale');
-assert(item.reasons.some(v=>v.includes('1.3')&&v.includes('Galatasaray')),'Goals missing from rationale');
+assert(item.reasons.some(v=>v.includes('Aston Villa')&&v.includes('Galatasaray')&&v.includes('1.1')),'Goals missing from rationale');
 assert(item.reasons.some(v=>v.includes('yalnızca Aston Villa')),'Missing-side xG must not be fabricated');
 console.log('FUTSIM compact UX + model rationale regression: OK');
