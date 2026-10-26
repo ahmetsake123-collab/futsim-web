@@ -31,7 +31,7 @@ def main():
     snap=load('snapshot.json')
     if not snap.get('teams'):raise RuntimeError('Current published club snapshot missing')
     published=[]
-    for srcfile in ('striker_xg.json','xg_source.json','fpl_xg.json'):
+    for srcfile in ('hf_xg.json','striker_xg.json','xg_source.json','fpl_xg.json'):
         src=load(srcfile)
         if not src.get('teams') or src.get('status') not in ('verified',None) or src.get('verified') is False:continue
         try:
@@ -95,7 +95,7 @@ def main():
              'teams':result,'coverage':{'clubs':len(result),'published_team_xg':real_xg,'published_team_xa':real_xa,
               'shot_volume_proxies_not_xg':proxy},
              'sources':['docs/data/snapshot.json','docs/data/fpl_xg.json',
-                       'docs/data/striker_xg.json','docs/data/xg_source.json'],
+                       'docs/data/striker_xg.json','docs/data/xg_source.json','docs/data/hf_xg.json'],
              'limitations':['Published xG / xA only where verified source permits', 'Shot proxy is not actual xG',
                'Sample size for home-form may be fewer than five games early in season',
                'The weekly archive is stale until next automated Monday run']}
