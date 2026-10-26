@@ -19,7 +19,9 @@ def norm(v):
     'brighton':'brighton hove albion','nott m forest':'nottingham forest',
     'bayern munchen':'bayern munich','psv':'psv eindhoven','psg':'paris saint germain',
     'inter milan':'inter','internazionale':'inter','man city':'manchester city',
-    'man utd':'manchester united','besiktas':'besiktas','galatasaray':'galatasaray'}
+    'man utd':'manchester united','besiktas':'besiktas','galatasaray':'galatasaray',
+    'newcastle':'newcastle united','leeds':'leeds united','coventry':'coventry city',
+    'ipswich':'ipswich town','brighton':'brighton hove albion'}
     return aliases.get(v,v)
 def n(v):
     try:
