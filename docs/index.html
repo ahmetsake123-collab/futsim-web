@@ -31,6 +31,12 @@
  
 /* Focus view: a clear match result, meaningful reasons, optional deep dive. */
 body:not(.show-extras) .extra-panel{display:none !important}
+body:not(.show-extras) #liveFeedStatus{display:none !important}
+body:not(.show-extras) .hero,body:not(.show-extras) .two:has(> .extra-panel){grid-template-columns:minmax(0,1fr)}
+body:not(.show-extras) .two:has(> .extra-panel)>.card:not(.extra-panel){width:100%}
+.controls label, .controls select{font-size:14px}
+.status,.lead{font-size:14px}
+
 .bet-focus{margin:14px 0;padding:15px 16px;border:1px solid #357765;border-radius:13px;background:linear-gradient(110deg,rgba(34,96,78,.27),rgba(20,45,58,.7));line-height:1.55}
 .bet-eyebrow{letter-spacing:.13em;color:#70e2ba;font-size:11px;font-weight:800;margin-bottom:5px}
 .bet-name{font-size:20px;font-weight:850;line-height:1.25}
