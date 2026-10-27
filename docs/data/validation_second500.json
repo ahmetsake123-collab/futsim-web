@@ -1,7 +1,7 @@
 {
   "period_train": "2024/25",
   "period_test": "2025/26",
-  "run_utc": "2026-10-27T20:37:33.842445+00:00",
+  "run_utc": "2026-10-27T21:17:25.023402+00:00",
   "disjoint_from_original_2026_27": true,
   "n": 500,
   "training_available": 2246,
