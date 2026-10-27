@@ -41,21 +41,45 @@ function opening(a){
  return a.date&&a.date===today?'Bugün '+a.home+' ve '+a.away+' karşı karşıya.':a.home+' ve '+a.away+' karşı karşıya.';
 }
 function spokenScore(s){return String(s||'').replace('-', ' - ');}
+
+function bestMarket(a){
+ // Only markets actually computed from the 100,000 simulated full-time scores.
+ // Do not mix in separate, non-simulated corner projections or unsourced bookmaker odds.
+ var names={
+  '1':'Ev sahibi galibiyeti','X':'Beraberlik','2':'Deplasman galibiyeti',
+  '1X':'Ev sahibi veya beraberlik','X2':'Beraberlik veya deplasman',
+  '1,5 Üst':'1,5 gol üstü','2,5 Üst':'2,5 gol üstü','2,5 Alt':'2,5 gol altı',
+  '3,5 Alt':'3,5 gol altı','4,5 Alt':'4,5 gol altı',
+  'KG Var':'Karşılıklı gol var','Ev gol':'Ev sahibi gol atar','Dep gol':'Deplasman gol atar'
+ };
+ var spoken={
+  '1':'ev sahibi kazanır','X':'beraberlik','2':'deplasman kazanır',
+  '1X':'ev sahibi yenilmez','X2':'deplasman yenilmez',
+  '1,5 Üst':'bir buçuk gol üstü','2,5 Üst':'iki buçuk gol üstü','2,5 Alt':'iki buçuk gol altı',
+  '3,5 Alt':'üç buçuk gol altı','4,5 Alt':'dört buçuk gol altı',
+  'KG Var':'karşılıklı gol var','Ev gol':'ev sahibi gol atar','Dep gol':'deplasman gol atar'
+ };
+ var m=a.r.markets||{},arr=Object.keys(names).map(function(key){return {key:key,label:names[key],spoken:spoken[key],p:Number(m[key])};})
+  .filter(function(x){return Number.isFinite(m[x.key])&&x.p>=0&&x.p<=100;});
+ arr.sort(function(x,y){return y.p-x.p;});
+ return arr[0]||null;
+}
+
 function speech(a){
- var m=a.r.markets,top=a.r.allScores.slice(0,6),close=matchup(a);
- var others=top.filter(function(x){return x.score!==a.chosen.modal.score;});
- var first=others[0],second=others[1],half=(a.r.halves||[])[0];
- return opening(a)+'\n\n'+
-  'FUTSIM bu maç için yüz bin simülasyon çalıştırdı. '+a.home+' galibiyeti yüzde '+Math.round(m['1'])+
-  ', beraberlik yüzde '+Math.round(m.X)+', '+a.away+' galibiyeti yüzde '+Math.round(m['2'])+'. '+
-  close.spoken+'\n\nEn sık görülen skor '+spokenScore(a.chosen.modal.score)+', ihtimali yüzde '+Math.round(a.chosen.modal.p)+
-  '. Diğer olası skorlar '+spokenScore(first?.score||a.chosen.modal.score)+' yüzde '+Math.round(first?.p||0)+
-  ', ve '+spokenScore(second?.score||a.chosen.modal.score)+' yüzde '+Math.round(second?.p||0)+'. '+
-  'Yapay zekânın tercih ettiği skor '+spokenScore(a.chosen.representative.score)+'.\n\n'+
+ var m=a.r.markets,close=matchup(a),bet=bestMarket(a);
+ var alternatives=a.r.allScores.filter(function(x){return x.score!==a.chosen.modal.score;}).slice(0,2);
+ var alt=alternatives.map(function(x){return spokenScore(x.score)+' yüzde '+Math.round(x.p);}).join(', ');
+ var favorit=close.favori?close.favori+' favori.':close.spoken;
+ return opening(a)+'\n'+
+  'FUTSIM bu maçı yüz bin kez simüle etti. '+
+  a.home+' yüzde '+Math.round(m['1'])+', beraberlik yüzde '+Math.round(m.X)+
+  ', '+a.away+' yüzde '+Math.round(m['2'])+'. '+favorit+'\n'+
+  'En sık skor '+spokenScore(a.chosen.modal.score)+', yüzde '+Math.round(a.chosen.modal.p)+
+  '. Alternatifler '+alt+'. Yapay zekânın tercih ettiği skor '+spokenScore(a.chosen.representative.score)+'.\n'+
   'İki buçuk gol üstü yüzde '+Math.round(m['2,5 Üst'])+', altı yüzde '+Math.round(m['2,5 Alt'])+
-  '. Karşılıklı gol ihtimali yüzde '+Math.round(m['KG Var'])+'. '+
-  (half?'En sık ilk yarı skoru '+spokenScore(half.score)+'. ':'')+
-  '\nFUTSIM. Her maçın bir olasılığı var.';
+  '. Karşılıklı gol yüzde '+Math.round(m['KG Var'])+'.\n'+
+  (bet?'Modelin en yüksek olasılıklı bahis seçeneği: '+bet.spoken+', yüzde '+Math.round(bet.p)+'. Garanti değil, model tahmini.\n':'Bu maç için güvenilir bir bahis seçeneği belirlenemedi.\n')+
+  'FUTSIM. Her maçın bir olasılığı var.';
 }
 function details(a){
  var m=a.r.markets;
@@ -65,6 +89,7 @@ function details(a){
  ' · Yapay zekânın tercih ettiği skor: '+escapeHTML(a.chosen.representative.score)+
  '<br>En olası 6 skor: '+a.r.allScores.slice(0,6).map(function(x){return escapeHTML(x.score)+' ('+percent(x.p)+')';}).join(' · ')+
  '<br>'+escapeHTML(matchup(a).spoken)+
+ '<br>En yüksek olasılıklı bahis seçeneği: '+(bestMarket(a)?escapeHTML(bestMarket(a).label)+' ('+percent(bestMarket(a).p)+')':'Veri yetersiz')+
  '<br>2,5 Alt: '+percent(m['2,5 Alt'])+' · Üst: '+percent(m['2,5 Üst'])+' · KG Var: '+percent(m['KG Var'])+
  (!a.date?'<br><small>Bu eşleşmenin önümüzdeki 7 günlük fikstürdeki tarihi doğrulanmadı; özel karşılaştırma.</small>':'');
  el('studioScript').value=speech(a);el('studioTextControls').hidden=false;
@@ -74,7 +99,7 @@ function details(a){
   var result={home:a.home,away:a.away,competition:a.competition,fixture_date:a.date,asof:a.asof,
    generated_at:a.created,engine:'FUTSIM two-half Monte Carlo',simulations:100000,
    model_goal_parameters:{home:a.p.lh,away:a.p.la},markets:m,matchup_classification:matchup(a).headline,
-   modal_score:a.chosen.modal,representative_score:a.chosen.representative,
+   modal_score:a.chosen.modal,representative_score:a.chosen.representative,highest_probability_betting_market:bestMarket(a),
    most_frequent_scores:a.r.scores,all_scores:a.r.allScores,
    narration:el('studioScript').value};
   save(new Blob([JSON.stringify(result,null,2)],{type:'application/json'}),'FUTSIM_'+clean(a.home)+'_'+clean(a.away)+'_analiz.json');
@@ -120,7 +145,7 @@ function frame(g,a,t,W,H){
   label(g,percent(value),x+w-28,y+37,32,col,'right',850);
   bar(x+28,y+81,w-56,11,value,col,stagger);
  }
- part(0,4,function(f,u){
+ part(0,2,function(f,u){
   label(g,'MAÇ GÜNÜ',540,354,40,'#6ff0c8');
   label(g,a.home.toUpperCase(),540,633,Math.min(92,1160/Math.max(12,a.home.length)),'#f4ffff');
   label(g,'V S',540,798,52,'#8cacba');
@@ -128,7 +153,7 @@ function frame(g,a,t,W,H){
   ring(g,540,798,341+8*Math.sin(u),.15,6.1,'rgba(88,230,205,.3)',4);
   label(g,'100.000 SİMÜLASYON / GERÇEK FUTSIM MOTORU',540,1255,29,'#78d5bd');
  });
- part(4,10,function(f,u){
+ part(2,6,function(f,u){
   label(g,'100.000 MAÇ SENARYOSU',540,345,46,'#a5c9d0');
   label(g,Math.round(100000*ease(f)).toLocaleString('tr-TR'),540,584,137,'#58efc7');
   label(g,'İKİ DEVRELİ MONTE CARLO',540,704,33,'#e0f6f1');
@@ -140,7 +165,7 @@ function frame(g,a,t,W,H){
   bar(131,1448,820,20,100,'#64ffcf',f);
   label(g,'100.000 OLASI KARŞILAŞMA ÜRETİLDİ',540,1542,27,'#a1d6d5');
  });
- part(10,17,function(f,u){
+ part(6,13,function(f,u){
   label(g,'MAÇ SONUCU OLASILIKLARI',540,329,42,'#6cf4cf');
   [{key:'1',name:a.home,val:z['1'],color:'#56edbf'},
    {key:'X',name:'BERABERLİK',val:z.X,color:'#c1d3df'},
@@ -154,7 +179,7 @@ function frame(g,a,t,W,H){
   rect(g,95,1404,890,114,25,'#14343f','#3e666c');
   label(g,judgement.headline,540,1461,Math.min(36,870/Math.max(14,judgement.headline.length)),'#a1efd9');
  });
- part(17,27,function(f,u){
+ part(13,23,function(f,u){
   label(g,'EN OLASI SKORLAR',540,300,51,'#62f8ca');
   label(g,'EN SIK GÖRÜLEN SONUÇ',540,413,28,'#a6bfca');
   label(g,ch.modal.score.replace('-', ' : '),540,575,127,'#f5ffff');
@@ -170,7 +195,7 @@ function frame(g,a,t,W,H){
    g.restore();
   });
  });
- part(27,33,function(f,u){
+ part(23,29,function(f,u){
   label(g,'YAPAY ZEKÂNIN TERCİH ETTİĞİ SKOR',540,409,37,'#91c1d3');
   rect(g,106,617,868,505,38,'#142c41','#416c7c');
   label(g,ch.representative.score.replace('-', ' : '),540,860,145,'#bdc0ff');
@@ -178,7 +203,7 @@ function frame(g,a,t,W,H){
   label(g,judgement.headline,540,1354,35,'#79eecb');
   label(g,'MODELİN EN GÜÇLÜ SONUÇ GRUBUNDAN',540,1464,27,'#9dbcc9');
  });
- part(33,40,function(f,u){
+ part(29,35,function(f,u){
   label(g,'GOL DAĞILIMI',540,348,46,'#62f2c9');
   label(g,'2,5 ALT / ÜST',540,458,69,'#ffffff');
   var under=z['2,5 Alt'],over=z['2,5 Üst'],start=-Math.PI/2;
@@ -189,7 +214,7 @@ function frame(g,a,t,W,H){
   label(g,'ALT '+percent(under),272,1488,47,'#63f6c8');
   label(g,'ÜST '+percent(over),810,1488,47,'#aab6ff');
  });
- part(40,45,function(f,u){
+ part(35,40,function(f,u){
   var half=(a.r.halves||[])[0];
   label(g,'EK SENARYOLAR',540,346,48,'#6eefd1');
   rect(g,97,536,886,348,32,'#123240','#396274');
@@ -200,7 +225,22 @@ function frame(g,a,t,W,H){
   label(g,half?half.score.replace('-', ' : '):'—',540,1197,107,'#b7c0ff');
   if(half)label(g,percent(half.p)+' OLASILIK',540,1404,37,'#a9b5fc');
  });
- part(45,49,function(f,u){
+ part(40,46,function(f,u){
+  var best=bestMarket(a);
+  label(g,'FUTSIM MODEL TERCİHİ',540,375,45,'#64efd0');
+  rect(g,96,520,888,866,38,'#112f38','#3a7773');
+  label(g,'EN YÜKSEK OLASILIKLI BAHİS SEÇENEĞİ',540,632,30,'#a9c9d2');
+  if(best){
+   var title=best.label.toUpperCase(),size=Math.min(69,770/Math.max(10,title.length));
+   label(g,title,540,824,size,'#f5ffff');
+   label(g,percent(best.p),540,1033,145,'#64f8c9');
+   bar(179,1170,722,21,best.p,'#62edca',u/2.5);
+  }else{
+   label(g,'YETERLİ VERİ YOK',540,940,54,'#e6c1a8');
+  }
+  label(g,'YÜKSEK İHTİMAL  ≠  GARANTİLİ KAZANÇ',540,1440,27,'#a6bfca');
+ });
+ part(46,49,function(f,u){
   label(g,'FUTSIM',540,767,145,'#f5ffff');
   g.fillStyle='#55dbc2';g.fillRect(216,903,648,4);
   label(g,'HER MAÇIN BİR OLASILIĞI VAR',540,1032,38,'#a5f1df');
