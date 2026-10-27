@@ -167,6 +167,14 @@ function syncData(){
   duration:totalDuration(),source:'Approximate pause detection, manual timestamps allowed',
   scenes:sceneData.map((s,i)=>({id:s.id,title:s.label,start:timing[i],end:i+1<timing.length?timing[i+1]:totalDuration(),narration:s.text}))};
 }
+async function prepare(external){
+ api=external;
+ try{
+  st('FUTSIM 100.000 simülasyon hesaplıyor...');
+  await new Promise(resolve=>setTimeout(resolve,30));
+  const a=api.analyze();api.details(a);setup(a,api);
+ }catch(e){st('Analiz hazırlanamadı: '+e.message);}
+}
 async function create(external,forceSynced){
  if(rendering)return;
  api=external;
@@ -242,6 +250,6 @@ function init(){
   a.href=URL.createObjectURL(blob);a.download='FUTSIM_sahne_zamanlari.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),60000);
  });
 }
-window.FUTSIM_STUDIO_SYNC={init,setup,create,syncData,speechText,bestScene:()=>sceneData};
+window.FUTSIM_STUDIO_SYNC={init,setup,prepare,create,syncData,speechText,bestScene:()=>sceneData};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
