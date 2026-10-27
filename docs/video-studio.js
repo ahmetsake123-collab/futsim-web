@@ -1,7 +1,7 @@
 /* FUTSIM Video Studio | Rendered in the browser. No server or paid service. */
 (function(){
 'use strict';
-var duration=40, lastUrl=null, working=false;
+var duration=49, lastUrl=null, working=false;
 var el=function(id){return document.getElementById(id);};
 var limit=function(x){return Math.max(0,Math.min(1,x));};
 var ease=function(x){x=limit(x);return x*x*(3-2*x);};
@@ -28,24 +28,41 @@ function analyze(){
  return {home:h.name,away:a.name,competition:c,date:(getChosenFixture(h,a)||{}).date||null,asof:data.asof,
   created:new Date().toISOString(),p:p,r:r,chosen:resultAlignedScore(r),sample:100000,coverage:Math.min(h.stats?.matches||0,a.stats?.matches||0)};
 }
+
+function matchup(a){
+ var m=a.r.markets,home=m['1'],away=m['2'],d=Math.abs(home-away);
+ if(d>=8&&Math.max(home,away)>=40)return {favori:home>away?a.home:a.away,headline:(home>away?a.home:a.away)+' FAVORİ',spoken:'Bu maçın favorisi '+(home>away?a.home:a.away)+'.'};
+ return {favori:null,headline:'DENGELİ MAÇ · NET FAVORİ YOK',spoken:'İki takımın galibiyet ihtimali birbirine yakın. Bu maçta net bir favori yok.'};
+}
+function opening(a){
+ var today=typeof istanbulDay==='function'?istanbulDay():null;
+ return a.date&&a.date===today?'Bugün '+a.home+' ve '+a.away+' karşı karşıya.':a.home+' ve '+a.away+' karşı karşıya.';
+}
+function spokenScore(s){return String(s||'').replace('-', ' - ');}
 function speech(a){
- var m=a.r.markets,modal=a.chosen.modal.score.replace('-',' - '),rep=a.chosen.representative.score.replace('-',' - ');
- var fav=a.chosen.favorite==='1'?a.home:a.chosen.favorite==='2'?a.away:'beraberlik';
- var tight=Math.abs(m['1']-m['2'])<3?'İki takımın kazanma ihtimali birbirine çok yakın. ':'';
- return 'FUTSIM analizine hoş geldiniz. '+a.home+' ve '+a.away+' karşı karşıya.\n\n'+
-  'Bu maçı FUTSIM motorunda tam yüz bin kez simüle ettik. '+a.home+' için yüzde '+Math.round(m['1'])+
-  ', beraberlik için yüzde '+Math.round(m.X)+', '+a.away+' için yüzde '+Math.round(m['2'])+' ihtimal oluştu. '+tight+
-  '\nEn sık skor '+modal+'. Ancak modelin öne çıkardığı sonuç '+fav+'; bu sonuç grubunun temsilî skoru '+rep+
-  '.\nİki buçuk gol üstü yüzde '+Math.round(m['2,5 Üst'])+', altı yüzde '+Math.round(m['2,5 Alt'])+
-  '. Karşılıklı gol olasılığı yüzde '+Math.round(m['KG Var'])+
-  '.\n\nBu sayılar kesin sonuç değil, olasılıktır. FUTSIM. Her maçın bir olasılığı var.';
+ var m=a.r.markets,top=a.r.allScores.slice(0,6),close=matchup(a);
+ var others=top.filter(function(x){return x.score!==a.chosen.modal.score;});
+ var first=others[0],second=others[1],half=(a.r.halves||[])[0];
+ return opening(a)+'\n\n'+
+  'FUTSIM bu maç için yüz bin simülasyon çalıştırdı. '+a.home+' galibiyeti yüzde '+Math.round(m['1'])+
+  ', beraberlik yüzde '+Math.round(m.X)+', '+a.away+' galibiyeti yüzde '+Math.round(m['2'])+'. '+
+  close.spoken+'\n\nEn sık görülen skor '+spokenScore(a.chosen.modal.score)+', ihtimali yüzde '+Math.round(a.chosen.modal.p)+
+  '. Diğer olası skorlar '+spokenScore(first?.score||a.chosen.modal.score)+' yüzde '+Math.round(first?.p||0)+
+  ', ve '+spokenScore(second?.score||a.chosen.modal.score)+' yüzde '+Math.round(second?.p||0)+'. '+
+  'Yapay zekânın tercih ettiği skor '+spokenScore(a.chosen.representative.score)+'.\n\n'+
+  'İki buçuk gol üstü yüzde '+Math.round(m['2,5 Üst'])+', altı yüzde '+Math.round(m['2,5 Alt'])+
+  '. Karşılıklı gol ihtimali yüzde '+Math.round(m['KG Var'])+'. '+
+  (half?'En sık ilk yarı skoru '+spokenScore(half.score)+'. ':'')+
+  '\nFUTSIM. Her maçın bir olasılığı var.';
 }
 function details(a){
  var m=a.r.markets;
  el('studioDigest').innerHTML='<b>'+escapeHTML(a.home)+' – '+escapeHTML(a.away)+'</b><br>'+
  '100.000 simülasyon · 1: '+percent(m['1'])+' · X: '+percent(m.X)+' · 2: '+percent(m['2'])+
  '<br>En sık skor: '+escapeHTML(a.chosen.modal.score)+' ('+percent(a.chosen.modal.p)+')'+
- ' · Temsilî skor: '+escapeHTML(a.chosen.representative.score)+
+ ' · Yapay zekânın tercih ettiği skor: '+escapeHTML(a.chosen.representative.score)+
+ '<br>En olası 6 skor: '+a.r.allScores.slice(0,6).map(function(x){return escapeHTML(x.score)+' ('+percent(x.p)+')';}).join(' · ')+
+ '<br>'+escapeHTML(matchup(a).spoken)+
  '<br>2,5 Alt: '+percent(m['2,5 Alt'])+' · Üst: '+percent(m['2,5 Üst'])+' · KG Var: '+percent(m['KG Var'])+
  (!a.date?'<br><small>Bu eşleşmenin önümüzdeki 7 günlük fikstürdeki tarihi doğrulanmadı; özel karşılaştırma.</small>':'');
  el('studioScript').value=speech(a);el('studioTextControls').hidden=false;
@@ -54,7 +71,7 @@ function details(a){
  el('studioSaveData').onclick=function(){
   var result={home:a.home,away:a.away,competition:a.competition,fixture_date:a.date,asof:a.asof,
    generated_at:a.created,engine:'FUTSIM two-half Monte Carlo',simulations:100000,
-   model_goal_parameters:{home:a.p.lh,away:a.p.la},markets:m,
+   model_goal_parameters:{home:a.p.lh,away:a.p.la},markets:m,matchup_classification:matchup(a).headline,
    modal_score:a.chosen.modal,representative_score:a.chosen.representative,
    most_frequent_scores:a.r.scores,all_scores:a.r.allScores,
    narration:el('studioScript').value};
@@ -80,74 +97,118 @@ function background(g,t){
  for(var j=1080;j<1940;j+=80){g.beginPath();g.moveTo(0,j);g.lineTo(1080,j);g.stroke();}
  for(var k=0;k<38;k++){var x=(k*227.7)%1000+40,y=(k*433.5)%1680+40;g.fillStyle='rgba(112,250,215,'+(.12+.10*Math.sin(t*.7+k))+')';g.beginPath();g.arc(x,y,2,0,7);g.fill();}
 }
+
 function frame(g,a,t,W,H){
- g.setTransform(W/1080,0,0,H/1920,0,0);background(g,t);
- var z=a.r.markets,ch=a.chosen;
- function part(start,end,draw){var alpha=ease((t-start)/.75)*ease((end-t)/.75);if(alpha<=0)return;g.save();g.globalAlpha=alpha;draw(ease((t-start)/(end-start)),t-start);g.restore();}
- part(0,5,function(f,u){
-   label(g,'MATCH INTELLIGENCE',540,365,39,'#67e6ca');
-   label(g,a.home.toLocaleUpperCase('tr-TR'),540,630,Math.min(94,1150/Math.max(12,a.home.length)),'#f4ffff');
-   label(g,'V S',540,790,48,'#91b2c1');
-   label(g,a.away.toLocaleUpperCase('tr-TR'),540,960,Math.min(94,1150/Math.max(12,a.away.length)),'#f4ffff');
-   rect(g,205,1155,670,117,34,'#123a40','#376b66');label(g,'FUTSIM VIDEO STÜDYOSU',540,1214,34,'#72f5d6');
-   ring(g,540,790,335+8*Math.sin(u),.2,6.05,'rgba(88,230,205,.3)',4);
+ g.setTransform(W/1080,0,0,H/1920,0,0);
+ background(g,t);
+ var z=a.r.markets,ch=a.chosen,judgement=matchup(a);
+ function part(start,end,draw){
+  var alpha=ease((t-start)/.58)*ease((end-t)/.58);
+  if(alpha<=0)return;
+  g.save();g.globalAlpha=alpha;draw(ease((t-start)/(end-start)),t-start);g.restore();
+ }
+ function bar(x,y,w,h,value,col,progress){
+  rect(g,x,y,w,h,h/2,'#21404c');
+  var amount=Math.max(0,w*Math.max(0,Math.min(100,value))/100*ease(progress));
+  if(amount>0.5)rect(g,x,y,amount,h,Math.min(h/2,amount/2),col);
+ }
+ function progressBox(x,y,w,h,title,value,col,stagger){
+  rect(g,x,y,w,h,22,'#102a35','#35616a');
+  label(g,title,x+27,y+34,27,'#e5f6fb','left',700);
+  label(g,percent(value),x+w-28,y+37,32,col,'right',850);
+  bar(x+28,y+81,w-56,11,value,col,stagger);
+ }
+ part(0,4,function(f,u){
+  label(g,'MAÇ GÜNÜ',540,354,40,'#6ff0c8');
+  label(g,a.home.toLocaleUpperCase('tr-TR'),540,633,Math.min(92,1160/Math.max(12,a.home.length)),'#f4ffff');
+  label(g,'V S',540,798,52,'#8cacba');
+  label(g,a.away.toLocaleUpperCase('tr-TR'),540,967,Math.min(92,1160/Math.max(12,a.away.length)),'#f4ffff');
+  ring(g,540,798,341+8*Math.sin(u),.15,6.1,'rgba(88,230,205,.3)',4);
+  label(g,'100.000 SİMÜLASYON / GERÇEK FUTSIM MOTORU',540,1255,29,'#78d5bd');
  });
- part(5,12,function(f,u){
-   label(g,'SİMÜLASYON MOTORU',540,358,41,'#92c4cc');
-   label(g,Math.round(100000*ease(f)).toLocaleString('tr-TR'),540,605,138,'#5bf8c9');
-   label(g,'İKİ DEVRELİ 100.000 MAÇ',540,718,36,'#ecffff');
-   rect(g,95,863,890,505,31,'rgba(13,37,47,.92)','#235c66');
-   for(var i=0;i<90;i++){var angle=i*2.39996+u*.12,r=34+175*Math.sqrt(i/90),x=540+Math.cos(angle)*r,y=1110+Math.sin(angle)*r;
-     g.fillStyle=i%7===0?'#a6bcff':'#55e4c6';g.beginPath();g.arc(x,y,3.5,0,7);g.fill();}
-   rect(g,130,1470,820,15,7,'#1b3d45');g.fillStyle='#67ffd0';g.fillRect(130,1470,820*f,15);
-   label(g,'OLASI GOL SENARYOLARI HESAPLANIYOR',540,1560,26,'#86aabb');
+ part(4,10,function(f,u){
+  label(g,'100.000 MAÇ SENARYOSU',540,345,46,'#a5c9d0');
+  label(g,Math.round(100000*ease(f)).toLocaleString('tr-TR'),540,584,137,'#58efc7');
+  label(g,'İKİ DEVRELİ MONTE CARLO',540,704,33,'#e0f6f1');
+  rect(g,99,852,882,482,30,'#0f2731','#2b5962');
+  for(var i=0;i<135;i++){
+   var angle=i*2.39996+u*.1,r=34+184*Math.sqrt(i/135),x=540+Math.cos(angle)*r,y=1086+Math.sin(angle)*r;
+   g.fillStyle=i%6===0?'#9db0ff':'#5ceacb';g.beginPath();g.arc(x,y,3.7,0,7);g.fill();
+  }
+  bar(131,1448,820,20,100,'#64ffcf',f);
+  label(g,'100.000 OLASI KARŞILAŞMA ÜRETİLDİ',540,1542,27,'#a1d6d5');
  });
- part(12,21,function(f,u){
-   label(g,'MODEL SONUÇLARI',540,351,43,'#68efcf');
-   var items=[{name:a.home,val:z['1'],color:'#5cf0c5'},{name:'BERABERLİK',val:z.X,color:'#acc4d1'},{name:a.away,val:z['2'],color:'#999fff'}];
-   items.forEach(function(v,i){var y=555+i*276;rect(g,81,y,918,225,31,'#102938','#2d5162');
-     label(g,v.name.toLocaleUpperCase('tr-TR'),116,y+54,36,'#edf7ff','left');
-     label(g,percent(v.val),956,y+54,54,v.color,'right');
-     rect(g,112,y+141,840,19,9,'#214252');g.fillStyle=v.color;g.fillRect(112,y+141,840*v.val/100*ease((u-i*.45)/2.8),19);
-   });
-   label(g,Math.abs(z['1']-z['2'])<3?'İKİ TAKIM BİRBİRİNE ÇOK YAKIN':'GALİBİYET DAĞILIMI',540,1525,30,'#a7dacc');
+ part(10,17,function(f,u){
+  label(g,'MAÇ SONUCU OLASILIKLARI',540,329,42,'#6cf4cf');
+  [{key:'1',name:a.home,val:z['1'],color:'#56edbf'},
+   {key:'X',name:'BERABERLİK',val:z.X,color:'#c1d3df'},
+   {key:'2',name:a.away,val:z['2'],color:'#9ba9ff'}].forEach(function(v,i){
+    var y=483+i*282;
+    rect(g,82,y,916,243,28,'#102938','#2c5761');
+    label(g,v.name.toLocaleUpperCase('tr-TR'),114,y+64,Math.min(41,670/Math.max(8,v.name.length)),'#ecffff','left');
+    label(g,percent(v.val),963,y+65,50,v.color,'right');
+    bar(114,y+154,848,19,v.val,v.color,(u-i*.35)/2.2);
+  });
+  rect(g,95,1404,890,114,25,'#14343f','#3e666c');
+  label(g,judgement.headline,540,1461,Math.min(36,870/Math.max(14,judgement.headline.length)),'#a1efd9');
  });
- part(21,29,function(f,u){
-   label(g,'SKOR LABORATUVARI',540,342,44,'#62e9c7');
-   label(g,'EN SIK GERÇEKLEŞEN SKOR',540,509,29,'#aac4d1');
-   label(g,ch.modal.score.replace('-', ' : '),540,692,160,'#f5fdff');
-   label(g,'ORAN '+percent(ch.modal.p),540,839,40,'#64f8d0');
-   rect(g,100,1035,880,348,38,'#17283c','#38596b');
-   label(g,'FAVORİ SONUCUN TEMSİLÎ SKORU',540,1133,29,'#acc2d4');
-   label(g,ch.representative.score.replace('-', ' : '),540,1262,113,'#a5b7ff');
-   label(g,'En sık skor ile favori sonuç farklı olabilir',540,1508,27,'#a1b5c4');
+ part(17,27,function(f,u){
+  label(g,'EN OLASI SKORLAR',540,300,51,'#62f8ca');
+  label(g,'EN SIK GÖRÜLEN SONUÇ',540,413,28,'#a6bfca');
+  label(g,ch.modal.score.replace('-', ' : '),540,575,127,'#f5ffff');
+  label(g,percent(ch.modal.p)+' OLASILIK',540,686,43,'#70f8cc');
+  label(g,'DİĞER EN OLASI 5 SKOR',540,828,33,'#a2bdca');
+  a.r.allScores.filter(function(x){return x.score!==ch.modal.score;}).slice(0,5).forEach(function(x,i){
+   var y=899+i*116,reveal=ease((u-.55-i*.24)/1.2);
+   g.save();g.globalAlpha*=reveal;
+   rect(g,134,y,812,98,19,'#102c3b','#294b61');
+   label(g,'0'+(i+2),172,y+49,30,'#638898','left');
+   label(g,x.score.replace('-', ' : '),264,y+49,47,'#effaff','left');
+   label(g,percent(x.p),898,y+49,41,i%2?'#aab7ff':'#5af5d0','right');
+   g.restore();
+  });
  });
- part(29,35,function(f,u){
-   label(g,'TOPLAM GOL',540,340,44,'#64eccb');label(g,'2,5 ALT / ÜST',540,448,69,'#ecfaff');
-   var under=z['2,5 Alt'],over=z['2,5 Üst'],st=-Math.PI/2;
-   ring(g,540,1000,243,0,Math.PI*2,'#244253',58);
-   ring(g,540,1000,243,st,st+Math.PI*2*under/100*ease(u/2),'#64f5cb',58);
-   ring(g,540,1000,243,st+Math.PI*2*under/100,st+Math.PI*2*(under+over)/100*ease(u/2),'#a6a8ff',58);
-   label(g,'100.000',540,983,81,'#fff');label(g,'MAÇ',540,1075,30,'#92b6c2');
-   label(g,'ALT '+percent(under),260,1470,48,'#64f5cb');
-   label(g,'ÜST '+percent(over),815,1470,48,'#b5b5ff');
+ part(27,33,function(f,u){
+  label(g,'YAPAY ZEKÂNIN TERCİH ETTİĞİ SKOR',540,409,37,'#91c1d3');
+  rect(g,106,617,868,505,38,'#142c41','#416c7c');
+  label(g,ch.representative.score.replace('-', ' : '),540,860,145,'#bdc0ff');
+  label(g,percent(ch.representative.p)+' SKOR OLASILIĞI',540,1040,35,'#8cf3cb');
+  label(g,judgement.headline,540,1354,35,'#79eecb');
+  label(g,'MODELİN EN GÜÇLÜ SONUÇ GRUBUNDAN',540,1464,27,'#9dbcc9');
  });
- part(35,40,function(f,u){
-   label(g,'KARŞILIKLI GOL',540,430,46,'#b3ccd8');
-   label(g,percent(z['KG Var']),540,649,155,'#64ffd2');
-   label(g,'FUTSIM',540,1041,131,'#fbffff');
-   g.fillStyle='#5ad7bd';g.fillRect(220,1153,640,4);
-   label(g,'HER MAÇIN BİR OLASILIĞI VAR',540,1234,37,'#9fe6d5');
-   label(g,'Simülasyon tahminidir, kesin sonuç değildir',540,1432,25,'#91abb9');
+ part(33,40,function(f,u){
+  label(g,'GOL DAĞILIMI',540,348,46,'#62f2c9');
+  label(g,'2,5 ALT / ÜST',540,458,69,'#ffffff');
+  var under=z['2,5 Alt'],over=z['2,5 Üst'],start=-Math.PI/2;
+  ring(g,540,1000,247,0,Math.PI*2,'#274652',58);
+  ring(g,540,1000,247,start,start+Math.PI*2*under/100*ease(u/2),'#62efd1',58);
+  ring(g,540,1000,247,start+Math.PI*2*under/100,start+Math.PI*2*(under+over)/100*ease(u/2),'#aab1ff',58);
+  label(g,'100.000',540,980,81,'#ffffff');label(g,'SENARYO',540,1079,30,'#a5c0ce');
+  label(g,'ALT '+percent(under),272,1488,47,'#63f6c8');
+  label(g,'ÜST '+percent(over),810,1488,47,'#aab6ff');
  });
- // Fixed visual identity / progress.
- label(g,'F U T S I M',71,114,38,'#6cf9d3','left');
- label(g,'// VIDEO STUDIO',73,161,23,'#779da9','left',650);
- label(g,'100K  /  DATA DRIVEN',1008,119,22,'#87b2bd','right',700);
- g.fillStyle='#1e4654';g.fillRect(70,205,940,2);g.fillRect(70,1850,940,3);
- g.fillStyle='#5efad0';g.fillRect(70,1850,940*limit(t/duration),4);
- label(g,a.date||a.asof||'FUTSIM',74,1812,24,'#8aaebb','left',650);
- label(g,'40 SEC  ·  9:16  ·  100.000',1009,1812,23,'#8aaebb','right',650);
+ part(40,45,function(f,u){
+  var half=(a.r.halves||[])[0];
+  label(g,'EK SENARYOLAR',540,346,48,'#6eefd1');
+  rect(g,97,536,886,348,32,'#123240','#396274');
+  label(g,'KARŞILIKLI GOL VAR',540,632,34,'#afcad3');
+  label(g,percent(z['KG Var']),540,774,114,'#64f4c9');
+  rect(g,97,959,886,370,32,'#182e47','#426478');
+  label(g,'EN SIK İLK YARI SKORU',540,1061,33,'#b1ced7');
+  label(g,half?half.score.replace('-', ' : '):'—',540,1197,107,'#b7c0ff');
+  if(half)label(g,percent(half.p)+' OLASILIK',540,1404,37,'#a9b5fc');
+ });
+ part(45,49,function(f,u){
+  label(g,'FUTSIM',540,767,145,'#f5ffff');
+  g.fillStyle='#55dbc2';g.fillRect(216,903,648,4);
+  label(g,'HER MAÇIN BİR OLASILIĞI VAR',540,1032,38,'#a5f1df');
+  label(g,a.home.toLocaleUpperCase('tr-TR')+'   •   '+a.away.toLocaleUpperCase('tr-TR'),540,1276,30,'#9ab7c4');
+ });
+ label(g,'F U T S I M',73,120,39,'#6cf5cf','left');
+ g.fillStyle='#1d444e';g.fillRect(70,187,940,2);
+ g.fillStyle='#1a4a4b';g.fillRect(70,1785,940,3);
+ g.fillStyle='#5bffce';g.fillRect(70,1785,940*limit(t/duration),4);
+ label(g,'Yatırım tavsiyesi değildir.',1007,1849,27,'#b2c2cb','right',550);
 }
 function buildRecorder(stream){if(!window.MediaRecorder)return null;
  var options=['video/mp4;codecs=avc1.42E01E','video/mp4','video/webm;codecs=vp9','video/webm;codecs=vp8','video/webm'];
