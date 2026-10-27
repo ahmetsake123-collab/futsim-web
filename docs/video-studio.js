@@ -31,7 +31,9 @@ function analyze(){
 
 function matchup(a){
  var m=a.r.markets,home=m['1'],away=m['2'],d=Math.abs(home-away);
- if(d>=8&&Math.max(home,away)>=40)return {favori:home>away?a.home:a.away,headline:(home>away?a.home:a.away)+' FAVORİ',spoken:'Bu maçın favorisi '+(home>away?a.home:a.away)+'.'};
+ var leader=home>away?a.home:a.away,winning=Math.max(home,away),draw=m.X;
+ if(d>=8 && winning>draw)return {favori:leader,headline:leader.toLocaleUpperCase('tr-TR')+' FAVORİ',spoken:'Bu maçın favorisi '+leader+'.'};
+ if(d>=8 && winning<=draw)return {favori:null,headline:'BERABERLİK DE GÜÇLÜ İHTİMAL',spoken:'Galibiyet ihtimallerinde '+leader+' önde, ancak beraberlik de güçlü bir senaryo.'};
  return {favori:null,headline:'DENGELİ MAÇ · NET FAVORİ YOK',spoken:'İki takımın galibiyet ihtimali birbirine yakın. Bu maçta net bir favori yok.'};
 }
 function opening(a){
