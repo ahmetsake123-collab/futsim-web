@@ -64,14 +64,55 @@ function detectPauses(buffer){
 function alignTimes(){
  if(!sceneData.length)return;
  const total=audioBuffer?audioBuffer.duration:Math.max(36,Math.min(59,weights().reduce((x,y)=>x+y,0)*1.07));
- let starts=weightedTimes(total);
+ const predicted=weightedTimes(total);
+ let starts=[...predicted];
  if(audioBuffer){
-  const candidates=detectPauses(audioBuffer);
-  for(let i=1;i<starts.length;i++){
-   const target=starts[i],lower=starts[i-1]+.7,upper=total-(sceneData.length-i)*.6;
-   let options=candidates.filter(c=>c.t>lower&&c.t<upper&&Math.abs(c.t-target)<2.1);
-   options.sort((a,b)=>Math.abs(a.t-target)-Math.min(a.length,.32)*.36-(Math.abs(b.t-target)-Math.min(b.length,.32)*.36));
-   if(options.length)starts[i]=r1(options[0].t);
+  // Global alignment: prefer meaningful MP3 pauses near the expected scene
+  // positions, while keeping all boundaries strictly ordered. This avoids
+  // local decisions drifting into the following sentence.
+  const pauses=detectPauses(audioBuffer).filter(p=>p.t>.5&&p.t<total-.5&&p.length>=.105)
+    .sort((a,b)=>a.t-b.t);
+  const stages=[];
+  const n=sceneData.length,window=Math.max(5.5,total*.16);
+  stages.push([{t:0,cost:0,prev:-1}]);
+  for(let i=1;i<n;i++){
+   const minLeft=i*.48,maxRight=total-(n-i)*.48;
+   const matches=pauses.filter(p=>p.t>=minLeft&&p.t<=maxRight&&Math.abs(p.t-predicted[i])<window)
+    .map(p=>({t:r1(p.t),pause:p.length}));
+   matches.push({t:predicted[i],pause:0});
+   const unique=[...new Map(matches.map(c=>[c.t,c])).values()].sort((a,b)=>a.t-b.t);
+   const stage=[];
+   for(const c of unique){
+    let best=null;
+    for(let j=0;j<stages[i-1].length;j++){
+     const prior=stages[i-1][j];
+     const gap=c.t-prior.t,expected=predicted[i]-predicted[i-1];
+     if(gap<.48)continue;
+     const penalty=.065*Math.pow(c.t-predicted[i],2)+.04*Math.pow(gap-expected,2)-
+       Math.min(.8,c.pause)*3.1+(c.pause===0?.48:0);
+     const cost=prior.cost+penalty;
+     if(!best||cost<best.cost)best={t:c.t,pause:c.pause,cost,prev:j};
+    }
+    if(best)stage.push(best);
+   }
+   // Always provide a fallback when speech has no detectable pauses.
+   if(!stage.length){
+    const prev=stages[i-1].reduce((v,x,j)=>x.cost<v.item.cost?{item:x,index:j}:v,
+      {item:{cost:Infinity},index:-1});
+    const fallback=clamp(Math.max(predicted[i],prev.item.t+.48),minLeft,maxRight);
+    stage.push({t:r1(fallback),cost:prev.item.cost+10,prev:prev.index,pause:0});
+   }
+   stages.push(stage);
+  }
+  const last=stages[n-1];
+  let index=0,bestCost=Infinity;
+  for(let j=0;j<last.length;j++){
+   const remaining=total-last[j].t,expected=total-predicted[n-1];
+   const cost=last[j].cost+.055*Math.pow(remaining-expected,2);
+   if(cost<bestCost){bestCost=cost;index=j;}
+  }
+  for(let i=n-1;i>=1;i--){
+   const node=stages[i][index];starts[i]=node.t;index=node.prev;
   }
  }
  timing=starts;updateEditorTimes();
