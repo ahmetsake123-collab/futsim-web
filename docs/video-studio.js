@@ -2,6 +2,7 @@
 (function(){
 'use strict';
 var duration=49, lastUrl=null, working=false;
+var studioVersion='V4 · 1/X/2 + 2,5 ALT/ÜST + KG VAR/YOK';
 var el=function(id){return document.getElementById(id);};
 var limit=function(x){return Math.max(0,Math.min(1,x));};
 var ease=function(x){x=limit(x);return x*x*(3-2*x);};
@@ -42,27 +43,25 @@ function opening(a){
 }
 function spokenScore(s){return String(s||'').replace('-', ' - ');}
 
+function bettingMarkets(a){
+ // Use the final calibrated 100,000-score distribution, not bookmaker odds.
+ // Only full-time result (1/X/2), 2.5 over/under, and BTTS yes/no.
+ var m=a.r.markets||{};
+ var defs=[
+  {key:'1',label:a.home+' kazanır',spoken:a.home+' galibiyeti',p:m['1']},
+  {key:'X',label:'Beraberlik',spoken:'beraberlik',p:m['X']},
+  {key:'2',label:a.away+' kazanır',spoken:a.away+' galibiyeti',p:m['2']},
+  {key:'2,5 Alt',label:'2,5 gol altı',spoken:'iki buçuk gol altı',p:m['2,5 Alt']},
+  {key:'2,5 Üst',label:'2,5 gol üstü',spoken:'iki buçuk gol üstü',p:m['2,5 Üst']},
+  {key:'KG Var',label:'KG Var',spoken:'karşılıklı gol var',p:m['KG Var']},
+  {key:'KG Yok',label:'KG Yok',spoken:'karşılıklı gol yok',
+   p:Number.isFinite(m['KG Var'])?100-m['KG Var']:NaN}
+ ];
+ return defs.filter(function(x){return Number.isFinite(x.p)&&x.p>=0&&x.p<=100;})
+  .sort(function(x,y){return y.p-x.p;});
+}
 function bestMarket(a){
- // Only markets actually computed from the 100,000 simulated full-time scores.
- // Do not mix in separate, non-simulated corner projections or unsourced bookmaker odds.
- var names={
-  '1':'Ev sahibi galibiyeti','X':'Beraberlik','2':'Deplasman galibiyeti',
-  '1X':'Ev sahibi veya beraberlik','X2':'Beraberlik veya deplasman',
-  '1,5 Üst':'1,5 gol üstü','2,5 Üst':'2,5 gol üstü','2,5 Alt':'2,5 gol altı',
-  '3,5 Alt':'3,5 gol altı','4,5 Alt':'4,5 gol altı',
-  'KG Var':'Karşılıklı gol var','Ev gol':'Ev sahibi gol atar','Dep gol':'Deplasman gol atar'
- };
- var spoken={
-  '1':'ev sahibi kazanır','X':'beraberlik','2':'deplasman kazanır',
-  '1X':'ev sahibi yenilmez','X2':'deplasman yenilmez',
-  '1,5 Üst':'bir buçuk gol üstü','2,5 Üst':'iki buçuk gol üstü','2,5 Alt':'iki buçuk gol altı',
-  '3,5 Alt':'üç buçuk gol altı','4,5 Alt':'dört buçuk gol altı',
-  'KG Var':'karşılıklı gol var','Ev gol':'ev sahibi gol atar','Dep gol':'deplasman gol atar'
- };
- var m=a.r.markets||{},arr=Object.keys(names).map(function(key){return {key:key,label:names[key],spoken:spoken[key],p:Number(m[key])};})
-  .filter(function(x){return Number.isFinite(m[x.key])&&x.p>=0&&x.p<=100;});
- arr.sort(function(x,y){return y.p-x.p;});
- return arr[0]||null;
+ return bettingMarkets(a)[0]||null;
 }
 
 function speech(a){
@@ -78,7 +77,7 @@ function speech(a){
   '. Alternatifler '+alt+'. Yapay zekânın tercih ettiği skor '+spokenScore(a.chosen.representative.score)+'.\n'+
   'İki buçuk gol üstü yüzde '+Math.round(m['2,5 Üst'])+', altı yüzde '+Math.round(m['2,5 Alt'])+
   '. Karşılıklı gol yüzde '+Math.round(m['KG Var'])+'.\n'+
-  (bet?'Modelin en yüksek olasılıklı bahis seçeneği: '+bet.spoken+', yüzde '+Math.round(bet.p)+'. Garanti değil, model tahmini.\n':'Bu maç için güvenilir bir bahis seçeneği belirlenemedi.\n')+
+  (bet?'Yapay zekânın tercih ettiği bahis: '+bet.spoken+', yüzde '+Math.round(bet.p)+'. Bu bir model olasılığıdır, garanti değildir.\n':'Bahis tahmini için yeterli veri bulunamadı.\n')+
   'FUTSIM. Her maçın bir olasılığı var.';
 }
 function details(a){
@@ -89,7 +88,7 @@ function details(a){
  ' · Yapay zekânın tercih ettiği skor: '+escapeHTML(a.chosen.representative.score)+
  '<br>En olası 6 skor: '+a.r.allScores.slice(0,6).map(function(x){return escapeHTML(x.score)+' ('+percent(x.p)+')';}).join(' · ')+
  '<br>'+escapeHTML(matchup(a).spoken)+
- '<br>En yüksek olasılıklı bahis seçeneği: '+(bestMarket(a)?escapeHTML(bestMarket(a).label)+' ('+percent(bestMarket(a).p)+')':'Veri yetersiz')+
+ '<br><b>Yapay zekânın tercih ettiği bahis:</b> '+(bestMarket(a)?escapeHTML(bestMarket(a).label)+' ('+percent(bestMarket(a).p)+')':'Veri yetersiz')+
  '<br>2,5 Alt: '+percent(m['2,5 Alt'])+' · Üst: '+percent(m['2,5 Üst'])+' · KG Var: '+percent(m['KG Var'])+
  (!a.date?'<br><small>Bu eşleşmenin önümüzdeki 7 günlük fikstürdeki tarihi doğrulanmadı; özel karşılaştırma.</small>':'');
  el('studioScript').value=speech(a);el('studioTextControls').hidden=false;
@@ -99,7 +98,7 @@ function details(a){
   var result={home:a.home,away:a.away,competition:a.competition,fixture_date:a.date,asof:a.asof,
    generated_at:a.created,engine:'FUTSIM two-half Monte Carlo',simulations:100000,
    model_goal_parameters:{home:a.p.lh,away:a.p.la},markets:m,matchup_classification:matchup(a).headline,
-   modal_score:a.chosen.modal,representative_score:a.chosen.representative,highest_probability_betting_market:bestMarket(a),
+   modal_score:a.chosen.modal,representative_score:a.chosen.representative,highest_probability_betting_market:bestMarket(a),betting_markets_ranked:bettingMarkets(a),
    most_frequent_scores:a.r.scores,all_scores:a.r.allScores,
    narration:el('studioScript').value};
   save(new Blob([JSON.stringify(result,null,2)],{type:'application/json'}),'FUTSIM_'+clean(a.home)+'_'+clean(a.away)+'_analiz.json');
@@ -227,9 +226,9 @@ function frame(g,a,t,W,H){
  });
  part(40,46,function(f,u){
   var best=bestMarket(a);
-  label(g,'FUTSIM MODEL TERCİHİ',540,375,45,'#64efd0');
+  label(g,'YAPAY ZEKÂNIN TERCİH ETTİĞİ BAHİS',540,375,39,'#64efd0');
   rect(g,96,520,888,866,38,'#112f38','#3a7773');
-  label(g,'EN YÜKSEK OLASILIKLI BAHİS SEÇENEĞİ',540,632,30,'#a9c9d2');
+  label(g,'1 / X / 2 · 2,5 ALT-ÜST · KG VAR-YOK',540,619,31,'#a9c9d2');
   if(best){
    var title=best.label.toUpperCase(),size=Math.min(69,770/Math.max(10,title.length));
    label(g,title,540,824,size,'#f5ffff');
@@ -238,7 +237,7 @@ function frame(g,a,t,W,H){
   }else{
    label(g,'YETERLİ VERİ YOK',540,940,54,'#e6c1a8');
   }
-  label(g,'YÜKSEK İHTİMAL  ≠  GARANTİLİ KAZANÇ',540,1440,27,'#a6bfca');
+  label(g,'YÜKSEK OLASILIK GARANTİ DEĞİLDİR',540,1440,27,'#a6bfca');
  });
  part(46,49,function(f,u){
   label(g,'FUTSIM',540,767,145,'#f5ffff');
@@ -279,7 +278,7 @@ async function create(){
    var blob=new Blob(chunks,{type:typ});if(!blob.size){status('Video kaydı boş geldi, tekrar dene.');return;}
    if(lastUrl)URL.revokeObjectURL(lastUrl);lastUrl=URL.createObjectURL(blob);
    video.src=lastUrl;video.hidden=false;download.href=lastUrl;download.download='FUTSIM_'+clean(a.home)+'_'+clean(a.away)+'_100K_sessiz.'+ext;download.hidden=false;
-   status('Video hazır! '+duration+' saniye sessiz '+ext.toUpperCase()+'. Metni indirip seslendirdikten sonra video ve MP3 dosyasını ChatGPT’ye yükle.');
+   status(studioVersion+' • Video hazır! '+duration+' saniye sessiz '+ext.toUpperCase()+'. Metni yeniden indir; sonundaki bahis seçimi yeni modele göre oluşturuldu.');
   };
   rec.start(500);
   var begin=performance.now(),lastSecond=-1;
@@ -296,7 +295,7 @@ async function create(){
 function init(){if(!el('studioGenerate'))return;
  el('studioGenerate').addEventListener('click',create);
  el('studioJump').addEventListener('click',function(){el('videoStudio').scrollIntoView({behavior:'smooth'});});
- status('Maçı yukarıdan seç. Butona basınca FUTSIM 100.000 yeni simülasyon çalıştırır.');
+ status(studioVersion+' hazır. Maçı seç; FUTSIM 100.000 yeni simülasyonla en yüksek olasılıklı bahis seçimini de hesaplar.');
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
