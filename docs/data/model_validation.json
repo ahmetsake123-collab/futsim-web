@@ -1,5 +1,5 @@
 {
-  "run_utc": "2026-10-27T20:21:01.352842+00:00",
+  "run_utc": "2026-10-27T20:27:03.239766+00:00",
   "method": "At least 100 next-match chronological walk-forward tests; 2025/26 prehistory, 2026/27 out-of-sample. After each prediction error, adjust using past ONLY; same-day excluded.",
   "source_results": "https://github.com/openfootball (public domain)",
   "source_corners": "https://github.com/oladeeayo/open-matchday (informational non-commercial, attribution)",
