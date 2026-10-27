@@ -58,6 +58,7 @@ jobs:
           python scripts/check_site.py
           node scripts/test_xg_preserve.cjs
           node scripts/test_simple_ui.cjs
+          node scripts/test_sim_insights.cjs
       - name: Save a verified nonempty update
         run: |
           git config user.name "FUTSIM Data Bot"

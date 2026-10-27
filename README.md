@@ -27,4 +27,8 @@ Günlük planlama çalışmasında isteğe bağlı API adımı çalışır; kodu
 
 ## Tahmin kalitesi
 
-Sitede gösterilen 10.000 örnekli simülatör ile tarihsel walk-forward test motoru ayrı uygulamalardır. Testte referanstan iyi sonuç almak, kârlı bahis veya gelecek maçlarda aynı performans garantisi değildir. Tamamlanmamış ilk 11/xG/xA/veri eksiklikleri modelin güven düzeyini sınırlar.
+Sitede gösterilen 100.000 örnekli simülatör ile tarihsel walk-forward test motoru ayrı uygulamalardır. Testte referanstan iyi sonuç almak, kârlı bahis veya gelecek maçlarda aynı performans garantisi değildir. Tamamlanmamış ilk 11/xG/xA/veri eksiklikleri modelin güven düzeyini sınırlar.
+
+## 100.000 maç örneklemi
+
+Her tahminde tarayıcıda 100.000 iki yarılı Monte Carlo maçı üretilir. Ayrı panelde ham simülasyon sayımlarıyla 1-X-2 sonuçları, en sık skorlar, devre/maç geçişleri, tam devre→final skor yolları, toplam gol sayıları ve olaylar sıralanır. Bir olay başka olayla çakışabilir ve yüzdeleri toplanmaz. Bunlar gerçek 100.000 maçın testi değil; model örneklemidir. Geriye dönük doğrulama ayrıca yapılır. Mobil cihazlarda hesaplama birkaç saniye sürebilir.

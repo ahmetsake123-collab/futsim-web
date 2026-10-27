@@ -50,10 +50,13 @@ body:not(.show-extras) .two:has(> .extra-panel)>.card:not(.extra-panel){width:10
 .hero .lead{font-size:14px}
 .grid{grid-template-columns:1.25fr 1fr}
 @media(max-width:850px){.grid{grid-template-columns:1fr}.hero{grid-template-columns:1fr}.bet-name{font-size:19px}}
+
+.sim-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.sim-head h2{font-size:20px;margin:5px 0 10px}.sim-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.sim-cell{min-width:0;border:1px solid #2b4b57;background:#0b212c;border-radius:12px;padding:14px}.sim-cell h3{font-size:14px;color:#bdeadd;margin:0 0 13px}.sim-stat{margin:0 0 12px}.sim-stat:last-child{margin-bottom:0}.sim-stat-top{display:flex;justify-content:space-between;gap:8px;align-items:baseline;font-size:12px}.sim-stat-top span{overflow-wrap:anywhere;min-width:0}.sim-stat-top strong{color:#57e5b5;flex-shrink:0;font-variant-numeric:tabular-nums}.sim-stat-top small{font-weight:400;color:#91a8b9}.sim-meter{height:4px;background:#21404d;border-radius:20px;overflow:hidden;margin-top:6px}.sim-meter i{height:100%;background:#45e3ad;display:block}.sim-disclaimer{font-size:12px;line-height:1.6;color:#a9bcca;margin-top:15px}@media(max-width:1080px){.sim-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:680px){.sim-grid{grid-template-columns:1fr}.sim-stat-top{font-size:13px}}
+
 </style></head><body><div class="wrap">
-<header class="top"><div class="logo">FUTSIM <em>WEB</em></div><div class="meta"><span class="tag" id="updated">Veri bekleniyor</span><span class="tag" id="origin">Kaynak denetleniyor</span><span class="tag">10.000 maç</span></div></header>
+<header class="top"><div class="logo">FUTSIM <em>WEB</em></div><div class="meta"><span class="tag" id="updated">Veri bekleniyor</span><span class="tag" id="origin">Kaynak denetleniyor</span><span class="tag">100.000 maç</span></div></header>
 <div class="notice" style="line-height:1.5">Pazartesi güncellenen verilerle maç analizi. Tahminler kesin sonuç veya kâr garantisi değildir.</div>
-<div class="hero" style="margin-top:15px"><section class="card"><div class="subtitle">Maç laboratuvarı</div><h2 style="font-size:20px;margin-top:7px">İki takımı karşılaştır</h2><p class="lead">Takımları seç, son formu ve modelin gerekçeli tahminini gör.</p><div class="controls"><div><label for="hleague">Ev sahibi ligi</label><select id="hleague"></select><label for="home">Ev sahibi</label><select id="home"></select></div><div><label for="aleague">Deplasman ligi</label><select id="aleague"></select><label for="away">Deplasman</label><select id="away"></select></div></div><div style="margin:12px 0"><label style="display:block;color:var(--muted);font-size:12px;margin-bottom:5px" for="competition">Maçın oynanacağı organizasyon</label><select id="competition" style="width:100%"><option value="Özel maç">Özel maç / karşılaştırma</option><option value="Şampiyonlar Ligi">Şampiyonlar Ligi</option><option value="Premier League">Premier League</option><option value="Bundesliga">Bundesliga</option><option value="La Liga">La Liga</option><option value="Süper Lig">Süper Lig</option><option value="Championship">Championship</option></select></div><div class="inline"><div class="small" id="dataLine">Veri kaynağı kontrol ediliyor...</div><button class="primary" id="run">10.000 simülasyon</button></div></section>
+<div class="hero" style="margin-top:15px"><section class="card"><div class="subtitle">Maç laboratuvarı</div><h2 style="font-size:20px;margin-top:7px">İki takımı karşılaştır</h2><p class="lead">Takımları seç, son formu ve modelin gerekçeli tahminini gör.</p><div class="controls"><div><label for="hleague">Ev sahibi ligi</label><select id="hleague"></select><label for="home">Ev sahibi</label><select id="home"></select></div><div><label for="aleague">Deplasman ligi</label><select id="aleague"></select><label for="away">Deplasman</label><select id="away"></select></div></div><div style="margin:12px 0"><label style="display:block;color:var(--muted);font-size:12px;margin-bottom:5px" for="competition">Maçın oynanacağı organizasyon</label><select id="competition" style="width:100%"><option value="Özel maç">Özel maç / karşılaştırma</option><option value="Şampiyonlar Ligi">Şampiyonlar Ligi</option><option value="Premier League">Premier League</option><option value="Bundesliga">Bundesliga</option><option value="La Liga">La Liga</option><option value="Süper Lig">Süper Lig</option><option value="Championship">Championship</option></select></div><div class="inline"><div class="small" id="dataLine">Veri kaynağı kontrol ediliyor...</div><button class="primary" id="run">100.000 simülasyon</button></div></section>
 <section class="card extra-panel"><div class="subtitle">Veri kaynağı durumu</div><h2 id="healthTitle">Veri yükleniyor</h2><p class="status" id="health">Açık kaynak kayıtları okunuyor.</p><div class="tick"><div class="inline"><span class="small">Geçmiş tamamlanmış maçlar</span><b id="matches">—</b></div><div class="inline" style="margin-top:9px"><span class="small">Kayıtlı kulüpler</span><b id="clubs">—</b></div><div class="inline" style="margin-top:9px"><span class="small">Bağlantı / kaynak hatası</span><b id="errCount">—</b></div></div></section></div>
 <div class="notice" style="margin:14px 0" id="liveFeedStatus">Bugünün ve yarının maçları için açık fikstür aranıyor…</div>
 <div class="two"><section class="card"><h2>Bugün ve yarın • Liglere göre</h2><p class="small">Lig başlıklarını aç; bir maça basınca doğrudan analiz edilir.</p><div id="fixtures" class="empty compact-fixtures">Kaynak fikstürü yükleniyor.</div></section><section class="card extra-panel"><h2>Modelin geçmiş doğruluğu</h2><div id="backtest" class="empty">Geçmiş maçlardan ileriye dönük doğrulama sonucu yükleniyor.</div><p class="small">Geçmişteki bir maçı tahmin ederken o maçın ve sonraki maçların skorları kullanılmaz. Kalibrasyon ancak ayrı test kümesinde iyileşme varsa geçerli olur.</p></section></div>
@@ -61,6 +64,7 @@ body:not(.show-extras) .two:has(> .extra-panel)>.card:not(.extra-panel){width:10
 <section class="grid"><div class="card"><div class="subtitle">Tahmini sonuç</div><h2 id="matchName">Bir maç seç</h2><div class="confidence" id="confidenceBadge">Veri kapsamı hesaplanıyor</div><section id="betSummary" class="bet-focus"><div class="bet-eyebrow">FUTSIM TERCİHİ</div><div class="bet-name">Model sonuçları bekleniyor</div><div class="bet-explain">Haftalık takım verileri kontrol ediliyor.</div></section><div id="xgReadout" class="small" style="line-height:1.65;border:1px solid #2d4c59;border-radius:10px;padding:10px;margin:10px 0;background:#0e2733">xG/xA kaynak kontrolü yapılıyor…</div><div class="three"><div><span class="small">1</span><b id="p1" class="green">—</b></div><div><span class="small">X</span><b id="px">—</b></div><div><span class="small">2</span><b id="p2" class="blue">—</b></div></div><div class="bars"><i id="bar1" style="background:#45e3ad;width:33%"></i><i id="barx" style="background:#9caeb7;width:34%"></i><i id="bar2" style="background:#72b6ff;width:33%"></i></div><span class="small" id="forecastNote">Model başlatılmadı.</span></div>
 <div class="card"><div class="subtitle">Beklenen skor</div><div class="inline" style="margin:12px 0"><div><div class="small">1-X-2 ile uyumlu skor</div><div class="big" id="topscore">—</div></div><div><div class="small">Bu skorun ihtimali</div><div class="big green" id="toppct">—</div></div></div><div id="top5" class="small">Skor simülasyonu çalıştırılmadı.</div><p class="small" id="scoreClarifier"></p><div class="tick extra-panel"><div class="subtitle">Diğer skor senaryoları</div><div class="inline"><b class="big" id="extremeScore">—</b><b class="green" id="extremePct">—</b></div><p class="small">Olasılığı en yüksek sıra dışı skorlar; farklı galibiyet şart değil.</p><div id="surpriseList" class="small"></div></div></div>
 <div class="card extra-panel"><div class="subtitle">Lig ve maç gücü</div><div class="inline" style="margin-top:12px"><div><div class="small">Ev gücü</div><div class="big" id="eh">—</div></div><div><div class="small">Dep güç</div><div class="big" id="ea">—</div></div></div><div class="tick" id="lambdas" style="font-size:13px">Beklenen gol dağılımı hesaplanmadı.</div></div></section>
+<section class="card" id="simInsights" style="margin-top:16px"><h2>100.000 maçın en sık sonuçları</h2><p class="small">Simülasyonu çalıştırınca görülme sayıları ve oranlar burada belirecek.</p></section>
 <div class="two"><section class="card extra-panel"><details class="fp-detail"><summary><strong>%50 üzeri • Oran / fiyat-performans</strong> <span class="pill">Aç / kapat</span></summary><div class="value-grid" id="markets"><span class="empty">Simülasyon sonrasında olasılıklar listelenir.</span></div><p class="small" id="valueSummary"></p><p class="small">Adil oran = 100 / model yüzdesi; gerçek site fiyatı değildir. Gerçek oran yoksa teorik avantaj hesaplanmaz.</p></details></section><section class="card"><h2>Takımların son formu ve ölçülebilen veriler</h2><div id="teamstats" class="empty">Maç seçildiğinde son maç, skor ortalaması, şut/isabet ve korner verileri gösterilir.</div></section></div>
 <section class="card results" id="couponLab"><div class="inline"><div><div class="subtitle">Modelin tercihleri</div><h2 style="margin-top:8px">Kupon oluştur</h2></div><span class="pill">Her karşılaşmadan bir seçim</span></div><p class="small">Maçlar için model olasılıklarıyla seçim ekleyebilirsin. Piyasa oranı doğrulanmadıkça kârlılık tahmini yapılmaz.</p>
 <div class="coupon-pick"><div class="notice" id="autoPick">Maç simülasyonu sonrasında FUTSIM önerisi burada çıkacak.</div><div class="coupon-selector"><label for="couponMarket">Seçim</label><select id="couponMarket"></select><button class="primary" id="couponAdd" type="button">Kupona ekle</button></div></div>
@@ -462,8 +466,8 @@ function rng(seed){let a=seed>>>0;return()=>{a=(a+0x6D2B79F5)|0;let x=Math.imul(
 function gauss(r){return Math.sqrt(-2*Math.log(Math.max(1e-10,r())))*Math.cos(2*Math.PI*r());}
 function poisson(r,lambda){let p=1,n=0,t=Math.exp(-lambda);do{p*=r();n++;}while(p>t&&n<32);return n-1;}
 function halfShare(p){if(!p?.ht_n||p.ht_n<4)return .54;return clamp(.54+((p.second_half_more_goals??50)-50)/100*.045*Math.min(1,p.ht_n/16),.48,.60);}
-function simulate(p,ph,pa,n=10000){
- let rand=rng(4041),score={},half={},freq={},hshare=halfShare(ph),ashare=halfShare(pa);
+function simulate(p,ph,pa,n=100000){
+ let rand=rng(4041),score={},half={},freq={},hshare=halfShare(ph),ashare=halfShare(pa),htft={},paths={},goalTotals={};
  for(let i=0;i<n;i++){
   let tempo=Math.exp(.14*gauss(rand)-.0098);
   let h0=poisson(rand,p.lh*tempo*(1-hshare)*Math.exp(.07*gauss(rand)-.00245));
@@ -474,11 +478,25 @@ function simulate(p,ph,pa,n=10000){
   let a1=poisson(rand,p.la*tempo*ashare*am*Math.exp(.09*gauss(rand)-.00405));
   let h=h0+h1,a=a0+a1,s=h+'-'+a,ht=h0+'-'+a0;
   score[s]=(score[s]||0)+1;half[ht]=(half[ht]||0)+1;
+  let hr=h0>a0?'1':h0<a0?'2':'X',fr=h>a?'1':h<a?'2':'X',trans=hr+'→'+fr,path=ht+' → '+s,gk=h+a>=8?'8+':String(h+a);
+  htft[trans]=(htft[trans]||0)+1;paths[path]=(paths[path]||0)+1;goalTotals[gk]=(goalTotals[gk]||0)+1;
   let flags={'1':h>a,'X':h===a,'2':h<a,'1X':h>=a,'X2':h<=a,'KG Var':h>0&&a>0,
   '1,5 Üst':h+a>=2,'2,5 Üst':h+a>=3,'2,5 Alt':h+a<=2,'3,5 Alt':h+a<=3,'4,5 Alt':h+a<=4,
   'Ev gol':h>0,'Dep gol':a>0,'Ev 3+ gol':h>=3,'Dep 3+ gol':a>=3,
   'İlk yarı gol':h0+a0>=1,'İlk yarı berabere':h0===a0,'İkinci yarı daha gollü':h1+a1>h0+a0,
   'Geriden dönüp yenilmeme':h0<a0&&h>=a||h0>a0&&a>=h,'3+ farklı galibiyet':Math.abs(h-a)>=3,'Golsüz maç':h===0&&a===0};
+  Object.assign(flags,{
+   'İki devrede de gol':h0+a0>0&&h1+a1>0,
+   'İlk yarı 0-0':h0===0&&a0===0,
+   'İkinci yarı 2+ gol':h1+a1>=2,
+   'İlk yarı 0-0 → sonra gol':h0===0&&a0===0&&h1+a1>0,
+   'İlk yarı beraber → ev kazandı':h0===a0&&h>a,
+   'İlk yarı beraber → dep kazandı':h0===a0&&h<a,
+   'Ev geriden gelip kazandı':h0<a0&&h>a,
+   'Dep geriden gelip kazandı':h0>a0&&h<a,
+   'Gollü beraberlik (2-2+)':h===a&&h>=2,
+   'Maçta 5+ gol':h+a>=5
+  });
   for(const [k,flag] of Object.entries(flags))if(flag)freq[k]=(freq[k]||0)+1;
  }
  return {n,markets:Object.fromEntries(Object.keys({'1':1,'X':1,'2':1,'1X':1,'X2':1,'KG Var':1,'1,5 Üst':1,'2,5 Üst':1,'2,5 Alt':1,'3,5 Alt':1,'4,5 Alt':1,'Ev gol':1,'Dep gol':1,'Ev 3+ gol':1,'Dep 3+ gol':1,'İlk yarı gol':1,'İlk yarı berabere':1,'İkinci yarı daha gollü':1,'Geriden dönüp yenilmeme':1,'3+ farklı galibiyet':1,'Golsüz maç':1}).map(k=>[k,(freq[k]||0)*100/n])),
@@ -492,9 +510,34 @@ function simulate(p,ph,pa,n=10000){
   return sorted.slice(0,6);
  })(),
  extreme:null,
- halves:Object.entries(half).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([k,v])=>({score:k,p:v*100/n}))};
+ halves:Object.entries(half).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([k,v])=>({score:k,p:v*100/n})),
+  simBreakdown:(()=>{
+   const rank=(obj,count=7)=>Object.entries(obj).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).slice(0,count).map(([key,num])=>({key,count:num,p:num*100/n}));
+   const events=['KG Var','İki devrede de gol','İkinci yarı daha gollü','İlk yarı berabere','İlk yarı 0-0','İkinci yarı 2+ gol','İlk yarı 0-0 → sonra gol','İlk yarı beraber → ev kazandı','İlk yarı beraber → dep kazandı','Ev geriden gelip kazandı','Dep geriden gelip kazandı','Gollü beraberlik (2-2+)','Maçta 5+ gol','3+ farklı galibiyet'];
+   return {results:['1','X','2'].map(key=>({key,count:freq[key]||0,p:(freq[key]||0)*100/n})),
+    scores:rank(score,7),halftime:rank(half,5),htft:rank(htft,9),
+    paths:rank(paths,7),goals:rank(goalTotals,9),
+    events:events.map(key=>({key,count:freq[key]||0,p:(freq[key]||0)*100/n})).filter(x=>x.count>0).sort((a,b)=>b.count-a.count).slice(0,9)};
+  })()};
 }
 
+function renderSimulationInsights(r,elapsedMs){
+ const root=document.getElementById('simInsights');if(!root||!r.simBreakdown)return;
+ const b=r.simBreakdown,number=x=>Number(x).toLocaleString('tr-TR');
+ const percent=x=>(x.count*100/r.n).toFixed(2).replace('.',',')+'%';
+ const ft={1:'Ev sahibi galibiyeti',X:'Beraberlik',2:'Deplasman galibiyeti'};
+ const ht={1:'Ev sahibi önde',X:'Berabere',2:'Deplasman önde'};
+ const table=(title,rows,label)=>`<div class="sim-cell"><h3>${esc(title)}</h3>${rows.map((x,i)=>`<div class="sim-stat"><div class="sim-stat-top"><span>${i===0?'★ ':''}${esc(label(x))}</span><strong>${percent(x)} <small>(${number(x.count)})</small></strong></div><div class="sim-meter"><i style="width:${Math.max(.5,x.count*100/r.n).toFixed(2)}%"></i></div></div>`).join('')||'<p class="small">Bu örneklemde görülmedi.</p>'}</div>`;
+ root.innerHTML=`<div class="sim-head"><div><div class="subtitle">100.000 MAÇ LABORATUVARI</div><h2>100.000 simülasyonda en çok neler oldu?</h2></div><span class="tag">${number(r.n)} olası maç${Number.isFinite(elapsedMs)?' · '+number(elapsedMs)+' ms':''}</span></div><p class="lead">Aşağıdaki sayılar ${number(r.n)} <b>model simülasyonundan</b> gelir; gerçekte oynanmış maçlar değildir. Her satır gerçekleşme sayısı ve yüzde sıklığını gösterir.</p>
+ <div class="sim-grid">
+ ${table('1-X-2 · simülasyon sayıları',b.results,x=>ft[x.key])}
+ ${table('En çok biten skorlar',b.scores,x=>x.key)}
+ ${table('İlk yarı → maç sonucu',b.htft,x=>{const [start,end]=x.key.split('→');return (ht[start]||start)+' → '+(ft[end]||end);})}
+ ${table('En sık yaşanan olaylar',b.events,x=>x.key)}
+ ${table('Toplam gol dağılımı',b.goals,x=>x.key==='8+'?'8 veya daha fazla gol':x.key+' gol')}
+ ${table('Devre skoru → maç skoru',b.paths,x=>'İY '+x.key.replace(' → ',' → MS '))}
+ </div><p class="sim-disclaimer">Olaylar aynı maçta birlikte gerçekleşebilir; yüzdeleri toplanmaz. Sıklıklar ham 100.000 denemeye aittir. Yukarıdaki 1-X-2 tahminleri geçmiş test kalibrasyonu uygulanmışsa farklı olabilir. Simülasyon sayısının artması veri kalitesini veya gerçek maç tahmininin doğruluğunu kendiliğinden artırmaz.</p>`;
+}
 function resultOfScore(score){const [x,y]=score.split('-').map(Number);return x>y?'1':x<y?'2':'X';}
 function matchOutcome(k,h,a){const v=h+a;return ({'1':h>a,'X':h===a,'2':h<a,'1X':h>=a,'X2':h<=a,'KG Var':h>0&&a>0,'1,5 Üst':v>=2,'2,5 Üst':v>=3,'2,5 Alt':v<=2,'3,5 Alt':v<=3,'4,5 Alt':v<=4,'Ev gol':h>=1,'Dep gol':a>=1,'Ev 3+ gol':h>=3,'Dep 3+ gol':a>=3})[k];}
 function reconcileScoreOutcome(r){
@@ -668,7 +711,7 @@ function renderScenarios(h,a,p,r,ph,pa){
  const stats=['Ev 3+ gol','Dep 3+ gol','3+ farklı galibiyet','Geriden dönüp yenilmeme','İkinci yarı daha gollü','İlk yarı berabere'];
  const predictions=stats.map(k=>`<div class="inline tick"><span>${esc(k)}</span><b>${pc(r.markets[k])}</b></div>`).join('');
  const ht=r.halves.slice(0,3).map(x=>`${x.score} (${pc(x.p)})`).join(' · ');
- $('scenarios').innerHTML=`<p class="lead">${esc(intro)} ${p.competition==='Şampiyonlar Ligi'?'Bu bir Şampiyonlar Ligi simülasyonudur: yerel lig temeli + mevcutsa Avrupa maçlarının farklı örüntüsü kullanılır.':'Yerel liglerdeki skorlar, rakip seviyesi ve saha etkisi temel alındı.'}</p>${displayPatterns(h,p.competition)}<div class="tick">${displayPatterns(a,p.competition)}</div><h3 class="tick">10.000 olası maç gidişatı</h3>${predictions}<p class="small">En sık ilk yarı skorları: ${ht}. Geriye düşen takımın ikinci yarı risk artırması bir model varsayımıdır, gözlemlenmiş oyuncu davranışı değildir.</p>`;
+ $('scenarios').innerHTML=`<p class="lead">${esc(intro)} ${p.competition==='Şampiyonlar Ligi'?'Bu bir Şampiyonlar Ligi simülasyonudur: yerel lig temeli + mevcutsa Avrupa maçlarının farklı örüntüsü kullanılır.':'Yerel liglerdeki skorlar, rakip seviyesi ve saha etkisi temel alındı.'}</p>${displayPatterns(h,p.competition)}<div class="tick">${displayPatterns(a,p.competition)}</div><h3 class="tick">100.000 olası maç gidişatı</h3>${predictions}<p class="small">En sık ilk yarı skorları: ${ht}. Geriye düşen takımın ikinci yarı risk artırması bir model varsayımıdır, gözlemlenmiş oyuncu davranışı değildir.</p>`;
 }
 function teamCard(t){const s=t.stats||{},n=s.matches||t.given?.played||0;const gf=s.raw_gf??(t.given?.played?t.given.gf/t.given.played:null);const ga=s.raw_ga??(t.given?.played?t.given.ga/t.given.played:null);const form=(s.form||[]).map(x=>`${esc(x.opponent)} ${x.gf}-${x.ga}`).join(' · ');
  const v=x=>x==null?'veri yok':fmt(x);const d=s.season_change;const seasonInfo=d&&d.raw_gf!=null?`<br>2025/26 farkı: gol ${d.raw_gf>=0?'+':''}${fmt(d.raw_gf)} / maç; yenen gol ${d.raw_ga>=0?'+':''}${fmt(d.raw_ga)} / maç (en az 5+5 maç)`:'<br>Geçen sezonla güvenilir karşılaştırma için veri yetersiz';return `<h3>${esc(t.name)} <span class="pill">${esc(t.league)}</span></h3><p class="small">Maç: ${n} · Gol: ${v(gf)} · Yenen gol: ${v(ga)} · Şut: ${v(s.shots)} · İsabet: ${v(s.sot)} · Korner: ${v(s.corners)}<br>KG: ${s.btts==null?'—':pc(s.btts)} · 2,5 üst: ${s.over25==null?'—':pc(s.over25)} · Gol yememe: ${s.clean_sheets==null?'—':pc(s.clean_sheets)}<br>Son skorlar: ${form||'yeterli geçmiş yok'}${seasonInfo}</p>`;}
@@ -859,11 +902,12 @@ async function run(){
   const beforeFixture=getChosenFixture(h,a);
   $('researchStatus').textContent='Haftalık arşiv modu: maç seçerken canlı haber araştırması yapılmaz.';
   $('researchSources').innerHTML='<div>Yalnızca Pazartesi arşivinde bulunan doğrulanmış bilgiler kullanılır.</div>';
-  showLoader(true,'Haftalık takım arşiviyle 10.000 senaryo hesaplanıyor...');
-  const comp=$('competition').value;const p=goalRates(h,a,comp),ph=pattern(h,comp),pa=pattern(a,comp),r=simulate(p,ph,pa);
+  showLoader(true,'Haftalık takım arşiviyle 100.000 senaryo hesaplanıyor...');
+  const comp=$('competition').value;const p=goalRates(h,a,comp),ph=pattern(h,comp),pa=pattern(a,comp),simStart=performance.now(),r=simulate(p,ph,pa),simElapsed=Math.round(performance.now()-simStart);
   const c=data.backtest||{};
   if(c.status==='gelişti'&&c.temperature&&c.temperature!==1){const keys=['1','X','2'],t=Number(c.temperature),adjust=keys.map(k=>(r.markets[k]/100)**(1/t)),total=adjust.reduce((x,y)=>x+y,0);keys.forEach((k,i)=>r.markets[k]=adjust[i]/total*100);r.markets['1X']=r.markets['1']+r.markets['X'];r.markets['X2']=r.markets['X']+r.markets['2'];}
   reconcileScoreOutcome(r);
+  renderSimulationInsights(r,simElapsed);
   $('matchName').textContent=h.name+' – '+a.name;
   for(const [key,node] of [['1','p1'],['X','px'],['2','p2']])$(node).textContent=pc(r.markets[key]);
   for(const [key,node] of [['1','bar1'],['X','barx'],['2','bar2']])$(node).style.width=r.markets[key]+'%';
@@ -886,7 +930,7 @@ async function run(){
   };
   $('xgReadout').innerHTML='<b>Takım bazlı xG / xA veri kontrolü</b>'+reportAdvanced(h)+reportAdvanced(a)+
     '<div style="color:#fcb969;margin-top:4px">Maç sonucu simülasyonu henüz xG/xA ile kalibre edilmedi; aşağıdaki yüzdeler skor ve takım gücü temellidir. Veri kapsam puanı, tahmin isabet oranı değildir.</div>';
-  const f=getChosenFixture(h,a);$('forecastNote').textContent=(f?`${f.date} ${f.league} fikstürü eşleşti. `:'Önümüzdeki 7 günde bu eşleşme doğrulanamadı. ')+`10.000 adet iki yarılı skor simülasyonu · ${comp}.`;
+  const f=getChosenFixture(h,a);$('forecastNote').textContent=(f?`${f.date} ${f.league} fikstürü eşleşti. `:'Önümüzdeki 7 günde bu eşleşme doğrulanamadı. ')+`100.000 adet iki yarılı skor simülasyonu · ${comp}.`;
   render50Market(r,getMatchOdds(h,a,f),p.quality);
   renderCouponChoice(h,a,f,r);
   $('teamstats').innerHTML=teamCard(h)+'<div class="tick">'+teamCard(a)+'</div>';
