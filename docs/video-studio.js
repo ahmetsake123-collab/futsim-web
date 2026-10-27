@@ -32,7 +32,7 @@ function analyze(){
 function matchup(a){
  var m=a.r.markets,home=m['1'],away=m['2'],d=Math.abs(home-away);
  var leader=home>away?a.home:a.away,winning=Math.max(home,away),draw=m.X;
- if(d>=8 && winning>draw)return {favori:leader,headline:leader.toLocaleUpperCase('tr-TR')+' FAVORİ',spoken:'Bu maçın favorisi '+leader+'.'};
+ if(d>=8 && winning>draw)return {favori:leader,headline:leader.toUpperCase()+' FAVORİ',spoken:'Bu maçın favorisi '+leader+'.'};
  if(d>=8 && winning<=draw)return {favori:null,headline:'BERABERLİK DE GÜÇLÜ İHTİMAL',spoken:'Galibiyet ihtimallerinde '+leader+' önde, ancak beraberlik de güçlü bir senaryo.'};
  return {favori:null,headline:'DENGELİ MAÇ · NET FAVORİ YOK',spoken:'İki takımın galibiyet ihtimali birbirine yakın. Bu maçta net bir favori yok.'};
 }
@@ -122,9 +122,9 @@ function frame(g,a,t,W,H){
  }
  part(0,4,function(f,u){
   label(g,'MAÇ GÜNÜ',540,354,40,'#6ff0c8');
-  label(g,a.home.toLocaleUpperCase('tr-TR'),540,633,Math.min(92,1160/Math.max(12,a.home.length)),'#f4ffff');
+  label(g,a.home.toUpperCase(),540,633,Math.min(92,1160/Math.max(12,a.home.length)),'#f4ffff');
   label(g,'V S',540,798,52,'#8cacba');
-  label(g,a.away.toLocaleUpperCase('tr-TR'),540,967,Math.min(92,1160/Math.max(12,a.away.length)),'#f4ffff');
+  label(g,a.away.toUpperCase(),540,967,Math.min(92,1160/Math.max(12,a.away.length)),'#f4ffff');
   ring(g,540,798,341+8*Math.sin(u),.15,6.1,'rgba(88,230,205,.3)',4);
   label(g,'100.000 SİMÜLASYON / GERÇEK FUTSIM MOTORU',540,1255,29,'#78d5bd');
  });
@@ -147,7 +147,7 @@ function frame(g,a,t,W,H){
    {key:'2',name:a.away,val:z['2'],color:'#9ba9ff'}].forEach(function(v,i){
     var y=483+i*282;
     rect(g,82,y,916,243,28,'#102938','#2c5761');
-    label(g,v.name.toLocaleUpperCase('tr-TR'),114,y+64,Math.min(41,670/Math.max(8,v.name.length)),'#ecffff','left');
+    label(g,v.name.toUpperCase(),114,y+64,Math.min(41,670/Math.max(8,v.name.length)),'#ecffff','left');
     label(g,percent(v.val),963,y+65,50,v.color,'right');
     bar(114,y+154,848,19,v.val,v.color,(u-i*.35)/2.2);
   });
@@ -204,7 +204,7 @@ function frame(g,a,t,W,H){
   label(g,'FUTSIM',540,767,145,'#f5ffff');
   g.fillStyle='#55dbc2';g.fillRect(216,903,648,4);
   label(g,'HER MAÇIN BİR OLASILIĞI VAR',540,1032,38,'#a5f1df');
-  label(g,a.home.toLocaleUpperCase('tr-TR')+'   •   '+a.away.toLocaleUpperCase('tr-TR'),540,1276,30,'#9ab7c4');
+  label(g,a.home.toUpperCase()+'   •   '+a.away.toUpperCase(),540,1276,30,'#9ab7c4');
  });
  label(g,'F U T S I M',73,120,39,'#6cf5cf','left');
  g.fillStyle='#1d444e';g.fillRect(70,187,940,2);
