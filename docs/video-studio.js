@@ -258,7 +258,7 @@ function buildRecorder(stream){if(!window.MediaRecorder)return null;
  try{return new MediaRecorder(stream,{videoBitsPerSecond:7000000});}catch(e){return null;}
 }
 async function create(){
- if(window.FUTSIM_STUDIO_SYNC){return window.FUTSIM_STUDIO_SYNC.create({analyze,details,frame,buildRecorder,clean});}
+ if(window.FUTSIM_STUDIO_SYNC){return window.FUTSIM_STUDIO_SYNC.create({analyze,details,frame,buildRecorder,clean,bestMarket,matchup,opening});}
  if(working)return;
  try{
   status('FUTSIM 100.000 yeni maç simülasyonu çalıştırıyor…');
@@ -296,7 +296,7 @@ async function create(){
 }
 function init(){if(!el('studioGenerate'))return;
  el('studioGenerate').addEventListener('click',create);
- el('studioPlanOnly')?.addEventListener('click',()=>{if(window.FUTSIM_STUDIO_SYNC)window.FUTSIM_STUDIO_SYNC.prepare({analyze,details,frame,buildRecorder,clean});});
+ el('studioPlanOnly')?.addEventListener('click',()=>{if(window.FUTSIM_STUDIO_SYNC)window.FUTSIM_STUDIO_SYNC.prepare({analyze,details,frame,buildRecorder,clean,bestMarket,matchup,opening});});
  el('studioJump').addEventListener('click',function(){el('videoStudio').scrollIntoView({behavior:'smooth'});});
  status(studioVersion+' hazır. Maçı seç; FUTSIM 100.000 yeni simülasyonla en yüksek olasılıklı bahis seçimini de hesaplar.');
 }
