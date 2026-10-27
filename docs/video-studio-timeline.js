@@ -132,15 +132,9 @@ function renderCanvas(g,a,t,w,h){
  const mapped=sc.window[0]+(sc.window[1]-sc.window[0])*(.05+.90*u);
  api.frame(g,a,mapped,w,h);
  g.setTransform(w/1080,0,0,h/1920,0,0);
- // A shared caption is authored directly from the selected scene paragraph.
- const text=sceneData[i]?.text||'',lines=[];
- const words=text.split(/\s+/);let line='';
- for(const word of words){if((line+' '+word).trim().length>49&&line){lines.push(line);line=word;}else line=(line+' '+word).trim();}
- if(line)lines.push(line);
- g.save();g.globalAlpha=.94;g.fillStyle='#061824';g.beginPath();g.roundRect(95,1581,890,Math.min(174,53+lines.slice(0,3).length*39),22);g.fill();g.restore();
- g.save();g.textAlign='center';g.textBaseline='middle';g.fillStyle='#e7fafa';g.font='600 28px system-ui,Arial';
- lines.slice(0,3).forEach((txt,j)=>g.fillText(txt,540,1624+j*38,836));
- g.restore();
+ // Captions intentionally omitted: scene visuals convey the match facts.
+ // Narration remains in the script editor and in the uploaded audio.
+
 }
 function drawNow(t){
  if(!active||!api)return;
