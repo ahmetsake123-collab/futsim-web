@@ -1,11 +1,11 @@
 {
-  "run_utc": "2026-10-27T03:26:47.262610+00:00",
+  "run_utc": "2026-10-27T18:55:17.851765+00:00",
   "method": "At least 100 next-match chronological walk-forward tests; 2025/26 prehistory, 2026/27 out-of-sample. After each prediction error, adjust using past ONLY; same-day excluded.",
   "source_results": "https://github.com/openfootball (public domain)",
   "source_corners": "https://github.com/oladeeayo/open-matchday (informational non-commercial, attribution)",
   "training_matches": 2156,
-  "available_test_matches": 560,
-  "extra_current_matches_from_attributed_source": 560,
+  "available_test_matches": 565,
+  "extra_current_matches_from_attributed_source": 565,
   "iterations": 500,
   "final_temperature": 0.8875,
   "goal_factors": {
@@ -28,13 +28,13 @@
   },
   "improved_over_baseline_brier": true,
   "corners": {
-    "n": 360,
-    "brier": 0.23486,
-    "baseline_brier": 0.24048,
-    "mean_absolute_corner_error": 2.646,
+    "n": 365,
+    "brier": 0.23532,
+    "baseline_brier": 0.24068,
+    "mean_absolute_corner_error": 2.642,
     "actual_over85_frequency": 0.614,
-    "predicted_over85_mean": 0.595,
-    "source_matches": 560,
+    "predicted_over85_mean": 0.594,
+    "source_matches": 565,
     "examples": [
       {
         "date": "2026-08-28",
@@ -85,65 +85,65 @@
         "baseline_brier": 0.11704
       },
       {
-        "date": "2026-10-25",
-        "league": "Serie A",
-        "home": "lecce",
-        "away": "juventus",
+        "date": "2026-10-26",
+        "league": "Ligue 1",
+        "home": "psg",
+        "away": "olympique lyonnais",
+        "total_corners": 11,
+        "actual_over85": 1,
+        "pred_over85": 0.5497,
+        "pred_total": 9.14,
+        "brier": 0.2028,
+        "baseline_brier": 0.18671
+      },
+      {
+        "date": "2026-10-26",
+        "league": "Süper Lig",
+        "home": "besiktas",
+        "away": "istanbul basaksehir",
+        "total_corners": 7,
+        "actual_over85": 0,
+        "pred_over85": 0.5943,
+        "pred_total": 9.58,
+        "brier": 0.35325,
+        "baseline_brier": 0.34917
+      },
+      {
+        "date": "2026-10-26",
+        "league": "Süper Lig",
+        "home": "caykur rizespor",
+        "away": "trabzonspor",
         "total_corners": 8,
         "actual_over85": 0,
-        "pred_over85": 0.5898,
-        "pred_total": 9.53,
-        "brier": 0.34792,
-        "baseline_brier": 0.29287
+        "pred_over85": 0.5698,
+        "pred_total": 9.33,
+        "brier": 0.32465,
+        "baseline_brier": 0.34917
       },
       {
-        "date": "2026-10-25",
-        "league": "Serie A",
-        "home": "udinese",
-        "away": "milan",
-        "total_corners": 10,
-        "actual_over85": 1,
-        "pred_over85": 0.4894,
-        "pred_total": 8.57,
-        "brier": 0.26072,
-        "baseline_brier": 0.21052
-      },
-      {
-        "date": "2026-10-25",
+        "date": "2026-10-26",
         "league": "Süper Lig",
-        "home": "goztepe",
-        "away": "corum",
-        "total_corners": 5,
-        "actual_over85": 0,
-        "pred_over85": 0.6035,
-        "pred_total": 9.67,
-        "brier": 0.36418,
-        "baseline_brier": 0.35168
-      },
-      {
-        "date": "2026-10-25",
-        "league": "Süper Lig",
-        "home": "konyaspor",
-        "away": "genclerbirligi",
-        "total_corners": 12,
+        "home": "galatasaray",
+        "away": "fenerbahce",
+        "total_corners": 14,
         "actual_over85": 1,
-        "pred_over85": 0.6203,
-        "pred_total": 9.85,
-        "brier": 0.14417,
-        "baseline_brier": 0.16563
+        "pred_over85": 0.6146,
+        "pred_total": 9.79,
+        "brier": 0.14852,
+        "baseline_brier": 0.16736
       }
     ],
     "warning": "Noncommercial attribution dataset; corner forecasts uncertain and do not imply positive betting value."
   },
-  "corner_records_matched": 560,
+  "corner_records_matched": 565,
   "corner_coverage_status": {
     "Premier League": 80,
     "Bundesliga": 63,
-    "La Liga": 98,
+    "La Liga": 99,
     "Serie A": 80,
-    "Ligue 1": 71,
+    "Ligue 1": 72,
     "Eredivisie": 90,
-    "Süper Lig": 78
+    "Süper Lig": 81
   },
   "calibration_bins": [
     {
