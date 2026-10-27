@@ -100,7 +100,8 @@ function details(a){
    model_goal_parameters:{home:a.p.lh,away:a.p.la},markets:m,matchup_classification:matchup(a).headline,
    modal_score:a.chosen.modal,representative_score:a.chosen.representative,highest_probability_betting_market:bestMarket(a),betting_markets_ranked:bettingMarkets(a),
    most_frequent_scores:a.r.scores,all_scores:a.r.allScores,
-   narration:el('studioScript').value};
+   narration:el('studioScript').value,
+   scene_timeline:window.FUTSIM_STUDIO_SYNC?.syncData?.()||null};
   save(new Blob([JSON.stringify(result,null,2)],{type:'application/json'}),'FUTSIM_'+clean(a.home)+'_'+clean(a.away)+'_analiz.json');
  };
 }
@@ -257,6 +258,7 @@ function buildRecorder(stream){if(!window.MediaRecorder)return null;
  try{return new MediaRecorder(stream,{videoBitsPerSecond:7000000});}catch(e){return null;}
 }
 async function create(){
+ if(window.FUTSIM_STUDIO_SYNC){return window.FUTSIM_STUDIO_SYNC.create({analyze,details,frame,buildRecorder,clean});}
  if(working)return;
  try{
   status('FUTSIM 100.000 yeni maç simülasyonu çalıştırıyor…');
@@ -294,6 +296,7 @@ async function create(){
 }
 function init(){if(!el('studioGenerate'))return;
  el('studioGenerate').addEventListener('click',create);
+ el('studioPlanOnly')?.addEventListener('click',()=>{if(window.FUTSIM_STUDIO_SYNC)window.FUTSIM_STUDIO_SYNC.prepare({analyze,details,frame,buildRecorder,clean});});
  el('studioJump').addEventListener('click',function(){el('videoStudio').scrollIntoView({behavior:'smooth'});});
  status(studioVersion+' hazır. Maçı seç; FUTSIM 100.000 yeni simülasyonla en yüksek olasılıklı bahis seçimini de hesaplar.');
 }
