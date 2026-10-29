@@ -1,0 +1,1436 @@
+{
+  "created_utc": "2026-10-29T23:34:50.116456+00:00",
+  "season_train": "2024-25",
+  "season_test": "2025-26",
+  "competitions": [
+    "Premier League",
+    "Bundesliga",
+    "La Liga",
+    "Serie A",
+    "Ligue 1",
+    "Eredivisie",
+    "Süper Lig",
+    "Şampiyonlar Ligi"
+  ],
+  "coverage": {
+    "train": {
+      "Premier League": 342,
+      "Bundesliga": 289,
+      "La Liga": 304,
+      "Serie A": 361,
+      "Ligue 1": 306,
+      "Eredivisie": 306,
+      "Süper Lig": 338,
+      "Şampiyonlar Ligi": 187
+    },
+    "full_season": {
+      "Premier League": 380,
+      "Bundesliga": 306,
+      "La Liga": 380,
+      "Serie A": 380,
+      "Ligue 1": 306,
+      "Eredivisie": 305,
+      "Süper Lig": 99,
+      "Şampiyonlar Ligi": 186
+    },
+    "independent_2026_27": {
+      "Premier League": 47,
+      "Bundesliga": 34,
+      "La Liga": 52,
+      "Serie A": 47,
+      "Ligue 1": 45,
+      "Eredivisie": 63,
+      "Süper Lig": 36,
+      "Şampiyonlar Ligi": 0
+    }
+  },
+  "complete_test_matches": 2342,
+  "season_metrics": {
+    "existing_simple_baseline": {
+      "n": 2342,
+      "brier": 0.61388,
+      "log_loss": 1.02495,
+      "accuracy": 0.4987,
+      "correct": 1168,
+      "over25_brier": 0.24564,
+      "btts_brier": 0.24627,
+      "home_goal_mae": 1.0101,
+      "away_goal_mae": 0.88731
+    },
+    "context_candidate": {
+      "n": 2342,
+      "brier": 0.6185,
+      "log_loss": 1.03058,
+      "accuracy": 0.4915,
+      "correct": 1151,
+      "over25_brier": 0.24569,
+      "btts_brier": 0.24658,
+      "home_goal_mae": 1.0082,
+      "away_goal_mae": 0.89244
+    }
+  },
+  "independent_2026_27": {
+    "baseline": {
+      "n": 324,
+      "brier": 0.6234,
+      "log_loss": 1.03768,
+      "accuracy": 0.4846,
+      "correct": 157,
+      "over25_brier": 0.23715,
+      "btts_brier": 0.24281,
+      "home_goal_mae": 1.05097,
+      "away_goal_mae": 0.97939
+    },
+    "candidate": {
+      "n": 324,
+      "brier": 0.62066,
+      "log_loss": 1.03399,
+      "accuracy": 0.4877,
+      "correct": 158,
+      "over25_brier": 0.23753,
+      "btts_brier": 0.24324,
+      "home_goal_mae": 1.05165,
+      "away_goal_mae": 0.97556
+    },
+    "n": 324
+  },
+  "per_competition": {
+    "Premier League": {
+      "baseline": {
+        "n": 380,
+        "brier": 0.62982,
+        "log_loss": 1.04745,
+        "accuracy": 0.4737,
+        "correct": 180,
+        "over25_brier": 0.25484,
+        "btts_brier": 0.247,
+        "home_goal_mae": 0.97962,
+        "away_goal_mae": 0.84012
+      },
+      "context": {
+        "n": 380,
+        "brier": 0.63409,
+        "log_loss": 1.05108,
+        "accuracy": 0.4947,
+        "correct": 188,
+        "over25_brier": 0.25562,
+        "btts_brier": 0.24724,
+        "home_goal_mae": 0.98784,
+        "away_goal_mae": 0.84086
+      },
+      "home_upsets": 59,
+      "draw_surprises": 104
+    },
+    "Bundesliga": {
+      "baseline": {
+        "n": 306,
+        "brier": 0.60401,
+        "log_loss": 1.01249,
+        "accuracy": 0.5098,
+        "correct": 156,
+        "over25_brier": 0.23741,
+        "btts_brier": 0.2413,
+        "home_goal_mae": 1.09252,
+        "away_goal_mae": 0.95871
+      },
+      "context": {
+        "n": 306,
+        "brier": 0.60688,
+        "log_loss": 1.01687,
+        "accuracy": 0.4935,
+        "correct": 151,
+        "over25_brier": 0.23617,
+        "btts_brier": 0.24186,
+        "home_goal_mae": 1.08872,
+        "away_goal_mae": 0.9561
+      },
+      "home_upsets": 54,
+      "draw_surprises": 75
+    },
+    "La Liga": {
+      "baseline": {
+        "n": 380,
+        "brier": 0.60787,
+        "log_loss": 1.01692,
+        "accuracy": 0.5158,
+        "correct": 196,
+        "over25_brier": 0.24559,
+        "btts_brier": 0.24512,
+        "home_goal_mae": 0.90778,
+        "away_goal_mae": 0.77187
+      },
+      "context": {
+        "n": 380,
+        "brier": 0.6121,
+        "log_loss": 1.02125,
+        "accuracy": 0.4947,
+        "correct": 188,
+        "over25_brier": 0.2457,
+        "btts_brier": 0.24551,
+        "home_goal_mae": 0.8983,
+        "away_goal_mae": 0.78571
+      },
+      "home_upsets": 63,
+      "draw_surprises": 93
+    },
+    "Serie A": {
+      "baseline": {
+        "n": 380,
+        "brier": 0.62541,
+        "log_loss": 1.03997,
+        "accuracy": 0.4974,
+        "correct": 189,
+        "over25_brier": 0.25075,
+        "btts_brier": 0.25263,
+        "home_goal_mae": 0.95178,
+        "away_goal_mae": 0.83065
+      },
+      "context": {
+        "n": 380,
+        "brier": 0.6238,
+        "log_loss": 1.03787,
+        "accuracy": 0.5184,
+        "correct": 197,
+        "over25_brier": 0.25142,
+        "btts_brier": 0.25272,
+        "home_goal_mae": 0.93648,
+        "away_goal_mae": 0.83711
+      },
+      "home_upsets": 61,
+      "draw_surprises": 99
+    },
+    "Ligue 1": {
+      "baseline": {
+        "n": 306,
+        "brier": 0.61544,
+        "log_loss": 1.02581,
+        "accuracy": 0.4706,
+        "correct": 144,
+        "over25_brier": 0.25124,
+        "btts_brier": 0.25551,
+        "home_goal_mae": 1.07648,
+        "away_goal_mae": 0.98713
+      },
+      "context": {
+        "n": 306,
+        "brier": 0.62441,
+        "log_loss": 1.0375,
+        "accuracy": 0.4608,
+        "correct": 141,
+        "over25_brier": 0.25077,
+        "btts_brier": 0.25464,
+        "home_goal_mae": 1.07786,
+        "away_goal_mae": 0.99952
+      },
+      "home_upsets": 54,
+      "draw_surprises": 75
+    },
+    "Eredivisie": {
+      "baseline": {
+        "n": 305,
+        "brier": 0.61337,
+        "log_loss": 1.02567,
+        "accuracy": 0.5082,
+        "correct": 155,
+        "over25_brier": 0.23791,
+        "btts_brier": 0.23405,
+        "home_goal_mae": 1.01599,
+        "away_goal_mae": 0.87448
+      },
+      "context": {
+        "n": 305,
+        "brier": 0.61962,
+        "log_loss": 1.0337,
+        "accuracy": 0.4754,
+        "correct": 145,
+        "over25_brier": 0.23677,
+        "btts_brier": 0.23377,
+        "home_goal_mae": 1.01715,
+        "away_goal_mae": 0.86943
+      },
+      "home_upsets": 55,
+      "draw_surprises": 80
+    },
+    "Süper Lig": {
+      "baseline": {
+        "n": 99,
+        "brier": 0.62358,
+        "log_loss": 1.04036,
+        "accuracy": 0.4141,
+        "correct": 41,
+        "over25_brier": 0.25382,
+        "btts_brier": 0.25467,
+        "home_goal_mae": 0.86171,
+        "away_goal_mae": 0.9172
+      },
+      "context": {
+        "n": 99,
+        "brier": 0.62418,
+        "log_loss": 1.04204,
+        "accuracy": 0.4747,
+        "correct": 47,
+        "over25_brier": 0.25451,
+        "btts_brier": 0.25554,
+        "home_goal_mae": 0.8479,
+        "away_goal_mae": 0.92844
+      },
+      "home_upsets": 19,
+      "draw_surprises": 28
+    },
+    "Şampiyonlar Ligi": {
+      "baseline": {
+        "n": 186,
+        "brier": 0.57939,
+        "log_loss": 0.97436,
+        "accuracy": 0.5753,
+        "correct": 107,
+        "over25_brier": 0.22919,
+        "btts_brier": 0.24266,
+        "home_goal_mae": 1.22511,
+        "away_goal_mae": 1.05877
+      },
+      "context": {
+        "n": 186,
+        "brier": 0.5934,
+        "log_loss": 0.99283,
+        "accuracy": 0.5054,
+        "correct": 94,
+        "over25_brier": 0.23085,
+        "btts_brier": 0.24564,
+        "home_goal_mae": 1.24441,
+        "away_goal_mae": 1.06655
+      },
+      "home_upsets": 33,
+      "draw_surprises": 33
+    }
+  },
+  "discovered_mistake_patterns": {
+    "underdog_away_wins_missed": 398,
+    "draws_not_top_pick": 587,
+    "five_plus_goal_matches": 374,
+    "five_plus_goal_model_home_mae": 1.724,
+    "upsets_when_favourite_over_60_percent": 62
+  },
+  "biggest_errors": [
+    {
+      "date": "2026-01-24",
+      "league": "Bundesliga",
+      "home": "FC Bayern München",
+      "away": "FC Augsburg",
+      "actual": "1-2",
+      "predicted": 0,
+      "truth": 2,
+      "probs": [
+        0.78355,
+        0.13295,
+        0.08351
+      ],
+      "brier": 1.47158131011997,
+      "log_loss": 2.482835896605903,
+      "hit": 0,
+      "over25_brier": 0.08317592082737386,
+      "btts_brier": 0.2141220727950314,
+      "home_goal_mae": 1.8370960428595402,
+      "away_goal_mae": 1.1543230080830817,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 3.4,
+          "earlier_diff": 2.8333333333333335,
+          "venue_n": 8,
+          "venue_unbeaten": 1.0,
+          "venue_gf": 4.125,
+          "venue_ga": 0.875,
+          "n_total": 51,
+          "gf": 4.1,
+          "ga": 1
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -1,
+          "earlier_diff": -1.3333333333333333,
+          "venue_n": 8,
+          "venue_unbeaten": 0.25,
+          "venue_gf": 1,
+          "venue_ga": 2.125,
+          "n_total": 51,
+          "gf": 0.8,
+          "ga": 1.5
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.55,
+        "home_form_delta": 0.567,
+        "away_form_delta": 0.333
+      }
+    },
+    {
+      "date": "2025-09-14",
+      "league": "Serie A",
+      "home": "AS Roma",
+      "away": "Torino",
+      "actual": "0-1",
+      "predicted": 0,
+      "truth": 2,
+      "probs": [
+        0.68824,
+        0.20897,
+        0.10279
+      ],
+      "brier": 1.322332640480967,
+      "log_loss": 2.2750834654808982,
+      "hit": 0,
+      "over25_brier": 0.18643295450509415,
+      "btts_brier": 0.12797687356487542,
+      "home_goal_mae": 1.853722413448578,
+      "away_goal_mae": 0.4480236263660181,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 1,
+          "earlier_diff": 0.6666666666666666,
+          "venue_n": 8,
+          "venue_unbeaten": 1.0,
+          "venue_gf": 1.75,
+          "venue_ga": 0.375,
+          "n_total": 39,
+          "gf": 1.3,
+          "ga": 0.5
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -2,
+          "earlier_diff": -0.16666666666666666,
+          "venue_n": 8,
+          "venue_unbeaten": 0.375,
+          "venue_gf": 0.875,
+          "venue_ga": 1.875,
+          "n_total": 39,
+          "gf": 0.4,
+          "ga": 1.5
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.445,
+        "home_form_delta": 0.333,
+        "away_form_delta": -1.833
+      }
+    },
+    {
+      "date": "2025-08-30",
+      "league": "Eredivisie",
+      "home": "PSV",
+      "away": "Telstar 1963",
+      "actual": "0-2",
+      "predicted": 0,
+      "truth": 2,
+      "probs": [
+        0.7177,
+        0.16189,
+        0.12041
+      ],
+      "brier": 1.3149714477409415,
+      "log_loss": 2.1168378915904738,
+      "hit": 0,
+      "over25_brier": 0.4650945088550275,
+      "btts_brier": 0.32449874874100565,
+      "home_goal_mae": 2.5538531461145135,
+      "away_goal_mae": 1.0384417144338263,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 2.8,
+          "earlier_diff": 1.8333333333333333,
+          "venue_n": 8,
+          "venue_unbeaten": 0.875,
+          "venue_gf": 3.375,
+          "venue_ga": 1.25,
+          "n_total": 37,
+          "gf": 3.7,
+          "ga": 1
+        },
+        "away": {
+          "last_n": 3,
+          "recent_diff": -1.3333333333333333,
+          "earlier_diff": 0,
+          "venue_n": 1,
+          "venue_unbeaten": 0.0,
+          "venue_gf": 0,
+          "venue_ga": 2,
+          "n_total": 3,
+          "gf": 0.6666666666666666,
+          "ga": 2
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.328,
+        "home_form_delta": 0.967,
+        "away_form_delta": 0
+      }
+    },
+    {
+      "date": "2025-12-14",
+      "league": "Bundesliga",
+      "home": "FC Bayern München",
+      "away": "1. FSV Mainz 05",
+      "actual": "2-2",
+      "predicted": 0,
+      "truth": 1,
+      "probs": [
+        0.75559,
+        0.14965,
+        0.09476
+      ],
+      "brier": 1.302996330005062,
+      "log_loss": 1.8994806083601985,
+      "hit": 0,
+      "over25_brier": 0.11292395049849042,
+      "btts_brier": 0.2326465335282606,
+      "home_goal_mae": 0.6001751545851315,
+      "away_goal_mae": 1.1808302063925538,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 2.8,
+          "earlier_diff": 3.1666666666666665,
+          "venue_n": 8,
+          "venue_unbeaten": 1.0,
+          "venue_gf": 3.875,
+          "venue_ga": 0.5,
+          "n_total": 46,
+          "gf": 3.5,
+          "ga": 0.7
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -1.2,
+          "earlier_diff": -1,
+          "venue_n": 8,
+          "venue_unbeaten": 0.375,
+          "venue_gf": 1.25,
+          "venue_ga": 2.125,
+          "n_total": 46,
+          "gf": 1,
+          "ga": 2.1
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.445,
+        "home_form_delta": -0.367,
+        "away_form_delta": -0.2
+      }
+    },
+    {
+      "date": "2026-01-04",
+      "league": "Ligue 1",
+      "home": "Olympique Marseille",
+      "away": "FC Nantes",
+      "actual": "0-2",
+      "predicted": 0,
+      "truth": 2,
+      "probs": [
+        0.68817,
+        0.18243,
+        0.12939
+      ],
+      "brier": 1.2648203613370252,
+      "log_loss": 2.0448944881563906,
+      "hit": 0,
+      "over25_brier": 0.3648218866619299,
+      "btts_brier": 0.2692857843606174,
+      "home_goal_mae": 2.257557200728109,
+      "away_goal_mae": 1.13355848063538,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 1.4,
+          "earlier_diff": 1.3333333333333333,
+          "venue_n": 8,
+          "venue_unbeaten": 1.0,
+          "venue_gf": 3,
+          "venue_ga": 1,
+          "n_total": 50,
+          "gf": 2.4,
+          "ga": 1
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -1.4,
+          "earlier_diff": -0.8333333333333334,
+          "venue_n": 8,
+          "venue_unbeaten": 0.5,
+          "venue_gf": 0.75,
+          "venue_ga": 1.625,
+          "n_total": 50,
+          "gf": 0.9,
+          "ga": 2.1
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.32,
+        "home_form_delta": 0.067,
+        "away_form_delta": -0.567
+      }
+    },
+    {
+      "date": "2025-11-29",
+      "league": "Bundesliga",
+      "home": "Union Berlin",
+      "away": "Heidenheim",
+      "actual": "1-2",
+      "predicted": 0,
+      "truth": 2,
+      "probs": [
+        0.68427,
+        0.18626,
+        0.12947
+      ],
+      "brier": 1.2607278783567744,
+      "log_loss": 2.044276227131071,
+      "hit": 0,
+      "over25_brier": 0.17118185390956528,
+      "btts_brier": 0.24456370325309032,
+      "home_goal_mae": 1.202523003039091,
+      "away_goal_mae": 1.1600303355165822,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 0.4,
+          "earlier_diff": -0.8333333333333334,
+          "venue_n": 6,
+          "venue_unbeaten": 0.8333333333333334,
+          "venue_gf": 1.5,
+          "venue_ga": 1.3333333333333333,
+          "n_total": 11,
+          "gf": 1.2,
+          "ga": 1.6
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -2.2,
+          "earlier_diff": -1.1666666666666667,
+          "venue_n": 5,
+          "venue_unbeaten": 0.0,
+          "venue_gf": 0.4,
+          "venue_ga": 2.8,
+          "n_total": 11,
+          "gf": 0.7,
+          "ga": 2.3
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.438,
+        "home_form_delta": 1.233,
+        "away_form_delta": -1.033
+      }
+    },
+    {
+      "date": "2026-03-22",
+      "league": "Ligue 1",
+      "home": "Rennes",
+      "away": "FC Metz",
+      "actual": "0-0",
+      "predicted": 0,
+      "truth": 1,
+      "probs": [
+        0.73213,
+        0.16026,
+        0.1076
+      ],
+      "brier": 1.2527483365028416,
+      "log_loss": 1.8309267550157522,
+      "hit": 0,
+      "over25_brier": 0.424914478583675,
+      "btts_brier": 0.27881195017315424,
+      "home_goal_mae": 2.5006951532546156,
+      "away_goal_mae": 0.8561783908533944,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 1.8,
+          "earlier_diff": -0.6666666666666666,
+          "venue_n": 8,
+          "venue_unbeaten": 0.75,
+          "venue_gf": 2.125,
+          "venue_ga": 1.125,
+          "n_total": 26,
+          "gf": 1.6,
+          "ga": 1.3
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -2,
+          "earlier_diff": -1,
+          "venue_n": 8,
+          "venue_unbeaten": 0.25,
+          "venue_gf": 0.875,
+          "venue_ga": 2,
+          "n_total": 26,
+          "gf": 0.8,
+          "ga": 2.3
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.32,
+        "home_form_delta": 2.467,
+        "away_form_delta": -1
+      }
+    },
+    {
+      "date": "2025-10-19",
+      "league": "Eredivisie",
+      "home": "FC Groningen",
+      "away": "Sparta Rotterdam",
+      "actual": "0-2",
+      "predicted": 0,
+      "truth": 2,
+      "probs": [
+        0.69025,
+        0.17104,
+        0.13871
+      ],
+      "brier": 1.247528707455155,
+      "log_loss": 1.9753910982287548,
+      "hit": 0,
+      "over25_brier": 0.46755361657203975,
+      "btts_brier": 0.35039589241288344,
+      "home_goal_mae": 2.4879194243891876,
+      "away_goal_mae": 0.9627066655766265,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 1.4,
+          "earlier_diff": -1.5,
+          "venue_n": 8,
+          "venue_unbeaten": 0.75,
+          "venue_gf": 2.625,
+          "venue_ga": 1.125,
+          "n_total": 42,
+          "gf": 1.6,
+          "ga": 1.5
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -2,
+          "earlier_diff": 0,
+          "venue_n": 8,
+          "venue_unbeaten": 0.75,
+          "venue_gf": 1.625,
+          "venue_ga": 1.375,
+          "n_total": 42,
+          "gf": 1.3,
+          "ga": 2.6
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": -0.18,
+        "home_form_delta": 2.5,
+        "away_form_delta": -2
+      }
+    },
+    {
+      "date": "2025-12-10",
+      "league": "Şampiyonlar Ligi",
+      "home": "Qarabağ Ağdam FK (AZE)",
+      "away": "AFC Ajax (NED)",
+      "actual": "2-4",
+      "predicted": 0,
+      "truth": 2,
+      "probs": [
+        0.66333,
+        0.19656,
+        0.14012
+      ],
+      "brier": 1.2180318906356926,
+      "log_loss": 1.9652696499971187,
+      "hit": 0,
+      "over25_brier": 0.18992909699845686,
+      "btts_brier": 0.24949729139442753,
+      "home_goal_mae": 0.0992959442677579,
+      "away_goal_mae": 3.1550924327229506,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": -0.2,
+          "earlier_diff": 0,
+          "venue_n": 2,
+          "venue_unbeaten": 1.0,
+          "venue_gf": 2,
+          "venue_ga": 1,
+          "n_total": 5,
+          "gf": 1.6,
+          "ga": 1.8
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -3,
+          "earlier_diff": 0,
+          "venue_n": 2,
+          "venue_unbeaten": 0.0,
+          "venue_gf": 0.5,
+          "venue_ga": 4.5,
+          "n_total": 5,
+          "gf": 0.2,
+          "ga": 3.2
+        },
+        "ucl_samples": [
+          5,
+          5
+        ],
+        "venue_edge": 0.205,
+        "home_form_delta": 0,
+        "away_form_delta": 0
+      }
+    },
+    {
+      "date": "2026-04-18",
+      "league": "Ligue 1",
+      "home": "Lille",
+      "away": "OGC Nice",
+      "actual": "0-0",
+      "predicted": 0,
+      "truth": 1,
+      "probs": [
+        0.71783,
+        0.17269,
+        0.10948
+      ],
+      "brier": 1.2117189741396779,
+      "log_loss": 1.7562849256334272,
+      "hit": 0,
+      "over25_brier": 0.355637781002468,
+      "btts_brier": 0.23755180893929026,
+      "home_goal_mae": 2.3095866290129945,
+      "away_goal_mae": 0.7789918444509578,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 1.8,
+          "earlier_diff": -0.3333333333333333,
+          "venue_n": 8,
+          "venue_unbeaten": 0.75,
+          "venue_gf": 1.5,
+          "venue_ga": 1.25,
+          "n_total": 29,
+          "gf": 1.5,
+          "ga": 0.5
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -1.6,
+          "earlier_diff": 0,
+          "venue_n": 8,
+          "venue_unbeaten": 0.25,
+          "venue_gf": 1.125,
+          "venue_ga": 2.125,
+          "n_total": 63,
+          "gf": 0.9,
+          "ga": 2
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.32,
+        "home_form_delta": 2.133,
+        "away_form_delta": -1.6
+      }
+    },
+    {
+      "date": "2025-08-23",
+      "league": "Premier League",
+      "home": "Manchester City",
+      "away": "Tottenham Hotspur",
+      "actual": "0-2",
+      "predicted": 0,
+      "truth": 2,
+      "probs": [
+        0.65016,
+        0.20314,
+        0.1467
+      ],
+      "brier": 1.192091590836506,
+      "log_loss": 1.9193587484543995,
+      "hit": 0,
+      "over25_brier": 0.30153294788155316,
+      "btts_brier": 0.24586669485182341,
+      "home_goal_mae": 2.033689156963885,
+      "away_goal_mae": 1.1548627187945906,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 1.8,
+          "earlier_diff": 1.3333333333333333,
+          "venue_n": 8,
+          "venue_unbeaten": 0.875,
+          "venue_gf": 2.375,
+          "venue_ga": 1,
+          "n_total": 37,
+          "gf": 2.1,
+          "ga": 0.4
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -0.8,
+          "earlier_diff": -1,
+          "venue_n": 8,
+          "venue_unbeaten": 0.375,
+          "venue_gf": 1.25,
+          "venue_ga": 1.875,
+          "n_total": 37,
+          "gf": 1,
+          "ga": 2
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.32,
+        "home_form_delta": 0.467,
+        "away_form_delta": 0.2
+      }
+    },
+    {
+      "date": "2025-09-14",
+      "league": "Eredivisie",
+      "home": "FC Utrecht",
+      "away": "FC Groningen",
+      "actual": "0-1",
+      "predicted": 0,
+      "truth": 2,
+      "probs": [
+        0.65812,
+        0.1864,
+        0.15548
+      ],
+      "brier": 1.1810873603915273,
+      "log_loss": 1.8612563019082453,
+      "hit": 0,
+      "over25_brier": 0.41658702375150874,
+      "btts_brier": 0.33366097230406033,
+      "home_goal_mae": 2.2963987052140387,
+      "away_goal_mae": 0.02795507880938941,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 1.6,
+          "earlier_diff": 1.3333333333333333,
+          "venue_n": 8,
+          "venue_unbeaten": 0.875,
+          "venue_gf": 2.375,
+          "venue_ga": 0.5,
+          "n_total": 38,
+          "gf": 2.3,
+          "ga": 0.7
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -0.4,
+          "earlier_diff": 0.16666666666666666,
+          "venue_n": 8,
+          "venue_unbeaten": 0.25,
+          "venue_gf": 1.125,
+          "venue_ga": 2.75,
+          "n_total": 38,
+          "gf": 2.2,
+          "ga": 2.1
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.445,
+        "home_form_delta": 0.267,
+        "away_form_delta": -0.567
+      }
+    },
+    {
+      "date": "2025-08-10",
+      "league": "Süper Lig",
+      "home": "Çaykur Rizespor",
+      "away": "Göztepe",
+      "actual": "0-3",
+      "predicted": 0,
+      "truth": 2,
+      "probs": [
+        0.65933,
+        0.1835,
+        0.15717
+      ],
+      "brier": 1.178749311771382,
+      "log_loss": 1.8504227267162676,
+      "hit": 0,
+      "over25_brier": 0.11327135425730475,
+      "btts_brier": 0.3519644151011022,
+      "home_goal_mae": 2.3500140900035658,
+      "away_goal_mae": 1.9334270973956242,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 1.6,
+          "earlier_diff": -0.8333333333333334,
+          "venue_n": 8,
+          "venue_unbeaten": 0.75,
+          "venue_gf": 2.375,
+          "venue_ga": 1.375,
+          "n_total": 36,
+          "gf": 1.8,
+          "ga": 1.4
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -0.6,
+          "earlier_diff": 0.3333333333333333,
+          "venue_n": 8,
+          "venue_unbeaten": 0.5,
+          "venue_gf": 1.125,
+          "venue_ga": 1.75,
+          "n_total": 36,
+          "gf": 1.5,
+          "ga": 1.6
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.07,
+        "home_form_delta": 2.433,
+        "away_form_delta": -0.933
+      }
+    },
+    {
+      "date": "2026-05-17",
+      "league": "Serie A",
+      "home": "FC Internazionale Milano",
+      "away": "Hellas Verona",
+      "actual": "1-1",
+      "predicted": 0,
+      "truth": 1,
+      "probs": [
+        0.70205,
+        0.18417,
+        0.11378
+      ],
+      "brier": 1.1714001720118574,
+      "log_loss": 1.6918923913055457,
+      "hit": 0,
+      "over25_brier": 0.3087087666890733,
+      "btts_brier": 0.288759019959191,
+      "home_goal_mae": 1.1678281121338685,
+      "away_goal_mae": 0.26098362646800244,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 1.8,
+          "earlier_diff": 1,
+          "venue_n": 8,
+          "venue_unbeaten": 1.0,
+          "venue_gf": 2.875,
+          "venue_ga": 0.875,
+          "n_total": 55,
+          "gf": 2.3,
+          "ga": 1
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -0.6,
+          "earlier_diff": -1.1666666666666667,
+          "venue_n": 8,
+          "venue_unbeaten": 0.375,
+          "venue_gf": 0.625,
+          "venue_ga": 1.75,
+          "n_total": 73,
+          "gf": 0.5,
+          "ga": 1.2
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.445,
+        "home_form_delta": 0.8,
+        "away_form_delta": 0.567
+      }
+    },
+    {
+      "date": "2026-01-25",
+      "league": "Premier League",
+      "home": "Brentford",
+      "away": "Nottingham Forest",
+      "actual": "0-2",
+      "predicted": 0,
+      "truth": 2,
+      "probs": [
+        0.64097,
+        0.20523,
+        0.1538
+      ],
+      "brier": 1.169007412145106,
+      "log_loss": 1.8720827927688322,
+      "hit": 0,
+      "over25_brier": 0.30712451999132984,
+      "btts_brier": 0.2564170776414652,
+      "home_goal_mae": 2.025102290238661,
+      "away_goal_mae": 1.124441336968463,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 1.2,
+          "earlier_diff": -0.16666666666666666,
+          "venue_n": 8,
+          "venue_unbeaten": 0.875,
+          "venue_gf": 2.125,
+          "venue_ga": 0.875,
+          "n_total": 58,
+          "gf": 1.7,
+          "ga": 1.1
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -0.8,
+          "earlier_diff": 0.16666666666666666,
+          "venue_n": 8,
+          "venue_unbeaten": 0.375,
+          "venue_gf": 0.875,
+          "venue_ga": 1.5,
+          "n_total": 58,
+          "gf": 0.8,
+          "ga": 1.4
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.32,
+        "home_form_delta": 1.367,
+        "away_form_delta": -0.967
+      }
+    },
+    {
+      "date": "2026-05-10",
+      "league": "Premier League",
+      "home": "Nottingham Forest",
+      "away": "Newcastle United",
+      "actual": "1-1",
+      "predicted": 0,
+      "truth": 1,
+      "probs": [
+        0.68784,
+        0.18015,
+        0.13202
+      ],
+      "brier": 1.1627056789479102,
+      "log_loss": 1.7139828636886545,
+      "hit": 0,
+      "over25_brier": 0.3863195319841856,
+      "btts_brier": 0.21579475654298522,
+      "home_goal_mae": 1.3033287948488113,
+      "away_goal_mae": 0.09634580252766212,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 2.6,
+          "earlier_diff": -0.6666666666666666,
+          "venue_n": 8,
+          "venue_unbeaten": 0.75,
+          "venue_gf": 0.75,
+          "venue_ga": 0.75,
+          "n_total": 71,
+          "gf": 1.9,
+          "ga": 0.8
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -0.4,
+          "earlier_diff": 0,
+          "venue_n": 8,
+          "venue_unbeaten": 0.5,
+          "venue_gf": 1.125,
+          "venue_ga": 1.375,
+          "n_total": 71,
+          "gf": 1.4,
+          "ga": 1.5
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.07,
+        "home_form_delta": 2.5,
+        "away_form_delta": -0.4
+      }
+    },
+    {
+      "date": "2026-02-14",
+      "league": "Serie A",
+      "home": "Como",
+      "away": "Fiorentina",
+      "actual": "1-2",
+      "predicted": 0,
+      "truth": 2,
+      "probs": [
+        0.6355,
+        0.20601,
+        0.15849
+      ],
+      "brier": 1.1544285843306659,
+      "log_loss": 1.8420418569468349,
+      "hit": 0,
+      "over25_brier": 0.19377586290211846,
+      "btts_brier": 0.23542107512263444,
+      "home_goal_mae": 1.0261177109811999,
+      "away_goal_mae": 1.1011039283702453,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 1.4,
+          "earlier_diff": 0.6666666666666666,
+          "venue_n": 8,
+          "venue_unbeaten": 0.875,
+          "venue_gf": 1.75,
+          "venue_ga": 0.625,
+          "n_total": 23,
+          "gf": 1.8,
+          "ga": 0.9
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -0.2,
+          "earlier_diff": 0.16666666666666666,
+          "venue_n": 8,
+          "venue_unbeaten": 0.375,
+          "venue_gf": 1,
+          "venue_ga": 2,
+          "n_total": 24,
+          "gf": 1.6,
+          "ga": 1.4
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.32,
+        "home_form_delta": 0.733,
+        "away_form_delta": -0.367
+      }
+    },
+    {
+      "date": "2025-10-29",
+      "league": "Ligue 1",
+      "home": "FC Metz",
+      "away": "Lens",
+      "actual": "2-0",
+      "predicted": 2,
+      "truth": 0,
+      "probs": [
+        0.16106,
+        0.20501,
+        0.63393
+      ],
+      "brier": 1.147725273205259,
+      "log_loss": 1.825997001223863,
+      "hit": 0,
+      "over25_brier": 0.32389963516487164,
+      "btts_brier": 0.2746196446376632,
+      "home_goal_mae": 1.0788378049817684,
+      "away_goal_mae": 2.044723137774132,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": -3,
+          "earlier_diff": -1.25,
+          "venue_n": 4,
+          "venue_unbeaten": 0.5,
+          "venue_gf": 0.25,
+          "venue_ga": 1.25,
+          "n_total": 9,
+          "gf": 0.6666666666666666,
+          "ga": 2.888888888888889
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": 1.2,
+          "earlier_diff": 0,
+          "venue_n": 4,
+          "venue_unbeaten": 0.75,
+          "venue_gf": 1,
+          "venue_ga": 1,
+          "n_total": 9,
+          "gf": 1.5555555555555556,
+          "ga": 0.8888888888888888
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": -0.215,
+        "home_form_delta": -1.75,
+        "away_form_delta": 1.2
+      }
+    },
+    {
+      "date": "2025-08-31",
+      "league": "Serie A",
+      "home": "FC Internazionale Milano",
+      "away": "Udinese",
+      "actual": "1-2",
+      "predicted": 0,
+      "truth": 2,
+      "probs": [
+        0.62828,
+        0.21167,
+        0.16005
+      ],
+      "brier": 1.145046123446638,
+      "log_loss": 1.8322515147048284,
+      "hit": 0,
+      "over25_brier": 0.21336092998262848,
+      "btts_brier": 0.2501245247898089,
+      "home_goal_mae": 0.9599010616346191,
+      "away_goal_mae": 1.128105210452883,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 1.6,
+          "earlier_diff": 0.3333333333333333,
+          "venue_n": 1,
+          "venue_unbeaten": 1.0,
+          "venue_gf": 5,
+          "venue_ga": 0,
+          "n_total": 20,
+          "gf": 1.5,
+          "ga": 0.9
+        },
+        "away": {
+          "last_n": 1,
+          "recent_diff": 0,
+          "earlier_diff": 0,
+          "venue_n": 0,
+          "venue_unbeaten": 0.5,
+          "venue_gf": null,
+          "venue_ga": null,
+          "n_total": 1,
+          "gf": 1,
+          "ga": 1
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.05,
+        "home_form_delta": 1.267,
+        "away_form_delta": 0
+      }
+    },
+    {
+      "date": "2026-02-11",
+      "league": "Eredivisie",
+      "home": "NEC",
+      "away": "FC Utrecht",
+      "actual": "1-3",
+      "predicted": 0,
+      "truth": 2,
+      "probs": [
+        0.63717,
+        0.19536,
+        0.16747
+      ],
+      "brier": 1.1372450950553994,
+      "log_loss": 1.7869267634160617,
+      "hit": 0,
+      "over25_brier": 0.13967192022705083,
+      "btts_brier": 0.18239475334151223,
+      "home_goal_mae": 1.1949076174736861,
+      "away_goal_mae": 1.9651288017581043,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 1.4,
+          "earlier_diff": 1,
+          "venue_n": 8,
+          "venue_unbeaten": 0.875,
+          "venue_gf": 2.625,
+          "venue_ga": 1.75,
+          "n_total": 55,
+          "gf": 2.9,
+          "ga": 1.5
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -0.8,
+          "earlier_diff": 0.3333333333333333,
+          "venue_n": 8,
+          "venue_unbeaten": 0.5,
+          "venue_gf": 1.125,
+          "venue_ga": 1.875,
+          "n_total": 55,
+          "gf": 1,
+          "ga": 1.3
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.195,
+        "home_form_delta": 0.4,
+        "away_form_delta": -1.133
+      }
+    }
+  ],
+  "deployment": {
+    "recommend_context_model": false,
+    "rule": "Only promote if both full 2025/26 and independent 2026/27 Brier improve.",
+    "ui_engine_updated": false,
+    "commentary_data_only": true
+  },
+  "data_limits": [
+    "2025/26 Champions League uses openfootball league/knockout stages, no qualifiers; penalty/extra-time results excluded",
+    "No verified per-player event/lineup/injury/coaching history in these match-score files",
+    "Corners not present in CC0 match-only files; must validate separately with match-level corner dataset",
+    "Historical match results are only visible AFTER each game for all subsequent dates; no same-day leakage",
+    "This is NOT full validation of the browser two-half 100k Monte Carlo engine; independent league score model"
+  ],
+  "source_errors": [
+    {
+      "league": "Şampiyonlar Ligi",
+      "season": "2026-27",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ]
+}
