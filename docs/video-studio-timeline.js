@@ -29,12 +29,12 @@ function sceneScript(a){
  return [
   api.opening(a),
   'FUTSIM bu maçı tam yüz bin kez simüle etti.',
-  a.home+' yüzde '+Math.round(m['1'])+', beraberlik yüzde '+Math.round(m.X)+', '+a.away+' yüzde '+Math.round(m['2'])+'. '+(fav.favori?fav.favori+' favori.':fav.spoken),
+  a.home+' yüzde '+Math.round(m['1'])+', beraberlik yüzde '+Math.round(m.X)+', '+a.away+' yüzde '+Math.round(m['2'])+'. '+(fav.favori?fav.favori+' favori.':fav.spoken)+' '+(a.commentary?.[0]||''),
   'En sık skor '+score(modal.score)+', yüzde '+Math.round(modal.p)+'. Alternatifler '+other.slice(0,2).map(x=>score(x.score)+' yüzde '+Math.round(x.p)).join(', ')+'.',
-  'Yapay zekânın tercih ettiği skor '+score(rep.score)+'.',
+  'Yapay zekânın tercih ettiği skor '+score(rep.score)+'. '+(a.commentary?.[1]||''),
   'İki buçuk gol üstü yüzde '+Math.round(m['2,5 Üst'])+', altı yüzde '+Math.round(m['2,5 Alt'])+'.',
-  'Karşılıklı gol var yüzde '+Math.round(m['KG Var'])+', yok yüzde '+Math.round(100-m['KG Var'])+'.',
-  bet?'Yapay zekânın tercih ettiği bahis: '+bet.spoken+', yüzde '+Math.round(bet.p)+'. Bu, garanti değil, model olasılığıdır.':'Bahis seçimi için yeterli veri yok.',
+  'Karşılıklı gol var yüzde '+Math.round(m['KG Var'])+', yok yüzde '+Math.round(100-m['KG Var'])+'. '+(a.corners?.ok?'Kornerde sekiz buçuk üst yüzde '+Math.round(a.corners.over85)+'.':'Korner için yeterli doğrulanmış veri yok.'),
+  bet?'Yapay zekânın tercih ettiği bahis: '+bet.spoken+', yüzde '+Math.round(bet.p)+'. '+(bet.kind==='separate corner model'?'Bu oran ayrı korner modelinden geliyor. ':'')+'Garanti değil, model olasılığıdır.':'Bahis seçimi için yeterli veri yok.',
   'FUTSIM. Her maçın bir olasılığı var.'
  ];
 }
