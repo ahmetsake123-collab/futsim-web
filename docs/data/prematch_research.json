@@ -1,5 +1,5 @@
 {
-  "fetched_at_utc": "2026-10-29T23:42:50.464378+00:00",
+  "fetched_at_utc": "2026-10-29T23:47:44.720439+00:00",
   "source": "Google News RSS search headlines",
   "usage": "News headlines are not validated articles. Never modify winning probabilities or claim verified injuries using headlines alone.",
   "searched_matches": 14,
@@ -9,48 +9,8 @@
       "home": "frosinone",
       "away": "lecce",
       "league": "Serie A",
-      "headline_count": 8,
+      "headline_count": 1,
       "headlines": [
-        {
-          "headline": "Frosinone vs Lecce: Lineups, Prediction, Betting Tips & Odds - Oddschecker",
-          "source": "Oddschecker",
-          "published_at": "2026-10-29T14:37:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPOGtZRnhvQnc3Qm9LTG05VHdreDZ2ZlpXNEVMd3FfaE9mMGZXYWxjNm1CRC1Rd21ObmRfczFOeWJHMWVfc29qX3lZSFdoZTc4aTRuYVRWdW5RTEJfbHZNSmIyR1RRcXE3Ymh4VjE5VlUwZWc3RHNnd19oZTZGY2xkRXRaR0paM2pEZV9qb2p2T2poNWRCR1UwZUJVV2drTnNCRGJVM2pPb2JTQ1cxS0QtazBzV2hiYXdNMWVSenhueGt3OU9jV2F3R3RONVZieVE?oc=5",
-          "headline_tags": [
-            "rotation"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "Frosinone vs Lecce: Lineups, Prediction, Odds & Bet Builder Tip - WhoScored.com",
-          "source": "WhoScored.com",
-          "published_at": "2026-10-29T09:35:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPTEdFaExfSzFUUVNQNjlDQS14SXZIZGFIYlllcFl6NTRXNHhHWkZHWXFGTVNaZkZHUkxZM2tBNER1M1FZN3d2d0owQlg4YTYxYk1BQWh5SXM5Wl9ScDNTVHV5aE1MMlRYY0NhN2JpSFhGX2VRLU5fajAyT2VMWmxkcll6cDl6RW03Q1pLaVlqZTYwck9SVjRaWExyWTY4YlRWa1N5eTR2bTdLRXVhelB5LS1wZEROZzV4dzFJ?oc=5",
-          "headline_tags": [
-            "rotation"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "Preview: Frosinone vs Lecce - prediction, team news, lineups - Sports Mole",
-          "source": "Sports Mole",
-          "published_at": "2026-10-27T08:36:20+00:00",
-          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQdnpkSWx6dkpXMFlZbU1OR2tlRlMxX0xLVzBIeElfWTZSVnFVakVsTG1qSzI2bG9tNE1QREs1NEstSXlsS0drVDA1eklySGxPbUUwMlVET0F1M28tY244U2pyUmZCT2FTUGVzdXRMREo3WUZfOUJHNTdjYVU1bmJ3WXNkZ3JSelFBUW1HQnUxNE92MW1WRW5jVGI1ZDJFUHNvZWJMRWxOMEtxd2tqMkQ4b29DNE1zUQ?oc=5",
-          "headline_tags": [
-            "rotation"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "Frosinone vs Lecce preview: form, stats and odds - Sofascore",
-          "source": "Sofascore",
-          "published_at": "2026-10-29T07:50:23+00:00",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPZ090Zms2bUQ5eGVsemJTR1BURC1xb3FpZmUtdlk4bHd4UnJLTlRxOUNETlpTQjBlVkxJU2tNczVwYnBGcW1sY3NKa2xtTklYWG1VMkZmeWM4aXJadF94MGRUM2taWXgyTm5TcjFlc1drTmVhUTJNeHJSVWZvWXdDaDFUbw?oc=5",
-          "headline_tags": [
-            "form"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
         {
           "headline": "PREVIEW | Frosinone vs Lecce: team news, lineups, predictions (Serie A 29/10) - Yahoo Sports",
           "source": "Yahoo Sports",
@@ -60,35 +20,6 @@
             "rotation"
           ],
           "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "Frosinone vs Lecce Prediction, Betting Tips, Lineups & Odds | 29 Oct 2026 - Sportsgambler",
-          "source": "Sportsgambler",
-          "published_at": "2026-10-29T21:59:43+00:00",
-          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxONjBGYVl2TWtmd09XZWZBMWYwNERVT09DOENvSy1oSmNGclZIM2U1eXZfYlIzZnhWWUxldXl1blJkTjZiVGNmdDM3UTViWkVBTVJ4MDBzWW81a3BWUEtEaDhEeHRmLVBLWTdfUnZVUXF4b0RJOHZYX0FPS01ZT2xGNk9sZlExdzYwZTVSSURyTXdBVFVNMnVNd0ZGTmVyWGN3ZWVLbTRBLVZFdw?oc=5",
-          "headline_tags": [
-            "rotation"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "Frosinone vs Lecce prediction: teams form analysis, possible lineups on October 29, 2026 - RatingBet",
-          "source": "RatingBet",
-          "published_at": "2026-10-28T22:00:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNUTBrd2k2M1EyaE80djJoZGxSSzNKRmRhenJRMGJKT0VNTUpHTGRXdUZFMm1hZnpUbFlYRDE1akdsWFZCdDI3QXJXOUJ5WWgweUlPaV9TLVdwQURQSThNZEpiWWNmaDh0RUdUZ0xwZU1ZQTY0ZXNQRzBFZjAtalk3dUlrNUwwUGtLYkl0b1FOd0tUMTRmVmlBRFBUNUtYc0FlcDNUbTZfV2dLYklPTmV3VUZTdTROc0pRMk14bw?oc=5",
-          "headline_tags": [
-            "rotation",
-            "form"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "Lecce vs. Frosinone Live Stream of Italian Serie A - CBS Sports",
-          "source": "CBS Sports",
-          "published_at": "2026-10-22T19:58:57+00:00",
-          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBHT0kwTmwzZEVJcDBvY2ZPVFU4SGpuc1A3cWw4R3BLdTF6YkE3TlktRldyNmdKV29JQUIydGtPTGpTZnAzQ2VsalNRV0RmSVUtZjZnb0J6cmZMcF9uc0ZSSVFoVQ?oc=5",
-          "headline_tags": [],
-          "verification": "headline_only_not_confirmed"
         }
       ]
     },
@@ -97,45 +28,25 @@
       "home": "fiorentina",
       "away": "atalanta",
       "league": "Serie A",
-      "headline_count": 4,
+      "headline_count": 2,
       "headlines": [
         {
-          "headline": "Fiorentina vs Atalanta: Lineups and how to watch - Yahoo Sports",
-          "source": "Yahoo Sports",
-          "published_at": "2026-10-29T18:56:55+00:00",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQcGkwUlJobk1oZ01ZQWNva045c3VWMTFOUFVLSnRTVXZ1T1B0WHhkMWNFUTZZbGNBWklVSXhoY1U0VzBkdWtjVHNuSGhwSDhya2wwQWoyY2V3V29ITEk0TDZld0xJVWNHSUh0UEZDaHhVYlZTakt2dkFXVkk1SXk1YkZEZEQ5SkwydGxCRkZB?oc=5",
+          "headline": "Preview: Fiorentina vs Atalanta BC - prediction, team news, lineups - Sports Mole",
+          "source": "Sports Mole",
+          "published_at": "2026-10-27T15:27:28+00:00",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNMFN4Wk02Z2RQXzBKTDFSOVAyUWZyVG1tR1VzeUg0SjNIN1c4cUFHcHlxN0kyc3NmdkJYQjAxWHJ1Y3c4WVJfdkMyNGZ1ZmRkQkxtTS1YVFRWMXM5REFXUWxpSGRZMGdxdGxPRDM0MFRLbVU1LTJLNmRNZWFPcXJ2ekJvS21uM3RQQTJsNjZyVlZLcGhvN1o4QUZhaUtrRE5DSm9LRTdnREUzZUUtVnBYWjVvcHZGdFk1Tm5adg?oc=5",
           "headline_tags": [
             "rotation"
           ],
           "verification": "headline_only_not_confirmed"
         },
         {
-          "headline": "Fiorentina vs Atalanta: Lineups, Prediction, Odds & Bet Builder Tip - WhoScored.com",
-          "source": "WhoScored.com",
-          "published_at": "2026-10-29T11:57:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOLVJVYUNUM0Q5ZFg5LVI0M1otMHdpTi05YjRfMFM5YnRiMDlyM0hMLTVqSTZsY3ZKVGhfUzhhM2RwckVnQi1GcDBrSGplQmIwVjYwMWV0a294WUptUTlRclktZWhxNUxnVTVwN3E0R3ZKSjRRLUdKSWZIN0c0ZDRIUmxtQzlDVlgwTHJEaTNYRWtQSEc2czR3TUd5clFwLWt6QzFZOUp1VUVPMUlRUGhBeGhOTlpFQUVuQWlZVElsZDQ?oc=5",
+          "headline": "PREVIEW | Fiorentina vs Atalanta: team news, lineups, predictions (Serie A 29/10) - Playmakerstats",
+          "source": "Playmakerstats",
+          "published_at": "2026-10-27T19:58:58+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSnFkYk9Hc0RMcWQtajc0UEtwejQzT3AyTUgwNmdjRk1qNTk0bjRQV2haTmlQZGhnUnFmLWtoaEpNQk5fVzhXQmVSdFYwZGRCZHZIRVhadXVkZXVwb0w0WlMyT1lRSmdCektvNUhPRUF5ckR0OWpTZHVMMDBONjVfX2pweVVrb1NuNS1KcmdEb3pzMUFCMHRINmhyVHRYaGFWRFZiQmJYbmF6XzN4ZW1mQ0ozeS1NX3hpSVE?oc=5",
           "headline_tags": [
             "rotation"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "Fiorentina vs Atalanta: Lineups, Prediction, Betting Tips & Odds - Oddschecker",
-          "source": "Oddschecker",
-          "published_at": "2026-10-29T16:56:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNMUhqRDFwc3J5SWl1c1JFeGp6OGFNTXdhdHc3YmkzSEZmSF9sTV8wcXZRNnhfRnlYanhpcXN0SVA5T1VSQWxqUVVneGdSUllRSkNuREFxWk44cVZHejRncW5TWUMyQlZxSl9QcnV0cTctalVoRks3SzhzT2ZpZVNnQ0M3Vmk1R29vUUdNeERtU2RWekVDbDhlZWR5WmxFLTZHSy0xV0NyRDRpTUd5OC1zR1lIQXo4cEs4Y3JwTVpCTGJIVWxscm9rQk1GWUlRSU5HYmpEQg?oc=5",
-          "headline_tags": [
-            "rotation"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "Fiorentina vs Atalanta preview: form, stats and a goalsy feel - Sofascore",
-          "source": "Sofascore",
-          "published_at": "2026-10-29T08:05:23+00:00",
-          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNUkYzNTRZMWhHak5qOTNCNm10akl6R2tHZWI2anIxdHRHenBUbHRWeThLV1NYS1dxZ3dsTHlxVDRYWllZZ2ZWeTc4RWJ0NkVMM2tuS1NiTWNUSW85TWhOcnlkLXhESlN2STF3VGFwOFBSR2JLbW1sMmM3cTBrVlNaZGNpa0R6ZmF2aTE4YW1PRVd1S1Np?oc=5",
-          "headline_tags": [
-            "form"
           ],
           "verification": "headline_only_not_confirmed"
         }
@@ -187,61 +98,33 @@
       "home": "konyaspor",
       "away": "galatasaray",
       "league": "Süper Lig",
-      "headline_count": 0,
-      "headlines": []
-    },
-    {
-      "date": "2026-10-31",
-      "home": "chelsea",
-      "away": "manchester united",
-      "league": "Premier League",
-      "headline_count": 5,
+      "headline_count": 3,
       "headlines": [
         {
-          "headline": "TV info, team news, form guide: Chelsea v United - Manchester United",
-          "source": "Manchester United",
-          "published_at": "2026-10-29T18:05:39+00:00",
-          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZktJM1pPd3ZpSHQzcWZ5eXZNSzhSR2U2WURoMTJrV0M2TTgwdHJDTWdKdnJQVF9TQ2NsNUlCd2o4b3luSGtrS2xuUnF1YVpWdV96OVA1eUNPc0ljSThUR3N2Z21NVXhGeVBTLW9YUEJOQjRNV3JUT3dYU1BZTGlWS1ZBelhDdGI3a01ueUlkWlZuQTZTSUl3?oc=5",
-          "headline_tags": [
-            "form"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "Chelsea vs Manchester United Prediction, Lineups & Team News - RotoWire",
-          "source": "RotoWire",
-          "published_at": "2026-10-28T06:03:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNXzc3ZEhXTEs1ZjlHNWttN2VPcmFBTVFoRkFXVEtPOEU0bFRUZDdsN2o5SnRkTXBNMUUtRXNpblFrcVZyWFVwYjBmWVQtNTQxS2ZLb1R1WXFBdDVWRG05M1hlMEg5SFhzRVh5N2dhSUg3aWEtRExqMmpqZWQ2b083dWNoQVdNcGp0bFJLaFJ3VFZsLVd5cWpBR09CQUFSUEhfbDhYdG1ONmc4UkU?oc=5",
-          "headline_tags": [
-            "rotation"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "PREVIEW | Chelsea vs Manchester United: team news, lineups, predictions (Premier League 31/10) - Yahoo Sports",
-          "source": "Yahoo Sports",
-          "published_at": "2026-10-29T11:30:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNdEtscUxDb3kzTGpGSUlxaTJNRmd3RTQyRi14c3lRUkJqSXVHR19XOWV0LW9melBwd19kM3hBaHowUjd5UGhCYXJHcnFXNm03bVZuWlJCR1ltYVJSLUtGN3Nua0txQ3hWbkFLNFZwbU1ZZHdVaWJyX1VGZEExYkhiMUhacUtxVy11alBFTDBn?oc=5",
-          "headline_tags": [
-            "rotation"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "Chelsea vs Manchester United preview, team news and prediction - Fan Banter",
-          "source": "Fan Banter",
-          "published_at": "2026-10-29T20:32:46+00:00",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTHBDdk1pVjVFT3pBZm5RVmJPWGM3ektBZ3JZS1NvVjI1a3VZUjlnVzRUR1pyNkRvTkdsMG5jbjN4dEFOV2dTSmZSd2pfNUt5N25QTDRTMmtmSmluV3BHZHNLd1hLclR2RGpyMzdmUnNwVld0Q2p2SE5JV0lsbk9wamp5emZNZVN1TUtXQURldno?oc=5",
+          "headline": "Konyaspor - Galatasaray - Flashscore.com",
+          "source": "Flashscore.com",
+          "published_at": "2026-10-28T22:55:52+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNVlA4bU5PVl9NSDJQZ3FrLUFSbXpNdlFfcGlfdDVldXhwTTRzb3lHcmgwTzdMczUyS1ZJX01SQlBwV3Bkb3E5S01aWjBybUdhTGxNQlNIR1BEc0J0Zng3VVhtR3N1S2hUck1OeER5SEJlbElYSXdSdjUyMi1tQWxWdjNOaVpOSUhTTVE?oc=5",
           "headline_tags": [],
           "verification": "headline_only_not_confirmed"
         },
         {
-          "headline": "Lacroix, Martinez & Pedro - Chelsea injury news ahead of Manchester United Premier League 2026-27 clash - Khel Now",
-          "source": "Khel Now",
-          "published_at": "2026-10-29T16:54:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOS1IyUW1lZmI1YTVKb3M4RlRUNXAyM1RiLTZpOGZDMmk0dVRpWGZPX09RNU4tNjZSMjZ4UUoyMVlZTDZiQlBNd3hqTWFnQlhDYTY3REtZVWswOU9aOEhWUUd5WDlrREQwTVViWjN4aGlFSFJVOGNtdHV3X1d0Uzh2a2hESW9yX1V1ZG9paE9ySFp6RmVwdkFibG9n?oc=5",
+          "headline": "Preview: Konyaspor vs Galatasaray - prediction, team news, lineups - Sports Mole",
+          "source": "Sports Mole",
+          "published_at": "2026-10-28T17:28:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQb3RicjF0VkNJWm56YllPaU1CbEI1S2xIcWF0c2JrTEZ6ekRPNGZVUllwTVp1dmtWVXNGU3kzZ0txU2ZRVC0ybkFWQ282RkY3VC1sMTQxd2lrTlRzRjU2YTZCVDdUWTFxSmxsWGFKelNvd3BLczdYU2JFZUtZZUZxa2JBQ04xVWFyQ19EaVRsY256QzloaHEzaXdrcHFIamlaRy1FUm0zSXNBclVzTHJsMmhtOGxCZTFjM3JPT0tB?oc=5",
           "headline_tags": [
-            "injury"
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Konyaspor vs Galatasaray Prediction, Betting Tips, Lineups & Odds | 30 Oct 2026 - Sportsgambler",
+          "source": "Sportsgambler",
+          "published_at": "2026-10-29T00:31:05+00:00",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbFd4dUFRcUhOY1FwLUk1OHNXaEdwc3BNQWlHMWE3c09CdmtSQlo5ODJGVzg1RlI3Szh6MVJSTEtnd1N6WkI4WXFDQnFzU0lSZFdxazFUTnZNbjlLWTZKN21sd0xLR2FxMGtHRndYdjJTb2g2aWhaWm02TThsdWJVOWdYbnB3Ullpc3NnSk1ueG1YZUNEaWRoalluTW1YYVBMcmtoQXdVdFBzWUlwbHdlWTFB?oc=5",
+          "headline_tags": [
+            "rotation"
           ],
           "verification": "headline_only_not_confirmed"
         }
@@ -249,37 +132,19 @@
     },
     {
       "date": "2026-10-31",
+      "home": "chelsea",
+      "away": "manchester united",
+      "league": "Premier League",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-10-31",
       "home": "bournemouth",
       "away": "leeds united",
       "league": "Premier League",
-      "headline_count": 5,
+      "headline_count": 1,
       "headlines": [
-        {
-          "headline": "Bournemouth vs Leeds United Prediction, Tips and Odds | Premier League - TNT Sports",
-          "source": "TNT Sports",
-          "published_at": "2026-10-29T16:20:43+00:00",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNdk1XN091eG5lTFV2bE5TQjVUREMzTmJjTUM0R0JXbjdqUTVsMTJBc3MtM3VxMG1aRjRJbjd0QktHQkZieGJ2Z3hCZjZWa3BscjUwMjg5SExWWWtpNWZrNlgtV21XZVVjdWYzUEhXbXRjTkxxVi1rTFVmTjFLeGZOTUhTU09USHZpLU84TTBFSzZwYTU4NzVXYTh1OXFxdXNwOGJYeWZ3?oc=5",
-          "headline_tags": [],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "Daniel Farke press conference: Bournemouth vs Leeds United - BBC",
-          "source": "BBC",
-          "published_at": "2026-10-29T15:14:01+00:00",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFA0MS1TS3dEaE5yWnlfRUNWc21YZlBqenVIWjFnc3VCelBkYkEwbjkyR0U0MG1HNDdLQWxmaGFCNjFrTjJGVUg3M0pMa1BNYVlYRTdpVDFBdklORTVWWEpKdFBuemtjeGJCb3VF?oc=5",
-          "headline_tags": [],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "Leeds United & Bournemouth injury news as midfield 'question mark' leaves 5 out & 3 doubts but key man back - Yorkshire Evening Post",
-          "source": "Yorkshire Evening Post",
-          "published_at": "2026-10-29T16:59:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOZTBXa0o0TEdJRUVkVVFKRzVLaEx6ZGl5S0wyTEk2aUJYTmhDcW5WOEpGNEFqZ1pocFVmZ3pvUE1hUHFGN3FFSDhpTzI0S1l5T1VzRG9ieERYdUpKMHYxWC10aEd1akxwMjZfN0E1cHJGX2xyWWVlYlRsWV9YU2toQXRwbGpadkkyZDRwcldEVDhxaGJWMkFCSWkzNmFiQi0xc3pBYVFDWEZkTlM1WGFsVHU0WE9rRXJFOU8wbG1KLWlxd012M2lN?oc=5",
-          "headline_tags": [
-            "injury"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
         {
           "headline": "Preview: Bournemouth vs Leeds United - prediction, team news, lineups - Sports Mole",
           "source": "Sports Mole",
@@ -289,14 +154,6 @@
             "rotation"
           ],
           "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "Leeds United predicted XI vs Bournemouth: Brenden Aaronson and 'outstanding' star axed by Daniel Farke - MOT Leeds News",
-          "source": "MOT Leeds News",
-          "published_at": "2026-10-28T12:00:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNRUNyMXBBVHRYM0dZZjFNVnZmRk5iN01wVG1nbVRmdV9sanRnUVVJYVpKenFxdmxvdE9rUHk1aGRtTXcyNjJYLUs4MGR3NGRpNF95bjNTb0dyOTlOTFhydGwwb09PbVVzTVBSaFFpNkVaT1N5UUJtdTB2dm5OUU9mX3gtOFVielpzS1pmLWs5TWhId1lyOW5XdG82Q1B4cmdaVTBiVXFFb3hGdmJ0Skk4VkxHZ191T1ZJTnRNcmptQVJBZFE3cDVWQm5n?oc=5",
-          "headline_tags": [],
-          "verification": "headline_only_not_confirmed"
         }
       ]
     },
@@ -305,18 +162,8 @@
       "home": "brentford",
       "away": "nottingham forest",
       "league": "Premier League",
-      "headline_count": 3,
+      "headline_count": 2,
       "headlines": [
-        {
-          "headline": "Brentford vs Nottingham Forest: Predictions, Picks, Odds & Lineups - Squawka",
-          "source": "Squawka",
-          "published_at": "2026-10-25T02:38:56+00:00",
-          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNRE9iVm1sX2hxM1JvdWIzTG8xRFdNVlJIZzlDQmYtV1duNkprMzhnRWJGb1ExZXYwRlVXZ2pXWU5yUkJxSVRmb1lPcjRhMUVBLVo2Nk1ZbkxhNVgwR2JKRC1GeU1kSzRaZUFZYjhXbzZ4dktCcDA5ZFVONjFCY1A3bEE0Q2lPU3dMRms0d1hTYUIzRk1JaVFuSG9RRWdiMHRfRFhQaG0zalVVQjA2TnRFWTluS2FFNUU?oc=5",
-          "headline_tags": [
-            "rotation"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
         {
           "headline": "PREVIEW | Brentford vs Nottingham Forest: team news, lineups, predictions (Premier League 31/10) - Yahoo Sports",
           "source": "Yahoo Sports",
@@ -359,8 +206,8 @@
         {
           "headline": "Coventry City vs Sunderland: Predictions, Picks, Odds & Lineups - Squawka",
           "source": "Squawka",
-          "published_at": "2026-10-25T03:01:38+00:00",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQM1V6RkZFT0lFVzluWlQxbG91R0gtNmhaUjljekdQZHczc28yVlIzWVZEVk9qc3dwcEhZd3R4X2JRUnYzMElEb1J4NjdnSF9CVTZSOWRvRE82WjdqWlkwbUJkcWpQcE4wU0FPdHVVRHQ3Ml9LbkIzQWJtOVJHQ0RMWUlfcDhCQkN6MTMyTWN6Q2pBcjRCNTJvMnRHclFJeTlSYVZIZW5JS3h2MlRsTUs1R3p1MA?oc=5",
+          "published_at": "2026-10-29T10:04:07+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNV0NONlZCMW1xRHdtOWlNQnRFQ3RBZjljVGk4R2RHMFJLWXhBdjZyVkxTbVhIdUVBWVdJNTNRamwtVEZYQkFoQWp4cGRQNnVKQVV5SVdKSXJKLUhGUlpkSzg2ZWxBTlo4MGxidU1lRk1BZW1KUmtDbWVNekR3R0xFYXMxRnc4bGlsWG9nMDhVUDNZSEZNY2tIT2dxVVk0N3BQbXNPZnlvUm9QT1J3QUdVTmJFMA?oc=5",
           "headline_tags": [
             "rotation"
           ],
@@ -373,8 +220,19 @@
       "home": "hull city",
       "away": "ipswich",
       "league": "Premier League",
-      "headline_count": 0,
-      "headlines": []
+      "headline_count": 1,
+      "headlines": [
+        {
+          "headline": "Hull City vs Ipswich Town: Predictions, Picks, Odds & Lineups - Squawka",
+          "source": "Squawka",
+          "published_at": "2026-10-25T03:01:44+00:00",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQUXI2OWg4dC01LUYwTzdCdG84U1BJR0RUNXBLdS13MW1PVzdwSGt4Um9xV3FTaTNzeEZxMi1LRnhWc0lOUnY4OTNjYjVvMFZKdHktOVlKdnVqYUpGTkVmNkV3SVJEUnVZZldwSFk5bTNLTkh2Sld0LUU3eWVXanhPaUMwTU5EOXFHWUFLOFBIUmM3S2FtV3BobFBUMjJzZkR2WEtyRU9ZVml4NV9mMEtLbA?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        }
+      ]
     },
     {
       "date": "2026-10-31",

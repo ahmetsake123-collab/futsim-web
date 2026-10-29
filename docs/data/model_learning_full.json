@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-10-29T23:42:47.787744+00:00",
+  "created_utc": "2026-10-29T23:47:41.546830+00:00",
   "season_train": "2024-25",
   "season_test": "2025-26",
   "competitions": [
@@ -41,7 +41,7 @@
       "Ligue 1": 72,
       "Eredivisie": 90,
       "Süper Lig": 81,
-      "Şampiyonlar Ligi": 0
+      "Şampiyonlar Ligi": 54
     }
   },
   "complete_test_matches": 2549,
@@ -79,36 +79,36 @@
   },
   "independent_2026_27": {
     "baseline": {
-      "n": 573,
-      "brier": 0.62166,
-      "log_loss": 1.03484,
-      "accuracy": 0.466,
-      "correct": 267,
-      "over25_brier": 0.23873,
-      "btts_brier": 0.2425,
-      "home_goal_mae": 1.06981,
-      "away_goal_mae": 0.99834,
+      "n": 627,
+      "brier": 0.61476,
+      "log_loss": 1.025,
+      "accuracy": 0.4801,
+      "correct": 301,
+      "over25_brier": 0.23737,
+      "btts_brier": 0.24168,
+      "home_goal_mae": 1.09534,
+      "away_goal_mae": 1.00456,
       "corner_over85": {
         "n": 431,
         "brier": 0.24126
       }
     },
     "candidate": {
-      "n": 573,
-      "brier": 0.62138,
-      "log_loss": 1.03401,
-      "accuracy": 0.4625,
-      "correct": 265,
-      "over25_brier": 0.23765,
-      "btts_brier": 0.24222,
-      "home_goal_mae": 1.06056,
-      "away_goal_mae": 0.99933,
+      "n": 627,
+      "brier": 0.61515,
+      "log_loss": 1.02502,
+      "accuracy": 0.4721,
+      "correct": 296,
+      "over25_brier": 0.23631,
+      "btts_brier": 0.24204,
+      "home_goal_mae": 1.08742,
+      "away_goal_mae": 1.00479,
       "corner_over85": {
         "n": 431,
         "brier": 0.24126
       }
     },
-    "n": 573
+    "n": 627
   },
   "per_competition": {
     "Premier League": {
@@ -1526,11 +1526,5 @@
     "Historical match results are only visible AFTER each game for all subsequent dates; no same-day leakage",
     "This is NOT full validation of the browser two-half 100k Monte Carlo engine; independent league score model"
   ],
-  "source_errors": [
-    {
-      "league": "Şampiyonlar Ligi",
-      "season": "2026-27",
-      "error": "HTTP Error 404: Not Found"
-    }
-  ]
+  "source_errors": []
 }
