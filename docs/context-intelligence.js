@@ -1,7 +1,7 @@
 /* FUTSIM competition-aware narrative, grounded only in published score records. */
 (function(){
 'use strict';
-let current=null,learning=null,last=null;
+let current=null,learning=null,research=null,last=null;
 const $=id=>document.getElementById(id);
 const numeric=x=>Number.isFinite(Number(x))?Number(x):null;
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -55,6 +55,21 @@ function build(h,a,comp){
  }
  return thoughts.slice(0,4);
 }
+function renderNews(h,a){
+ if(!research?.results)return;
+ const match=(research.results||[]).find(x=>
+   norm(x.home)===norm(h.name)&&norm(x.away)===norm(a.name));
+ const status=$('researchStatus'),root=$('researchSources');
+ if(!status||!root)return;
+ if(!match){status.textContent='Bu maç için güncel başlık arşivinde doğrulanmış kayıt yok.';return;}
+ const sourceTime=research.fetched_at_utc?new Date(research.fetched_at_utc).toLocaleString('tr-TR'):'bilinmiyor';
+ status.textContent='Kaynak başlığı araştırması: '+match.headline_count+' yayın · Son tarama '+sourceTime+
+ ' · Haber başlıkları doğrulanmış sakatlık veya kadro bilgisi sayılmaz.';
+ root.innerHTML=(match.headlines||[]).map(x=>'<div><b>'+esc(x.source)+'</b><p>'+esc(x.headline)+'</p>'+
+   '<small>'+esc(x.published_at?.slice(0,10))+' · yalnızca başlık okundu</small> · '+
+   '<a rel="noopener noreferrer" target="_blank" href="'+esc(x.url)+'">Haberi aç</a></div>').join('')||
+   '<div>İlgili iki takımın adını birlikte içeren tarihli bir yayın başlığı bulunamadı.</div>';
+}
 function render(h,a,comp,r,corners){
  last={h,a,comp,r,corners};
  const dest=$('contextInsights');if(!dest)return;
@@ -67,6 +82,7 @@ function render(h,a,comp,r,corners){
  explain+='<p class="small">'+esc(market)+'</p>';
  explain+='<p class="small" style="color:#fcb969">Sakatlıklar, teknik direktör değişikliği ve olası rotasyon ancak tarihli güvenilir kaynakla doğrulanırsa yorumlanmalıdır. Bu sinyaller henüz simülasyon yüzdelerine otomatik etki etmiyor.</p>';
  dest.innerHTML=explain;
+ renderNews(h,a);
  const audit=$('contextLearningSummary');if(audit){
   const d=learning;
   audit.textContent=d?('2025/26 geçmiş test: '+d.complete_test_matches+' maç; mevcut basit model Brier '+d.season_metrics.existing_simple_baseline.brier+', bağlam modeli '+d.season_metrics.context_candidate.brier+'. '+(d.deployment.recommend_context_model?'Yeni model iki dönemde de daha iyi göründü; uygulamaya henüz geçirilmedi.':'İyileştirme iki dönemde doğrulanmadı; mevcut model korundu.')+' Kapsam: 7 lig + Şampiyonlar Ligi.'):'Tam sezon test raporu henüz yüklenmedi.';
@@ -74,11 +90,13 @@ function render(h,a,comp,r,corners){
 }
 async function init(){
  try{
- const [a,b]=await Promise.allSettled([
+ const [a,b,c]=await Promise.allSettled([
    fetch('data/competition_form.json?v=20261030',{cache:'no-store'}).then(x=>x.ok?x.json():null),
-   fetch('data/model_learning_full.json?v=20261030',{cache:'no-store'}).then(x=>x.ok?x.json():null)]);
+   fetch('data/model_learning_full.json?v=20261030',{cache:'no-store'}).then(x=>x.ok?x.json():null),
+   fetch('data/prematch_research.json?v=20261030',{cache:'no-store'}).then(x=>x.ok?x.json():null)]);
  if(a.status==='fulfilled')current=a.value;
  if(b.status==='fulfilled')learning=b.value;
+ if(c.status==='fulfilled')research=c.value;
  if(last)render(last.h,last.a,last.comp,last.r,last.corners);
  }catch(e){}
 }
