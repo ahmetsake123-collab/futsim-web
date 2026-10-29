@@ -44,7 +44,9 @@ def run():
      if published.tzinfo is None:published=published.replace(tzinfo=dt.timezone.utc)
     except Exception:continue
     # No post-match content, older than 10 days, or future content.
-    if published.date()>dt.date.fromisoformat(fixture['date']) or published<now-dt.timedelta(days=10):continue
+    # Conservative leakage guard: exclude the match calendar day entirely;
+    # we cannot prove the publication preceded kickoff from local time alone.
+    if published.date()>=dt.date.fromisoformat(fixture['date']) or published<now-dt.timedelta(days=10):continue
     simple=norm(title)
     # Both team names must be referenced; prevent unrelated headlines.
     if not (norm(home) in simple and norm(away) in simple):continue
