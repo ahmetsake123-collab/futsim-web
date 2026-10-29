@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-10-29T23:36:26.444073+00:00",
+  "created_utc": "2026-10-29T23:42:47.787744+00:00",
   "season_train": "2024-25",
   "season_test": "2025-26",
   "competitions": [
@@ -16,7 +16,7 @@
     "train": {
       "Premier League": 342,
       "Bundesliga": 289,
-      "La Liga": 304,
+      "La Liga": 380,
       "Serie A": 361,
       "Ligue 1": 306,
       "Eredivisie": 306,
@@ -30,69 +30,85 @@
       "Serie A": 380,
       "Ligue 1": 306,
       "Eredivisie": 305,
-      "Süper Lig": 99,
+      "Süper Lig": 306,
       "Şampiyonlar Ligi": 186
     },
     "independent_2026_27": {
-      "Premier League": 47,
-      "Bundesliga": 34,
-      "La Liga": 52,
-      "Serie A": 47,
-      "Ligue 1": 45,
-      "Eredivisie": 63,
-      "Süper Lig": 36,
+      "Premier League": 80,
+      "Bundesliga": 63,
+      "La Liga": 99,
+      "Serie A": 90,
+      "Ligue 1": 72,
+      "Eredivisie": 90,
+      "Süper Lig": 81,
       "Şampiyonlar Ligi": 0
     }
   },
-  "complete_test_matches": 2342,
+  "complete_test_matches": 2549,
   "season_metrics": {
     "existing_simple_baseline": {
-      "n": 2342,
-      "brier": 0.61388,
-      "log_loss": 1.02495,
-      "accuracy": 0.4987,
-      "correct": 1168,
-      "over25_brier": 0.24564,
-      "btts_brier": 0.24627,
-      "home_goal_mae": 1.0101,
-      "away_goal_mae": 0.88731
+      "n": 2549,
+      "brier": 0.61433,
+      "log_loss": 1.02548,
+      "accuracy": 0.499,
+      "correct": 1272,
+      "over25_brier": 0.24587,
+      "btts_brier": 0.24629,
+      "home_goal_mae": 1.00608,
+      "away_goal_mae": 0.88405,
+      "corner_over85": {
+        "n": 1074,
+        "brier": 0.24116
+      }
     },
     "context_candidate": {
-      "n": 2342,
-      "brier": 0.6185,
-      "log_loss": 1.03058,
-      "accuracy": 0.4915,
-      "correct": 1151,
-      "over25_brier": 0.24569,
-      "btts_brier": 0.24658,
-      "home_goal_mae": 1.0082,
-      "away_goal_mae": 0.89244
+      "n": 2549,
+      "brier": 0.61807,
+      "log_loss": 1.02989,
+      "accuracy": 0.4904,
+      "correct": 1250,
+      "over25_brier": 0.24582,
+      "btts_brier": 0.24663,
+      "home_goal_mae": 1.00288,
+      "away_goal_mae": 0.88896,
+      "corner_over85": {
+        "n": 1074,
+        "brier": 0.24116
+      }
     }
   },
   "independent_2026_27": {
     "baseline": {
-      "n": 324,
-      "brier": 0.6234,
-      "log_loss": 1.03768,
-      "accuracy": 0.4846,
-      "correct": 157,
-      "over25_brier": 0.23715,
-      "btts_brier": 0.24281,
-      "home_goal_mae": 1.05097,
-      "away_goal_mae": 0.97939
+      "n": 573,
+      "brier": 0.62166,
+      "log_loss": 1.03484,
+      "accuracy": 0.466,
+      "correct": 267,
+      "over25_brier": 0.23873,
+      "btts_brier": 0.2425,
+      "home_goal_mae": 1.06981,
+      "away_goal_mae": 0.99834,
+      "corner_over85": {
+        "n": 431,
+        "brier": 0.24126
+      }
     },
     "candidate": {
-      "n": 324,
-      "brier": 0.62066,
-      "log_loss": 1.03399,
-      "accuracy": 0.4877,
-      "correct": 158,
-      "over25_brier": 0.23753,
-      "btts_brier": 0.24324,
-      "home_goal_mae": 1.05165,
-      "away_goal_mae": 0.97556
+      "n": 573,
+      "brier": 0.62138,
+      "log_loss": 1.03401,
+      "accuracy": 0.4625,
+      "correct": 265,
+      "over25_brier": 0.23765,
+      "btts_brier": 0.24222,
+      "home_goal_mae": 1.06056,
+      "away_goal_mae": 0.99933,
+      "corner_over85": {
+        "n": 431,
+        "brier": 0.24126
+      }
     },
-    "n": 324
+    "n": 573
   },
   "per_competition": {
     "Premier League": {
@@ -105,7 +121,11 @@
         "over25_brier": 0.25484,
         "btts_brier": 0.247,
         "home_goal_mae": 0.97962,
-        "away_goal_mae": 0.84012
+        "away_goal_mae": 0.84012,
+        "corner_over85": {
+          "n": 261,
+          "brier": 0.22477
+        }
       },
       "context": {
         "n": 380,
@@ -116,7 +136,11 @@
         "over25_brier": 0.25562,
         "btts_brier": 0.24724,
         "home_goal_mae": 0.98784,
-        "away_goal_mae": 0.84086
+        "away_goal_mae": 0.84086,
+        "corner_over85": {
+          "n": 261,
+          "brier": 0.22477
+        }
       },
       "home_upsets": 59,
       "draw_surprises": 104
@@ -131,7 +155,11 @@
         "over25_brier": 0.23741,
         "btts_brier": 0.2413,
         "home_goal_mae": 1.09252,
-        "away_goal_mae": 0.95871
+        "away_goal_mae": 0.95871,
+        "corner_over85": {
+          "n": 58,
+          "brier": 0.24708
+        }
       },
       "context": {
         "n": 306,
@@ -142,7 +170,11 @@
         "over25_brier": 0.23617,
         "btts_brier": 0.24186,
         "home_goal_mae": 1.08872,
-        "away_goal_mae": 0.9561
+        "away_goal_mae": 0.9561,
+        "corner_over85": {
+          "n": 58,
+          "brier": 0.24708
+        }
       },
       "home_upsets": 54,
       "draw_surprises": 75
@@ -150,27 +182,35 @@
     "La Liga": {
       "baseline": {
         "n": 380,
-        "brier": 0.60787,
-        "log_loss": 1.01692,
+        "brier": 0.60798,
+        "log_loss": 1.01709,
         "accuracy": 0.5158,
         "correct": 196,
-        "over25_brier": 0.24559,
-        "btts_brier": 0.24512,
-        "home_goal_mae": 0.90778,
-        "away_goal_mae": 0.77187
+        "over25_brier": 0.2465,
+        "btts_brier": 0.24463,
+        "home_goal_mae": 0.91389,
+        "away_goal_mae": 0.77309,
+        "corner_over85": {
+          "n": 38,
+          "brier": 0.24037
+        }
       },
       "context": {
         "n": 380,
-        "brier": 0.6121,
-        "log_loss": 1.02125,
+        "brier": 0.61172,
+        "log_loss": 1.02066,
         "accuracy": 0.4947,
         "correct": 188,
-        "over25_brier": 0.2457,
-        "btts_brier": 0.24551,
-        "home_goal_mae": 0.8983,
-        "away_goal_mae": 0.78571
+        "over25_brier": 0.24668,
+        "btts_brier": 0.24495,
+        "home_goal_mae": 0.90437,
+        "away_goal_mae": 0.78654,
+        "corner_over85": {
+          "n": 38,
+          "brier": 0.24037
+        }
       },
-      "home_upsets": 63,
+      "home_upsets": 64,
       "draw_surprises": 93
     },
     "Serie A": {
@@ -183,7 +223,11 @@
         "over25_brier": 0.25075,
         "btts_brier": 0.25263,
         "home_goal_mae": 0.95178,
-        "away_goal_mae": 0.83065
+        "away_goal_mae": 0.83065,
+        "corner_over85": {
+          "n": 272,
+          "brier": 0.25344
+        }
       },
       "context": {
         "n": 380,
@@ -194,7 +238,11 @@
         "over25_brier": 0.25142,
         "btts_brier": 0.25272,
         "home_goal_mae": 0.93648,
-        "away_goal_mae": 0.83711
+        "away_goal_mae": 0.83711,
+        "corner_over85": {
+          "n": 272,
+          "brier": 0.25344
+        }
       },
       "home_upsets": 61,
       "draw_surprises": 99
@@ -209,7 +257,11 @@
         "over25_brier": 0.25124,
         "btts_brier": 0.25551,
         "home_goal_mae": 1.07648,
-        "away_goal_mae": 0.98713
+        "away_goal_mae": 0.98713,
+        "corner_over85": {
+          "n": 110,
+          "brier": 0.25392
+        }
       },
       "context": {
         "n": 306,
@@ -220,7 +272,11 @@
         "over25_brier": 0.25077,
         "btts_brier": 0.25464,
         "home_goal_mae": 1.07786,
-        "away_goal_mae": 0.99952
+        "away_goal_mae": 0.99952,
+        "corner_over85": {
+          "n": 110,
+          "brier": 0.25392
+        }
       },
       "home_upsets": 54,
       "draw_surprises": 75
@@ -235,7 +291,11 @@
         "over25_brier": 0.23791,
         "btts_brier": 0.23405,
         "home_goal_mae": 1.01599,
-        "away_goal_mae": 0.87448
+        "away_goal_mae": 0.87448,
+        "corner_over85": {
+          "n": 51,
+          "brier": 0.18729
+        }
       },
       "context": {
         "n": 305,
@@ -246,36 +306,48 @@
         "over25_brier": 0.23677,
         "btts_brier": 0.23377,
         "home_goal_mae": 1.01715,
-        "away_goal_mae": 0.86943
+        "away_goal_mae": 0.86943,
+        "corner_over85": {
+          "n": 51,
+          "brier": 0.18729
+        }
       },
       "home_upsets": 55,
       "draw_surprises": 80
     },
     "Süper Lig": {
       "baseline": {
-        "n": 99,
-        "brier": 0.62358,
-        "log_loss": 1.04036,
-        "accuracy": 0.4141,
-        "correct": 41,
-        "over25_brier": 0.25382,
-        "btts_brier": 0.25467,
-        "home_goal_mae": 0.86171,
-        "away_goal_mae": 0.9172
+        "n": 306,
+        "brier": 0.62065,
+        "log_loss": 1.03419,
+        "accuracy": 0.4739,
+        "correct": 145,
+        "over25_brier": 0.24904,
+        "btts_brier": 0.24976,
+        "home_goal_mae": 0.921,
+        "away_goal_mae": 0.86832,
+        "corner_over85": {
+          "n": 284,
+          "brier": 0.24807
+        }
       },
       "context": {
-        "n": 99,
-        "brier": 0.62418,
-        "log_loss": 1.04204,
-        "accuracy": 0.4747,
-        "correct": 47,
-        "over25_brier": 0.25451,
-        "btts_brier": 0.25554,
-        "home_goal_mae": 0.8479,
-        "away_goal_mae": 0.92844
+        "n": 306,
+        "brier": 0.61723,
+        "log_loss": 1.0293,
+        "accuracy": 0.4771,
+        "correct": 146,
+        "over25_brier": 0.24848,
+        "btts_brier": 0.2506,
+        "home_goal_mae": 0.90449,
+        "away_goal_mae": 0.87408,
+        "corner_over85": {
+          "n": 284,
+          "brier": 0.24807
+        }
       },
-      "home_upsets": 19,
-      "draw_surprises": 28
+      "home_upsets": 42,
+      "draw_surprises": 89
     },
     "Şampiyonlar Ligi": {
       "baseline": {
@@ -287,7 +359,11 @@
         "over25_brier": 0.22919,
         "btts_brier": 0.24266,
         "home_goal_mae": 1.22511,
-        "away_goal_mae": 1.05877
+        "away_goal_mae": 1.05877,
+        "corner_over85": {
+          "n": 0,
+          "brier": null
+        }
       },
       "context": {
         "n": 186,
@@ -298,18 +374,22 @@
         "over25_brier": 0.23085,
         "btts_brier": 0.24564,
         "home_goal_mae": 1.24441,
-        "away_goal_mae": 1.06655
+        "away_goal_mae": 1.06655,
+        "corner_over85": {
+          "n": 0,
+          "brier": null
+        }
       },
       "home_upsets": 33,
       "draw_surprises": 33
     }
   },
   "discovered_mistake_patterns": {
-    "underdog_away_wins_missed": 398,
-    "draws_not_top_pick": 587,
-    "five_plus_goal_matches": 374,
-    "five_plus_goal_model_home_mae": 1.724,
-    "upsets_when_favourite_over_60_percent": 62
+    "underdog_away_wins_missed": 422,
+    "draws_not_top_pick": 648,
+    "five_plus_goal_matches": 401,
+    "five_plus_goal_model_home_mae": 1.721,
+    "upsets_when_favourite_over_60_percent": 65
   },
   "biggest_errors": [
     {
@@ -332,6 +412,7 @@
       "btts_brier": 0.2141220727950314,
       "home_goal_mae": 1.8370960428595402,
       "away_goal_mae": 1.1543230080830817,
+      "corner_brier": 0.14149034000707605,
       "risk": "upset",
       "context": {
         "home": {
@@ -387,6 +468,7 @@
       "btts_brier": 0.12797687356487542,
       "home_goal_mae": 1.853722413448578,
       "away_goal_mae": 0.4480236263660181,
+      "corner_brier": 0.27569878047926305,
       "risk": "upset",
       "context": {
         "home": {
@@ -442,6 +524,7 @@
       "btts_brier": 0.32449874874100565,
       "home_goal_mae": 2.5538531461145135,
       "away_goal_mae": 1.0384417144338263,
+      "corner_brier": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -497,6 +580,7 @@
       "btts_brier": 0.2326465335282606,
       "home_goal_mae": 0.6001751545851315,
       "away_goal_mae": 1.1808302063925538,
+      "corner_brier": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -552,6 +636,7 @@
       "btts_brier": 0.2692857843606174,
       "home_goal_mae": 2.257557200728109,
       "away_goal_mae": 1.13355848063538,
+      "corner_brier": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -607,6 +692,7 @@
       "btts_brier": 0.24456370325309032,
       "home_goal_mae": 1.202523003039091,
       "away_goal_mae": 1.1600303355165822,
+      "corner_brier": 0.1769447211379896,
       "risk": "upset",
       "context": {
         "home": {
@@ -662,6 +748,7 @@
       "btts_brier": 0.27881195017315424,
       "home_goal_mae": 2.5006951532546156,
       "away_goal_mae": 0.8561783908533944,
+      "corner_brier": 0.1480846939106831,
       "risk": "upset",
       "context": {
         "home": {
@@ -717,6 +804,7 @@
       "btts_brier": 0.35039589241288344,
       "home_goal_mae": 2.4879194243891876,
       "away_goal_mae": 0.9627066655766265,
+      "corner_brier": 0.15033377030622627,
       "risk": "upset",
       "context": {
         "home": {
@@ -772,6 +860,7 @@
       "btts_brier": 0.24949729139442753,
       "home_goal_mae": 0.0992959442677579,
       "away_goal_mae": 3.1550924327229506,
+      "corner_brier": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -827,6 +916,7 @@
       "btts_brier": 0.23755180893929026,
       "home_goal_mae": 2.3095866290129945,
       "away_goal_mae": 0.7789918444509578,
+      "corner_brier": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -882,6 +972,7 @@
       "btts_brier": 0.24586669485182341,
       "home_goal_mae": 2.033689156963885,
       "away_goal_mae": 1.1548627187945906,
+      "corner_brier": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -937,6 +1028,7 @@
       "btts_brier": 0.33366097230406033,
       "home_goal_mae": 2.2963987052140387,
       "away_goal_mae": 0.02795507880938941,
+      "corner_brier": 0.33585968085472195,
       "risk": "upset",
       "context": {
         "home": {
@@ -973,61 +1065,6 @@
       }
     },
     {
-      "date": "2025-08-10",
-      "league": "Süper Lig",
-      "home": "Çaykur Rizespor",
-      "away": "Göztepe",
-      "actual": "0-3",
-      "predicted": 0,
-      "truth": 2,
-      "probs": [
-        0.65933,
-        0.1835,
-        0.15717
-      ],
-      "brier": 1.178749311771382,
-      "log_loss": 1.8504227267162676,
-      "hit": 0,
-      "over25_brier": 0.11327135425730475,
-      "btts_brier": 0.3519644151011022,
-      "home_goal_mae": 2.3500140900035658,
-      "away_goal_mae": 1.9334270973956242,
-      "risk": "upset",
-      "context": {
-        "home": {
-          "last_n": 5,
-          "recent_diff": 1.6,
-          "earlier_diff": -0.8333333333333334,
-          "venue_n": 8,
-          "venue_unbeaten": 0.75,
-          "venue_gf": 2.375,
-          "venue_ga": 1.375,
-          "n_total": 36,
-          "gf": 1.8,
-          "ga": 1.4
-        },
-        "away": {
-          "last_n": 5,
-          "recent_diff": -0.6,
-          "earlier_diff": 0.3333333333333333,
-          "venue_n": 8,
-          "venue_unbeaten": 0.5,
-          "venue_gf": 1.125,
-          "venue_ga": 1.75,
-          "n_total": 36,
-          "gf": 1.5,
-          "ga": 1.6
-        },
-        "ucl_samples": [
-          0,
-          0
-        ],
-        "venue_edge": 0.07,
-        "home_form_delta": 2.433,
-        "away_form_delta": -0.933
-      }
-    },
-    {
       "date": "2026-05-17",
       "league": "Serie A",
       "home": "FC Internazionale Milano",
@@ -1047,6 +1084,7 @@
       "btts_brier": 0.288759019959191,
       "home_goal_mae": 1.1678281121338685,
       "away_goal_mae": 0.26098362646800244,
+      "corner_brier": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -1102,6 +1140,7 @@
       "btts_brier": 0.2564170776414652,
       "home_goal_mae": 2.025102290238661,
       "away_goal_mae": 1.124441336968463,
+      "corner_brier": 0.13100171745592346,
       "risk": "upset",
       "context": {
         "home": {
@@ -1157,6 +1196,7 @@
       "btts_brier": 0.21579475654298522,
       "home_goal_mae": 1.3033287948488113,
       "away_goal_mae": 0.09634580252766212,
+      "corner_brier": 0.4286504254273896,
       "risk": "upset",
       "context": {
         "home": {
@@ -1212,6 +1252,7 @@
       "btts_brier": 0.23542107512263444,
       "home_goal_mae": 1.0261177109811999,
       "away_goal_mae": 1.1011039283702453,
+      "corner_brier": 0.2413298707034925,
       "risk": "upset",
       "context": {
         "home": {
@@ -1267,6 +1308,7 @@
       "btts_brier": 0.2746196446376632,
       "home_goal_mae": 1.0788378049817684,
       "away_goal_mae": 2.044723137774132,
+      "corner_brier": 0.4380676832267401,
       "risk": "upset",
       "context": {
         "home": {
@@ -1322,6 +1364,7 @@
       "btts_brier": 0.2501245247898089,
       "home_goal_mae": 0.9599010616346191,
       "away_goal_mae": 1.128105210452883,
+      "corner_brier": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -1377,6 +1420,7 @@
       "btts_brier": 0.18239475334151223,
       "home_goal_mae": 1.1949076174736861,
       "away_goal_mae": 1.9651288017581043,
+      "corner_brier": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -1411,6 +1455,62 @@
         "home_form_delta": 0.4,
         "away_form_delta": -1.133
       }
+    },
+    {
+      "date": "2026-01-25",
+      "league": "Eredivisie",
+      "home": "FC Groningen",
+      "away": "Fortuna Sittard",
+      "actual": "1-2",
+      "predicted": 0,
+      "truth": 2,
+      "probs": [
+        0.62439,
+        0.21089,
+        0.16472
+      ],
+      "brier": 1.1320288417199256,
+      "log_loss": 1.803506214011323,
+      "hit": 0,
+      "over25_brier": 0.20259867687026342,
+      "btts_brier": 0.23750139779628748,
+      "home_goal_mae": 0.9784402081986943,
+      "away_goal_mae": 1.0963065296139904,
+      "corner_brier": null,
+      "risk": "upset",
+      "context": {
+        "home": {
+          "last_n": 5,
+          "recent_diff": 1.4,
+          "earlier_diff": -0.8333333333333334,
+          "venue_n": 8,
+          "venue_unbeaten": 0.75,
+          "venue_gf": 1.5,
+          "venue_ga": 0.75,
+          "n_total": 53,
+          "gf": 1.3,
+          "ga": 0.9
+        },
+        "away": {
+          "last_n": 5,
+          "recent_diff": -0.6,
+          "earlier_diff": -0.5,
+          "venue_n": 8,
+          "venue_unbeaten": 0.375,
+          "venue_gf": 1.25,
+          "venue_ga": 2,
+          "n_total": 53,
+          "gf": 1.5,
+          "ga": 2
+        },
+        "ucl_samples": [
+          0,
+          0
+        ],
+        "venue_edge": 0.195,
+        "home_form_delta": 2.233,
+        "away_form_delta": -0.1
+      }
     }
   ],
   "deployment": {
@@ -1422,7 +1522,7 @@
   "data_limits": [
     "2025/26 Champions League uses openfootball league/knockout stages, no qualifiers; penalty/extra-time results excluded",
     "No verified per-player event/lineup/injury/coaching history in these match-score files",
-    "Corners not present in CC0 match-only files; must validate separately with match-level corner dataset",
+    "Corners are independently joined from historical CSV only when verified; missing corners are not invented",
     "Historical match results are only visible AFTER each game for all subsequent dates; no same-day leakage",
     "This is NOT full validation of the browser two-half 100k Monte Carlo engine; independent league score model"
   ],
