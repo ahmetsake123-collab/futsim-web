@@ -58,6 +58,22 @@ def read_ucl(season):
     return out
 # Independent score/corner archive for historical research. Aggregate reports only.
 DIVS={'Premier League':'E0','Bundesliga':'D1','La Liga':'SP1','Serie A':'I1','Ligue 1':'F1','Eredivisie':'N1','Süper Lig':'T1'}
+def current_ucl_fallback():
+    # 2026/27 CC0-like public fixture collection when OpenFootball UCL has no
+    # current season file yet. Independent match source; verify row by row.
+    url=BASE+'oladeeayo/open-matchday/master/data/UEFA_1_champions-league/results_2627.csv'
+    rows=[]
+    for r in csv.DictReader(io.StringIO(fetch(url))):
+        try:
+            day=(r.get('date') or '')[:10]
+            dt.date.fromisoformat(day)
+            h=(r.get('home') or '').strip();a=(r.get('away') or '').strip()
+            if not h or not a:continue
+            rows.append(dict(date=day,league=UCL,home=club(h),away=club(a),
+              home_label=h,away_label=a,hg=int(r['ft_home']),ag=int(r['ft_away']),
+              hc=None,ac=None,stage='League'))
+        except (ValueError,TypeError,KeyError):continue
+    return rows
 def csv_season(lg,season):
     year=int(season[:4]);code=f'{year%100:02d}{(year+1)%100:02d}'
     raw=fetch('https://www.football-data.co.uk/mmz4281/'+code+'/'+DIVS[lg]+'.csv')
@@ -111,7 +127,15 @@ def get_season(season,mandatory=False):
         if not rows:raise ValueError('parsed zero UCL scores')
         matches+=rows;coverage[UCL]=len(rows)
     except Exception as exc:
-        coverage[UCL]=0;errors.append({'league':UCL,'season':season,'error':str(exc)[:125]})
+        coverage[UCL]=0
+        if season=='2026-27':
+            try:
+                rows=current_ucl_fallback()
+                matches+=rows;coverage[UCL]=len(rows)
+            except Exception as fallback:
+                errors.append({'league':UCL,'season':season,'error':str(exc)[:95],
+                               'fallback_error':str(fallback)[:95]})
+        else:errors.append({'league':UCL,'season':season,'error':str(exc)[:125]})
     matches=enrich_season(matches,season,errors)
     coverage.update({lg:sum(m['league']==lg for m in matches) for lg in SOURCES})
     # guard against mistakenly treating incomplete snapshots as full seasons
