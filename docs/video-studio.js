@@ -2,7 +2,7 @@
 (function(){
 'use strict';
 var duration=49, lastUrl=null, working=false;
-var studioVersion='V4 · 1/X/2 + 2,5 ALT/ÜST + KG VAR/YOK';
+var studioVersion='V6 · bağlama özel maç yorumu + 8,5/9,5 korner';
 var el=function(id){return document.getElementById(id);};
 var limit=function(x){return Math.max(0,Math.min(1,x));};
 var ease=function(x){x=limit(x);return x*x*(3-2*x);};
@@ -27,7 +27,8 @@ function analyze(){
  }
  reconcileScoreOutcome(r);
  return {home:h.name,away:a.name,competition:c,date:(getChosenFixture(h,a)||{}).date||null,asof:data.asof,
-  created:new Date().toISOString(),p:p,r:r,chosen:resultAlignedScore(r),sample:100000,coverage:Math.min(h.stats?.matches||0,a.stats?.matches||0)};
+  created:new Date().toISOString(),p:p,r:r,corners:futsimCornerPrediction(h,a),
+  commentary:window.FUTSIM_CONTEXT?.getForVideo(h,a,c)||[],chosen:resultAlignedScore(r),sample:100000,coverage:Math.min(h.stats?.matches||0,a.stats?.matches||0)};
 }
 
 function matchup(a){
@@ -57,6 +58,16 @@ function bettingMarkets(a){
   {key:'KG Yok',label:'KG Yok',spoken:'karşılıklı gol yok',
    p:Number.isFinite(m['KG Var'])?100-m['KG Var']:NaN}
  ];
+ // Corners use independently modelled historical corner totals, not the score simulation.
+ // Include only when the prediction reports sufficient match coverage.
+ if(a.corners?.ok){
+  for(const [label,num,spoken] of [['8,5',a.corners.over85,'sekiz buçuk'],['9,5',a.corners.over95,'dokuz buçuk']]){
+   if(Number.isFinite(num)){
+    defs.push({key:'Korner '+label+' Üst',label:'Korner '+label+' üst',spoken:spoken+' korner üstü',p:num,kind:'separate corner model'});
+    defs.push({key:'Korner '+label+' Alt',label:'Korner '+label+' alt',spoken:spoken+' korner altı',p:100-num,kind:'separate corner model'});
+   }
+  }
+ }
  return defs.filter(function(x){return Number.isFinite(x.p)&&x.p>=0&&x.p<=100;})
   .sort(function(x,y){return y.p-x.p;});
 }
@@ -89,6 +100,7 @@ function details(a){
  '<br>En olası 6 skor: '+a.r.allScores.slice(0,6).map(function(x){return escapeHTML(x.score)+' ('+percent(x.p)+')';}).join(' · ')+
  '<br>'+escapeHTML(matchup(a).spoken)+
  '<br><b>Yapay zekânın tercih ettiği bahis:</b> '+(bestMarket(a)?escapeHTML(bestMarket(a).label)+' ('+percent(bestMarket(a).p)+')':'Veri yetersiz')+
+ '<br>Korner 8,5 Üst: '+(a.corners?.ok?percent(a.corners.over85)+' (ayrı korner modeli)':'veri yetersiz')+
  '<br>2,5 Alt: '+percent(m['2,5 Alt'])+' · Üst: '+percent(m['2,5 Üst'])+' · KG Var: '+percent(m['KG Var'])+
  (!a.date?'<br><small>Bu eşleşmenin önümüzdeki 7 günlük fikstürdeki tarihi doğrulanmadı; özel karşılaştırma.</small>':'');
  el('studioScript').value=speech(a);el('studioTextControls').hidden=false;
@@ -97,7 +109,8 @@ function details(a){
  el('studioSaveData').onclick=function(){
   var result={home:a.home,away:a.away,competition:a.competition,fixture_date:a.date,asof:a.asof,
    generated_at:a.created,engine:'FUTSIM two-half Monte Carlo',simulations:100000,
-   model_goal_parameters:{home:a.p.lh,away:a.p.la},markets:m,matchup_classification:matchup(a).headline,
+   model_goal_parameters:{home:a.p.lh,away:a.p.la},markets:m,
+   corner_model:a.corners,commentary:a.commentary,matchup_classification:matchup(a).headline,
    modal_score:a.chosen.modal,representative_score:a.chosen.representative,highest_probability_betting_market:bestMarket(a),betting_markets_ranked:bettingMarkets(a),
    most_frequent_scores:a.r.scores,all_scores:a.r.allScores,
    narration:el('studioScript').value,
@@ -221,15 +234,16 @@ function frame(g,a,t,W,H){
   label(g,'KARŞILIKLI GOL VAR',540,632,34,'#afcad3');
   label(g,percent(z['KG Var']),540,774,114,'#64f4c9');
   rect(g,97,959,886,370,32,'#182e47','#426478');
-  label(g,'EN SIK İLK YARI SKORU',540,1061,33,'#b1ced7');
-  label(g,half?half.score.replace('-', ' : '):'—',540,1197,107,'#b7c0ff');
-  if(half)label(g,percent(half.p)+' OLASILIK',540,1404,37,'#a9b5fc');
+  label(g,a.corners?.ok?'KORNER 8,5 ÜST':'EN SIK İLK YARI SKORU',540,1061,33,'#b1ced7');
+  label(g,a.corners?.ok?percent(a.corners.over85):(half?half.score.replace('-', ' : '):'—'),540,1197,107,'#b7c0ff');
+  if(a.corners?.ok)label(g,'DOĞRULANMIŞ KORNER VERİSİ: '+a.corners.n+' MAÇ',540,1404,30,'#a9b5fc');
+  else if(half)label(g,percent(half.p)+' OLASILIK',540,1404,37,'#a9b5fc');
  });
  part(40,46,function(f,u){
   var best=bestMarket(a);
   label(g,'YAPAY ZEKÂNIN TERCİH ETTİĞİ BAHİS',540,375,39,'#64efd0');
   rect(g,96,520,888,866,38,'#112f38','#3a7773');
-  label(g,'1 / X / 2 · 2,5 ALT-ÜST · KG VAR-YOK',540,619,31,'#a9c9d2');
+  label(g,'1 / X / 2 · GOL · KG · KORNER',540,619,32,'#a9c9d2');
   if(best){
    var title=best.label.toUpperCase(),size=Math.min(69,770/Math.max(10,title.length));
    label(g,title,540,824,size,'#f5ffff');
