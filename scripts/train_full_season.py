@@ -214,6 +214,26 @@ def corner_estimate(m,history):
     if h is None or a is None:return None
     mean=clamp((h[0]+a[1]+a[0]+h[1])/2,4,16)
     return 1-sum(poiss(k,mean) for k in range(9))
+def corner_summary(rows):
+    eligible=[x for x in rows if x.get('corner_brier') is not None]
+    n=len(eligible)
+    if not n:return {'n':0,'brier':None,'correct':0,'accuracy':None}
+    correct=sum(int(x['corner_predicted_over85']==x['corner_actual_over85']) for x in eligible)
+    overs=sum(x['corner_actual_over85'] for x in eligible)
+    pred_overs=sum(x['corner_predicted_over85'] for x in eligible)
+    return {'n':n,
+      'correct':correct,
+      'wrong':n-correct,
+      'accuracy':round(correct/n,5),
+      'actual_over85':overs,
+      'actual_under85':n-overs,
+      'actual_over85_rate':round(overs/n,5),
+      'predicted_over85_count':pred_overs,
+      'predicted_under85_count':n-pred_overs,
+      'brier':round(statistics.mean(x['corner_brier'] for x in eligible),5),
+      'coin_flip_brier':0.25,
+      'majority_class_baseline_accuracy':round(max(overs,n-overs)/n,5)}
+
 def score_measures(rows):
     if not rows:return {'n':0}
     n=len(rows)
@@ -223,8 +243,7 @@ def score_measures(rows):
      'correct':sum(x['hit'] for x in rows),
      'over25_brier':avg('over25_brier'),'btts_brier':avg('btts_brier'),
      'home_goal_mae':avg('home_goal_mae'),'away_goal_mae':avg('away_goal_mae'),
-     'corner_over85':{'n':sum(x.get('corner_brier') is not None for x in rows),
-        'brier':round(statistics.mean(x['corner_brier'] for x in rows if x.get('corner_brier') is not None),5) if any(x.get('corner_brier') is not None for x in rows) else None}}
+     'corner_over85':corner_summary(rows)}
 def other_markets(lh,la):
     # Poisson independent-goal baseline, cap at 11 with tail retained.
     hp=[poiss(k,lh) for k in range(12)]
@@ -245,6 +264,8 @@ def row(m,pred,name,corner_probability=None):
       'btts_brier':(kg-int(m['hg']>0 and m['ag']>0))**2,
       'home_goal_mae':abs(pred['lh']-m['hg']),'away_goal_mae':abs(pred['la']-m['ag']),
       'corner_brier':(corner_probability-int(m['hc']+m['ac']>=9))**2 if corner_probability is not None and m['hc'] is not None and m['ac'] is not None else None,
+      'corner_predicted_over85':int(corner_probability>=.5) if corner_probability is not None else None,
+      'corner_actual_over85':int(m['hc']+m['ac']>=9) if m['hc'] is not None and m['ac'] is not None else None,
       'risk':'upset' if guess!=truth and max(p)>=.5 else 'ordinary',
       'context':pred.get('context',{})}
 def evaluate(tests,initial):
