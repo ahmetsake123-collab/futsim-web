@@ -53,6 +53,7 @@ def derive(match,history):
     var=avg([(x-mean)**2 for x in last]) if last else 10.5
     h,a=match['home'],match['away']
     return {'league':league,'prior':prio,'n_prior':len(last),'mu':mean,'variance':var,
+     'line_priors':{str(k):(sum(v>k for v in last)+6)/(len(last)+12) for k in (7,8,9,10)},
      'h_all':stats(hm,h,window=15),'a_all':stats(hm,a,window=15),
      'h_home':stats(hm,h,True,10),'a_away':stats(hm,a,False,10),
      'h_last5':stats(hm,h,window=5),'a_last5':stats(hm,a,window=5)}
@@ -114,6 +115,41 @@ def candidates():
         token=json.dumps(p,sort_keys=True)
         if token not in seen:seen.add(token);unique.append(p)
     return unique
+def multithreshold_search(training,holdout,threshold):
+    def guess(features,param):
+        mu=features['mu'];mean=features_mean(features,param)
+        prior=features['line_priors'][str(threshold)]
+        if param['dist']=='poisson':raw=poisson_over(mean,threshold)
+        elif param['dist']=='nb':
+            raw=nb_over(mean,max(mean+.1,features['variance']*(mean/max(1,mu))**2),threshold)
+        return clamp((1-param['weight'])*prior+param['weight']*raw,.02,.98)
+    trials=[]
+    for dist,venue,shrink_factor,recent,weight in itertools.product(
+      ('poisson','nb'),(0,.5,1),(3,10,22),(0,.35),(.3,.65,1)):
+        p={'method':'poisson','dist':dist,'venue':venue,'shrink':shrink_factor,
+          'recent':recent,'weight':weight,'scale':.2}
+        tr=[dict(x,y=int(x['total']>threshold)) for x in training]
+        pp=[guess(x['f'],p) for x in tr]
+        stats=stats_for(tr,pp)
+        trials.append((stats['brier'],p,stats))
+    trials.sort(key=lambda x:x[0])
+    _,winner,train_stats=trials[0]
+    hold=[dict(x,y=int(x['total']>threshold)) for x in holdout]
+    chosen=[guess(x['f'],winner) for x in hold]
+    old=[poisson_over(features_mean(x['f'],{'shrink':10,'venue':0,'recent':0}),threshold) for x in hold]
+    league=[x['f']['line_priors'][str(threshold)] for x in hold]
+    result={'threshold':threshold+.5,'trials':len(trials),'selection':winner,
+      'training':train_stats,
+      'holdout':{'selected':stats_for(hold,chosen),'old_poisson':stats_for(hold,old),
+          'league_prior':stats_for(hold,league)}}
+    z=result['holdout'];result['independent_improvement']=(
+      z['selected']['brier']<min(z['old_poisson']['brier'],z['league_prior']['brier'])-.001
+      and z['selected']['accuracy']>max(z['old_poisson']['accuracy'],
+                                        z['selected']['constant_over_accuracy']))
+    return result
+def features_mean(f,param):
+    return features(f,param)
+
 def chronological_matches(season,initial):
     # One feature vector per match, exactly once, before its score is seen.
     history=[x for x in initial if x['hc'] is not None and x['ac'] is not None]
@@ -181,7 +217,8 @@ def run():
     summary={'created_at_utc':dt.datetime.now(dt.timezone.utc).isoformat(),
       'period_selection':'2025-26 chronological, prior 2024-25',
       'period_independent_holdout':'2026-27 chronological',
-      'tested_candidates':len(cand),
+      'tested_candidates':len(cand)+3*108,
+      'tested_candidates_8_5':len(cand),
       'selected_parameters':best,
       'training':{'selected':stats_for(x_train,ptrain),
          'old_poisson':stats_for(x_train,oldtrain),
@@ -197,6 +234,7 @@ def run():
        'Any 2025 model selection can overfit; 2026 data is evaluated only once',
        'Browser FUTSIM uses different data aggregation, so this experiment is not direct production performance',
        'No verified Champions League corner coverage in source.'],
+      'additional_lines':{str(k+0.5):multithreshold_search(x_train,x_hold,k) for k in (7,9,10)},
       'sample_date_ranges':{'train':[x_train[0]['date'],x_train[-1]['date']],
         'holdout':[x_hold[0]['date'],x_hold[-1]['date']]},
       'coverage':{'2024-25':cov_old,'2025-26':cov_sample,'2026-27':cov_later},
