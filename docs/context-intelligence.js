@@ -1,7 +1,7 @@
 /* FUTSIM competition-aware narrative, grounded only in published score records. */
 (function(){
 'use strict';
-let current=null,learning=null,research=null,last=null;
+let current=null,learning=null,research=null,cornerAudit=null,last=null;
 const $=id=>document.getElementById(id);
 const numeric=x=>Number.isFinite(Number(x))?Number(x):null;
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -83,23 +83,43 @@ function render(h,a,comp,r,corners){
  explain+='<p class="small" style="color:#fcb969">Sakatlıklar, teknik direktör değişikliği ve olası rotasyon ancak tarihli güvenilir kaynakla doğrulanırsa yorumlanmalıdır. Bu sinyaller henüz simülasyon yüzdelerine otomatik etki etmiyor.</p>';
  dest.innerHTML=explain;
  renderNews(h,a);
+ renderCornerAudit(comp);
  const audit=$('contextLearningSummary');if(audit){
   const d=learning;
   audit.textContent=d?('2025/26 geçmiş test: '+d.complete_test_matches+' maç; mevcut basit model Brier '+d.season_metrics.existing_simple_baseline.brier+', bağlam modeli '+d.season_metrics.context_candidate.brier+'. '+(d.deployment.recommend_context_model?'Yeni model iki dönemde de daha iyi göründü; uygulamaya henüz geçirilmedi.':'İyileştirme iki dönemde doğrulanmadı; mevcut model korundu.')+' Kapsam: 7 lig + Şampiyonlar Ligi.'):'Tam sezon test raporu henüz yüklenmedi.';
  }
 }
+function renderCornerAudit(competition){
+ const el=$('cornerExperimentReadout');if(!el)return;
+ const d=cornerAudit;
+ if(!d){el.textContent='Korner model deneyi raporu henüz yüklenmedi.';return;}
+ const tr=d.training||{},val=d.holdout||{},now=val.selected||{},older=val.old_poisson||{};
+ const best=tr.selected||{};
+ const ntr=best.n||0,nval=now.n||0;
+ const label=(v)=>Number.isFinite(v)?(v*100).toFixed(1)+'%':'—';
+ const league=d.by_competition?.holdout?.[competition];
+ const leagueDetail=league&&league.n?(' '+competition+': '+league.correct+'/'+league.n+' ('+label(league.accuracy)+') [deneysel].'):'';
+ const badge=d.deployment?.eligible?'Yeterli sonuç işareti, canlı sürüm henüz güncellenmedi.':'Canlı model korunuyor: iyileşme bütün ölçütleri karşılamadı.';
+ el.innerHTML='<b>Korner model karşılaştırması:</b> '+esc(d.tested_candidates)+' aday yöntem. 2025–26: deneysel '+best.correct+'/'+ntr+' ('+label(best.accuracy)+
+ '); bağımsız 2026–27: deneysel '+now.correct+'/'+nval+' ('+label(now.accuracy)+'), eski '+older.correct+'/'+nval+
+ ' ('+label(older.accuracy)+'). Deneysel Brier '+esc(now.brier)+'; eski '+esc(older.brier)+'. '+esc(leagueDetail)+
+ ' <b>'+esc(badge)+'</b> <a href="data/corner_experiment.json" rel="noopener" target="_blank">Raporu incele</a>';
+}
 async function init(){
  try{
- const [a,b,c]=await Promise.allSettled([
+ const [a,b,c,d]=await Promise.allSettled([
    fetch('data/competition_form.json?v=20261030',{cache:'no-store'}).then(x=>x.ok?x.json():null),
    fetch('data/model_learning_full.json?v=20261030',{cache:'no-store'}).then(x=>x.ok?x.json():null),
-   fetch('data/prematch_research.json?v=20261030',{cache:'no-store'}).then(x=>x.ok?x.json():null)]);
+   fetch('data/prematch_research.json?v=20261030',{cache:'no-store'}).then(x=>x.ok?x.json():null),
+   fetch('data/corner_experiment.json?v=20261030-v2',{cache:'no-store'}).then(x=>x.ok?x.json():null)]);
  if(a.status==='fulfilled')current=a.value;
  if(b.status==='fulfilled')learning=b.value;
  if(c.status==='fulfilled')research=c.value;
+ if(d.status==='fulfilled')cornerAudit=d.value;
+ renderCornerAudit(last?.comp);
  if(last)render(last.h,last.a,last.comp,last.r,last.corners);
  }catch(e){}
 }
-window.FUTSIM_CONTEXT={render,build,getForVideo:build,learning:()=>learning};
+window.FUTSIM_CONTEXT={render,build,getForVideo:build,learning:()=>learning,cornerAudit:()=>cornerAudit};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
