@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-10-29T23:47:41.546830+00:00",
+  "created_utc": "2026-10-30T00:05:08.056363+00:00",
   "season_train": "2024-25",
   "season_test": "2025-26",
   "competitions": [
@@ -58,7 +58,17 @@
       "away_goal_mae": 0.88405,
       "corner_over85": {
         "n": 1074,
-        "brier": 0.24116
+        "correct": 629,
+        "wrong": 445,
+        "accuracy": 0.58566,
+        "actual_over85": 633,
+        "actual_under85": 441,
+        "actual_over85_rate": 0.58939,
+        "predicted_over85_count": 974,
+        "predicted_under85_count": 100,
+        "brier": 0.24116,
+        "coin_flip_brier": 0.25,
+        "majority_class_baseline_accuracy": 0.58939
       }
     },
     "context_candidate": {
@@ -73,42 +83,72 @@
       "away_goal_mae": 0.88896,
       "corner_over85": {
         "n": 1074,
-        "brier": 0.24116
+        "correct": 629,
+        "wrong": 445,
+        "accuracy": 0.58566,
+        "actual_over85": 633,
+        "actual_under85": 441,
+        "actual_over85_rate": 0.58939,
+        "predicted_over85_count": 974,
+        "predicted_under85_count": 100,
+        "brier": 0.24116,
+        "coin_flip_brier": 0.25,
+        "majority_class_baseline_accuracy": 0.58939
       }
     }
   },
   "independent_2026_27": {
     "baseline": {
-      "n": 627,
-      "brier": 0.61476,
-      "log_loss": 1.025,
+      "n": 629,
+      "brier": 0.61474,
+      "log_loss": 1.02504,
       "accuracy": 0.4801,
-      "correct": 301,
-      "over25_brier": 0.23737,
-      "btts_brier": 0.24168,
-      "home_goal_mae": 1.09534,
-      "away_goal_mae": 1.00456,
+      "correct": 302,
+      "over25_brier": 0.23719,
+      "btts_brier": 0.24144,
+      "home_goal_mae": 1.09772,
+      "away_goal_mae": 1.00263,
       "corner_over85": {
-        "n": 431,
-        "brier": 0.24126
+        "n": 433,
+        "correct": 253,
+        "wrong": 180,
+        "accuracy": 0.5843,
+        "actual_over85": 252,
+        "actual_under85": 181,
+        "actual_over85_rate": 0.58199,
+        "predicted_over85_count": 410,
+        "predicted_under85_count": 23,
+        "brier": 0.24088,
+        "coin_flip_brier": 0.25,
+        "majority_class_baseline_accuracy": 0.58199
       }
     },
     "candidate": {
-      "n": 627,
-      "brier": 0.61515,
-      "log_loss": 1.02502,
-      "accuracy": 0.4721,
-      "correct": 296,
-      "over25_brier": 0.23631,
-      "btts_brier": 0.24204,
-      "home_goal_mae": 1.08742,
-      "away_goal_mae": 1.00479,
+      "n": 629,
+      "brier": 0.61526,
+      "log_loss": 1.02523,
+      "accuracy": 0.4722,
+      "correct": 297,
+      "over25_brier": 0.23616,
+      "btts_brier": 0.2418,
+      "home_goal_mae": 1.08988,
+      "away_goal_mae": 1.0031,
       "corner_over85": {
-        "n": 431,
-        "brier": 0.24126
+        "n": 433,
+        "correct": 253,
+        "wrong": 180,
+        "accuracy": 0.5843,
+        "actual_over85": 252,
+        "actual_under85": 181,
+        "actual_over85_rate": 0.58199,
+        "predicted_over85_count": 410,
+        "predicted_under85_count": 23,
+        "brier": 0.24088,
+        "coin_flip_brier": 0.25,
+        "majority_class_baseline_accuracy": 0.58199
       }
     },
-    "n": 627
+    "n": 629
   },
   "per_competition": {
     "Premier League": {
@@ -124,7 +164,17 @@
         "away_goal_mae": 0.84012,
         "corner_over85": {
           "n": 261,
-          "brier": 0.22477
+          "correct": 176,
+          "wrong": 85,
+          "accuracy": 0.67433,
+          "actual_over85": 178,
+          "actual_under85": 83,
+          "actual_over85_rate": 0.68199,
+          "predicted_over85_count": 259,
+          "predicted_under85_count": 2,
+          "brier": 0.22477,
+          "coin_flip_brier": 0.25,
+          "majority_class_baseline_accuracy": 0.68199
         }
       },
       "context": {
@@ -139,7 +189,17 @@
         "away_goal_mae": 0.84086,
         "corner_over85": {
           "n": 261,
-          "brier": 0.22477
+          "correct": 176,
+          "wrong": 85,
+          "accuracy": 0.67433,
+          "actual_over85": 178,
+          "actual_under85": 83,
+          "actual_over85_rate": 0.68199,
+          "predicted_over85_count": 259,
+          "predicted_under85_count": 2,
+          "brier": 0.22477,
+          "coin_flip_brier": 0.25,
+          "majority_class_baseline_accuracy": 0.68199
         }
       },
       "home_upsets": 59,
@@ -158,7 +218,17 @@
         "away_goal_mae": 0.95871,
         "corner_over85": {
           "n": 58,
-          "brier": 0.24708
+          "correct": 35,
+          "wrong": 23,
+          "accuracy": 0.60345,
+          "actual_over85": 36,
+          "actual_under85": 22,
+          "actual_over85_rate": 0.62069,
+          "predicted_over85_count": 55,
+          "predicted_under85_count": 3,
+          "brier": 0.24708,
+          "coin_flip_brier": 0.25,
+          "majority_class_baseline_accuracy": 0.62069
         }
       },
       "context": {
@@ -173,7 +243,17 @@
         "away_goal_mae": 0.9561,
         "corner_over85": {
           "n": 58,
-          "brier": 0.24708
+          "correct": 35,
+          "wrong": 23,
+          "accuracy": 0.60345,
+          "actual_over85": 36,
+          "actual_under85": 22,
+          "actual_over85_rate": 0.62069,
+          "predicted_over85_count": 55,
+          "predicted_under85_count": 3,
+          "brier": 0.24708,
+          "coin_flip_brier": 0.25,
+          "majority_class_baseline_accuracy": 0.62069
         }
       },
       "home_upsets": 54,
@@ -192,7 +272,17 @@
         "away_goal_mae": 0.77309,
         "corner_over85": {
           "n": 38,
-          "brier": 0.24037
+          "correct": 20,
+          "wrong": 18,
+          "accuracy": 0.52632,
+          "actual_over85": 22,
+          "actual_under85": 16,
+          "actual_over85_rate": 0.57895,
+          "predicted_over85_count": 34,
+          "predicted_under85_count": 4,
+          "brier": 0.24037,
+          "coin_flip_brier": 0.25,
+          "majority_class_baseline_accuracy": 0.57895
         }
       },
       "context": {
@@ -207,7 +297,17 @@
         "away_goal_mae": 0.78654,
         "corner_over85": {
           "n": 38,
-          "brier": 0.24037
+          "correct": 20,
+          "wrong": 18,
+          "accuracy": 0.52632,
+          "actual_over85": 22,
+          "actual_under85": 16,
+          "actual_over85_rate": 0.57895,
+          "predicted_over85_count": 34,
+          "predicted_under85_count": 4,
+          "brier": 0.24037,
+          "coin_flip_brier": 0.25,
+          "majority_class_baseline_accuracy": 0.57895
         }
       },
       "home_upsets": 64,
@@ -226,7 +326,17 @@
         "away_goal_mae": 0.83065,
         "corner_over85": {
           "n": 272,
-          "brier": 0.25344
+          "correct": 135,
+          "wrong": 137,
+          "accuracy": 0.49632,
+          "actual_over85": 133,
+          "actual_under85": 139,
+          "actual_over85_rate": 0.48897,
+          "predicted_over85_count": 204,
+          "predicted_under85_count": 68,
+          "brier": 0.25344,
+          "coin_flip_brier": 0.25,
+          "majority_class_baseline_accuracy": 0.51103
         }
       },
       "context": {
@@ -241,7 +351,17 @@
         "away_goal_mae": 0.83711,
         "corner_over85": {
           "n": 272,
-          "brier": 0.25344
+          "correct": 135,
+          "wrong": 137,
+          "accuracy": 0.49632,
+          "actual_over85": 133,
+          "actual_under85": 139,
+          "actual_over85_rate": 0.48897,
+          "predicted_over85_count": 204,
+          "predicted_under85_count": 68,
+          "brier": 0.25344,
+          "coin_flip_brier": 0.25,
+          "majority_class_baseline_accuracy": 0.51103
         }
       },
       "home_upsets": 61,
@@ -260,7 +380,17 @@
         "away_goal_mae": 0.98713,
         "corner_over85": {
           "n": 110,
-          "brier": 0.25392
+          "correct": 62,
+          "wrong": 48,
+          "accuracy": 0.56364,
+          "actual_over85": 63,
+          "actual_under85": 47,
+          "actual_over85_rate": 0.57273,
+          "predicted_over85_count": 105,
+          "predicted_under85_count": 5,
+          "brier": 0.25392,
+          "coin_flip_brier": 0.25,
+          "majority_class_baseline_accuracy": 0.57273
         }
       },
       "context": {
@@ -275,7 +405,17 @@
         "away_goal_mae": 0.99952,
         "corner_over85": {
           "n": 110,
-          "brier": 0.25392
+          "correct": 62,
+          "wrong": 48,
+          "accuracy": 0.56364,
+          "actual_over85": 63,
+          "actual_under85": 47,
+          "actual_over85_rate": 0.57273,
+          "predicted_over85_count": 105,
+          "predicted_under85_count": 5,
+          "brier": 0.25392,
+          "coin_flip_brier": 0.25,
+          "majority_class_baseline_accuracy": 0.57273
         }
       },
       "home_upsets": 54,
@@ -294,7 +434,17 @@
         "away_goal_mae": 0.87448,
         "corner_over85": {
           "n": 51,
-          "brier": 0.18729
+          "correct": 41,
+          "wrong": 10,
+          "accuracy": 0.80392,
+          "actual_over85": 41,
+          "actual_under85": 10,
+          "actual_over85_rate": 0.80392,
+          "predicted_over85_count": 51,
+          "predicted_under85_count": 0,
+          "brier": 0.18729,
+          "coin_flip_brier": 0.25,
+          "majority_class_baseline_accuracy": 0.80392
         }
       },
       "context": {
@@ -309,7 +459,17 @@
         "away_goal_mae": 0.86943,
         "corner_over85": {
           "n": 51,
-          "brier": 0.18729
+          "correct": 41,
+          "wrong": 10,
+          "accuracy": 0.80392,
+          "actual_over85": 41,
+          "actual_under85": 10,
+          "actual_over85_rate": 0.80392,
+          "predicted_over85_count": 51,
+          "predicted_under85_count": 0,
+          "brier": 0.18729,
+          "coin_flip_brier": 0.25,
+          "majority_class_baseline_accuracy": 0.80392
         }
       },
       "home_upsets": 55,
@@ -328,7 +488,17 @@
         "away_goal_mae": 0.86832,
         "corner_over85": {
           "n": 284,
-          "brier": 0.24807
+          "correct": 160,
+          "wrong": 124,
+          "accuracy": 0.56338,
+          "actual_over85": 160,
+          "actual_under85": 124,
+          "actual_over85_rate": 0.56338,
+          "predicted_over85_count": 266,
+          "predicted_under85_count": 18,
+          "brier": 0.24807,
+          "coin_flip_brier": 0.25,
+          "majority_class_baseline_accuracy": 0.56338
         }
       },
       "context": {
@@ -343,7 +513,17 @@
         "away_goal_mae": 0.87408,
         "corner_over85": {
           "n": 284,
-          "brier": 0.24807
+          "correct": 160,
+          "wrong": 124,
+          "accuracy": 0.56338,
+          "actual_over85": 160,
+          "actual_under85": 124,
+          "actual_over85_rate": 0.56338,
+          "predicted_over85_count": 266,
+          "predicted_under85_count": 18,
+          "brier": 0.24807,
+          "coin_flip_brier": 0.25,
+          "majority_class_baseline_accuracy": 0.56338
         }
       },
       "home_upsets": 42,
@@ -362,7 +542,9 @@
         "away_goal_mae": 1.05877,
         "corner_over85": {
           "n": 0,
-          "brier": null
+          "brier": null,
+          "correct": 0,
+          "accuracy": null
         }
       },
       "context": {
@@ -377,7 +559,9 @@
         "away_goal_mae": 1.06655,
         "corner_over85": {
           "n": 0,
-          "brier": null
+          "brier": null,
+          "correct": 0,
+          "accuracy": null
         }
       },
       "home_upsets": 33,
@@ -413,6 +597,8 @@
       "home_goal_mae": 1.8370960428595402,
       "away_goal_mae": 1.1543230080830817,
       "corner_brier": 0.14149034000707605,
+      "corner_predicted_over85": 1,
+      "corner_actual_over85": 1,
       "risk": "upset",
       "context": {
         "home": {
@@ -469,6 +655,8 @@
       "home_goal_mae": 1.853722413448578,
       "away_goal_mae": 0.4480236263660181,
       "corner_brier": 0.27569878047926305,
+      "corner_predicted_over85": 0,
+      "corner_actual_over85": 1,
       "risk": "upset",
       "context": {
         "home": {
@@ -525,6 +713,8 @@
       "home_goal_mae": 2.5538531461145135,
       "away_goal_mae": 1.0384417144338263,
       "corner_brier": null,
+      "corner_predicted_over85": null,
+      "corner_actual_over85": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -581,6 +771,8 @@
       "home_goal_mae": 0.6001751545851315,
       "away_goal_mae": 1.1808302063925538,
       "corner_brier": null,
+      "corner_predicted_over85": null,
+      "corner_actual_over85": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -637,6 +829,8 @@
       "home_goal_mae": 2.257557200728109,
       "away_goal_mae": 1.13355848063538,
       "corner_brier": null,
+      "corner_predicted_over85": null,
+      "corner_actual_over85": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -693,6 +887,8 @@
       "home_goal_mae": 1.202523003039091,
       "away_goal_mae": 1.1600303355165822,
       "corner_brier": 0.1769447211379896,
+      "corner_predicted_over85": 1,
+      "corner_actual_over85": 1,
       "risk": "upset",
       "context": {
         "home": {
@@ -749,6 +945,8 @@
       "home_goal_mae": 2.5006951532546156,
       "away_goal_mae": 0.8561783908533944,
       "corner_brier": 0.1480846939106831,
+      "corner_predicted_over85": 1,
+      "corner_actual_over85": 1,
       "risk": "upset",
       "context": {
         "home": {
@@ -805,6 +1003,8 @@
       "home_goal_mae": 2.4879194243891876,
       "away_goal_mae": 0.9627066655766265,
       "corner_brier": 0.15033377030622627,
+      "corner_predicted_over85": 1,
+      "corner_actual_over85": 1,
       "risk": "upset",
       "context": {
         "home": {
@@ -861,6 +1061,8 @@
       "home_goal_mae": 0.0992959442677579,
       "away_goal_mae": 3.1550924327229506,
       "corner_brier": null,
+      "corner_predicted_over85": null,
+      "corner_actual_over85": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -917,6 +1119,8 @@
       "home_goal_mae": 2.3095866290129945,
       "away_goal_mae": 0.7789918444509578,
       "corner_brier": null,
+      "corner_predicted_over85": null,
+      "corner_actual_over85": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -973,6 +1177,8 @@
       "home_goal_mae": 2.033689156963885,
       "away_goal_mae": 1.1548627187945906,
       "corner_brier": null,
+      "corner_predicted_over85": null,
+      "corner_actual_over85": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -1029,6 +1235,8 @@
       "home_goal_mae": 2.2963987052140387,
       "away_goal_mae": 0.02795507880938941,
       "corner_brier": 0.33585968085472195,
+      "corner_predicted_over85": 1,
+      "corner_actual_over85": 0,
       "risk": "upset",
       "context": {
         "home": {
@@ -1085,6 +1293,8 @@
       "home_goal_mae": 1.1678281121338685,
       "away_goal_mae": 0.26098362646800244,
       "corner_brier": null,
+      "corner_predicted_over85": null,
+      "corner_actual_over85": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -1141,6 +1351,8 @@
       "home_goal_mae": 2.025102290238661,
       "away_goal_mae": 1.124441336968463,
       "corner_brier": 0.13100171745592346,
+      "corner_predicted_over85": 1,
+      "corner_actual_over85": 1,
       "risk": "upset",
       "context": {
         "home": {
@@ -1197,6 +1409,8 @@
       "home_goal_mae": 1.3033287948488113,
       "away_goal_mae": 0.09634580252766212,
       "corner_brier": 0.4286504254273896,
+      "corner_predicted_over85": 1,
+      "corner_actual_over85": 0,
       "risk": "upset",
       "context": {
         "home": {
@@ -1253,6 +1467,8 @@
       "home_goal_mae": 1.0261177109811999,
       "away_goal_mae": 1.1011039283702453,
       "corner_brier": 0.2413298707034925,
+      "corner_predicted_over85": 0,
+      "corner_actual_over85": 0,
       "risk": "upset",
       "context": {
         "home": {
@@ -1309,6 +1525,8 @@
       "home_goal_mae": 1.0788378049817684,
       "away_goal_mae": 2.044723137774132,
       "corner_brier": 0.4380676832267401,
+      "corner_predicted_over85": 1,
+      "corner_actual_over85": 0,
       "risk": "upset",
       "context": {
         "home": {
@@ -1365,6 +1583,8 @@
       "home_goal_mae": 0.9599010616346191,
       "away_goal_mae": 1.128105210452883,
       "corner_brier": null,
+      "corner_predicted_over85": null,
+      "corner_actual_over85": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -1421,6 +1641,8 @@
       "home_goal_mae": 1.1949076174736861,
       "away_goal_mae": 1.9651288017581043,
       "corner_brier": null,
+      "corner_predicted_over85": null,
+      "corner_actual_over85": null,
       "risk": "upset",
       "context": {
         "home": {
@@ -1477,6 +1699,8 @@
       "home_goal_mae": 0.9784402081986943,
       "away_goal_mae": 1.0963065296139904,
       "corner_brier": null,
+      "corner_predicted_over85": null,
+      "corner_actual_over85": null,
       "risk": "upset",
       "context": {
         "home": {
