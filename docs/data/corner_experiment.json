@@ -1,8 +1,9 @@
 {
-  "created_at_utc": "2026-10-30T02:31:14.406875+00:00",
+  "created_at_utc": "2026-10-30T02:37:44.355066+00:00",
   "period_selection": "2025-26 chronological, prior 2024-25",
   "period_independent_holdout": "2026-27 chronological",
-  "tested_candidates": 323,
+  "tested_candidates": 647,
+  "tested_candidates_8_5": 323,
   "selected_parameters": {
     "method": "team_over",
     "shrink": 3,
@@ -535,6 +536,200 @@
     "Browser FUTSIM uses different data aggregation, so this experiment is not direct production performance",
     "No verified Champions League corner coverage in source."
   ],
+  "additional_lines": {
+    "7.5": {
+      "threshold": 7.5,
+      "trials": 108,
+      "selection": {
+        "method": "poisson",
+        "dist": "poisson",
+        "venue": 0,
+        "shrink": 22,
+        "recent": 0,
+        "weight": 0.3,
+        "scale": 0.2
+      },
+      "training": {
+        "n": 1074,
+        "correct": 757,
+        "accuracy": 0.70484,
+        "brier": 0.20678,
+        "log_loss": 0.603585,
+        "predicted_overs": 1074,
+        "observed_overs": 757,
+        "constant_over_accuracy": 0.70484,
+        "majority_accuracy": 0.70484,
+        "prior_average": 0.7079
+      },
+      "holdout": {
+        "selected": {
+          "n": 433,
+          "correct": 308,
+          "accuracy": 0.71132,
+          "brier": 0.206036,
+          "log_loss": 0.602771,
+          "predicted_overs": 433,
+          "observed_overs": 308,
+          "constant_over_accuracy": 0.71132,
+          "majority_accuracy": 0.71132,
+          "prior_average": 0.7178
+        },
+        "old_poisson": {
+          "n": 433,
+          "correct": 308,
+          "accuracy": 0.71132,
+          "brier": 0.205939,
+          "log_loss": 0.603527,
+          "predicted_overs": 433,
+          "observed_overs": 308,
+          "constant_over_accuracy": 0.71132,
+          "majority_accuracy": 0.71132,
+          "prior_average": 0.7457
+        },
+        "league_prior": {
+          "n": 433,
+          "correct": 308,
+          "accuracy": 0.71132,
+          "brier": 0.206858,
+          "log_loss": 0.60446,
+          "predicted_overs": 433,
+          "observed_overs": 308,
+          "constant_over_accuracy": 0.71132,
+          "majority_accuracy": 0.71132,
+          "prior_average": 0.7063
+        }
+      },
+      "independent_improvement": false
+    },
+    "9.5": {
+      "threshold": 9.5,
+      "trials": 108,
+      "selection": {
+        "method": "poisson",
+        "dist": "nb",
+        "venue": 0,
+        "shrink": 22,
+        "recent": 0,
+        "weight": 1,
+        "scale": 0.2
+      },
+      "training": {
+        "n": 1074,
+        "correct": 578,
+        "accuracy": 0.53818,
+        "brier": 0.246916,
+        "log_loss": 0.686907,
+        "predicted_overs": 352,
+        "observed_overs": 520,
+        "constant_over_accuracy": 0.48417,
+        "majority_accuracy": 0.51583,
+        "prior_average": 0.4703
+      },
+      "holdout": {
+        "selected": {
+          "n": 433,
+          "correct": 229,
+          "accuracy": 0.52887,
+          "brier": 0.247979,
+          "log_loss": 0.689054,
+          "predicted_overs": 207,
+          "observed_overs": 207,
+          "constant_over_accuracy": 0.47806,
+          "majority_accuracy": 0.52194,
+          "prior_average": 0.4922
+        },
+        "old_poisson": {
+          "n": 433,
+          "correct": 234,
+          "accuracy": 0.54042,
+          "brier": 0.247524,
+          "log_loss": 0.68817,
+          "predicted_overs": 224,
+          "observed_overs": 207,
+          "constant_over_accuracy": 0.47806,
+          "majority_accuracy": 0.52194,
+          "prior_average": 0.5015
+        },
+        "league_prior": {
+          "n": 433,
+          "correct": 221,
+          "accuracy": 0.51039,
+          "brier": 0.250193,
+          "log_loss": 0.693553,
+          "predicted_overs": 187,
+          "observed_overs": 207,
+          "constant_over_accuracy": 0.47806,
+          "majority_accuracy": 0.52194,
+          "prior_average": 0.4797
+        }
+      },
+      "independent_improvement": false
+    },
+    "10.5": {
+      "threshold": 10.5,
+      "trials": 108,
+      "selection": {
+        "method": "poisson",
+        "dist": "nb",
+        "venue": 0,
+        "shrink": 22,
+        "recent": 0,
+        "weight": 0.3,
+        "scale": 0.2
+      },
+      "training": {
+        "n": 1074,
+        "correct": 672,
+        "accuracy": 0.6257,
+        "brier": 0.231527,
+        "log_loss": 0.655383,
+        "predicted_overs": 0,
+        "observed_overs": 402,
+        "constant_over_accuracy": 0.3743,
+        "majority_accuracy": 0.6257,
+        "prior_average": 0.3656
+      },
+      "holdout": {
+        "selected": {
+          "n": 433,
+          "correct": 273,
+          "accuracy": 0.63048,
+          "brier": 0.230556,
+          "log_loss": 0.653407,
+          "predicted_overs": 0,
+          "observed_overs": 160,
+          "constant_over_accuracy": 0.36952,
+          "majority_accuracy": 0.63048,
+          "prior_average": 0.3833
+        },
+        "old_poisson": {
+          "n": 433,
+          "correct": 276,
+          "accuracy": 0.63741,
+          "brier": 0.228889,
+          "log_loss": 0.649681,
+          "predicted_overs": 23,
+          "observed_overs": 160,
+          "constant_over_accuracy": 0.36952,
+          "majority_accuracy": 0.63048,
+          "prior_average": 0.3796
+        },
+        "league_prior": {
+          "n": 433,
+          "correct": 273,
+          "accuracy": 0.63048,
+          "brier": 0.231453,
+          "log_loss": 0.655345,
+          "predicted_overs": 0,
+          "observed_overs": 160,
+          "constant_over_accuracy": 0.36952,
+          "majority_accuracy": 0.63048,
+          "prior_average": 0.3845
+        }
+      },
+      "independent_improvement": false
+    }
+  },
   "sample_date_ranges": {
     "train": [
       "2025-08-08",
