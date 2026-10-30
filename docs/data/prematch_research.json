@@ -1,5 +1,5 @@
 {
-  "fetched_at_utc": "2026-10-30T00:05:12.607646+00:00",
+  "fetched_at_utc": "2026-10-30T02:31:15.274204+00:00",
   "source": "Google News RSS search headlines",
   "usage": "News headlines are not validated articles. Never modify winning probabilities or claim verified injuries using headlines alone.",
   "searched_matches": 14,
@@ -69,30 +69,92 @@
       "home": "chelsea",
       "away": "manchester united",
       "league": "Premier League",
-      "headline_count": 0,
-      "headlines": []
+      "headline_count": 6,
+      "headlines": [
+        {
+          "headline": "TV info, team news, form guide: Chelsea v United - Manchester United",
+          "source": "Manchester United",
+          "published_at": "2026-10-29T18:05:39+00:00",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZktJM1pPd3ZpSHQzcWZ5eXZNSzhSR2U2WURoMTJrV0M2TTgwdHJDTWdKdnJQVF9TQ2NsNUlCd2o4b3luSGtrS2xuUnF1YVpWdV96OVA1eUNPc0ljSThUR3N2Z21NVXhGeVBTLW9YUEJOQjRNV3JUT3dYU1BZTGlWS1ZBelhDdGI3a01ueUlkWlZuQTZTSUl3?oc=5",
+          "headline_tags": [
+            "form"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Manchester United confirm cruel Benjamin Sesko blow in team news vs Chelsea - Manchester Evening News",
+          "source": "Manchester Evening News",
+          "published_at": "2026-10-29T14:30:47+00:00",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNWG1ENE5WV1V0SzAwek1DNmUxWkpZQ0hKMURsS1l2b01wcnl5ZEhxWW5wQmJUZHBHMHlFM0ZFTlZpOE1FT0xKM0NWNHlUdlBGSi1iWUR6SVdTSFBabGpfdmhHLXVpbzRmMWpHaXp3RXlwYTRlY20tdTlEVDY0QmJvamlZN2p5a0tSTXVOY0s1WXcwandOTnRLZk1tSHpnVmloamlEcnBVY9IBrAFBVV95cUxORXUzcGFiZWxHYzZ5Z0hWN2dhUUs2MFhBMTFrZ0o0UFV6MjA2YkVyV3hGNDR3NG0teDQySG5zY3lqeG5aWFdJLXQ0XzJrRklKRUtpa3F6bWhEUGdMLVNjRHMzUTJDVUhoLTVlaXBHQWdqU2NLb05lYVc2MFgzZFpieHlMdEcwaTBLUlJNYUY4TmhMZlJyNFAwby1NUEpWMWJwUllfMDBmUUdHaHdB?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Chelsea v Manchester United LIVE commentary: Michael Carrick faces date with destiny in huge Premier League clash - talkSPORT",
+          "source": "talkSPORT",
+          "published_at": "2026-10-29T13:53:08+00:00",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOdFFwbnNobjZac2xnUGR3OFhJZTU5TjBOcUJvZjhLWGJrLURwUlBGVkQ4d2ZQWHQzdUlNb1dDQ19vdWlfYnJjWWJrTE1ES093eEl0WHpWU1p1b2lPYWlVWW9vUlZSZ1Bua3NWcUNYb1BYVUd0SDIzeXlXTGhROF9Kb2pBZDBsX0hibGhpWGd6TGhGUlBiQmdQY09FbEMtMXA0Rk40Zw?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Manchester United XI vs Chelsea: Confirmed team news, predicted lineup, injury latest for Premier League - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "published_at": "2026-10-29T12:38:47+00:00",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOb0o5d1NITWM0T1dKQkd2U3k3OWg1cEh4My1KZktMRG13OHVGSi1ia2NlcW9EQTgtcEYwekhKQlpvVjlnSlRYRll3R2tGUkV0UGJGZTJfaHFHRm44clotNGR0bHZrSWpNUXZIbmZXOWxLTW53Q0psdVdad0dEcUxiS1BNaHBJUWM?oc=5",
+          "headline_tags": [
+            "injury",
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Chelsea v Manchester United Preview: Lineups, Key Stats and Odds (31.10.2026) Premier League - London Post",
+          "source": "London Post",
+          "published_at": "2026-10-27T02:54:29+00:00",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1WN1FaUzJVcEFpbFRyU3ROSGZZS2JKbWxhUmJMSE5xTTBTZ2lncmJxaGZhU0FaMEdlY3FMMmxuc2VHT2ZlSUZEekw1R0R2ZUdVR0pZQ05HdXlBSnc3am5SRkt2Q25TMkdTUHg1X2plclRTdVZ6eHc?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Chelsea vs Manchester United Prediction, Lineups & Team News - RotoWire",
+          "source": "RotoWire",
+          "published_at": "2026-10-28T06:03:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNXzc3ZEhXTEs1ZjlHNWttN2VPcmFBTVFoRkFXVEtPOEU0bFRUZDdsN2o5SnRkTXBNMUUtRXNpblFrcVZyWFVwYjBmWVQtNTQxS2ZLb1R1WXFBdDVWRG05M1hlMEg5SFhzRVh5N2dhSUg3aWEtRExqMmpqZWQ2b083dWNoQVdNcGp0bFJLaFJ3VFZsLVd5cWpBR09CQUFSUEhfbDhYdG1ONmc4UkU?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        }
+      ]
     },
     {
       "date": "2026-10-31",
       "home": "bournemouth",
       "away": "leeds united",
       "league": "Premier League",
-      "headline_count": 6,
+      "headline_count": 5,
       "headlines": [
         {
-          "headline": "Bournemouth vs Leeds United Prediction, Tips and Odds | Premier League - TNT Sports",
-          "source": "TNT Sports",
-          "published_at": "2026-10-29T16:20:43+00:00",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNdk1XN091eG5lTFV2bE5TQjVUREMzTmJjTUM0R0JXbjdqUTVsMTJBc3MtM3VxMG1aRjRJbjd0QktHQkZieGJ2Z3hCZjZWa3BscjUwMjg5SExWWWtpNWZrNlgtV21XZVVjdWYzUEhXbXRjTkxxVi1rTFVmTjFLeGZOTUhTU09USHZpLU84TTBFSzZwYTU4NzVXYTh1OXFxdXNwOGJYeWZ3?oc=5",
-          "headline_tags": [],
+          "headline": "Leeds United & Bournemouth injury news as midfield 'question mark' leaves 5 out & 3 doubts but key man back - Yorkshire Evening Post",
+          "source": "Yorkshire Evening Post",
+          "published_at": "2026-10-29T16:59:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOZ3ZmSTRoSVFCMHYtTzhyNURDUE42STBuRXc4U2NtLWNleHNIeV9hT2pfTC1rRTdYdWZZZS00SGh0VWNtWGwwQXNKZUVWRTVHOXBRVUJHeGJ1T05TaE1wWFNpLXNTb2ZBaDFkM3o2RXBCcHFCZUxwUEVkdmdUUldrdFh1RVp0MTFnQWxTU3hVb0RrSDB6eWg2Y0J6V3RHSzg2TmZ0YlpVMzR3dGFkVno5REFfSVJYVmt3Z3hiMjRYa2dyWHFQX3E2cm5pcjZwYXBO?oc=5",
+          "headline_tags": [
+            "injury"
+          ],
           "verification": "headline_only_not_confirmed"
         },
         {
-          "headline": "Daniel Farke press conference: Bournemouth vs Leeds United - BBC",
-          "source": "BBC",
-          "published_at": "2026-10-29T15:14:01+00:00",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFA0MS1TS3dEaE5yWnlfRUNWc21YZlBqenVIWjFnc3VCelBkYkEwbjkyR0U0MG1HNDdLQWxmaGFCNjFrTjJGVUg3M0pMa1BNYVlYRTdpVDFBdklORTVWWEpKdFBuemtjeGJCb3VF?oc=5",
-          "headline_tags": [],
+          "headline": "Joe Rodon returns but Farke's Leeds United injury news for Bournemouth comes with 48-hour catch - www.leedsunited.news",
+          "source": "www.leedsunited.news",
+          "published_at": "2026-10-29T13:45:25+00:00",
+          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQU1pqeTI3bE8zT0JNa1k5ZWp3V08zZFRQT0NEelhBUG0zQXJqZWN2QUxXSTFiV29GUHAzdXJyTnlhUDc4aVREOEIwWkhWOU5BdDR3QlI3SEZkeFlBWmN2V2s5QTBPWDNxaHFlNUZWTU9uX2tCMV91UndnT2RqdEhrOUpuWU5Yd254V0l2OWVYNkJEUDI3T0RXNC1seWhBQkpDVWJ3TkRnY1NoZXg0QmQzX2RUdk5OTVZzVkkyT1hsei1pQ3BrWjZmNTcwcXZOOXVpZHZSMGlB?oc=5",
+          "headline_tags": [
+            "injury"
+          ],
           "verification": "headline_only_not_confirmed"
         },
         {
@@ -114,16 +176,6 @@
           "verification": "headline_only_not_confirmed"
         },
         {
-          "headline": "Bournemouth boss drops Leeds United team news hint as Elland Road foe back from injury - Yorkshire Evening Post",
-          "source": "Yorkshire Evening Post",
-          "published_at": "2026-10-28T12:29:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNVHhfSWgxNjJ4QWRsX1dLZUgyckdNWG5CSzJGb2dBbWxETFprTzFQdi1JZGVLa0VFcWJGNHRhSFpqeDlXMzlOWUpld010SHhsZHF0ZU9CXzVULUNZUlJOWjBkX1I5MUhkU01mWktUY0tyTWhNaTJkRURoeDRycWViUWZrc3JMbFU4Y1gxbGhucGtYXzB5blJGczNobmhMV1gwS01ldXV0QmNKUl9hcEZUNmRCeFJkQmM?oc=5",
-          "headline_tags": [
-            "injury"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
           "headline": "Elvedi To Start, Bijol On The Bench | 3-4-2-1 Leeds United Predicted Lineup Vs Bournemouth - Yahoo Sports",
           "source": "Yahoo Sports",
           "published_at": "2026-10-29T19:30:00+00:00",
@@ -140,8 +192,29 @@
       "home": "brentford",
       "away": "nottingham forest",
       "league": "Premier League",
-      "headline_count": 0,
-      "headlines": []
+      "headline_count": 2,
+      "headlines": [
+        {
+          "headline": "PREVIEW | Brentford vs Nottingham Forest: team news, lineups, predictions (Premier League 31/10) - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "published_at": "2026-10-29T14:05:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQMnI4ck4tQ2tIWFFiNVZlVFowWTFLS3hlajY3X1VOSDFJS1gyaWdfYmMxZzh2M3A0V3A5Zm9vSlVZUWZkeUQzVGtIcC0teG9DX0J3eVBBNkFBd2RNcm44NTY5aFhQeUhZYnJMQTRzcm51Z3pxdFctVzFaZUJZTzFEWDVPdE5yd2ZEbHRvRk9uRWI?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Nottingham Forest injury news: Oliver Glasner reveals doubts over key player ahead of Brentford game - Sports Mole",
+          "source": "Sports Mole",
+          "published_at": "2026-10-29T16:36:16+00:00",
+          "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOOERVZ05tclpRWngzYlphUEVwWkFhR2ZSOUxpZHpuTFY0N3N6YkNoUGhqa2plRUNQeDljeVJkUy03UmtwSkY0SklzQ0pDbHBKdjdrMUZHRm8xc18yZnlINzQwNHc1bmVpUVlGTW1CSkhfM0RHMC0tSmlCQkVMM2FPVEI0TE9mN1o0UE9vWFhzQklpdTJRS2FLUkVBemRxdWgzTDVESHFzVmZEVnlkMFN2RnVIWEptZ0ZIUEhkY2ZGeWwwblJmc0gweHVLbmRLUURjSTM1NGh5TFpKdFRlaUkyTjRWU1lIQQ?oc=5",
+          "headline_tags": [
+            "injury"
+          ],
+          "verification": "headline_only_not_confirmed"
+        }
+      ]
     },
     {
       "date": "2026-10-31",
@@ -167,50 +240,8 @@
       "home": "hull city",
       "away": "ipswich",
       "league": "Premier League",
-      "headline_count": 4,
-      "headlines": [
-        {
-          "headline": "Hull City vs Ipswich Town: Predictions, Picks, Odds & Lineups - Squawka",
-          "source": "Squawka",
-          "published_at": "2026-10-25T03:01:44+00:00",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQUXI2OWg4dC01LUYwTzdCdG84U1BJR0RUNXBLdS13MW1PVzdwSGt4Um9xV3FTaTNzeEZxMi1LRnhWc0lOUnY4OTNjYjVvMFZKdHktOVlKdnVqYUpGTkVmNkV3SVJEUnVZZldwSFk5bTNLTkh2Sld0LUU3eWVXanhPaUMwTU5EOXFHWUFLOFBIUmM3S2FtV3BobFBUMjJzZkR2WEtyRU9ZVml4NV9mMEtLbA?oc=5",
-          "headline_tags": [
-            "rotation"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "Preview: Hull City vs. Ipswich Town - prediction, team news, lineups - Sports Mole",
-          "source": "Sports Mole",
-          "published_at": "2026-10-29T10:02:20+00:00",
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPS1JCeEhHNVBMUVBHRU1OTVI5c1hINnEwT3lRcVdXVjNBQUJtdEJRamxkWHotbkRhVk1QYVprbzREaXRyR1dZUW10aGRJOEdBQURzN3o1Z1ZfVEs3UjZreWhtZ2t4bmFmYUxnTVFBRFVKZ1FnZ293bG1ZYmxENXdSaHRKS254WEU5R2tvTFEtZ0FrZmFjelRYWUxwcG1xc1I4N1VMdG80c3VTdjc4c3BhUGFJNll0Zkoy?oc=5",
-          "headline_tags": [
-            "rotation"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "PREVIEW | Hull City vs Ipswich Town: team news, lineups, predictions (Premier League 31/10) - playmakerstats.com",
-          "source": "playmakerstats.com",
-          "published_at": "2026-10-29T15:24:53+00:00",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNaElXb0RGLWltOHVGcjdxSW1hVTZaa3BxV1hidmpZWXBhMTVhdzlmbEpzdl92cWNQYWkwdVhXRVJ2MHMtMXRwUGJYaUFaNnRCNDZJY1k3U0JGcmhKQmZ5Tjc2OFhWUmpRU01BOHdfSEM1LURVM2lPU3VoMDFMMzdhZ0diWVVlclRPS1MteXgxN2lKMVBZOGNYZTRpd3NZZzV5dGNORnotYVZqbVdsbGdJaFlDRWRoWGFxUW1OTDdZSnRMWWJ6M29R?oc=5",
-          "headline_tags": [
-            "rotation"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "Hull City Vs Ipswich Town: team news, form, lineups and travel - Fan Banter",
-          "source": "Fan Banter",
-          "published_at": "2026-10-27T16:23:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOLXVHQ1BySVoxMWFwbWVGVm91NzRzTzlIVy1kLTVtSjZBWWxfUGZkRS1RdzJuZDhzWGI5cER4dGE2bW9TdnFrdXctclcwWGY0WllSdmFMMVhQeUVub2xDajFldVNfNGJkNmJaMEVVcDRFS2V2b00tSERUSWJ0RlFEN01KaXVyRzRCM0FVbg?oc=5",
-          "headline_tags": [
-            "rotation",
-            "form"
-          ],
-          "verification": "headline_only_not_confirmed"
-        }
-      ]
+      "headline_count": 0,
+      "headlines": []
     },
     {
       "date": "2026-10-31",
@@ -236,8 +267,19 @@
       "home": "tottenham hotspur",
       "away": "crystal palace",
       "league": "Premier League",
-      "headline_count": 0,
-      "headlines": []
+      "headline_count": 1,
+      "headlines": [
+        {
+          "headline": "Preview: Tottenham Hotspur vs Crystal Palace - prediction, team news, lineups - Sports Mole",
+          "source": "Sports Mole",
+          "published_at": "2026-10-29T19:30:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZklaWTQxcHkzakFVOGE2TUN1Tk9LRGxLMTlsWUhDMERFNkNOT1IwS1BYalRxMUhWdWhqejVYMjZMMXBaOXkwc2hlZTJkaDBaeVk5LVppSV8xcWgxQ2xfV0VRenZnY3FSNnlWeW5zZFQxd2dsNE1pbktlQm9aVkYzbElzVm9PTUNNVE9QZEQ2UkYwWGJ4b0NaNldNSVBjVF9VZ0VUSzVDNWI3bXdWdnB0RHRCSXJqUWs?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        }
+      ]
     },
     {
       "date": "2026-10-31",
@@ -247,7 +289,17 @@
       "headline_count": 5,
       "headlines": [
         {
-          "headline": "Aston Villa Predicted Line-Up vs Fulham | Emery's Expected XI - Read Aston Villa",
+          "headline": "PREVIEW | Aston Villa vs Fulham: team news, lineups, predictions (Premier League 31/10) - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "published_at": "2026-10-29T19:05:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPb3o5VmNNYUE0bE1iSFRGWElESFRKNmJyR1AtRHpmemdvcURFdDhXcWt1NmJRNkxBUklfWE9QSExaOXlHWTd3X0IyUnRWUzMyWFJ4bU5VR01DclRlZ3BNR2FNUTIxTEJUeXZiSXhEaF9IQ29XUEt3Qmg3MGN1YUZ0UjBzeTg?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Aston Villa Predicted Line-Up vs Fulham: Emery Set to Make Nine Changes - Read Aston Villa",
           "source": "Read Aston Villa",
           "published_at": "2026-10-29T13:54:01+00:00",
           "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOX01VRDJyQm9ZWExzSnFMdG8zYUZRTk5oODdtSkVfaVByUzAtMjZYekNMRmt0QTBfckpEa1FhVVM3a3RKeFNQUnBJdHpSWWdVM0p5UWpjbmxSbFlXWlBPcFJoM3I0bU1ETTlEd196TVQzZHUwSXB2WTRzaXNTWXJpZFBDWVc?oc=5",
@@ -275,20 +327,10 @@
           "verification": "headline_only_not_confirmed"
         },
         {
-          "headline": "PREVIEW | Aston Villa vs Fulham: team news, lineups, predictions (Premier League 31/10) - Yahoo Sports",
-          "source": "Yahoo Sports",
-          "published_at": "2026-10-29T19:05:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPb3o5VmNNYUE0bE1iSFRGWElESFRKNmJyR1AtRHpmemdvcURFdDhXcWt1NmJRNkxBUklfWE9QSExaOXlHWTd3X0IyUnRWUzMyWFJ4bU5VR01DclRlZ3BNR2FNUTIxTEJUeXZiSXhEaF9IQ29XUEt3Qmg3MGN1YUZ0UjBzeTg?oc=5",
-          "headline_tags": [
-            "rotation"
-          ],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
-          "headline": "Aston Villa lineup vs. Fulham: Predicted XI for Premier League clash - Sports Mole",
+          "headline": "Preview: Aston Villa vs Fulham - prediction, team news, lineups - Sports Mole",
           "source": "Sports Mole",
-          "published_at": "2026-10-29T23:58:34+00:00",
-          "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQeERfSFhwQ3ZSZE51dkJncEJENlhMRl8zRlowRDJZcW0xQ0R6NTMxMnV1OGwxWm43X1hoeXJMNDMzZXZYN3ZVRTBjd1NmVmFfWGxkSXdydV9KNThHRXhDM2pGZ0pnLVpETmJKemhkd1ZycmpLb2VySGpyNy1WOHF2aVcxX3JZYm91LUpLS2ppYTl2cDlPbWNENy1pekpQMVlQOU9YS0tCNm53ZzBoQktQLWlOZ2NPMTRsMkpyNFJJYy1FQkVVSjBKYXp5T2NtaFJhWVY1T3RnRnpkSk5GRFlvZkJtTzY4aTZQcjhQYQ?oc=5",
+          "published_at": "2026-10-29T21:00:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNaGlYbWV5V2xSX1VYNGJDaEVyMUpyNnNOV2pla1pZX1Zoc0FYeHlUMW9hZTJZVENhYnNFVUdyUDE4T1V6OWxGeG1LNjE3Zk56ZXhZU29tQ3V2MDJGS3c1OGNSN2d3X2lXNlNvUzc2aE05Z05XTWhsU1lyczIxQ1puLWM1RFFSUDFYRHV5dl9uaTcwMVE3YzFOT1RLWE1ET2ZxdU1CbjVWa2pJS25xN1ZCMzZSVm1Gd0dXczhDWg?oc=5",
           "headline_tags": [
             "rotation"
           ],

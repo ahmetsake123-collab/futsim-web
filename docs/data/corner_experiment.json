@@ -1,0 +1,586 @@
+{
+  "created_at_utc": "2026-10-30T02:31:14.406875+00:00",
+  "period_selection": "2025-26 chronological, prior 2024-25",
+  "period_independent_holdout": "2026-27 chronological",
+  "tested_candidates": 323,
+  "selected_parameters": {
+    "method": "team_over",
+    "shrink": 3,
+    "venue": 0,
+    "recent": 0,
+    "scale": 0.18,
+    "weight": 0.45
+  },
+  "training": {
+    "selected": {
+      "n": 1074,
+      "correct": 638,
+      "accuracy": 0.59404,
+      "brier": 0.237679,
+      "log_loss": 0.668138,
+      "predicted_overs": 983,
+      "observed_overs": 633,
+      "constant_over_accuracy": 0.58939,
+      "majority_accuracy": 0.58939,
+      "prior_average": 0.5848
+    },
+    "old_poisson": {
+      "n": 1074,
+      "correct": 623,
+      "accuracy": 0.58007,
+      "brier": 0.243573,
+      "log_loss": 0.680852,
+      "predicted_overs": 896,
+      "observed_overs": 633,
+      "constant_over_accuracy": 0.58939,
+      "majority_accuracy": 0.58939,
+      "prior_average": 0.5951
+    },
+    "league_prior": {
+      "n": 1074,
+      "correct": 630,
+      "accuracy": 0.58659,
+      "brier": 0.237969,
+      "log_loss": 0.668675,
+      "predicted_overs": 1015,
+      "observed_overs": 633,
+      "constant_over_accuracy": 0.58939,
+      "majority_accuracy": 0.58939,
+      "prior_average": 0.5855
+    }
+  },
+  "holdout": {
+    "selected": {
+      "n": 433,
+      "correct": 255,
+      "accuracy": 0.58891,
+      "brier": 0.241193,
+      "log_loss": 0.675391,
+      "predicted_overs": 380,
+      "observed_overs": 252,
+      "constant_over_accuracy": 0.58199,
+      "majority_accuracy": 0.58199,
+      "prior_average": 0.589
+    },
+    "old_poisson": {
+      "n": 433,
+      "correct": 257,
+      "accuracy": 0.59353,
+      "brier": 0.243289,
+      "log_loss": 0.681313,
+      "predicted_overs": 382,
+      "observed_overs": 252,
+      "constant_over_accuracy": 0.58199,
+      "majority_accuracy": 0.58199,
+      "prior_average": 0.6312
+    },
+    "league_prior": {
+      "n": 433,
+      "correct": 249,
+      "accuracy": 0.57506,
+      "brier": 0.243665,
+      "log_loss": 0.680414,
+      "predicted_overs": 366,
+      "observed_overs": 252,
+      "constant_over_accuracy": 0.58199,
+      "majority_accuracy": 0.58199,
+      "prior_average": 0.5843
+    }
+  },
+  "by_competition": {
+    "selection": {
+      "Premier League": {
+        "n": 261,
+        "correct": 178,
+        "accuracy": 0.68199,
+        "brier": 0.220939,
+        "log_loss": 0.634523,
+        "predicted_overs": 261,
+        "observed_overs": 178,
+        "constant_over_accuracy": 0.68199,
+        "majority_accuracy": 0.68199,
+        "prior_average": 0.6635
+      },
+      "Bundesliga": {
+        "n": 58,
+        "correct": 33,
+        "accuracy": 0.56897,
+        "brier": 0.247483,
+        "log_loss": 0.688218,
+        "predicted_overs": 53,
+        "observed_overs": 36,
+        "constant_over_accuracy": 0.62069,
+        "majority_accuracy": 0.62069,
+        "prior_average": 0.5618
+      },
+      "La Liga": {
+        "n": 38,
+        "correct": 23,
+        "accuracy": 0.60526,
+        "brier": 0.241632,
+        "log_loss": 0.676224,
+        "predicted_overs": 37,
+        "observed_overs": 22,
+        "constant_over_accuracy": 0.57895,
+        "majority_accuracy": 0.57895,
+        "prior_average": 0.5585
+      },
+      "Serie A": {
+        "n": 272,
+        "correct": 141,
+        "accuracy": 0.51838,
+        "brier": 0.249711,
+        "log_loss": 0.692583,
+        "predicted_overs": 192,
+        "observed_overs": 133,
+        "constant_over_accuracy": 0.48897,
+        "majority_accuracy": 0.51103,
+        "prior_average": 0.5215
+      },
+      "Ligue 1": {
+        "n": 110,
+        "correct": 63,
+        "accuracy": 0.57273,
+        "brier": 0.251601,
+        "log_loss": 0.696573,
+        "predicted_overs": 110,
+        "observed_overs": 63,
+        "constant_over_accuracy": 0.57273,
+        "majority_accuracy": 0.57273,
+        "prior_average": 0.5686
+      },
+      "Eredivisie": {
+        "n": 51,
+        "correct": 41,
+        "accuracy": 0.80392,
+        "brier": 0.179132,
+        "log_loss": 0.546531,
+        "predicted_overs": 51,
+        "observed_overs": 41,
+        "constant_over_accuracy": 0.80392,
+        "majority_accuracy": 0.80392,
+        "prior_average": 0.657
+      },
+      "Süper Lig": {
+        "n": 284,
+        "correct": 159,
+        "accuracy": 0.55986,
+        "brier": 0.24413,
+        "log_loss": 0.68126,
+        "predicted_overs": 279,
+        "observed_overs": 160,
+        "constant_over_accuracy": 0.56338,
+        "majority_accuracy": 0.56338,
+        "prior_average": 0.5747
+      }
+    },
+    "holdout": {
+      "Premier League": {
+        "n": 65,
+        "correct": 33,
+        "accuracy": 0.50769,
+        "brier": 0.277506,
+        "log_loss": 0.751735,
+        "predicted_overs": 65,
+        "observed_overs": 33,
+        "constant_over_accuracy": 0.50769,
+        "majority_accuracy": 0.50769,
+        "prior_average": 0.6427
+      },
+      "Bundesliga": {
+        "n": 31,
+        "correct": 24,
+        "accuracy": 0.77419,
+        "brier": 0.200788,
+        "log_loss": 0.593212,
+        "predicted_overs": 31,
+        "observed_overs": 24,
+        "constant_over_accuracy": 0.77419,
+        "majority_accuracy": 0.77419,
+        "prior_average": 0.6398
+      },
+      "La Liga": {
+        "n": 85,
+        "correct": 42,
+        "accuracy": 0.49412,
+        "brier": 0.248867,
+        "log_loss": 0.69061,
+        "predicted_overs": 84,
+        "observed_overs": 43,
+        "constant_over_accuracy": 0.50588,
+        "majority_accuracy": 0.50588,
+        "prior_average": 0.5742
+      },
+      "Serie A": {
+        "n": 82,
+        "correct": 48,
+        "accuracy": 0.58537,
+        "brier": 0.247926,
+        "log_loss": 0.689008,
+        "predicted_overs": 31,
+        "observed_overs": 45,
+        "constant_over_accuracy": 0.54878,
+        "majority_accuracy": 0.54878,
+        "prior_average": 0.4939
+      },
+      "Ligue 1": {
+        "n": 44,
+        "correct": 23,
+        "accuracy": 0.52273,
+        "brier": 0.247161,
+        "log_loss": 0.68726,
+        "predicted_overs": 44,
+        "observed_overs": 23,
+        "constant_over_accuracy": 0.52273,
+        "majority_accuracy": 0.52273,
+        "prior_average": 0.5848
+      },
+      "Eredivisie": {
+        "n": 56,
+        "correct": 41,
+        "accuracy": 0.73214,
+        "brier": 0.19766,
+        "log_loss": 0.584739,
+        "predicted_overs": 56,
+        "observed_overs": 41,
+        "constant_over_accuracy": 0.73214,
+        "majority_accuracy": 0.73214,
+        "prior_average": 0.7105
+      },
+      "Süper Lig": {
+        "n": 70,
+        "correct": 44,
+        "accuracy": 0.62857,
+        "brier": 0.239234,
+        "log_loss": 0.671524,
+        "predicted_overs": 69,
+        "observed_overs": 43,
+        "constant_over_accuracy": 0.61429,
+        "majority_accuracy": 0.61429,
+        "prior_average": 0.5517
+      }
+    }
+  },
+  "top_12_selection": [
+    {
+      "parameters": {
+        "method": "team_over",
+        "shrink": 3,
+        "venue": 0,
+        "recent": 0,
+        "scale": 0.18,
+        "weight": 0.45
+      },
+      "metrics": {
+        "n": 1074,
+        "correct": 638,
+        "accuracy": 0.59404,
+        "brier": 0.237679,
+        "log_loss": 0.668138,
+        "predicted_overs": 983,
+        "observed_overs": 633,
+        "constant_over_accuracy": 0.58939,
+        "majority_accuracy": 0.58939,
+        "prior_average": 0.5848
+      }
+    },
+    {
+      "parameters": {
+        "method": "team_over",
+        "shrink": 10,
+        "venue": 0,
+        "recent": 0,
+        "scale": 0.18,
+        "weight": 0.45
+      },
+      "metrics": {
+        "n": 1074,
+        "correct": 638,
+        "accuracy": 0.59404,
+        "brier": 0.237679,
+        "log_loss": 0.668138,
+        "predicted_overs": 983,
+        "observed_overs": 633,
+        "constant_over_accuracy": 0.58939,
+        "majority_accuracy": 0.58939,
+        "prior_average": 0.5848
+      }
+    },
+    {
+      "parameters": {
+        "method": "team_over",
+        "shrink": 22,
+        "venue": 0,
+        "recent": 0,
+        "scale": 0.18,
+        "weight": 0.45
+      },
+      "metrics": {
+        "n": 1074,
+        "correct": 638,
+        "accuracy": 0.59404,
+        "brier": 0.237679,
+        "log_loss": 0.668138,
+        "predicted_overs": 983,
+        "observed_overs": 633,
+        "constant_over_accuracy": 0.58939,
+        "majority_accuracy": 0.58939,
+        "prior_average": 0.5848
+      }
+    },
+    {
+      "parameters": {
+        "method": "nb",
+        "shrink": 22,
+        "venue": 0,
+        "recent": 0,
+        "scale": 0.18,
+        "weight": 0.45
+      },
+      "metrics": {
+        "n": 1074,
+        "correct": 634,
+        "accuracy": 0.59032,
+        "brier": 0.237847,
+        "log_loss": 0.668441,
+        "predicted_overs": 1015,
+        "observed_overs": 633,
+        "constant_over_accuracy": 0.58939,
+        "majority_accuracy": 0.58939,
+        "prior_average": 0.5888
+      }
+    },
+    {
+      "parameters": {
+        "method": "hybrid",
+        "shrink": 22,
+        "venue": 0,
+        "recent": 0,
+        "scale": 0.18,
+        "weight": 0.45
+      },
+      "metrics": {
+        "n": 1074,
+        "correct": 630,
+        "accuracy": 0.58659,
+        "brier": 0.237869,
+        "log_loss": 0.668476,
+        "predicted_overs": 1009,
+        "observed_overs": 633,
+        "constant_over_accuracy": 0.58939,
+        "majority_accuracy": 0.58939,
+        "prior_average": 0.5869
+      }
+    },
+    {
+      "parameters": {
+        "method": "hybrid",
+        "shrink": 22,
+        "venue": 0,
+        "recent": 0,
+        "scale": 0.35,
+        "weight": 0.45
+      },
+      "metrics": {
+        "n": 1074,
+        "correct": 625,
+        "accuracy": 0.58194,
+        "brier": 0.237896,
+        "log_loss": 0.668533,
+        "predicted_overs": 1006,
+        "observed_overs": 633,
+        "constant_over_accuracy": 0.58939,
+        "majority_accuracy": 0.58939,
+        "prior_average": 0.5867
+      }
+    },
+    {
+      "parameters": {
+        "method": "hybrid",
+        "shrink": 10,
+        "venue": 0,
+        "recent": 0,
+        "scale": 0.18,
+        "weight": 0.45
+      },
+      "metrics": {
+        "n": 1074,
+        "correct": 627,
+        "accuracy": 0.5838,
+        "brier": 0.237929,
+        "log_loss": 0.668603,
+        "predicted_overs": 1004,
+        "observed_overs": 633,
+        "constant_over_accuracy": 0.58939,
+        "majority_accuracy": 0.58939,
+        "prior_average": 0.5864
+      }
+    },
+    {
+      "parameters": {
+        "method": "logistic",
+        "shrink": 22,
+        "venue": 0,
+        "recent": 0.35,
+        "scale": 0.18,
+        "weight": 0.45
+      },
+      "metrics": {
+        "n": 1074,
+        "correct": 623,
+        "accuracy": 0.58007,
+        "brier": 0.237932,
+        "log_loss": 0.668587,
+        "predicted_overs": 996,
+        "observed_overs": 633,
+        "constant_over_accuracy": 0.58939,
+        "majority_accuracy": 0.58939,
+        "prior_average": 0.585
+      }
+    },
+    {
+      "parameters": {
+        "method": "hybrid",
+        "shrink": 22,
+        "venue": 0,
+        "recent": 0,
+        "scale": 0.18,
+        "weight": 0.8
+      },
+      "metrics": {
+        "n": 1074,
+        "correct": 633,
+        "accuracy": 0.58939,
+        "brier": 0.237933,
+        "log_loss": 0.668615,
+        "predicted_overs": 1012,
+        "observed_overs": 633,
+        "constant_over_accuracy": 0.58939,
+        "majority_accuracy": 0.58939,
+        "prior_average": 0.588
+      }
+    },
+    {
+      "parameters": {
+        "method": "poisson",
+        "shrink": 22,
+        "venue": 0,
+        "recent": 0,
+        "scale": 0.18,
+        "weight": 0.45
+      },
+      "metrics": {
+        "n": 1074,
+        "correct": 633,
+        "accuracy": 0.58939,
+        "brier": 0.237934,
+        "log_loss": 0.668625,
+        "predicted_overs": 1028,
+        "observed_overs": 633,
+        "constant_over_accuracy": 0.58939,
+        "majority_accuracy": 0.58939,
+        "prior_average": 0.5932
+      }
+    },
+    {
+      "parameters": {
+        "method": "hybrid",
+        "shrink": 22,
+        "venue": 0,
+        "recent": 0.35,
+        "scale": 0.18,
+        "weight": 0.45
+      },
+      "metrics": {
+        "n": 1074,
+        "correct": 626,
+        "accuracy": 0.58287,
+        "brier": 0.237935,
+        "log_loss": 0.668589,
+        "predicted_overs": 1015,
+        "observed_overs": 633,
+        "constant_over_accuracy": 0.58939,
+        "majority_accuracy": 0.58939,
+        "prior_average": 0.5868
+      }
+    },
+    {
+      "parameters": {
+        "method": "logistic",
+        "shrink": 10,
+        "venue": 0,
+        "recent": 0.35,
+        "scale": 0.18,
+        "weight": 0.45
+      },
+      "metrics": {
+        "n": 1074,
+        "correct": 623,
+        "accuracy": 0.58007,
+        "brier": 0.237943,
+        "log_loss": 0.66861,
+        "predicted_overs": 1000,
+        "observed_overs": 633,
+        "constant_over_accuracy": 0.58939,
+        "majority_accuracy": 0.58939,
+        "prior_average": 0.5849
+      }
+    }
+  ],
+  "data_source": "Football-Data historical corner columns, independent CC0 league results for scores",
+  "limitations": [
+    "No prior-match outcome or matchday corners used for same-day prediction",
+    "Same 8.5 threshold for all teams; no bookmaker prices or profitability claim",
+    "Any 2025 model selection can overfit; 2026 data is evaluated only once",
+    "Browser FUTSIM uses different data aggregation, so this experiment is not direct production performance",
+    "No verified Champions League corner coverage in source."
+  ],
+  "sample_date_ranges": {
+    "train": [
+      "2025-08-08",
+      "2026-05-24"
+    ],
+    "holdout": [
+      "2026-08-09",
+      "2026-10-29"
+    ]
+  },
+  "coverage": {
+    "2024-25": {
+      "Premier League": 342,
+      "Bundesliga": 289,
+      "La Liga": 380,
+      "Serie A": 361,
+      "Ligue 1": 306,
+      "Eredivisie": 306,
+      "Süper Lig": 338,
+      "Şampiyonlar Ligi": 187
+    },
+    "2025-26": {
+      "Premier League": 380,
+      "Bundesliga": 306,
+      "La Liga": 380,
+      "Serie A": 380,
+      "Ligue 1": 306,
+      "Eredivisie": 305,
+      "Süper Lig": 306,
+      "Şampiyonlar Ligi": 186
+    },
+    "2026-27": {
+      "Premier League": 80,
+      "Bundesliga": 63,
+      "La Liga": 99,
+      "Serie A": 90,
+      "Ligue 1": 72,
+      "Eredivisie": 90,
+      "Süper Lig": 81,
+      "Şampiyonlar Ligi": 54
+    }
+  },
+  "errors": [],
+  "deployment": {
+    "eligible": false,
+    "reason": "Promotion only if holdout Brier beats old+league baseline by >0.001 and accuracy beats old+always-over.",
+    "deployed": false
+  }
+}
