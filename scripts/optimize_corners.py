@@ -83,7 +83,8 @@ def features(f,param):
 def predict(f,p):
     mean=features(f,p)
     method=p['method'];prior=f['prior'];raw=None
-    if method=='poisson':raw=poisson_over(mean)
+    if method=='prior':raw=prior
+    elif method=='poisson':raw=poisson_over(mean)
     elif method=='nb':raw=nb_over(mean, max(mean+.1,f['variance']*(mean/max(1,f['mu']))**2))
     elif method=='logistic':raw=sigmoid(logit(prior)+(mean-f['mu'])*p['scale'])
     elif method=='league':raw=prior
