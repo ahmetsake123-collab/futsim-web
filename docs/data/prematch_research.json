@@ -1,86 +1,34 @@
 {
-  "fetched_at_utc": "2026-10-30T02:37:48.050099+00:00",
+  "fetched_at_utc": "2026-10-31T20:58:55.641647+00:00",
   "source": "Google News RSS search headlines",
   "usage": "News headlines are not validated articles. Never modify winning probabilities or claim verified injuries using headlines alone.",
   "searched_matches": 14,
   "results": [
     {
-      "date": "2026-10-30",
-      "home": "07 elversberg",
-      "away": "1 fsv mainz 05",
-      "league": "Bundesliga",
-      "headline_count": 1,
+      "date": "2026-10-31",
+      "home": "chelsea",
+      "away": "manchester united",
+      "league": "Premier League",
+      "headline_count": 3,
       "headlines": [
         {
-          "headline": "SV 07 Elversberg vs. 1. FSV Mainz 05 preview: Die Elv and 05ers meet after cup upsets - Bulinews",
-          "source": "Bulinews",
-          "published_at": "2026-10-29T17:41:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQMVZwZG53Z2JLMHR4YVRYTjI3blgtSWRzSVk2SnVyamFXXy0wYVlzYVRMbTJ2RC02SkctS0JoQ002OVlGcE92Q0JkZ21aQlFPZ21KUmp3by1OZXA0V19MUFAxWkNKOUFyNUg4b3pocVVYNTl3MEk5YTBmVHZESTlpRmhEeVphS3B6c2phWVZaVG5RLTVjZTR6RDkzS1pBZw?oc=5",
+          "headline": "Xabi Alonso Rules Four Chelsea Players Out Of Manchester United Clash Including Double Defensive Blow - roundtable.io",
+          "source": "roundtable.io",
+          "published_at": "2026-10-30T14:30:43+00:00",
+          "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPZG5CTnY1VENROFFrcG5yUmhtVkl6ZmQyaTNLeE0zMm5WekltQXJSTzFBLUlrUzdiWXhHYmRYaGRlbnZ6dUVQTnlycWw5LXJ3QlNtUlRPY1hadFNhOFdNVkFzVWhpU21qcnFRSk5GeWRCUm9lYnJsTlRRTHB0VXJ0QWxnaHAwR1BEX2l3UU0tb1gtODYzYVhrdG5zcUQ4QlhDTFc0NVdkTDliWkhDUTJqVkZ3Y1hmS3prZmhrZ1BLWWtiZktfcHlKTXhQdXdTOFdkbFBSb3ZaMDRkUHRVZFo1ZlFLcE1tX2JXeEtrb2x0T0p4Nm5Zc0VWZ013?oc=5",
           "headline_tags": [],
           "verification": "headline_only_not_confirmed"
-        }
-      ]
-    },
-    {
-      "date": "2026-10-30",
-      "home": "villarreal",
-      "away": "rcd espanyol de barcelona",
-      "league": "La Liga",
-      "headline_count": 0,
-      "headlines": []
-    },
-    {
-      "date": "2026-10-30",
-      "home": "havre athletic club",
-      "away": "psg",
-      "league": "Ligue 1",
-      "headline_count": 0,
-      "headlines": []
-    },
-    {
-      "date": "2026-10-30",
-      "home": "losc lille",
-      "away": "rc lens",
-      "league": "Ligue 1",
-      "headline_count": 0,
-      "headlines": []
-    },
-    {
-      "date": "2026-10-30",
-      "home": "konyaspor",
-      "away": "galatasaray",
-      "league": "Süper Lig",
-      "headline_count": 2,
-      "headlines": [
+        },
         {
-          "headline": "Preview: Konyaspor vs Galatasaray - prediction, team news, lineups - Sports Mole",
-          "source": "Sports Mole",
-          "published_at": "2026-10-28T17:28:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQb3RicjF0VkNJWm56YllPaU1CbEI1S2xIcWF0c2JrTEZ6ekRPNGZVUllwTVp1dmtWVXNGU3kzZ0txU2ZRVC0ybkFWQ282RkY3VC1sMTQxd2lrTlRzRjU2YTZCVDdUWTFxSmxsWGFKelNvd3BLczdYU2JFZUtZZUZxa2JBQ04xVWFyQ19EaVRsY256QzloaHEzaXdrcHFIamlaRy1FUm0zSXNBclVzTHJsMmhtOGxCZTFjM3JPT0tB?oc=5",
+          "headline": "Chelsea vs Manchester United Prediction, Lineups & Team News - RotoWire",
+          "source": "RotoWire",
+          "published_at": "2026-10-30T17:08:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNXzc3ZEhXTEs1ZjlHNWttN2VPcmFBTVFoRkFXVEtPOEU0bFRUZDdsN2o5SnRkTXBNMUUtRXNpblFrcVZyWFVwYjBmWVQtNTQxS2ZLb1R1WXFBdDVWRG05M1hlMEg5SFhzRVh5N2dhSUg3aWEtRExqMmpqZWQ2b083dWNoQVdNcGp0bFJLaFJ3VFZsLVd5cWpBR09CQUFSUEhfbDhYdG1ONmc4UkU?oc=5",
           "headline_tags": [
             "rotation"
           ],
           "verification": "headline_only_not_confirmed"
         },
-        {
-          "headline": "Konyaspor vs Galatasaray Prediction, Betting Tips, Lineups & Odds | 30 Oct 2026 - Sportsgambler",
-          "source": "Sportsgambler",
-          "published_at": "2026-10-29T00:31:05+00:00",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbFd4dUFRcUhOY1FwLUk1OHNXaEdwc3BNQWlHMWE3c09CdmtSQlo5ODJGVzg1RlI3Szh6MVJSTEtnd1N6WkI4WXFDQnFzU0lSZFdxazFUTnZNbjlLWTZKN21sd0xLR2FxMGtHRndYdjJTb2g2aWhaWm02TThsdWJVOWdYbnB3Ullpc3NnSk1ueG1YZUNEaWRoalluTW1YYVBMcmtoQXdVdFBzWUlwbHdlWTFB?oc=5",
-          "headline_tags": [
-            "rotation"
-          ],
-          "verification": "headline_only_not_confirmed"
-        }
-      ]
-    },
-    {
-      "date": "2026-10-31",
-      "home": "chelsea",
-      "away": "manchester united",
-      "league": "Premier League",
-      "headline_count": 1,
-      "headlines": [
         {
           "headline": "Manchester United XI vs Chelsea: Confirmed team news, predicted lineup, injury latest for Premier League - Yahoo Sports",
           "source": "Yahoo Sports",
@@ -99,16 +47,30 @@
       "home": "bournemouth",
       "away": "leeds united",
       "league": "Premier League",
-      "headline_count": 1,
+      "headline_count": 3,
       "headlines": [
         {
-          "headline": "Preview: Bournemouth vs Leeds United - prediction, team news, lineups - Sports Mole",
-          "source": "Sports Mole",
-          "published_at": "2026-10-29T17:00:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSHdVb3JwV2VCMDlvT3VvdHhXQUx6WVlYakZINmJxeXRSbHA2aFZVNWwzQkRWSG5VcGpBajZiTENsN1VZbFZTWkEyUEFQUi1ZbnM5czBWOXlqYW9HVFEydExoVEJEQTJ1ZHdzNlJ6Z0VRX29naFlYMGRETGtGaUZvNEJrNU9qWWpNWnRYbkxoN2lDVEsxX3B6cXRJLWxmRzZ2UElEeExYczVUYm1pWEJXUDU3anh6amw5bWIw?oc=5",
-          "headline_tags": [
-            "rotation"
-          ],
+          "headline": "AFC Bournemouth vs Leeds United: Team news, key stats and everything you need to know - Leeds United | Official Website - Leeds United",
+          "source": "Leeds United | Official Website - Leeds United",
+          "published_at": "2026-10-30T14:01:18+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQTExURkpESzg3emNKaDVHQk85ZWdpY19KU0pZOFEzbGFidnllckZPV2lMNXUyVDhNX2doMW14ZGdvVmtqTUhiTXFNZEhnblBlaVhLZ1VlYUx6Tlp6WVo2UzViR1I5VzhFTWp4WUY5djJWd3JrX19vNXdheUNDcllaZ0FIc2wzaHV0NXppS01uM2t6MHYzY1B2SU9WcTlFR0F1QjdKUTdXOG1QM0tSa1hGTXN2bXd6ck1sUnVF?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Leeds United predicted XI vs Bournemouth amid Harry Wilson and Brenden Aaronson coin-flip - Leeds Live",
+          "source": "Leeds Live",
+          "published_at": "2026-10-30T08:30:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOdm1ING1mWXJWbkd3bGhwLUlzX0JwcGtJc1Rpcm40SDQ2SWh2SVlmcGJTNXZ2WFFVRFdsNXh5YnFYalhkdEJRbHMwY0VzNTVzNDBsa1J2QkI0dThSMnRUdFU5Q0RZYVRvSWdudW1KYkJaY0tfbEUtYXFFYXNnblhDUGdWTmNNVW5scXUzOFVn0gGTAUFVX3lxTE1zQjZIalBFenI3LWJueGtsWlZQaHNxd1ZwRnoxdTEyTnJBREpxNURJTGhGV1RpNUE3blFGekJyb3E1T0p0OVcxeWJnek9TcldvWDY1Tkd5bzlTZ1J1YmxjM1hOMzdvWHhyNEdQeWgyWmNjeEk0ZG5NQUdCR2VSajRDMUNDV1JwYjFscXlZUUdiNEpqVQ?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Bournemouth vs Leeds United Preview: Cherries Eye Six On The Bounce - VAVEL.com",
+          "source": "VAVEL.com",
+          "published_at": "2026-10-30T11:33:45+00:00",
+          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQcnBwbkdUc0UyN2VaV2IxbGRMUUw2cU9LXzFoZnBqWGJlaEdzcVRfWTJVb0tpOXBaWXR2WXFhYW12S2o1ejJOdm93VU1LY1ZyMnk1aVBYUUhnMm02RzNxUVhzaEg0QjhnN3pfNUwzZGlfWVNXY0ZNOWZrZDdTSFdFdkVvclE2VlRXWVFzOTB0SEVmUkJBdXZHM1UySi1ZUld2TENCRlpzVk1GdVVZQTFWcDdMRHh3TDk5NWZzakFTTWZqeDR3UHFjRnRxbjlUMHpfZXFrYTRB?oc=5",
+          "headline_tags": [],
           "verification": "headline_only_not_confirmed"
         }
       ]
@@ -118,8 +80,52 @@
       "home": "brentford",
       "away": "nottingham forest",
       "league": "Premier League",
-      "headline_count": 2,
+      "headline_count": 8,
       "headlines": [
+        {
+          "headline": "Brentford v Nottingham Forest team news: Carvalho out until after international break - Brentford FC",
+          "source": "Brentford FC",
+          "published_at": "2026-10-30T14:18:50+00:00",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNeDdrbFpzdFJmUVFsSm1FVE1TQlNWaXRpMG9sdlBXNC1BWFZvNV9jMDRsYWV6N0ZLMHFOTHFQcGpEZVlaamNVWHlYNjV2eWVoQUhaMEhPSkVuOVBEdE5YdkhtbzQ4b2F2Tjl5ZEczdXVNNS1ITzQ1bXlNZ3NBNjlIOS1LampOM3JfYmV2eE14b0RwT3hlX3VDWkhZYmpTUFJSUjFPWWpPUXF1RFJG?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Williams, Ndoye, Savona - Nottingham Forest injury news ahead of Brentford - Nottingham Post",
+          "source": "Nottingham Post",
+          "published_at": "2026-10-30T10:38:15+00:00",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOM3FUbzMwd2pMQTJ1Y3FPbmszcTlKSVFLdDhzQ0lLYWR6aUtfcW9vLXV4WWMyZFZzOGNKcDBPcGZZU2lISm9yenZVMGQzWjVMeXlpWTF6RTBIekFHeXpCeFh3cjNvLUJpcHlmV3lERlNmWVNLdlBzLTJ0Tm5ObkQtUDlBdmF4YWU2Wi1QeVhoaG5yMlNKWV95SnhkRlp4MmFWZDQxdGdLd09MUVRE?oc=5",
+          "headline_tags": [
+            "injury"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Brentford vs Nottingham Forest predictions: Tricky Trees to test Bees in capital clash - LiveScore",
+          "source": "LiveScore",
+          "published_at": "2026-10-30T17:12:03+00:00",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPWnZNOVZ4eThiSUQxeGZEUFJzcDdMYVlNNE9tUndaRXpvWHRzZGtwZHJSUUhrSEFMYlp3WHlMYW1hMHNEbjRLSFJJX3Z5OGtMSTA4U0g4T2R1RGxDaU5xaDVaY0RBUE9EcE05SV9IMkRvY0x1aFVQVFVqa2NIcWlRdWprQ01xaVdyODVQX3U1X2pyM3lneW9mSFVySFYyLU83ZFNjRi1LS29YV0FWZUdoTTdIc0xPOTBSYkNCOFJLOFhWa2RiY3JF?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Brentford vs Nottingham Forest Prediction and Betting Tips – 31/10/2026 - MrFixitsTips",
+          "source": "MrFixitsTips",
+          "published_at": "2026-10-29T18:32:38+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQbjZEZTMwdEZkamlMUTh4TzNEdzNWeU5NcDNQbXIxaEVyVEFPcTYyeTZfdEFvZTFUZmVlUkpjTE5BT0o0QnBmQ0VFdGJDejF3NVRSWThCcFZXQnBjeUpYTk1UMlFIVVp4bXRxVGVaMUR2VmFvY1NiUVpNLWZ6QXFhdEpWdC13NEl1ZktJUFFtbjkxSndRZktWTzZrRWpQQXBINnJlOWlkMHpUZw?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Preview: Brentford vs. Nottingham Forest - prediction, team news, lineups - Sports Mole",
+          "source": "Sports Mole",
+          "published_at": "2026-10-29T12:04:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNU0N2bThWMTJkYV9xLW01NzNpV2NhVU9lMUZyNkFpeExaVTVQSG5JaEx6RTRvX1VtMmlmQk1PcE9SNnJfZUVLWjA3RDNhVHB3b0R2cDNQc1JhckRfS0stR0VKZUtIaWdHbTdOaEVLRkdJb2pXQmhlaU8yOVhBdmQ1M1pwQm4ySnJHdHJSUE1GZjNOX1M5bWhnWlB3VV9xRFU1Q2psQ0ZZVmZOczRRWHExdzZLdlFvTWRwNkVORDY5TQ?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
         {
           "headline": "PREVIEW | Brentford vs Nottingham Forest: team news, lineups, predictions (Premier League 31/10) - Yahoo Sports",
           "source": "Yahoo Sports",
@@ -131,12 +137,22 @@
           "verification": "headline_only_not_confirmed"
         },
         {
-          "headline": "Nottingham Forest injury news: Oliver Glasner reveals doubts over key player ahead of Brentford game - Sports Mole",
-          "source": "Sports Mole",
-          "published_at": "2026-10-29T16:36:16+00:00",
-          "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOOERVZ05tclpRWngzYlphUEVwWkFhR2ZSOUxpZHpuTFY0N3N6YkNoUGhqa2plRUNQeDljeVJkUy03UmtwSkY0SklzQ0pDbHBKdjdrMUZHRm8xc18yZnlINzQwNHc1bmVpUVlGTW1CSkhfM0RHMC0tSmlCQkVMM2FPVEI0TE9mN1o0UE9vWFhzQklpdTJRS2FLUkVBemRxdWgzTDVESHFzVmZEVnlkMFN2RnVIWEptZ0ZIUEhkY2ZGeWwwblJmc0gweHVLbmRLUURjSTM1NGh5TFpKdFRlaUkyTjRWU1lIQQ?oc=5",
+          "headline": "Brentford vs Nottingham Forest: Lineups, Prediction, Odds & Bet Builder Tip - WhoScored.com",
+          "source": "WhoScored.com",
+          "published_at": "2026-10-30T17:18:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOczJrSF9fY1RndFVvWFY5TW5VendpT08yVWZrbUg0TEZVMnpxV3VIZkJXSGpjYzNOSEdHWmR4VWE1b1Q3Q2UwcWd4N0d3b291bUN6b2VQQ2tlQmlBdVQ5eXpRTlFab3BjVlR6SlN1MzQ0enItR0pETG13RkdQSFVua3JQcThaT3dMOWpfNktvQ1NCaHFjUy1OUHl3TkdpV0JUYVFJZnBhN25zb2laLWNWZzYwS1laVmpBaF91dWU5TFpUQ1NpSTc5dXdB?oc=5",
           "headline_tags": [
-            "injury"
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Brentford vs Nottingham Forest: Predictions, Picks, Odds & Lineups - Squawka",
+          "source": "Squawka",
+          "published_at": "2026-10-30T13:36:08+00:00",
+          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOeHNucW9OdGdfLWsxOVhBMzI5bC1IcDNEOVhnQ2ZfaGV6WFlWVTY5YUVpcWtmcEpnOVMyRjVEeFZKb1RSdlhtR2sydFpZQ2NCSU1vNXpmZm41X0ZiR3FKWTBJOFZXTWFCVkQyWFplTG1JQTg0UTlIU3R4OVZhX2tLMTJoQzRVR0lHX1FNUzVmRk1HcUs2R0ZDTE0yS2FzOHY3NkFZdXp3UzQtU2UzTTVsa2dxTzlTX00?oc=5",
+          "headline_tags": [
+            "rotation"
           ],
           "verification": "headline_only_not_confirmed"
         }
@@ -147,13 +163,65 @@
       "home": "coventry",
       "away": "sunderland",
       "league": "Premier League",
-      "headline_count": 1,
+      "headline_count": 7,
       "headlines": [
+        {
+          "headline": "Preview: Back to Premier League action at Coventry - Sunderland AFC",
+          "source": "Sunderland AFC",
+          "published_at": "2026-10-30T02:05:57+00:00",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQRGZuSENtUEE5bnF0Y2hoZGY1V1FZSlRPNkRpbGV0YU1BMThCeHBvOF9ndHBXTHR3cG1ET0xpM2V1RzQ1WVN5UURXMzFybW5nVTBOb2ctSVRSVi1lZmt0SDNJeENRTVR6R2UxWEdRcWNpNU54XzZtYUFtQmNSWTVCMmlrbnVfaXk3RGZORTNR?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Frank Lampard urges Coventry to adapt, Bobby Thomas to miss Sunderland game - OneFootball",
+          "source": "OneFootball",
+          "published_at": "2026-10-30T11:28:53+00:00",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPdElSWDJ4Nlh1RHpNRFA4MDczMHZRWGFXVnE2QjMtaUlEYUpTQXVTVG9SSDRxSnNjd0VuQW1ZTFpGeU9pem5mY3c4cl82M3lMTnpubS16LW5NekRacUkwNkVfdXJZVEt6LVM3N1I1amdESDBtcVd3YWlkQzllTFJ6WjV4T1lxQlFVWEhHMlhuZkJ6SzZnV3l6eFlZQzZVMGJpc2FZbkZYZWRKRDc3eDM0cHNXd2ZtQQ?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Sunderland set to be boosted by return for Coventry clash - Hayters",
+          "source": "Hayters",
+          "published_at": "2026-10-29T16:18:46+00:00",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPVUQwT1dBeDBpclhTeExuM3JRTVJOaTNxOEhJM2hJRWVZSU0wTXB5bFlDV04zZG5MdVc3MkRlUl9Ib3l3dDdaSG9sYjZsSFpZTmw2RDhQUXNzMG1GclgwU1dFbC1oYnZETnFMbC1FZ0VNSjBxNVVhQW9qZ1l2QzNQNEM0SFHSAYoBQVVfeXFMTzBqTm52UTNXNmozTzRmamJ0a0hLb3FLS0ZCVWxmSWdYbENuM1JFbUdvNmRQLWs2V3c4U1Z5M21pelFrX2xEMm11VGFwRmMxcGhScFpmdlZuaU9nTGxNSEE0NkczVThwVGNGRTRvNDFkQ1Y5dWlRcDJscE83TGNFLXdfemVFUFVjQk1B?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Coventry City vs Sunderland Prediction and Betting Tips – 31/10/2026 - MrFixitsTips",
+          "source": "MrFixitsTips",
+          "published_at": "2026-10-29T21:21:21+00:00",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPbV9SNGZUY1dFSGFhVE13RC1CWmxHZWZzMFlacDJHSlpOZGNyWEMyRzFyNUgtSTNld2paVEExdjdhb2V1NnlqNC1pbTVTc1BkSWsybmZ4YkplZXVFaEQ2cXVLSG1RQ3lIcFBhUUN5dGlJbzdoejR5bjBmbExuMTQ3VHh0cm9Gb0ZpcGhiamJ2Z3RCbGQxcVBJSndXcmFLVXdNZ0NyTll3?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Coventry vs Sunderland: Lineups, Prediction, Odds & Bet Builder Tip - WhoScored.com",
+          "source": "WhoScored.com",
+          "published_at": "2026-10-30T17:23:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPU3hXWF9GU2xSMktIV1kwaERUS1RxdDVTZ2JId3dQdEIyYTZZTVJzZFdRYU9keVZobUJrSjNoM3I0ZVY1VkZoZHlCUF9adFR4VTA2RC1JR0FMMWlDd0pjMy0zejE0NXhhSjk4QTN6WXpmOWZ1UU50V3gwOVlwVm9COFJVMnRQN3FjcENfWGQ2b2hIZEJrcTJHRmx5YUoyaWFtanMzN09ER0ZzbEF3YTlWTzhmaldBZGlFQmNSeElpbw?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
         {
           "headline": "PREVIEW | Coventry City vs Sunderland: team news, lineups, predictions (Premier League 31/10) - Yahoo Sports",
           "source": "Yahoo Sports",
           "published_at": "2026-10-29T14:10:00+00:00",
           "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMkVRUzYyYXpYV0FkWjlROTdKMktpeFBDREJONFNHTUxhSGEwZS1WZlZkLU9HTlYyNUVUeFNLTTNLdVlnaHk3UDBDa0RCaUNkNGttaWNhM3ZRY1RzVWt6ekhnUksySWpQdTFaQjBnc2Y3QTMwTDZmRXgxam5yNG82Nk55amFvamNFbFcyYw?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Coventry City vs Sunderland: Predictions, Picks, Odds & Lineups - Squawka",
+          "source": "Squawka",
+          "published_at": "2026-10-30T14:08:57+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNV0NONlZCMW1xRHdtOWlNQnRFQ3RBZjljVGk4R2RHMFJLWXhBdjZyVkxTbVhIdUVBWVdJNTNRamwtVEZYQkFoQWp4cGRQNnVKQVV5SVdKSXJKLUhGUlpkSzg2ZWxBTlo4MGxidU1lRk1BZW1KUmtDbWVNekR3R0xFYXMxRnc4bGlsWG9nMDhVUDNZSEZNY2tIT2dxVVk0N3BQbXNPZnlvUm9QT1J3QUdVTmJFMA?oc=5",
           "headline_tags": [
             "rotation"
           ],
@@ -166,13 +234,23 @@
       "home": "hull city",
       "away": "ipswich",
       "league": "Premier League",
-      "headline_count": 1,
+      "headline_count": 2,
       "headlines": [
         {
-          "headline": "Hull City vs Ipswich Town: Predictions, Picks, Odds & Lineups - Squawka",
-          "source": "Squawka",
-          "published_at": "2026-10-25T03:01:44+00:00",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQUXI2OWg4dC01LUYwTzdCdG84U1BJR0RUNXBLdS13MW1PVzdwSGt4Um9xV3FTaTNzeEZxMi1LRnhWc0lOUnY4OTNjYjVvMFZKdHktOVlKdnVqYUpGTkVmNkV3SVJEUnVZZldwSFk5bTNLTkh2Sld0LUU3eWVXanhPaUMwTU5EOXFHWUFLOFBIUmM3S2FtV3BobFBUMjJzZkR2WEtyRU9ZVml4NV9mMEtLbA?oc=5",
+          "headline": "Preview: Hull City vs. Ipswich Town - prediction, team news, lineups - Sports Mole",
+          "source": "Sports Mole",
+          "published_at": "2026-10-29T10:02:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPS1JCeEhHNVBMUVBHRU1OTVI5c1hINnEwT3lRcVdXVjNBQUJtdEJRamxkWHotbkRhVk1QYVprbzREaXRyR1dZUW10aGRJOEdBQURzN3o1Z1ZfVEs3UjZreWhtZ2t4bmFmYUxnTVFBRFVKZ1FnZ293bG1ZYmxENXdSaHRKS254WEU5R2tvTFEtZ0FrZmFjelRYWUxwcG1xc1I4N1VMdG80c3VTdjc4c3BhUGFJNll0Zkoy?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "PREVIEW | Hull City vs Ipswich Town: team news, lineups, predictions (Premier League 31/10) - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "published_at": "2026-10-29T14:15:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNOGlBVGZzUHRoTnA4T0lOQkxjOUFzMmw0YU9LZUVVWElHcXZRZWdEUF85MXB3ZlVzcjVuMXhVdTdaYlE2Zkk4LTlVZEhYM19HS0h6Q3hFcUtkWDJlZEpPZ0gwNHE4VWVRc2YtRnZQemxCTjBqbjY0MWdSNTY2VkpwZUlvbw?oc=5",
           "headline_tags": [
             "rotation"
           ],
@@ -207,10 +285,10 @@
       "headline_count": 1,
       "headlines": [
         {
-          "headline": "Preview: Tottenham Hotspur vs Crystal Palace - prediction, team news, lineups - Sports Mole",
-          "source": "Sports Mole",
-          "published_at": "2026-10-29T19:30:00+00:00",
-          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZklaWTQxcHkzakFVOGE2TUN1Tk9LRGxLMTlsWUhDMERFNkNOT1IwS1BYalRxMUhWdWhqejVYMjZMMXBaOXkwc2hlZTJkaDBaeVk5LVppSV8xcWgxQ2xfV0VRenZnY3FSNnlWeW5zZFQxd2dsNE1pbktlQm9aVkYzbElzVm9PTUNNVE9QZEQ2UkYwWGJ4b0NaNldNSVBjVF9VZ0VUSzVDNWI3bXdWdnB0RHRCSXJqUWs?oc=5",
+          "headline": "Porro, Gallagher And Solanke To Start | 4-2-3-1 Tottenham Hotspur Predicted Lineup Vs Crystal Palace - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "published_at": "2026-10-30T20:30:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQY0JzdXRFZ21iMldpM3F4eVctbldXNEY3ZG5HRmRMVFhRdzFxMlhOWG14blNXTG1XbENkdk1QaHFOTllSZ2hfUHFiNFdFeXVJOUpVLVpfcHpjTFBfeTNfeUxIRndRZVRObUFKNm1OUVBVSzVRMjk0MC1XV2tVLXJiQkZ2WFUwTGM?oc=5",
           "headline_tags": [
             "rotation"
           ],
@@ -223,8 +301,36 @@
       "home": "aston villa",
       "away": "fulham",
       "league": "Premier League",
-      "headline_count": 4,
+      "headline_count": 7,
       "headlines": [
+        {
+          "headline": "Team News: Aston Villa vs. Fulham injury, suspension list, predicted XIs - Sports Mole",
+          "source": "Sports Mole",
+          "published_at": "2026-10-30T20:00:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPVEVkRFJRNWVScTA4SE9pSkVxX3ZMYVR2Z3ZfTWtaNHZmSG5KTFM5OHVZcTNBSUhPc3pYTTJiNmRpSkFBOWowbHplZzJuUG03SkhWUDFFTGlEYWx4TUl2TU1oczJ6Z2RRb1A5elEtZVFxSjExY0VKVnVDUUFndGhTNmxtandMN0RMOV9rR0g5bjFWSUtNQy01RHNoZDFnRW9KaUtBZ0JKS09OcVZXYlItMzhnQjJpWk4xQ3k2ZE1oSEd1NWxPWXVrVjE4a1pKM2R0WXhNaUJBSkhNZw?oc=5",
+          "headline_tags": [
+            "injury"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Aston Villa v Fulham: Prediction, team news, lineups and odds - Football365",
+          "source": "Football365",
+          "published_at": "2026-10-30T18:55:17+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPMlp4NVp5b1ctekZWNG1JaEpKZzdXTGpSOWp2dGhCbV9GWjlpaFd2T29oSG9WU25LU3U1N0h2NUtqbGxuME9FdmFGaV9DQ3ZSWWxwTWx5TWhuSkxOZFFpYV9idWJpd1Y1OEFWVHRSNG93M21kQWg1a25mbkcxWHhPbTc3SHZlNUxj?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Aston Villa vs Fulham Prediction and Betting Tips – 31/10/2026 - MrFixitsTips",
+          "source": "MrFixitsTips",
+          "published_at": "2026-10-29T22:01:07+00:00",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNaUxpeTRiTmdqWW9mWWFnY0F2Y1NVYWM2SERvRUFIWWE5MXB4SHBKR08xWkFLSUM5RVBuQ3BLU1E2OWFRbk10dU1WVVpXMlpncWVwcGhFc25ST0lQdl9yVldIaDhBcExsSzFJcHRrdkZWSnpqX2dEWFRENVBOUjd3ajhyV01JOVpoZnVxbzhUckpxTzJGcUR1cXh3aTZPQQ?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        },
         {
           "headline": "PREVIEW | Aston Villa vs Fulham: team news, lineups, predictions (Premier League 31/10) - Yahoo Sports",
           "source": "Yahoo Sports",
@@ -236,20 +342,22 @@
           "verification": "headline_only_not_confirmed"
         },
         {
-          "headline": "Aston Villa Predicted Line-Up vs Fulham: Emery Set to Make Nine Changes - Read Aston Villa",
-          "source": "Read Aston Villa",
-          "published_at": "2026-10-29T13:54:01+00:00",
-          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOX01VRDJyQm9ZWExzSnFMdG8zYUZRTk5oODdtSkVfaVByUzAtMjZYekNMRmt0QTBfckpEa1FhVVM3a3RKeFNQUnBJdHpSWWdVM0p5UWpjbmxSbFlXWlBPcFJoM3I0bU1ETTlEd196TVQzZHUwSXB2WTRzaXNTWXJpZFBDWVc?oc=5",
-          "headline_tags": [],
-          "verification": "headline_only_not_confirmed"
-        },
-        {
           "headline": "Aston Villa vs Fulham: Predictions, Picks, Odds & Lineups - Squawka",
           "source": "Squawka",
-          "published_at": "2026-10-25T03:01:40+00:00",
+          "published_at": "2026-10-30T13:37:53+00:00",
           "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTWk4c1RheF9xLUxSTFFNQ2RFVTNYdHo5eTZuRTl4QW1iZ1Jtdzc3VVFqS2hSWkZhR1NERTNhNlpMQVNocm15MVpjX0UwZ1c5WTg4c2pvMUFMZkNSR0pHM2E4ODRnVFFUSy1iXzN5cTk1LVVRUkZGRG9MYXRiR0V0WkpnZXV0U29DTi10d2J4TEhOeUcwMzVHZkV1T1hndHRkRnctQ2hsWjdLbXM?oc=5",
           "headline_tags": [
             "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Aston Villa vs Fulham: Preview, team news, form and where to watch - Read Aston Villa",
+          "source": "Read Aston Villa",
+          "published_at": "2026-10-30T17:15:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQcndGOXBMTXRPWjVTNVZ0eUtVRkl6TjFXUkQxNmZyejNWMkRJSURvTkxLSG1KbGd6Ylc5ZDNsYVF0bUNhV0hBdV9HcXhHNU1UOFZBYkRhZlFJLTZxWXZMNW9COFZYUUhialhfb292OG9GR0s3cHNWWkpfQVNYOHZhanRudUtiTkJKVDg3UGVkRHZiWk1sWFAtcA?oc=5",
+          "headline_tags": [
+            "form"
           ],
           "verification": "headline_only_not_confirmed"
         },
@@ -272,6 +380,122 @@
       "league": "Bundesliga",
       "headline_count": 0,
       "headlines": []
+    },
+    {
+      "date": "2026-10-31",
+      "home": "borussia monchengladbach",
+      "away": "paderborn 07",
+      "league": "Bundesliga",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-10-31",
+      "home": "augsburg",
+      "away": "freiburg",
+      "league": "Bundesliga",
+      "headline_count": 1,
+      "headlines": [
+        {
+          "headline": "FC Augsburg vs. SC Freiburg preview: Hosts looking to end five-game winless run - Bulinews",
+          "source": "Bulinews",
+          "published_at": "2026-10-30T15:21:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPdFFsQ0tMMklyOWU4N2w0OTRqQVpkQXZ6Y3RVYmxpYjk0WXpkWEhXMkhkVmpZcWNYZTNJMjc5bXh4cHdqanA3T00ycjlnOXNRaXgtbG5RSGxCS1RmMnlNMUYzVnZIdURLMktBNUZKRXpXejFpc0pkN1ZhYmxBZW9OUzZQVlRYc0FXalF3Z0Vncw?oc=5",
+          "headline_tags": [
+            "form"
+          ],
+          "verification": "headline_only_not_confirmed"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "home": "schalke 04",
+      "away": "rb leipzig",
+      "league": "Bundesliga",
+      "headline_count": 2,
+      "headlines": [
+        {
+          "headline": "PREVIEW | Schalke 04 vs RB Leipzig: team news, lineups, predictions (Bundesliga 31/10) - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "published_at": "2026-10-29T13:45:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBXU2hNc1M0OF9ENVhBMVBxZE95bWV1VEk2aVdIXzBFeUxiNmhNV0ltSEk1NkNpTzFkbzZFNDluVlFhZXVCWXQ2M0lRVHdhb0N6U2F6N3pkNXh4aUVmNk5nUklWZ18wVGlvb1VPb3pVd2k4N2Q0eUtFWS1xeUZwUQ?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "FC Schalke 04 vs. RB Leipzig preview: Blues and Bulls desperate to end barren spells - Bulinews",
+          "source": "Bulinews",
+          "published_at": "2026-10-29T21:51:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPcUZSdDJHdGZXU2poVFliYlVSOEhTOE5iZHJsN3VrNkkzYU9NVEU2TUk1QU92UVFtRnlMZ0doa2JIaElNaUFWTGNaS2dOQkNMQ1ZrV3VwdjczeFJGQmg3QnJxVUVVSzIyNDZkd2tVemxnWGNzTVNJamRDU1NPN2F2RkhETGlpWmVTbkpmRFZfbFg5YW9MZnc?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "home": "werder bremen",
+      "away": "tsg hoffenheim",
+      "league": "Bundesliga",
+      "headline_count": 1,
+      "headlines": [
+        {
+          "headline": "PREVIEW | Werder Bremen vs TSG Hoffenheim: team news, lineups, predictions (Bundesliga 31/10) - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "published_at": "2026-10-29T13:35:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNQTd1eEM1elpvaFZxR1RpOV9aR0FMaXVrTV9XX1hJbE52ZEV4bXNOWlVDREozcnZpWERDRjJLRXZNczlOVGhYaktUQzZScFNTRGZ6RE14aUZXa1hQWl82ZDVld0VaTmNOek9GSHNDdC1TZ3V3LVNHX09kZFQycVY4Qm5iQQ?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "home": "bayern munich",
+      "away": "borussia dortmund",
+      "league": "Bundesliga",
+      "headline_count": 4,
+      "headlines": [
+        {
+          "headline": "Preview: Bayern Munich vs Borussia Dortmund - prediction, team news, lineups - Sports Mole",
+          "source": "Sports Mole",
+          "published_at": "2026-10-29T22:51:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQckYtc2xYcmdYUnp2RVkwbzJ2RWF3RVc1SktnN092TjJvYTY4WkhET3lqMVpvWkZJRkt3SC1nclZBb1BBeGhSU0dDZ2hPc3VQNDkxTkZHQWFUbVRudW9DS3BEa3VJcXdsUmpDUmF6OU9NYy0wRGlYbDZPalRVS1EyYnFOek1rMUxPVDF2QU5HZU9veGE3MEFQTXJPckJNX0xyOWh0MnZVNHRIN080eHRrZjgyZmdhTjh6WWJ4S1Z6V3FpMGo2N0V3M1pDem8xZw?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Where to watch Bayern Munich v Borussia Dortmund as Harry Kane looks to celebrate Ballon d’Or - talkSPORT",
+          "source": "talkSPORT",
+          "published_at": "2026-10-30T12:05:15+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPRV9SM0J0XzdaZWExY2tUSG42WEJCV1paODJMZ0U3MFpNNU15Y2UzNV8zVDhRLXdvbWdQT0lHcnB5c0pWcW41VklhWW9sYVpYbnlXT2tJV0pBbVFBOThrM1F6Q3o3c1cwTWl1QTlUQmVQdnhSVlE5REExaWhzRVZjNHhzU1Rja2g3ZllNTk9Eck5FcmNJTnBybks2UkdQeXlCeGU3MmdTY1k4dw?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Bayern Munich vs Borussia Dortmund Prediction: Bundesliga Der Klassiker Preview - Opta Analyst",
+          "source": "Opta Analyst",
+          "published_at": "2026-10-29T18:15:15+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQTWpCOS1GcnRTWFZFcDhHSzk5Y2lvNW5KZ1ljY24zZGFXQzVtNzgwdUNjalFzSlZOUnV6bFBOSHdnLUloRGhscDNnSW1HSlN3b3g0NmlzYzRpTnRPN3Q1Yl9lb1RTcE9vbjk0VTJBbnZlaEdPaWJHOFptYTlpX1BHaDlHMzhaWVBFV1lWWTdPb3l0bnZ5Wjh5azQtdVhSRExWeG5UemNtUFFlMzIxLUJQMGh0a2thZ1B2ZUE?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Bayern Munich vs. Borussia Dortmund preview: A top of the table clash awaits - Bulinews",
+          "source": "Bulinews",
+          "published_at": "2026-10-30T07:45:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPR3VJNEpWYlVDczdVLXlMeXdZUWQ5V2l4LWpaX2pabDlyN0w4MnlwSDhrN204OXFVZUZ6UmttMlRZNk80VGUwQmI4SGxHTFVqSGlGNmg1SnhrX0hKM2FtZTY3U19MV0VKR1ZyLXJLUlpENk9vYV9UcnY0T3NwYmNEcTJSU0FlaTM3VFoxbGxVQjA?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        }
+      ]
     }
   ],
   "errors": []
