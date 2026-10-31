@@ -55,6 +55,29 @@ function build(h,a,comp){
  }
  return thoughts.slice(0,4);
 }
+// Short, conversational, evidence-backed snippets for narration.
+// Never pass UI analysis instructions, "değerlendirmek gerekiyor" sentences,
+// unverified news headlines, or generic cautionary boilerplate into speech.
+function videoNotes(h,a,comp){
+ const notes=[], home=venue(h,true),away=venue(a,false);
+ const fmt=v=>Number(v).toLocaleString('tr-TR',{maximumFractionDigits:1});
+ if(home&&home.n>=4){
+   if(home.win>=3&&home.win/home.n>=.7)notes.push(h.name+' evindeki son '+home.n+' maçın '+home.win+'ünü kazandı.');
+   else if(home.unbeaten/home.n>=.75)notes.push(h.name+' evindeki son '+home.n+' maçın '+home.unbeaten+'ünde yenilmedi.');
+ }
+ if(away&&away.n>=4&&away.unbeaten/away.n>=.75)
+   notes.push(a.name+' deplasmandaki son '+away.n+' maçın '+away.unbeaten+'ünde yenilmedi.');
+ if(comp==='Şampiyonlar Ligi'){
+  for(const t of [h,a]){
+    const rec=find(t),ucl=rec['Şampiyonlar Ligi'],dom=rec[t.league];
+    if(!ucl||!dom||ucl.matches_current<4||dom.matches_current<5)continue;
+    const x=numeric(ucl.current_gf),y=numeric(dom.current_gf);
+    if(x===null||y===null||Math.abs(x-y)<.5)continue;
+    notes.unshift(t.name+' maç başına Avrupa’da '+fmt(x)+', ligde '+fmt(y)+' gol atıyor.');
+  }
+ }
+ return notes.slice(0,1); // One brief observation; narration remains within a short reel.
+}
 function renderNews(h,a){
  if(!research?.results)return;
  const match=(research.results||[]).find(x=>
@@ -120,6 +143,6 @@ async function init(){
  if(last)render(last.h,last.a,last.comp,last.r,last.corners);
  }catch(e){}
 }
-window.FUTSIM_CONTEXT={render,build,getForVideo:build,learning:()=>learning,cornerAudit:()=>cornerAudit};
+window.FUTSIM_CONTEXT={render,build,getForVideo:videoNotes,learning:()=>learning,cornerAudit:()=>cornerAudit};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
