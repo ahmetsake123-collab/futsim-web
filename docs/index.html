@@ -636,7 +636,7 @@ function confidenceOf(h,a,p){
  return {value,color:value>=80?'high':value>=50?'mid':'low'};
 }
 
-const couponKeys=['1','X','2','1X','X2','1,5 Üst','2,5 Üst','2,5 Alt','KG Var','3,5 Alt','4,5 Alt','Ev gol','Dep gol','Korner 8,5 Üst','Korner 9,5 Üst','Korner 10,5 Üst'];
+const couponKeys=['1','X','2','2,5 Üst','2,5 Alt','KG Var','KG Yok','Korner 8,5 Üst','Korner 8,5 Alt','Korner 9,5 Üst','Korner 9,5 Alt','Korner 10,5 Üst','Korner 10,5 Alt'];
 const marketLabel=k=>({'1':'MS 1','X':'MS X','2':'MS 2','1X':'1X','X2':'X2','Ev gol':'Ev sahibi gol atar','Dep gol':'Deplasman gol atar'})[k]||k;
 function selectedCouponOdds(odds,key){let v=Number(odds?.markets?.[key]);return Number.isFinite(v)&&v>=1.01?v:null;}
 function couponSave(){try{localStorage.setItem('futsim-v5-coupon',JSON.stringify(coupon));}catch{}}
@@ -669,13 +669,11 @@ function mediumRiskTip(r,raw){
 }
 function futsimModelLean(h,a,r,p,f){
  const sample=Math.min(Number(h.stats?.matches)||0,Number(a.stats?.matches)||0);
- const pickKeys=['1X','X2','2,5 Üst','2,5 Alt','KG Var','3,5 Alt','Korner 8,5 Üst','1','2','Ev gol','Dep gol'];
- const ranked=pickKeys.map(k=>({k,p:Number(r.markets[k])}))
-  .filter(x=>Number.isFinite(x.p)&&x.p>=57&&x.p<=84)
-  .sort((x,y)=>{
-    const score=t=>Math.abs(t.p-72)+(t.k.startsWith('Korner')?4:0)+(t.k==='1X'||t.k==='X2'?1.2:0);
-    return score(x)-score(y);
-  });
+ // Only permitted full-time result, 2.5 goal, BTTS and corner markets.
+ // Choose highest predicted probability, not closest to an arbitrary 72%.
+ const ranked=couponKeys.map(k=>({k,p:Number(r.markets[k])}))
+  .filter(x=>r.markets[x.k]!=null&&Number.isFinite(x.p)&&x.p>=0&&x.p<=100)
+  .sort((x,y)=>y.p-x.p);
  const pick=ranked[0]||null;
  const why=[];
  const fmtGoal=n=>Number.isFinite(n)?fmt(n):null;
@@ -700,11 +698,11 @@ function futsimModelLean(h,a,r,p,f){
  return {pick,reasons:why.slice(0,4)};
 }
 function renderCouponChoice(h,a,f,r){
- const odds=getMatchOdds(h,a,f),candidate=mediumRiskTip(r,odds);
+ const odds=getMatchOdds(h,a,f);
  const trust=confidenceOf(h,a,goalRates(h,a,$('competition').value));
  const p=goalRates(h,a,$('competition').value);
  const context=futsimModelLean(h,a,r,p,f),lean=context.pick;
- const prices=Boolean(odds&&selectedCouponOdds(odds,candidate?.k));
+ const selectedMarketPrice=lean?selectedCouponOdds(odds,lean.k):null;
  const genuineFixture=Boolean(f?.date);
  let label='',caption='',reason='',fallback=false;
  if(!lean || trust.value<44 || Math.min(h.stats?.matches||0,a.stats?.matches||0)<3){
@@ -715,9 +713,9 @@ function renderCouponChoice(h,a,f,r){
   caption='Bu iki takımın önümüzdeki 7 günde gerçek karşılaşması doğrulanmadı. Sadece örnek simülasyon; bahis önerisi değil.';
   fallback=true;
  }else{
-  const chosen=candidate||lean;
-  label='Model tercihi: '+marketLabel(chosen.k)+' · '+pc(chosen.p);
-  caption=candidate&&prices?'Kayıtlı oran '+fmt(candidate.odd)+' · tarihi ve piyasası doğrulanmadıkça kâr avantajı sayılmaz.':
+  const chosen=lean;
+  label='En yüksek model olasılığı: '+marketLabel(chosen.k)+' · '+pc(chosen.p);
+  caption=selectedMarketPrice?'Kayıtlı oran '+fmt(selectedMarketPrice)+' · tarihi ve piyasası doğrulanmadıkça kâr avantajı sayılmaz.':
    'Güncel doğrulanmış bahis oranı yok. Olasılığa dayalı tercih; kârlılık/pozitif değer iddiası yok.';
   fallback=true;
  }
@@ -729,7 +727,7 @@ function renderCouponChoice(h,a,f,r){
  $('autoPick').innerHTML='<b>'+esc(label)+'</b><p class="small" style="margin:5px 0">'+reason+'</p><p class="small">'+esc(caption)+'</p>';
  const select=$('couponMarket'),old=select.value;
  select.innerHTML=couponKeys.filter(k=>r.markets[k]!=null).map(k=>`<option value="${esc(k)}">${esc(marketLabel(k))} · ${pc(r.markets[k])}${selectedCouponOdds(odds,k)?' · '+fmt(selectedCouponOdds(odds,k)):''}</option>`).join('');
- select.value=couponKeys.includes(old)?old:(candidate?.k||'1');if(!select.value&&candidate)select.value=candidate.k;
+ select.value=couponKeys.includes(old)?old:(lean?.k||'1');if(!select.value&&lean)select.value=lean.k;
  $('couponAdd').onclick=()=>{
    const key=select.value,pct=r.markets[key];if(!key||pct==null)return;
    const date=f?.date||'',id=(date||'özel')+'|'+h.id+'|'+a.id;
@@ -977,7 +975,10 @@ async function run(){
   $('eh').textContent=fmt(p.eh);$('ea').textContent=fmt(p.ea);$('lambdas').innerHTML=`<b>${fmt(p.lh)} – ${fmt(p.la)}</b><p class="small">Skor-temelli gol yoğunluğu; ölçülmüş xG değildir</p>`;
   const confidence=confidenceOf(h,a,p);
   const corners=futsimCornerPrediction(h,a);
-  if(corners.ok){r.markets['Korner 8,5 Üst']=corners.over85;r.markets['Korner 9,5 Üst']=corners.over95;r.markets['Korner 10,5 Üst']=corners.over105;}
+  r.markets['KG Yok']=100-r.markets['KG Var'];
+  if(corners.ok){for(const [key,v] of [['Korner 8,5',corners.over85],['Korner 9,5',corners.over95],['Korner 10,5',corners.over105]]){
+    r.markets[key+' Üst']=v;r.markets[key+' Alt']=100-v;
+  }}
   window.FUTSIM_CONTEXT?.render(h,a,comp,r,corners);
   futsimEnhancePanel(h,a,confidence);$('confidenceBadge').className='confidence '+confidence.color;$('confidenceBadge').textContent=`Veri kapsamı: %${confidence.value} · ${confidence.color==='high'?'Yüksek':confidence.color==='mid'?'Orta':'Düşük'} (tahmin isabeti değil)`;const e=document.getElementById('weeklyBrief')||document.getElementById('xgReadout');if(e)e.innerHTML=weeklyBrief(h,a);
   const reportAdvanced=t=>{
