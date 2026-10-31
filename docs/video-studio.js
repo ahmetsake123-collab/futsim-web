@@ -46,7 +46,7 @@ function spokenScore(s){return String(s||'').replace('-', ' - ');}
 
 function bettingMarkets(a){
  // Use the final calibrated 100,000-score distribution, not bookmaker odds.
- // Only full-time result (1/X/2), 2.5 over/under, and BTTS yes/no.
+ // Only user-selected markets: full-time result, 2.5 goals, BTTS and validated corners.
  var m=a.r.markets||{};
  var defs=[
   {key:'1',label:a.home+' kazanır',spoken:a.home+' galibiyeti',p:m['1']},
@@ -61,7 +61,7 @@ function bettingMarkets(a){
  // Corners use independently modelled historical corner totals, not the score simulation.
  // Include only when the prediction reports sufficient match coverage.
  if(a.corners?.ok){
-  for(const [label,num,spoken] of [['8,5',a.corners.over85,'sekiz buçuk'],['9,5',a.corners.over95,'dokuz buçuk']]){
+  for(const [label,num,spoken] of [['8,5',a.corners.over85,'sekiz buçuk'],['9,5',a.corners.over95,'dokuz buçuk'],['10,5',a.corners.over105,'on buçuk']]){
    if(Number.isFinite(num)){
     defs.push({key:'Korner '+label+' Üst',label:'Korner '+label+' üst',spoken:spoken+' korner üstü',p:num,kind:'separate corner model'});
     defs.push({key:'Korner '+label+' Alt',label:'Korner '+label+' alt',spoken:spoken+' korner altı',p:100-num,kind:'separate corner model'});
