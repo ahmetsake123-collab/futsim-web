@@ -62,15 +62,16 @@ function videoNotes(h,a,comp){
  const notes=[], home=venue(h,true),away=venue(a,false);
  const fmt=v=>Number(v).toLocaleString('tr-TR',{maximumFractionDigits:1});
  if(home&&home.n>=4){
-   if(home.win>=3&&home.win/home.n>=.7)notes.push(h.name+' evindeki son '+home.n+' maçın '+home.win+'ünü kazandı.');
-   else if(home.unbeaten/home.n>=.75)notes.push(h.name+' evindeki son '+home.n+' maçın '+home.unbeaten+'ünde yenilmedi.');
+   if(home.win>=3&&home.win/home.n>=.7)notes.push(h.name+' evindeki son '+home.n+' maçın '+home.win+' tanesini kazandı.');
+   else if(home.unbeaten/home.n>=.75)notes.push(h.name+' evindeki son '+home.n+' maçın '+home.unbeaten+' tanesinde yenilmedi.');
  }
  if(away&&away.n>=4&&away.unbeaten/away.n>=.75)
-   notes.push(a.name+' deplasmandaki son '+away.n+' maçın '+away.unbeaten+'ünde yenilmedi.');
+   notes.push(a.name+' deplasmandaki son '+away.n+' maçın '+away.unbeaten+' tanesinde yenilmedi.');
  if(comp==='Şampiyonlar Ligi'){
   for(const t of [h,a]){
     const rec=find(t),ucl=rec['Şampiyonlar Ligi'],dom=rec[t.league];
     if(!ucl||!dom||ucl.matches_current<4||dom.matches_current<5)continue;
+    if(ucl.current_gf==null||dom.current_gf==null)continue;
     const x=numeric(ucl.current_gf),y=numeric(dom.current_gf);
     if(x===null||y===null||Math.abs(x-y)<.5)continue;
     notes.unshift(t.name+' maç başına Avrupa’da '+fmt(x)+', ligde '+fmt(y)+' gol atıyor.');
