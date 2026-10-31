@@ -676,6 +676,7 @@ function futsimModelLean(h,a,r,p,f){
   .sort((x,y)=>y.p-x.p);
  const pick=ranked[0]||null;
  const why=[];
+ if(pick)why.push('Seçim nedeni: İzin verilen bahisler arasında '+esc(marketLabel(pick.k))+' olasılığı %'+fmt(pick.p)+' ile en yüksek. Maç sonucu favorisi ayrı bir istatistiktir.');
  const fmtGoal=n=>Number.isFinite(n)?fmt(n):null;
  if(Number.isFinite(h.stats?.gf)&&Number.isFinite(a.stats?.ga))
   why.push(esc(h.name)+' maç başına '+fmtGoal(h.stats.gf)+' gol atıyor; '+esc(a.name)+' '+fmtGoal(a.stats.ga)+' gol yiyor');
@@ -1067,4 +1068,4 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 bootV42();
 
-</script><script defer src="context-intelligence.js?v=20261030-corners-v1"></script><script defer src="video-studio.js?v=v20261030-studio8"></script><script defer src="video-studio-timeline.js?v=v20261030-timeline5"></script></body></html>
+</script><script defer src="context-intelligence.js?v=20261030-corners-v1"></script><script defer src="video-studio.js?v=20261031-market-sync"></script><script defer src="video-studio-timeline.js?v=v20261030-timeline5"></script></body></html>
