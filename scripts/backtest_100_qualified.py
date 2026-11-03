@@ -183,6 +183,9 @@ def run():
     tmp=ROOT/"docs/data/_daily100_qualified_input.tmp.json"
     tmp.parent.mkdir(parents=True,exist_ok=True)
     tmp.write_text(json.dumps(payload,separators=(",",":"),ensure_ascii=False),encoding="utf-8")
+    if "--prepare-only" in sys.argv:
+        print("Prepared chronological 2024/25 training + 2025/26 and 2026/27 odds input for parallel replay",tmp,flush=True)
+        return
     import subprocess
     try:
         subprocess.run(["node","scripts/backtest_100_qualified.cjs",str(tmp),str(OUT)],
