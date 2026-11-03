@@ -74,11 +74,11 @@ function compile(team,games){
  base.ucl_patterns={n:0,ht_n:0};
  return base;
 }
-function teamObject(league,name,season){
+function teamObject(league,name,season,date){
  const earlier=playedByTeam.get(key(league,name))||[];
- const games=earlier.filter(m=>m.season===season);
+ const games=earlier.filter(m=>m.season===season&&m.date<date);
  const priorSeason=season==='2627'?'2526':season==='2526'?'2425':null;
- const old=[...(historicByTeam.get(key(league,name))||[]),...earlier].filter(m=>m.season===priorSeason);
+ const old=[...(historicByTeam.get(key(league,name))||[]),...earlier].filter(m=>m.season===priorSeason&&m.date<date);
  const stats=compile(name,games);
  const prior=compile(name,old);
  if(prior.matches)stats.last_season=prior;
@@ -125,14 +125,15 @@ function pass(m,market){
 const rolling=[];
 let playedTotal=0,pricedFixtures=0,simulatedFixtures=0,skippedQuality=0;
 const first=Date.parse(input.window_start+'T00:00:00Z');
-let priorCurrent=input.current.filter(m=>m.date<input.window_start);
-for(const m of priorCurrent)add(playedByTeam,m);
-for(let i=0;i<input.window_calendar_days;i++){
+// Preload dated records; every team query filters m.date < target date.
+for(const m of input.current)add(playedByTeam,m);
+let scanned=0,qualified=0;
+for(let i=input.window_calendar_days-1;i>=0;i--){
  const day=new Date(first+i*86400000).toISOString().slice(0,10);
  const matches=byDate.get(day)||[],models=[],eligible=matches.filter(x=>Object.keys(x.odds||{}).length>0);
  let simulated=0;
  for(const m of eligible){
-  const h=teamObject(m.league,m.home,m.season),a=teamObject(m.league,m.away,m.season);
+  const h=teamObject(m.league,m.home,m.season,day),a=teamObject(m.league,m.away,m.season,day);
   const state=[h,a];
   scope.setHistoricalTeams(state,day);
   const pp=engine.goalRates(h,a,m.league),quality=engine.confidenceOf(h,a,pp);
@@ -172,11 +173,13 @@ for(let i=0;i<input.window_calendar_days;i++){
  rolling.push(entry);
  playedTotal+=matches.length;pricedFixtures+=eligible.length;simulatedFixtures+=simulated;
  // No same-day result is ever available to a fixture being predicted above.
- for(const m of matches)add(playedByTeam,m);
- if(i%20===0||i+1===input.window_calendar_days)
-  console.log('FUTSIM backtest',i+1,'/',input.window_calendar_days,
-    'calendar days;',rolling.filter(x=>x.has_coupon).length,'coupon days',flushTime());
+ scanned++;
+  if(chosen)qualified++;
+ if(scanned%15===0||qualified>=input.required_coupon_days)
+   console.log('FUTSIM latest-first',scanned,'calendar days scanned;',qualified,'qualified coupon days',flushTime());
+  if(qualified>=input.required_coupon_days)break;
 }
+rolling.reverse();
 function flushTime(){return new Date().toISOString().slice(11,19);}
 const allCoupons=rolling.filter(x=>x.has_coupon);
 const required=input.required_coupon_days||100;
