@@ -120,7 +120,7 @@ function runFixture(f){
  var selections=[];
  for(var k of MARKET_KEYS){
   // A market is never priced from a model's theoretical 1/p.
-  var rawModel=Number(k==='12'?r.markets['1']+r.markets['2']:r.markets[k]);
+  var rawModel=Number(k==='12'?r.markets['1']+r.markets['2']:k==='3,5 Üst'?100-r.markets['3,5 Alt']:r.markets[k]);
   var quote=Number(odds?.markets?.[k]);
   if(!Number.isFinite(rawModel)||rawModel<12||rawModel>99||!Number.isFinite(quote)||quote<1.03||quote>4.5)continue;
   var marketFair=Number(odds?.market_fair_probabilities?.[k])/100;
