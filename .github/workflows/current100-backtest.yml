@@ -1,0 +1,44 @@
+name: FUTSIM 100-Day Current Full-Market Coupon Replay
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/backtest_current100.py"
+      - "scripts/backtest_current100.cjs"
+      - ".github/workflows/current100-backtest.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: futsim-current100
+  cancel-in-progress: true
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check current FUTSIM replay syntax
+        run: |
+          python -m py_compile scripts/backtest_current100.py
+          node --check scripts/backtest_current100.cjs
+      - name: Collect archived real historical markets and replay 100 calendar days
+        run: python -u scripts/backtest_current100.py
+      - name: Commit dated, reproducible historical report
+        run: |
+          git config user.name "FUTSIM Research Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/daily100_current_backtest.json
+          if ! git diff --cached --quiet; then
+            git commit -m "report: 100-day current FUTSIM full-market coupon replay [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
