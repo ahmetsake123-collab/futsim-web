@@ -1,0 +1,52 @@
+
+/* FUTSIM Daily: public screen is intentionally one compact coupon dashboard.
+   Legacy analysis nodes remain in the DOM so the existing simulation engine works. */
+.wrap{max-width:820px!important;padding:25px 16px 70px!important}
+.wrap>:not(#dailyApp){display:none!important}
+body{background:#060e14!important;color:#edf9ff}
+#dailyApp{display:block!important;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+#dailyApp *{box-sizing:border-box}
+.dc-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:30px}
+.dc-logo{font-weight:950;font-size:25px;letter-spacing:.1em}
+.dc-logo b{color:#4ee4b5}
+.dc-day{font-size:12px;font-weight:700;padding:8px 12px;background:#112630;border:1px solid #23404b;border-radius:999px;color:#b9cdd7}
+.dc-kicker{font-size:11px;color:#50eabb;letter-spacing:.24em;font-weight:850;text-transform:uppercase;margin:0 0 9px}
+#dailyApp h1{font-size:clamp(27px,6vw,42px);line-height:1.13;letter-spacing:-.035em;margin:0}
+.dc-intro{color:#99b0be;line-height:1.7;font-size:14px;margin:14px 0 22px}
+.dc-card{background:#0e202a;border:1px solid #25404b;border-radius:21px;padding:20px;margin-bottom:15px;box-shadow:0 12px 40px #0002}
+.dc-card-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px}
+.dc-small{font-size:12px;color:#9eb3bf;line-height:1.6}
+.dc-mark{color:#55eab9;font-size:12px;font-weight:800}
+.dc-total{font-size:45px;font-weight:900;line-height:1.2;font-variant-numeric:tabular-nums}
+.dc-total small{font-weight:550;font-size:14px;color:#a7bdc9}
+.dc-pick{padding:14px 0;border-top:1px solid #263e49;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.dc-pick-main{min-width:0}
+.dc-pick-main strong{display:block;font-size:15px;line-height:1.4}
+.dc-pick-main span{display:block;font-size:12px;color:#a3bac5;margin-top:4px;line-height:1.5}
+.dc-odd{font-size:21px;font-weight:850;text-align:right;white-space:nowrap;color:#e9fff7}
+.dc-pill{font-size:11px;color:#d6e6ed;background:#1a333d;border-radius:20px;padding:6px 9px;white-space:nowrap}
+.dc-note{margin:10px 0 0;color:#b2c3cf;font-size:12px;line-height:1.7}
+.dc-state{background:#1c2c32;border:1px solid #526466;padding:12px;border-radius:12px;color:#e4f0e9;line-height:1.6;font-size:13px}
+.dc-gauge{display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.dc-meter{width:min(100%,365px);height:auto;display:block}
+.dc-gauge-text{text-align:center;margin-top:-18px}
+.dc-percent{font-size:37px;font-weight:950;font-variant-numeric:tabular-nums;line-height:1.15}
+.dc-risklabel{font-size:12px;letter-spacing:.08em;color:#a3b9c7;font-weight:800}
+.dc-sides{display:flex;justify-content:space-between;gap:10px;margin:17px 0 5px;font-size:13px}
+.dc-sides b{font-size:18px;display:block}
+.dc-actions{display:flex;gap:9px;margin:18px 0 0}
+.dc-btn{flex:1;min-width:0;padding:13px 12px;border:1px solid #2e5d61;background:#14343a;color:#e5fff8;font-weight:750;border-radius:12px;cursor:pointer}
+.dc-btn.main{background:#54e3b5;color:#073027;border:0}
+.dc-btn:disabled{opacity:.4;cursor:not-allowed}
+.dc-more{margin-top:16px}
+.dc-more summary{font-weight:750;color:#a6ffdf;cursor:pointer}
+.dc-more[open] summary{margin-bottom:14px}
+.dc-script{width:100%;min-height:178px;padding:12px;background:#071923;border:1px solid #39535b;border-radius:12px;color:#e6f5fa;line-height:1.6;font:inherit;font-size:13px}
+.dc-editor{display:grid;gap:10px}
+.dc-video{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+.dc-video canvas,.dc-video video{width:175px;aspect-ratio:9/16;background:#07151d;border:1px solid #36515a;border-radius:10px;object-fit:contain}
+.dc-video-side{flex:1;min-width:220px}
+.dc-video-side input{max-width:100%;font-size:12px}
+.dc-link{color:#77e9c8;font-weight:750;display:inline-block;margin-top:12px}
+#dailyApp .dc-secondary{font-size:12px;color:#8eabb8;text-align:center;line-height:1.7}
+@media(max-width:470px){.dc-card{padding:16px}.dc-pick{gap:8px}.dc-odd{font-size:18px}.dc-head{margin-bottom:23px}.dc-actions{flex-direction:column}.dc-day{font-size:10px}}
