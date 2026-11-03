@@ -1,0 +1,1246 @@
+{
+  "status": "completed_limited_market_backtest",
+  "title": "FUTSIM new daily 2x coupon — 100-calendar-day chronological replay",
+  "created_utc": "2026-11-03T12:32:35.335Z",
+  "window_start": "2026-07-26",
+  "window_end": "2026-11-02",
+  "calendar_days": 100,
+  "days_with_finished_matches": 57,
+  "days_with_publicly_priced_matches": 57,
+  "days_with_coupon": 27,
+  "days_no_coupon": 73,
+  "match_results_count": 641,
+  "match_with_bookmaker_odds_count": 641,
+  "model_evaluated_matches": 270,
+  "model_low_data_skips": 371,
+  "successful_coupons": 11,
+  "failed_coupons": 16,
+  "success_rate_pct": 40.74,
+  "longest_consecutive_winning_coupons": 3,
+  "longest_streak_end_date": "2026-10-12",
+  "initial_bankroll_try": 100,
+  "single_no_reset_bankroll_end": 0,
+  "single_no_reset_bankroll_peak": 188.8,
+  "highest_100tl_restarted_chain_balance": 748.8,
+  "odds_source": "https://www.football-data.co.uk/downloadm.php",
+  "odds_columns": "B365 opening price; Avg/PS/WH fallbacks. Price columns are not fair odds.",
+  "previous_season_pre_match_priors": "2025/26 historical scores before 26 July 2026",
+  "markets_available": [
+    "1",
+    "X",
+    "2",
+    "2,5 Alt",
+    "2,5 Üst"
+  ],
+  "missing_live_markets": [
+    "1X",
+    "X2",
+    "12",
+    "KG Var",
+    "KG Yok",
+    "3,5 Alt",
+    "3,5 Üst",
+    "corners",
+    "European competitions"
+  ],
+  "model_method": "Current FUTSIM goalRates, 100000 two-half Monte Carlo simulations, score reconciling, data-quality gate, blended market probabilities, and exact 1–6-leg current coupon selection. Past matches are revealed only after each daily prediction.",
+  "important_limitations": [
+    "Incomplete relative to the live FUTSIM product: missing 1X/X2, BTTS, corners and Champions League historical wager prices. This is NOT a validated full-product 100-day performance estimate.",
+    "This replays today’s model retroactively with historical team scores; it does not reproduce unavailable daily lineup, injury, xG or archived market refresh timestamps.",
+    "Quoted CSV bookmaker prices were published retrospectively as match-time odds; original timestamp per price is not available. No live or late in-play quotes are used.",
+    "Predicted coupon probabilities have not been independently verified as calibration of joint events.",
+    "Days without a coupon are excluded from the winning streak but never counted as wins; losses reset it.",
+    "100 TL maximum restarted chain assumes full winnings re-staked after each win, a new 100 TL hypothetical start after each loss, ignores limits/taxes and is not realized profit.",
+    "A 100 TL all-in challenge with no reset ends at zero after its first failed coupon."
+  ],
+  "fetch_errors": [],
+  "price_sources": {
+    "Premier League 2526": {
+      "url": "https://www.football-data.co.uk/mmz4281/2526/E0.csv",
+      "rows": 380,
+      "priced": 380
+    },
+    "Bundesliga 2526": {
+      "url": "https://www.football-data.co.uk/mmz4281/2526/D1.csv",
+      "rows": 306,
+      "priced": 306
+    },
+    "La Liga 2526": {
+      "url": "https://www.football-data.co.uk/mmz4281/2526/SP1.csv",
+      "rows": 380,
+      "priced": 380
+    },
+    "Serie A 2526": {
+      "url": "https://www.football-data.co.uk/mmz4281/2526/I1.csv",
+      "rows": 380,
+      "priced": 380
+    },
+    "Ligue 1 2526": {
+      "url": "https://www.football-data.co.uk/mmz4281/2526/F1.csv",
+      "rows": 306,
+      "priced": 306
+    },
+    "Eredivisie 2526": {
+      "url": "https://www.football-data.co.uk/mmz4281/2526/N1.csv",
+      "rows": 306,
+      "priced": 306
+    },
+    "Süper Lig 2526": {
+      "url": "https://www.football-data.co.uk/mmz4281/2526/T1.csv",
+      "rows": 306,
+      "priced": 306
+    },
+    "Premier League 2627": {
+      "url": "https://www.football-data.co.uk/mmz4281/2627/E0.csv",
+      "rows": 90,
+      "priced": 90
+    },
+    "Bundesliga 2627": {
+      "url": "https://www.football-data.co.uk/mmz4281/2627/D1.csv",
+      "rows": 72,
+      "priced": 72
+    },
+    "La Liga 2627": {
+      "url": "https://www.football-data.co.uk/mmz4281/2627/SP1.csv",
+      "rows": 109,
+      "priced": 109
+    },
+    "Serie A 2627": {
+      "url": "https://www.football-data.co.uk/mmz4281/2627/I1.csv",
+      "rows": 100,
+      "priced": 100
+    },
+    "Ligue 1 2627": {
+      "url": "https://www.football-data.co.uk/mmz4281/2627/F1.csv",
+      "rows": 81,
+      "priced": 81
+    },
+    "Eredivisie 2627": {
+      "url": "https://www.football-data.co.uk/mmz4281/2627/N1.csv",
+      "rows": 99,
+      "priced": 99
+    },
+    "Süper Lig 2627": {
+      "url": "https://www.football-data.co.uk/mmz4281/2627/T1.csv",
+      "rows": 90,
+      "priced": 90
+    }
+  },
+  "daily": [
+    {
+      "date": "2026-07-26",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-27",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-28",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-29",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-30",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-31",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-01",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-02",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-03",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-04",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-05",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-06",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-07",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-08",
+      "games_with_results": 4,
+      "priced_games": 4,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-09",
+      "games_with_results": 4,
+      "priced_games": 4,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-10",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-11",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-12",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-13",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-14",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-15",
+      "games_with_results": 10,
+      "priced_games": 10,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-16",
+      "games_with_results": 9,
+      "priced_games": 9,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-17",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-18",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-19",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-20",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-21",
+      "games_with_results": 4,
+      "priced_games": 4,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-22",
+      "games_with_results": 23,
+      "priced_games": 23,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-23",
+      "games_with_results": 20,
+      "priced_games": 20,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-24",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-25",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-26",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-27",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-28",
+      "games_with_results": 8,
+      "priced_games": 8,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-29",
+      "games_with_results": 28,
+      "priced_games": 28,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-30",
+      "games_with_results": 23,
+      "priced_games": 23,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-31",
+      "games_with_results": 7,
+      "priced_games": 7,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-01",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-02",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-03",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-04",
+      "games_with_results": 8,
+      "priced_games": 8,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-05",
+      "games_with_results": 27,
+      "priced_games": 27,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-06",
+      "games_with_results": 23,
+      "priced_games": 23,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-07",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-08",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-09",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-10",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-11",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-12",
+      "games_with_results": 33,
+      "priced_games": 33,
+      "modeled_games": 1,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-13",
+      "games_with_results": 21,
+      "priced_games": 21,
+      "modeled_games": 4,
+      "has_coupon": true,
+      "total_odds": 1.888,
+      "model_probability_pct": 45.85,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Excelsior",
+          "away": "Utrecht",
+          "competition": "Eredivisie",
+          "market": "2,5 Üst",
+          "price": 1.6,
+          "prediction_probability_pct": 59.63,
+          "score": "1-2",
+          "won": true
+        },
+        {
+          "home": "PSV Eindhoven",
+          "away": "Sparta Rotterdam",
+          "competition": "Eredivisie",
+          "market": "1",
+          "price": 1.18,
+          "prediction_probability_pct": 76.89,
+          "score": "4-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-15",
+      "games_with_results": 4,
+      "priced_games": 4,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 1.9,
+      "model_probability_pct": 50.13,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Vallecano",
+          "away": "Espanol",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 1.9,
+          "prediction_probability_pct": 50.13,
+          "score": "2-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "games_with_results": 3,
+      "priced_games": 3,
+      "modeled_games": 1,
+      "has_coupon": true,
+      "total_odds": 2.1,
+      "model_probability_pct": 45.25,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Ath Madrid",
+          "away": "Osasuna",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 2.1,
+          "prediction_probability_pct": 45.25,
+          "score": "4-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 1,
+      "has_coupon": true,
+      "total_odds": 2.2,
+      "model_probability_pct": 42.79,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Betis",
+          "away": "Getafe",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 2.2,
+          "prediction_probability_pct": 42.79,
+          "score": "1-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "games_with_results": 7,
+      "priced_games": 7,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 46.76,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Espanol",
+          "away": "Elche",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 2,
+          "prediction_probability_pct": 46.76,
+          "score": "1-3",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "games_with_results": 31,
+      "priced_games": 31,
+      "modeled_games": 8,
+      "has_coupon": true,
+      "total_odds": 1.9,
+      "model_probability_pct": 51.07,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Ath Bilbao",
+          "away": "Alaves",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 1.9,
+          "prediction_probability_pct": 51.07,
+          "score": "0-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "games_with_results": 28,
+      "priced_games": 28,
+      "modeled_games": 9,
+      "has_coupon": true,
+      "total_odds": 1.93,
+      "model_probability_pct": 50.69,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Valencia",
+          "away": "Sociedad",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 1.93,
+          "prediction_probability_pct": 50.69,
+          "score": "2-3",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-22",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-23",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-24",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-25",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-26",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-27",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-28",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-29",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-30",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-01",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-02",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-03",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-04",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-05",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-06",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-07",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-08",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-09",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 4,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 47.24,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Malaga",
+          "away": "Espanol",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 2,
+          "prediction_probability_pct": 47.24,
+          "score": "1-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "games_with_results": 31,
+      "priced_games": 31,
+      "modeled_games": 20,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 51.55,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Lorient",
+          "away": "Paris FC",
+          "competition": "Ligue 1",
+          "market": "2,5 Alt",
+          "price": 1.88,
+          "prediction_probability_pct": 51.55,
+          "score": "1-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "games_with_results": 24,
+      "priced_games": 24,
+      "modeled_games": 18,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 50.08,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Crystal Palace",
+          "away": "Nott'm Forest",
+          "competition": "Premier League",
+          "market": "2,5 Üst",
+          "price": 1.91,
+          "prediction_probability_pct": 50.08,
+          "score": "3-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 48.76,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Levante",
+          "away": "Sevilla",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 2,
+          "prediction_probability_pct": 48.76,
+          "score": "3-3",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-14",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-15",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-16",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 4,
+      "has_coupon": true,
+      "total_odds": 1.93,
+      "model_probability_pct": 50.87,
+      "correct": false,
+      "legs": [
+        {
+          "home": "La Coruna",
+          "away": "Levante",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 1.93,
+          "prediction_probability_pct": 50.87,
+          "score": "1-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-17",
+      "games_with_results": 28,
+      "priced_games": 28,
+      "modeled_games": 21,
+      "has_coupon": true,
+      "total_odds": 1.93,
+      "model_probability_pct": 50.61,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Amedspor",
+          "away": "Konyaspor",
+          "competition": "Süper Lig",
+          "market": "2,5 Üst",
+          "price": 1.93,
+          "prediction_probability_pct": 50.61,
+          "score": "1-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "games_with_results": 27,
+      "priced_games": 27,
+      "modeled_games": 27,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 52.46,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Juventus",
+          "away": "Lazio",
+          "competition": "Serie A",
+          "market": "2,5 Alt",
+          "price": 1.88,
+          "prediction_probability_pct": 52.46,
+          "score": "0-3",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 2.15,
+      "model_probability_pct": 38.03,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Trabzonspor",
+          "away": "Besiktas",
+          "competition": "Süper Lig",
+          "market": "2",
+          "price": 2.15,
+          "prediction_probability_pct": 38.03,
+          "score": "2-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-21",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 1,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 50.55,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Levante",
+          "away": "Ath Bilbao",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 1.88,
+          "prediction_probability_pct": 50.55,
+          "score": "3-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-23",
+      "games_with_results": 7,
+      "priced_games": 7,
+      "modeled_games": 7,
+      "has_coupon": true,
+      "total_odds": 2.05,
+      "model_probability_pct": 48.84,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Alaves",
+          "away": "Malaga",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 2.05,
+          "prediction_probability_pct": 48.84,
+          "score": "1-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-24",
+      "games_with_results": 25,
+      "priced_games": 25,
+      "modeled_games": 22,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 52.29,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Vallecano",
+          "away": "Elche",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 1.88,
+          "prediction_probability_pct": 52.29,
+          "score": "0-3",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "games_with_results": 29,
+      "priced_games": 29,
+      "modeled_games": 29,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 50.42,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Udinese",
+          "away": "Milan",
+          "competition": "Serie A",
+          "market": "2,5 Üst",
+          "price": 1.88,
+          "prediction_probability_pct": 50.42,
+          "score": "0-2",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 5,
+      "has_coupon": true,
+      "total_odds": 1.95,
+      "model_probability_pct": 49.03,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Sevilla",
+          "away": "Osasuna",
+          "competition": "La Liga",
+          "market": "1",
+          "price": 1.95,
+          "prediction_probability_pct": 49.03,
+          "score": "2-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "games_with_results": 3,
+      "priced_games": 3,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 2.05,
+      "model_probability_pct": 46.86,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Sassuolo",
+          "away": "Lazio",
+          "competition": "Serie A",
+          "market": "2",
+          "price": 2.05,
+          "prediction_probability_pct": 46.86,
+          "score": "2-6",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-28",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 5,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 49.17,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Milan",
+          "away": "Bologna",
+          "competition": "Serie A",
+          "market": "2,5 Alt",
+          "price": 2,
+          "prediction_probability_pct": 49.17,
+          "score": "2-4",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 2,
+      "has_coupon": true,
+      "total_odds": 2.2,
+      "model_probability_pct": 40.84,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Fiorentina",
+          "away": "Atalanta",
+          "competition": "Serie A",
+          "market": "1",
+          "price": 2.2,
+          "prediction_probability_pct": 40.84,
+          "score": "2-2",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 6,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 50.58,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Lille",
+          "away": "Lens",
+          "competition": "Ligue 1",
+          "market": "2,5 Alt",
+          "price": 1.91,
+          "prediction_probability_pct": 50.58,
+          "score": "1-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "games_with_results": 30,
+      "priced_games": 30,
+      "modeled_games": 30,
+      "has_coupon": true,
+      "total_odds": 1.98,
+      "model_probability_pct": 52.06,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Bournemouth",
+          "away": "Leeds",
+          "competition": "Premier League",
+          "market": "2,5 Alt",
+          "price": 1.98,
+          "prediction_probability_pct": 52.06,
+          "score": "2-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "games_with_results": 24,
+      "priced_games": 24,
+      "modeled_games": 24,
+      "has_coupon": true,
+      "total_odds": 1.98,
+      "model_probability_pct": 51.5,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Liverpool",
+          "away": "Arsenal",
+          "competition": "Premier League",
+          "market": "2,5 Alt",
+          "price": 1.98,
+          "prediction_probability_pct": 51.5,
+          "score": "0-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 6,
+      "has_coupon": true,
+      "total_odds": 2.05,
+      "model_probability_pct": 47.7,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Lorient",
+          "away": "Brest",
+          "competition": "Ligue 1",
+          "market": "2,5 Üst",
+          "price": 2.05,
+          "prediction_probability_pct": 47.7,
+          "score": "0-2",
+          "won": false
+        }
+      ]
+    }
+  ]
+}
