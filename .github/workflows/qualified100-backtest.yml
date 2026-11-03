@@ -28,10 +28,10 @@ jobs:
           node-version: "22"
       - name: Check current FUTSIM replay syntax
         run: |
-          python -m py_compile scripts/backtest_current100.py
-          node --check scripts/backtest_current100.cjs
+          python -m py_compile scripts/backtest_100_qualified.py
+          node --check scripts/backtest_100_qualified.cjs
       - name: Collect sourced historical markets and replay until 100 qualifying coupon days
-        run: python -u scripts/backtest_current100.py
+        run: python -u scripts/backtest_100_qualified.py
       - name: Commit dated, reproducible historical report
         run: |
           git config user.name "FUTSIM Research Bot"
