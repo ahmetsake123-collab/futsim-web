@@ -1,0 +1,44 @@
+name: FUTSIM 100-Day Historical Daily Coupon Backtest
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/backtest_daily100.py"
+      - "scripts/backtest_daily100.cjs"
+      - ".github/workflows/daily100-backtest.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: futsim-daily100-backtest
+  cancel-in-progress: true
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 27
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate historical replay scripts
+        run: |
+          python -m py_compile scripts/backtest_daily100.py
+          node --check scripts/backtest_daily100.cjs
+      - name: Replay 100 chronological calendar days with pre-match inputs
+        run: python -u scripts/backtest_daily100.py 100
+      - name: Publish reproducible report
+        run: |
+          git config user.name "FUTSIM Research Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/daily100_backtest.json
+          if ! git diff --cached --quiet; then
+            git commit -m "report: FUTSIM 100-day real-price historical coupon replay [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
