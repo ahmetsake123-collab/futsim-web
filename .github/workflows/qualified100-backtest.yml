@@ -1,10 +1,11 @@
-name: FUTSIM 100 Qualified Coupon Days — Multi-Season Replay
+name: FUTSIM 100 Qualified Coupon Days — Four-Worker Replay
 on:
   push:
     branches: [main]
     paths:
       - "scripts/backtest_100_qualified.py"
       - "scripts/backtest_100_qualified.cjs"
+      - "scripts/merge_100_qualified.cjs"
       - ".github/workflows/qualified100-backtest.yml"
   workflow_dispatch:
 permissions:
@@ -13,32 +14,85 @@ concurrency:
   group: futsim-100-qualified
   cancel-in-progress: true
 jobs:
-  replay:
+  prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 55
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile and retrieve authentic historical prices
+        run: |
+          python -m py_compile scripts/backtest_100_qualified.py
+          python -u scripts/backtest_100_qualified.py --prepare-only
+      - uses: actions/upload-artifact@v4
+        with:
+          name: futsim-qualified-history
+          path: docs/data/_daily100_qualified_input.tmp.json
+          retention-days: 3
+  replay:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/download-artifact@v4
+        with:
+          name: futsim-qualified-history
+          path: docs/data
+      - name: Validate deterministic current-FUTSIM simulation
+        run: node --check scripts/backtest_100_qualified.cjs
+      - name: Run 100k simulations on this independent date shard
+        env:
+          FUTSIM_SHARD_INDEX: ${{ matrix.shard }}
+          FUTSIM_SHARD_COUNT: "4"
+        run: node scripts/backtest_100_qualified.cjs docs/data/_daily100_qualified_input.tmp.json shard_${{ matrix.shard }}.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: futsim-shard-${{ matrix.shard }}
+          path: shard_${{ matrix.shard }}.json
+          retention-days: 3
+  combine:
+    needs: replay
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Check current FUTSIM replay syntax
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: futsim-shard-*
+          merge-multiple: true
+          path: shards
+      - name: Merge and audit exactly 100 latest coupon dates
         run: |
-          python -m py_compile scripts/backtest_100_qualified.py
-          node --check scripts/backtest_100_qualified.cjs
-      - name: Collect sourced historical markets and replay until 100 qualifying coupon days
-        run: python -u scripts/backtest_100_qualified.py
-      - name: Commit dated, reproducible historical report
+          node --check scripts/merge_100_qualified.cjs
+          node scripts/merge_100_qualified.cjs shards/shard_0.json shards/shard_1.json shards/shard_2.json shards/shard_3.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: futsim-100-qualified-report
+          path: docs/data/daily100_qualified_backtest.json
+          retention-days: 14
+      - name: Publish source-linked replay report
         run: |
           git config user.name "FUTSIM Research Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/data/daily100_qualified_backtest.json
           if ! git diff --cached --quiet; then
-            git commit -m "report: 100 qualifying FUTSIM coupon days across seasons [skip ci]"
+            git commit -m "report: verified 100 FUTSIM coupon days with 100k-simulations [skip ci]"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
