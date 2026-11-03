@@ -1,0 +1,44 @@
+name: FUTSIM 100 Qualified Coupon Days — Multi-Season Replay
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/backtest_100_qualified.py"
+      - "scripts/backtest_100_qualified.cjs"
+      - ".github/workflows/qualified100-backtest.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: futsim-100-qualified
+  cancel-in-progress: true
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check current FUTSIM replay syntax
+        run: |
+          python -m py_compile scripts/backtest_current100.py
+          node --check scripts/backtest_current100.cjs
+      - name: Collect sourced historical markets and replay until 100 qualifying coupon days
+        run: python -u scripts/backtest_current100.py
+      - name: Commit dated, reproducible historical report
+        run: |
+          git config user.name "FUTSIM Research Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/daily100_qualified_backtest.json
+          if ! git diff --cached --quiet; then
+            git commit -m "report: 100 qualifying FUTSIM coupon days across seasons [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
