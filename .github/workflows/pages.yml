@@ -17,7 +17,7 @@ permissions:
   id-token: write
 concurrency:
   group: futsim-pages
-  cancel-in-progress: false
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
