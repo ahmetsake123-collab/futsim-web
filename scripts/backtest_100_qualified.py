@@ -93,6 +93,9 @@ def match_name(actual,site):
 def archive_day(day,rows):
     index_text=fetch_url(SITE+"/bulten/"+day)
     daylinks=find_match_urls(index_text,day)
+    # The archive has no page for many old dates. Do not request thousands of guessed/absent match URLs.
+    if not daylinks:
+        return []
     records=[]
     for m in rows:
         suffix="-"+day
