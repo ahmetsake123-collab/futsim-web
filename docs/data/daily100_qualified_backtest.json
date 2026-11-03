@@ -1,0 +1,7761 @@
+{
+  "status": "completed_100_qualified_coupon_days",
+  "title": "FUTSIM CURRENT 100 daily coupons: 100k-simulation multi-season independent-price backtest",
+  "created_utc": "2026-11-03T17:20:48.458Z",
+  "target_coupon_days": 100,
+  "achieved_coupon_days": 100,
+  "total_eligible_coupon_days_in_scanned_range": 178,
+  "total_scanned_calendar_days": 398,
+  "full_data_range_start": "2025-10-01",
+  "full_data_range_end": "2026-11-02",
+  "first_selected_coupon_day": "2026-02-08",
+  "window_start": "2026-02-08",
+  "window_end": "2026-11-02",
+  "calendar_days": 268,
+  "days_with_finished_matches": 133,
+  "days_with_publicly_priced_matches": 133,
+  "days_with_coupon": 100,
+  "days_no_coupon": 168,
+  "match_results_count": 1558,
+  "match_with_bookmaker_odds_count": 1558,
+  "model_evaluated_matches": 1187,
+  "successful_coupons": 47,
+  "failed_coupons": 53,
+  "success_rate_pct": 47,
+  "longest_consecutive_winning_coupons": 4,
+  "longest_streak_end_date": "2026-03-09",
+  "initial_bankroll_try": 100,
+  "single_no_reset_bankroll_peak": 100,
+  "single_no_reset_bankroll_end": 0,
+  "highest_100tl_restarted_chain_balance": 1436.32,
+  "fixed_100tl_stake_total": 10000,
+  "fixed_100tl_stake_payout": 9126.2,
+  "fixed_100tl_stake_net": -873.8,
+  "fixed_100tl_stake_roi_pct": -8.74,
+  "bankroll_explanation": "The restarted-chain peak adds new 100 TL after a loss and is NOT net profit. One unrefilled all-in sequence ends at zero after its first loss.",
+  "coupon_leg_count_distribution": {
+    "1": 94,
+    "2": 6
+  },
+  "market_selection_performance": {
+    "1": {
+      "selections": 16,
+      "correct": 8
+    },
+    "2": {
+      "selections": 3,
+      "correct": 1
+    },
+    "12": {
+      "selections": 3,
+      "correct": 3
+    },
+    "2,5 Alt": {
+      "selections": 41,
+      "correct": 21
+    },
+    "2,5 Üst": {
+      "selections": 30,
+      "correct": 15
+    },
+    "X2": {
+      "selections": 1,
+      "correct": 1
+    },
+    "1X": {
+      "selections": 4,
+      "correct": 0
+    },
+    "3,5 Alt": {
+      "selections": 7,
+      "correct": 4
+    },
+    "KG Var": {
+      "selections": 1,
+      "correct": 0
+    }
+  },
+  "archived_multi_market_odds": {
+    "attempted": 209,
+    "found": 182,
+    "failed_requests": 0,
+    "market_days": 16,
+    "days_coverage": {
+      "2026-10-16": 5,
+      "2026-10-18": 24,
+      "2026-10-17": 24,
+      "2026-10-19": 5,
+      "2026-10-23": 6,
+      "2026-10-21": 1,
+      "2026-10-25": 27,
+      "2026-10-24": 21,
+      "2026-10-26": 3,
+      "2026-10-28": 5,
+      "2026-10-27": 2,
+      "2026-10-30": 5,
+      "2026-10-31": 26,
+      "2026-10-29": 2,
+      "2026-11-01": 20,
+      "2026-11-02": 6
+    },
+    "matches": [
+      {
+        "date": "2026-10-16",
+        "home": "Le Mans",
+        "away": "Toulouse",
+        "archived_url": "https://zirveoran.com/mac/le-mans-toulouse-2026-10-16",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Groningen",
+        "away": "Ajax",
+        "archived_url": "https://zirveoran.com/mac/groningen-ajax-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-16",
+        "home": "Heerenveen",
+        "away": "Excelsior",
+        "archived_url": "https://zirveoran.com/mac/heerenveen-excelsior-2026-10-16",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-16",
+        "home": "Frosinone",
+        "away": "Sassuolo",
+        "archived_url": "https://zirveoran.com/mac/frosinone-sassuolo-2026-10-16",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-16",
+        "home": "Corum",
+        "away": "Rizespor",
+        "archived_url": "https://zirveoran.com/mac/corum-fk-rizespor-2026-10-16",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "M'gladbach",
+        "away": "Hoffenheim",
+        "archived_url": "https://zirveoran.com/mac/borussia-monchengladbach-1899-hoffenheim-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-16",
+        "home": "La Coruna",
+        "away": "Levante",
+        "archived_url": "https://zirveoran.com/mac/deportivo-la-coruna-levante-2026-10-16",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Leverkusen",
+        "away": "Freiburg",
+        "archived_url": "https://zirveoran.com/mac/bayer-leverkusen-sc-freiburg-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Cambuur",
+        "away": "AZ Alkmaar",
+        "archived_url": "https://zirveoran.com/mac/cambuur-az-alkmaar-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Twente",
+        "away": "Utrecht",
+        "archived_url": "https://zirveoran.com/mac/twente-utrecht-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Zwolle",
+        "away": "Go Ahead Eagles",
+        "archived_url": "https://zirveoran.com/mac/pec-zwolle-go-ahead-eagles-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Le Havre",
+        "away": "Auxerre",
+        "archived_url": "https://zirveoran.com/mac/le-havre-auxerre-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Real Madrid",
+        "away": "Sevilla",
+        "archived_url": "https://zirveoran.com/mac/real-madrid-sevilla-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Lorient",
+        "away": "Monaco",
+        "archived_url": "https://zirveoran.com/mac/lorient-monaco-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Malaga",
+        "away": "Sociedad",
+        "archived_url": "https://zirveoran.com/mac/malaga-real-sociedad-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Osasuna",
+        "away": "Santander",
+        "archived_url": "https://zirveoran.com/mac/osasuna-racing-santander-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Angers",
+        "away": "Marseille",
+        "archived_url": "https://zirveoran.com/mac/angers-marseille-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Celta",
+        "away": "Alaves",
+        "archived_url": "https://zirveoran.com/mac/celta-deportivo-alaves-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Paris FC",
+        "away": "Rennes",
+        "archived_url": "https://zirveoran.com/mac/paris-fc-rennes-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Udinese",
+        "away": "Lecce",
+        "archived_url": "https://zirveoran.com/mac/udinese-lecce-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Lyon",
+        "away": "Nice",
+        "archived_url": "https://zirveoran.com/mac/lyon-nice-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Bournemouth",
+        "away": "Sunderland",
+        "archived_url": "https://zirveoran.com/mac/bournemouth-sunderland-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Fiorentina",
+        "away": "Como",
+        "archived_url": "https://zirveoran.com/mac/fiorentina-como-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Juventus",
+        "away": "Lazio",
+        "archived_url": "https://zirveoran.com/mac/juventus-lazio-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Brighton",
+        "away": "Crystal Palace",
+        "archived_url": "https://zirveoran.com/mac/brighton-crystal-palace-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Leeds",
+        "away": "Man United",
+        "archived_url": "https://zirveoran.com/mac/leeds-manchester-united-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Hamburg",
+        "away": "Stuttgart",
+        "archived_url": "https://zirveoran.com/mac/hamburger-sv-vfb-stuttgart-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Milan",
+        "away": "Atalanta",
+        "archived_url": "https://zirveoran.com/mac/ac-milan-atalanta-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Bayern Munich",
+        "away": "RB Leipzig",
+        "archived_url": "https://zirveoran.com/mac/bayern-munchen-rb-leipzig-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Den Haag",
+        "away": "PSV Eindhoven",
+        "archived_url": "https://zirveoran.com/mac/ado-den-haag-psv-eindhoven-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Kasimpasa",
+        "away": "Samsunspor",
+        "archived_url": "https://zirveoran.com/mac/kasimpasa-samsunspor-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Telstar",
+        "away": "Feyenoord",
+        "archived_url": "https://zirveoran.com/mac/telstar-feyenoord-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Kocaelispor",
+        "away": "Goztep",
+        "archived_url": "https://zirveoran.com/mac/kocaelispor-goztepe-2026-10-18",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Union Berlin",
+        "away": "Dortmund",
+        "archived_url": "https://zirveoran.com/mac/union-berlin-borussia-dortmund-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Schalke 04",
+        "away": "Mainz",
+        "archived_url": "https://zirveoran.com/mac/fc-schalke-04-fsv-mainz-05-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Elversberg",
+        "away": "Augsburg",
+        "archived_url": "https://zirveoran.com/mac/sv-elversberg-fc-augsburg-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Werder Bremen",
+        "away": "Paderborn",
+        "archived_url": "https://zirveoran.com/mac/werder-bremen-sc-paderborn-07-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Sparta Rotterdam",
+        "away": "Willem II",
+        "archived_url": "https://zirveoran.com/mac/sparta-rotterdam-willem-ii-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Troyes",
+        "away": "Lens",
+        "archived_url": "https://zirveoran.com/mac/estac-troyes-lens-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Betis",
+        "away": "Barcelona",
+        "archived_url": "https://zirveoran.com/mac/real-betis-barcelona-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Espanol",
+        "away": "Ath Madrid",
+        "archived_url": "https://zirveoran.com/mac/espanyol-atletico-madrid-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Valencia",
+        "away": "Ath Bilbao",
+        "archived_url": "https://zirveoran.com/mac/valencia-athletic-club-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Villarreal",
+        "away": "Elche",
+        "archived_url": "https://zirveoran.com/mac/villarreal-elche-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Newcastle",
+        "away": "Aston Villa",
+        "archived_url": "https://zirveoran.com/mac/newcastle-aston-villa-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Venezia",
+        "away": "Napoli",
+        "archived_url": "https://zirveoran.com/mac/venezia-napoli-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Brentford",
+        "away": "Liverpool",
+        "archived_url": "https://zirveoran.com/mac/brentford-liverpool-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Everton",
+        "away": "Chelsea",
+        "archived_url": "https://zirveoran.com/mac/everton-chelsea-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Lille",
+        "away": "Brest",
+        "archived_url": "https://zirveoran.com/mac/lille-stade-brestois-29-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Genclerbirligi",
+        "away": "Galatasaray",
+        "archived_url": "https://zirveoran.com/mac/genclerbirligi-s-k-galatasaray-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Man City",
+        "away": "Ipswich",
+        "archived_url": "https://zirveoran.com/mac/manchester-city-ipswich-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Bologna",
+        "away": "Inter",
+        "archived_url": "https://zirveoran.com/mac/bologna-inter-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-19",
+        "home": "Trabzonspor",
+        "away": "Besiktas",
+        "archived_url": "https://zirveoran.com/mac/trabzonspor-besiktas-2026-10-19",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Fenerbahce",
+        "away": "Alanyaspor",
+        "archived_url": "https://zirveoran.com/mac/fenerbahce-alanyaspor-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Erzurumspor",
+        "away": "Eyupspor",
+        "archived_url": "https://zirveoran.com/mac/erzurumspor-fk-eyupspor-2026-10-17",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-19",
+        "home": "Tottenham",
+        "away": "Coventry",
+        "archived_url": "https://zirveoran.com/mac/tottenham-coventry-2026-10-19",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-19",
+        "home": "Getafe",
+        "away": "Vallecano",
+        "archived_url": "https://zirveoran.com/mac/getafe-rayo-vallecano-2026-10-19",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-19",
+        "home": "Monza",
+        "away": "Cagliari",
+        "archived_url": "https://zirveoran.com/mac/monza-cagliari-2026-10-19",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-23",
+        "home": "Torino",
+        "away": "Monza",
+        "archived_url": "https://zirveoran.com/mac/torino-monza-2026-10-23",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-21",
+        "home": "Levante",
+        "away": "Ath Bilbao",
+        "archived_url": "https://zirveoran.com/mac/levante-athletic-club-2026-10-21",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Freiburg",
+        "away": "Bayern Munich",
+        "archived_url": "https://zirveoran.com/mac/sc-freiburg-bayern-munchen-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-19",
+        "home": "Parma",
+        "away": "Torino",
+        "archived_url": "https://zirveoran.com/mac/parma-torino-2026-10-19",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-23",
+        "home": "Stuttgart",
+        "away": "M'gladbach",
+        "archived_url": "https://zirveoran.com/mac/vfb-stuttgart-borussia-monchengladbach-2026-10-23",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-23",
+        "home": "Go Ahead Eagles",
+        "away": "Telstar",
+        "archived_url": "https://zirveoran.com/mac/go-ahead-eagles-telstar-2026-10-23",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "AZ Alkmaar",
+        "away": "Twente",
+        "archived_url": "https://zirveoran.com/mac/az-alkmaar-twente-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-23",
+        "home": "Brest",
+        "away": "Nice",
+        "archived_url": "https://zirveoran.com/mac/stade-brestois-29-nice-2026-10-23",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Barcelona",
+        "away": "Real Madrid",
+        "archived_url": "https://zirveoran.com/mac/barcelona-real-madrid-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Hoffenheim",
+        "away": "Leverkusen",
+        "archived_url": "https://zirveoran.com/mac/1899-hoffenheim-bayer-leverkusen-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-23",
+        "home": "Alaves",
+        "away": "Malaga",
+        "archived_url": "https://zirveoran.com/mac/deportivo-alaves-malaga-2026-10-23",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Sociedad",
+        "away": "Levante",
+        "archived_url": "https://zirveoran.com/mac/real-sociedad-levante-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "PSV Eindhoven",
+        "away": "Feyenoord",
+        "archived_url": "https://zirveoran.com/mac/psv-eindhoven-feyenoord-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-23",
+        "home": "Alanyaspor",
+        "away": "Kocaelispor",
+        "archived_url": "https://zirveoran.com/mac/alanyaspor-kocaelispor-2026-10-23",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Ath Bilbao",
+        "away": "Getafe",
+        "archived_url": "https://zirveoran.com/mac/athletic-club-getafe-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Nijmegen",
+        "away": "Groningen",
+        "archived_url": "https://zirveoran.com/mac/nec-nijmegen-groningen-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Sparta Rotterdam",
+        "away": "Ajax",
+        "archived_url": "https://zirveoran.com/mac/sparta-rotterdam-ajax-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Monaco",
+        "away": "Lille",
+        "archived_url": "https://zirveoran.com/mac/monaco-lille-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Liverpool",
+        "away": "Brighton",
+        "archived_url": "https://zirveoran.com/mac/liverpool-brighton-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Celta",
+        "away": "Betis",
+        "archived_url": "https://zirveoran.com/mac/celta-vigo-real-betis-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Marseille",
+        "away": "Le Havre",
+        "archived_url": "https://zirveoran.com/mac/marseille-le-havre-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Angers",
+        "away": "Lorient",
+        "archived_url": "https://zirveoran.com/mac/angers-lorient-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Rennes",
+        "away": "Strasbourg",
+        "archived_url": "https://zirveoran.com/mac/rennes-strasbourg-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Auxerre",
+        "away": "Le Mans",
+        "archived_url": "https://zirveoran.com/mac/auxerre-le-mans-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Crystal Palace",
+        "away": "Newcastle",
+        "archived_url": "https://zirveoran.com/mac/crystal-palace-newcastle-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Man United",
+        "away": "Bournemouth",
+        "archived_url": "https://zirveoran.com/mac/manchester-united-bournemouth-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Toulouse",
+        "away": "Troyes",
+        "archived_url": "https://zirveoran.com/mac/toulouse-troyes-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Genoa",
+        "away": "Venezia",
+        "archived_url": "https://zirveoran.com/mac/genoa-venezia-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Inter",
+        "away": "Fiorentina",
+        "archived_url": "https://zirveoran.com/mac/inter-fiorentina-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Atalanta",
+        "away": "Frosinone",
+        "archived_url": "https://zirveoran.com/mac/atalanta-frosinone-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Lecce",
+        "away": "Juventus",
+        "archived_url": "https://zirveoran.com/mac/lecce-juventus-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Udinese",
+        "away": "Milan",
+        "archived_url": "https://zirveoran.com/mac/udinese-ac-milan-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Sunderland",
+        "away": "Leeds",
+        "archived_url": "https://zirveoran.com/mac/sunderland-leeds-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Goztep",
+        "away": "Corum",
+        "archived_url": "https://zirveoran.com/mac/goztepe-corum-fk-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Konyaspor",
+        "away": "Genclerbirligi",
+        "archived_url": "https://zirveoran.com/mac/konyaspor-genclerbirligi-s-k-2026-10-25",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Mainz",
+        "away": "Werder Bremen",
+        "archived_url": "https://zirveoran.com/mac/fsv-mainz-05-werder-bremen-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Augsburg",
+        "away": "Union Berlin",
+        "archived_url": "https://zirveoran.com/mac/fc-augsburg-union-berlin-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Paderborn",
+        "away": "Hamburg",
+        "archived_url": "https://zirveoran.com/mac/sc-paderborn-07-hamburger-sv-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Den Haag",
+        "away": "Heerenveen",
+        "archived_url": "https://zirveoran.com/mac/ado-den-haag-heerenveen-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Utrecht",
+        "away": "Zwolle",
+        "archived_url": "https://zirveoran.com/mac/utrecht-pec-zwolle-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Vallecano",
+        "away": "Elche",
+        "archived_url": "https://zirveoran.com/mac/rayo-vallecano-elche-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "RB Leipzig",
+        "away": "Elversberg",
+        "archived_url": "https://zirveoran.com/mac/rb-leipzig-sv-elversberg-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Willem II",
+        "away": "Cambuur",
+        "archived_url": "https://zirveoran.com/mac/willem-ii-cambuur-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Ath Madrid",
+        "away": "La Coruna",
+        "archived_url": "https://zirveoran.com/mac/atletico-madrid-deportivo-la-coruna-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Lazio",
+        "away": "Parma",
+        "archived_url": "https://zirveoran.com/mac/lazio-parma-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Santander",
+        "away": "Espanol",
+        "archived_url": "https://zirveoran.com/mac/racing-santander-espanyol-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Valencia",
+        "away": "Villarreal",
+        "archived_url": "https://zirveoran.com/mac/valencia-villarreal-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Lens",
+        "away": "Paris FC",
+        "archived_url": "https://zirveoran.com/mac/lens-paris-fc-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Arsenal",
+        "away": "Everton",
+        "archived_url": "https://zirveoran.com/mac/arsenal-everton-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Chelsea",
+        "away": "Tottenham",
+        "archived_url": "https://zirveoran.com/mac/chelsea-tottenham-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Coventry",
+        "away": "Fulham",
+        "archived_url": "https://zirveoran.com/mac/coventry-fulham-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Aston Villa",
+        "away": "Man City",
+        "archived_url": "https://zirveoran.com/mac/aston-villa-manchester-city-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-26",
+        "home": "Sevilla",
+        "away": "Osasuna",
+        "archived_url": "https://zirveoran.com/mac/sevilla-osasuna-2026-10-26",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Cagliari",
+        "away": "Bologna",
+        "archived_url": "https://zirveoran.com/mac/cagliari-bologna-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-26",
+        "home": "Galatasaray",
+        "away": "Fenerbahce",
+        "archived_url": "https://zirveoran.com/mac/galatasaray-fenerbahce-2026-10-26",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-28",
+        "home": "Genoa",
+        "away": "Juventus",
+        "archived_url": "https://zirveoran.com/mac/genoa-juventus-2026-10-28",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Como",
+        "away": "Sassuolo",
+        "archived_url": "https://zirveoran.com/mac/como-sassuolo-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Eyupspor",
+        "away": "Kasimpasa",
+        "archived_url": "https://zirveoran.com/mac/eyupspor-kasimpasa-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "home": "Gaziantep",
+        "away": "Erzurumspor",
+        "archived_url": "https://zirveoran.com/mac/gaziantep-fk-erzurumspor-fk-2026-10-24",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-26",
+        "home": "Rizespor",
+        "away": "Trabzonspor",
+        "archived_url": "https://zirveoran.com/mac/rizespor-trabzonspor-2026-10-26",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-28",
+        "home": "Milan",
+        "away": "Bologna",
+        "archived_url": "https://zirveoran.com/mac/ac-milan-bologna-2026-10-28",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-27",
+        "home": "Torino",
+        "away": "Como",
+        "archived_url": "https://zirveoran.com/mac/torino-como-2026-10-27",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-28",
+        "home": "Monza",
+        "away": "Napoli",
+        "archived_url": "https://zirveoran.com/mac/monza-napoli-2026-10-28",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-28",
+        "home": "Parma",
+        "away": "Udinese",
+        "archived_url": "https://zirveoran.com/mac/parma-udinese-2026-10-28",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-28",
+        "home": "Venezia",
+        "away": "Inter",
+        "archived_url": "https://zirveoran.com/mac/venezia-inter-2026-10-28",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-30",
+        "home": "Villarreal",
+        "away": "Espanol",
+        "archived_url": "https://zirveoran.com/mac/villarreal-espanyol-2026-10-30",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-27",
+        "home": "Sassuolo",
+        "away": "Lazio",
+        "archived_url": "https://zirveoran.com/mac/sassuolo-lazio-2026-10-27",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Augsburg",
+        "away": "Freiburg",
+        "archived_url": "https://zirveoran.com/mac/fc-augsburg-sc-freiburg-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-29",
+        "home": "Fiorentina",
+        "away": "Atalanta",
+        "archived_url": "https://zirveoran.com/mac/fiorentina-atalanta-2026-10-29",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-30",
+        "home": "Elversberg",
+        "away": "Mainz",
+        "archived_url": "https://zirveoran.com/mac/sv-elversberg-fsv-mainz-05-2026-10-30",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-29",
+        "home": "Frosinone",
+        "away": "Lecce",
+        "archived_url": "https://zirveoran.com/mac/frosinone-lecce-2026-10-29",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-30",
+        "home": "Lille",
+        "away": "Lens",
+        "archived_url": "https://zirveoran.com/mac/lille-lens-2026-10-30",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Schalke 04",
+        "away": "RB Leipzig",
+        "archived_url": "https://zirveoran.com/mac/fc-schalke-04-rb-leipzig-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-30",
+        "home": "Konyaspor",
+        "away": "Galatasaray",
+        "archived_url": "https://zirveoran.com/mac/konyaspor-galatasaray-2026-10-30",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-30",
+        "home": "Nice",
+        "away": "Rennes",
+        "archived_url": "https://zirveoran.com/mac/nice-rennes-2026-10-30",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Cambuur",
+        "away": "Go Ahead Eagles",
+        "archived_url": "https://zirveoran.com/mac/cambuur-go-ahead-eagles-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Bayern Munich",
+        "away": "Dortmund",
+        "archived_url": "https://zirveoran.com/mac/bayern-munchen-borussia-dortmund-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "M'gladbach",
+        "away": "Paderborn",
+        "archived_url": "https://zirveoran.com/mac/borussia-monchengladbach-sc-paderborn-07-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Leverkusen",
+        "away": "Stuttgart",
+        "archived_url": "https://zirveoran.com/mac/bayer-leverkusen-vfb-stuttgart-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Ajax",
+        "away": "AZ Alkmaar",
+        "archived_url": "https://zirveoran.com/mac/ajax-az-alkmaar-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Werder Bremen",
+        "away": "Hoffenheim",
+        "archived_url": "https://zirveoran.com/mac/werder-bremen-1899-hoffenheim-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Troyes",
+        "away": "Le Mans",
+        "archived_url": "https://zirveoran.com/mac/estac-troyes-le-mans-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "PSV Eindhoven",
+        "away": "Willem II",
+        "archived_url": "https://zirveoran.com/mac/psv-eindhoven-willem-ii-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Heerenveen",
+        "away": "Nijmegen",
+        "archived_url": "https://zirveoran.com/mac/heerenveen-nec-nijmegen-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Levante",
+        "away": "Ath Madrid",
+        "archived_url": "https://zirveoran.com/mac/levante-atletico-madrid-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Betis",
+        "away": "Malaga",
+        "archived_url": "https://zirveoran.com/mac/real-betis-malaga-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Vallecano",
+        "away": "Celta",
+        "archived_url": "https://zirveoran.com/mac/rayo-vallecano-celta-vigo-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Man City",
+        "away": "Brighton",
+        "archived_url": "https://zirveoran.com/mac/manchester-city-brighton-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Tottenham",
+        "away": "Crystal Palace",
+        "archived_url": "https://zirveoran.com/mac/tottenham-crystal-palace-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Aston Villa",
+        "away": "Fulham",
+        "archived_url": "https://zirveoran.com/mac/aston-villa-fulham-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Milan",
+        "away": "Inter",
+        "archived_url": "https://zirveoran.com/mac/ac-milan-inter-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Erzurumspor",
+        "away": "Corum",
+        "archived_url": "https://zirveoran.com/mac/erzurumspor-fk-corum-fk-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Bournemouth",
+        "away": "Leeds",
+        "archived_url": "https://zirveoran.com/mac/bournemouth-leeds-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Chelsea",
+        "away": "Man United",
+        "archived_url": "https://zirveoran.com/mac/chelsea-manchester-united-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Coventry",
+        "away": "Sunderland",
+        "archived_url": "https://zirveoran.com/mac/coventry-sunderland-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Excelsior",
+        "away": "Twente",
+        "archived_url": "https://zirveoran.com/mac/excelsior-twente-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Bologna",
+        "away": "Monza",
+        "archived_url": "https://zirveoran.com/mac/bologna-monza-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Barcelona",
+        "away": "Alaves",
+        "archived_url": "https://zirveoran.com/mac/barcelona-deportivo-alaves-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Fenerbahce",
+        "away": "Goztep",
+        "archived_url": "https://zirveoran.com/mac/fenerbahce-goztepe-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Kocaelispor",
+        "away": "Rizespor",
+        "archived_url": "https://zirveoran.com/mac/kocaelispor-rizespor-2026-10-31",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Santander",
+        "away": "Real Madrid",
+        "archived_url": "https://zirveoran.com/mac/racing-santander-real-madrid-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Groningen",
+        "away": "Sparta Rotterdam",
+        "archived_url": "https://zirveoran.com/mac/groningen-sparta-rotterdam-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Telstar",
+        "away": "Utrecht",
+        "archived_url": "https://zirveoran.com/mac/telstar-utrecht-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Zwolle",
+        "away": "Den Haag",
+        "archived_url": "https://zirveoran.com/mac/pec-zwolle-ado-den-haag-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Ath Bilbao",
+        "away": "Sociedad",
+        "archived_url": "https://zirveoran.com/mac/athletic-club-real-sociedad-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Elche",
+        "away": "Valencia",
+        "archived_url": "https://zirveoran.com/mac/elche-valencia-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Getafe",
+        "away": "Sevilla",
+        "archived_url": "https://zirveoran.com/mac/getafe-sevilla-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Marseille",
+        "away": "Toulouse",
+        "archived_url": "https://zirveoran.com/mac/marseille-toulouse-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Liverpool",
+        "away": "Arsenal",
+        "archived_url": "https://zirveoran.com/mac/liverpool-arsenal-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Paris FC",
+        "away": "Monaco",
+        "archived_url": "https://zirveoran.com/mac/paris-fc-monaco-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Strasbourg",
+        "away": "Auxerre",
+        "archived_url": "https://zirveoran.com/mac/strasbourg-auxerre-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Como",
+        "away": "Venezia",
+        "archived_url": "https://zirveoran.com/mac/como-venezia-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Frosinone",
+        "away": "Torino",
+        "archived_url": "https://zirveoran.com/mac/frosinone-torino-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Juventus",
+        "away": "Napoli",
+        "archived_url": "https://zirveoran.com/mac/juventus-napoli-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Lyon",
+        "away": "Angers",
+        "archived_url": "https://zirveoran.com/mac/lyon-angers-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Lazio",
+        "away": "Cagliari",
+        "archived_url": "https://zirveoran.com/mac/lazio-cagliari-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Lecce",
+        "away": "Genoa",
+        "archived_url": "https://zirveoran.com/mac/lecce-genoa-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Trabzonspor",
+        "away": "Gaziantep",
+        "archived_url": "https://zirveoran.com/mac/trabzonspor-gaziantep-fk-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Kasimpasa",
+        "away": "Besiktas",
+        "archived_url": "https://zirveoran.com/mac/kasimpasa-besiktas-2026-11-01",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-02",
+        "home": "Newcastle",
+        "away": "Everton",
+        "archived_url": "https://zirveoran.com/mac/newcastle-everton-2026-11-02",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-02",
+        "home": "Atalanta",
+        "away": "Parma",
+        "archived_url": "https://zirveoran.com/mac/atalanta-parma-2026-11-02",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-02",
+        "home": "Genclerbirligi",
+        "away": "Alanyaspor",
+        "archived_url": "https://zirveoran.com/mac/genclerbirligi-s-k-alanyaspor-2026-11-02",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-02",
+        "home": "La Coruna",
+        "away": "Osasuna",
+        "archived_url": "https://zirveoran.com/mac/deportivo-la-coruna-osasuna-2026-11-02",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-02",
+        "home": "Sassuolo",
+        "away": "Fiorentina",
+        "archived_url": "https://zirveoran.com/mac/sassuolo-fiorentina-2026-11-02",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      },
+      {
+        "date": "2026-11-02",
+        "home": "Lorient",
+        "away": "Brest",
+        "archived_url": "https://zirveoran.com/mac/lorient-brest-2026-11-02",
+        "markets": [
+          "1",
+          "X",
+          "2",
+          "1X",
+          "12",
+          "X2",
+          "2,5 Alt",
+          "2,5 Üst",
+          "KG Var",
+          "KG Yok",
+          "1,5 Alt",
+          "1,5 Üst",
+          "3,5 Alt",
+          "3,5 Üst"
+        ]
+      }
+    ]
+  },
+  "backed_price_markets": [
+    "1",
+    "X",
+    "2",
+    "1X",
+    "12",
+    "X2",
+    "1,5 Üst",
+    "2,5 Üst",
+    "2,5 Alt",
+    "3,5 Alt",
+    "3,5 Üst",
+    "KG Var",
+    "KG Yok"
+  ],
+  "odds_source": "https://www.football-data.co.uk/downloadm.php and https://zirveoran.com archived match prices",
+  "price_sources": {
+    "Premier League 2425": {
+      "url": "https://www.football-data.co.uk/mmz4281/2425/E0.csv",
+      "matches": 380
+    },
+    "Bundesliga 2425": {
+      "url": "https://www.football-data.co.uk/mmz4281/2425/D1.csv",
+      "matches": 306
+    },
+    "La Liga 2425": {
+      "url": "https://www.football-data.co.uk/mmz4281/2425/SP1.csv",
+      "matches": 380
+    },
+    "Serie A 2425": {
+      "url": "https://www.football-data.co.uk/mmz4281/2425/I1.csv",
+      "matches": 380
+    },
+    "Ligue 1 2425": {
+      "url": "https://www.football-data.co.uk/mmz4281/2425/F1.csv",
+      "matches": 306
+    },
+    "Eredivisie 2425": {
+      "url": "https://www.football-data.co.uk/mmz4281/2425/N1.csv",
+      "matches": 306
+    },
+    "Süper Lig 2425": {
+      "url": "https://www.football-data.co.uk/mmz4281/2425/T1.csv",
+      "matches": 342
+    },
+    "Premier League 2526": {
+      "url": "https://www.football-data.co.uk/mmz4281/2526/E0.csv",
+      "matches": 380
+    },
+    "Bundesliga 2526": {
+      "url": "https://www.football-data.co.uk/mmz4281/2526/D1.csv",
+      "matches": 306
+    },
+    "La Liga 2526": {
+      "url": "https://www.football-data.co.uk/mmz4281/2526/SP1.csv",
+      "matches": 380
+    },
+    "Serie A 2526": {
+      "url": "https://www.football-data.co.uk/mmz4281/2526/I1.csv",
+      "matches": 380
+    },
+    "Ligue 1 2526": {
+      "url": "https://www.football-data.co.uk/mmz4281/2526/F1.csv",
+      "matches": 306
+    },
+    "Eredivisie 2526": {
+      "url": "https://www.football-data.co.uk/mmz4281/2526/N1.csv",
+      "matches": 306
+    },
+    "Süper Lig 2526": {
+      "url": "https://www.football-data.co.uk/mmz4281/2526/T1.csv",
+      "matches": 306
+    },
+    "Premier League 2627": {
+      "url": "https://www.football-data.co.uk/mmz4281/2627/E0.csv",
+      "matches": 90
+    },
+    "Bundesliga 2627": {
+      "url": "https://www.football-data.co.uk/mmz4281/2627/D1.csv",
+      "matches": 72
+    },
+    "La Liga 2627": {
+      "url": "https://www.football-data.co.uk/mmz4281/2627/SP1.csv",
+      "matches": 109
+    },
+    "Serie A 2627": {
+      "url": "https://www.football-data.co.uk/mmz4281/2627/I1.csv",
+      "matches": 100
+    },
+    "Ligue 1 2627": {
+      "url": "https://www.football-data.co.uk/mmz4281/2627/F1.csv",
+      "matches": 81
+    },
+    "Eredivisie 2627": {
+      "url": "https://www.football-data.co.uk/mmz4281/2627/N1.csv",
+      "matches": 99
+    },
+    "Süper Lig 2627": {
+      "url": "https://www.football-data.co.uk/mmz4281/2627/T1.csv",
+      "matches": 90
+    }
+  },
+  "fetch_errors": [],
+  "source_repo": "ahmetsake123-collab/futsim-web",
+  "model_method": "Live FUTSIM goalRates and simulate(...,100000) for each priced eligible fixture; live probability blending and 1–6 leg coupon chooser. Four independent shards use only team results before each fixture date, then the most recent 100 distinct eligible days are merged in order.",
+  "important_limitations": [
+    "These are 100 distinct coupon-producing dates, not 100 contiguous calendar days. No-coupon dates cannot count as wins.",
+    "Historical 1X, 12, X2, KG and broader goal markets are included only where actual public posted prices could be matched. Corner-price and Champions League archives are incomplete and not fabricated.",
+    "The algorithm of the current app was retroactively replayed, not a live historical version frozen before each match.",
+    "Archived market pages do not always prove exact bookmaker price timestamp before kick-off; all price-based results are conditional on archive accuracy.",
+    "No historical lineup, injury, or measured xG data were retro-invented; model joint probabilities are not independently calibrated.",
+    "Full-bankroll all-in is highly risky; fees, taxes, exchange-rate differences and bookmaker restrictions are not represented."
+  ],
+  "selected_coupon_dates": [
+    "2026-02-08",
+    "2026-02-09",
+    "2026-02-10",
+    "2026-02-11",
+    "2026-02-12",
+    "2026-02-13",
+    "2026-02-14",
+    "2026-02-15",
+    "2026-02-16",
+    "2026-02-18",
+    "2026-02-20",
+    "2026-02-21",
+    "2026-02-22",
+    "2026-02-23",
+    "2026-02-27",
+    "2026-02-28",
+    "2026-03-01",
+    "2026-03-02",
+    "2026-03-03",
+    "2026-03-04",
+    "2026-03-05",
+    "2026-03-06",
+    "2026-03-07",
+    "2026-03-08",
+    "2026-03-09",
+    "2026-03-13",
+    "2026-03-14",
+    "2026-03-15",
+    "2026-03-16",
+    "2026-03-18",
+    "2026-03-19",
+    "2026-03-20",
+    "2026-03-21",
+    "2026-03-22",
+    "2026-04-03",
+    "2026-04-04",
+    "2026-04-05",
+    "2026-04-06",
+    "2026-04-08",
+    "2026-04-09",
+    "2026-04-10",
+    "2026-04-11",
+    "2026-04-12",
+    "2026-04-13",
+    "2026-04-17",
+    "2026-04-18",
+    "2026-04-19",
+    "2026-04-20",
+    "2026-04-21",
+    "2026-04-22",
+    "2026-04-23",
+    "2026-04-24",
+    "2026-04-25",
+    "2026-04-26",
+    "2026-04-27",
+    "2026-05-01",
+    "2026-05-02",
+    "2026-05-03",
+    "2026-05-04",
+    "2026-05-08",
+    "2026-05-09",
+    "2026-05-10",
+    "2026-05-11",
+    "2026-05-12",
+    "2026-05-13",
+    "2026-05-14",
+    "2026-05-15",
+    "2026-05-16",
+    "2026-05-17",
+    "2026-05-19",
+    "2026-05-22",
+    "2026-05-23",
+    "2026-05-24",
+    "2026-09-13",
+    "2026-09-15",
+    "2026-09-16",
+    "2026-09-17",
+    "2026-09-18",
+    "2026-09-19",
+    "2026-09-20",
+    "2026-10-09",
+    "2026-10-10",
+    "2026-10-11",
+    "2026-10-12",
+    "2026-10-16",
+    "2026-10-17",
+    "2026-10-18",
+    "2026-10-19",
+    "2026-10-21",
+    "2026-10-23",
+    "2026-10-24",
+    "2026-10-25",
+    "2026-10-26",
+    "2026-10-27",
+    "2026-10-28",
+    "2026-10-29",
+    "2026-10-30",
+    "2026-10-31",
+    "2026-11-01",
+    "2026-11-02"
+  ],
+  "daily": [
+    {
+      "date": "2026-02-08",
+      "games_with_results": 26,
+      "priced_games": 26,
+      "modeled_games": 26,
+      "has_coupon": true,
+      "total_odds": 1.9,
+      "model_probability_pct": 50.59,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Go Ahead Eagles",
+          "away": "Telstar",
+          "competition": "Eredivisie",
+          "market": "1",
+          "price": 1.9,
+          "prediction_probability_pct": 50.59,
+          "score": "1-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-02-09",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 6,
+      "has_coupon": true,
+      "total_odds": 1.98,
+      "model_probability_pct": 48.97,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Gaziantep",
+          "away": "Kasimpasa",
+          "competition": "Süper Lig",
+          "market": "2,5 Alt",
+          "price": 1.98,
+          "prediction_probability_pct": 48.97,
+          "score": "2-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-02-10",
+      "games_with_results": 4,
+      "priced_games": 4,
+      "modeled_games": 4,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 52.34,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Everton",
+          "away": "Bournemouth",
+          "competition": "Premier League",
+          "market": "2,5 Üst",
+          "price": 1.88,
+          "prediction_probability_pct": 52.34,
+          "score": "1-2",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-02-11",
+      "games_with_results": 7,
+      "priced_games": 7,
+      "modeled_games": 7,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 53.92,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Aston Villa",
+          "away": "Brighton",
+          "competition": "Premier League",
+          "market": "1",
+          "price": 1.91,
+          "prediction_probability_pct": 53.92,
+          "score": "1-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-02-12",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 1,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 50.82,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Brentford",
+          "away": "Arsenal",
+          "competition": "Premier League",
+          "market": "2,5 Üst",
+          "price": 1.88,
+          "prediction_probability_pct": 50.82,
+          "score": "1-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-02-13",
+      "games_with_results": 8,
+      "priced_games": 8,
+      "modeled_games": 8,
+      "has_coupon": true,
+      "total_odds": 1.93,
+      "model_probability_pct": 50.57,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Pisa",
+          "away": "Milan",
+          "competition": "Serie A",
+          "market": "2,5 Üst",
+          "price": 1.93,
+          "prediction_probability_pct": 50.57,
+          "score": "1-2",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-02-14",
+      "games_with_results": 23,
+      "priced_games": 23,
+      "modeled_games": 23,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 54.52,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Leverkusen",
+          "away": "St Pauli",
+          "competition": "Bundesliga",
+          "market": "2,5 Üst",
+          "price": 1.88,
+          "prediction_probability_pct": 54.52,
+          "score": "4-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-02-15",
+      "games_with_results": 21,
+      "priced_games": 21,
+      "modeled_games": 21,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 49.51,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Goztep",
+          "away": "Kayserispor",
+          "competition": "Süper Lig",
+          "market": "2,5 Üst",
+          "price": 2,
+          "prediction_probability_pct": 49.51,
+          "score": "0-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-02-16",
+      "games_with_results": 3,
+      "priced_games": 3,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 2.05,
+      "model_probability_pct": 45.74,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Kasimpasa",
+          "away": "Karagumruk",
+          "competition": "Süper Lig",
+          "market": "2,5 Üst",
+          "price": 2.05,
+          "prediction_probability_pct": 45.74,
+          "score": "3-2",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-02-17",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 1,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-02-18",
+      "games_with_results": 3,
+      "priced_games": 3,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 2.1,
+      "model_probability_pct": 47.34,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Wolves",
+          "away": "Arsenal",
+          "competition": "Premier League",
+          "market": "2,5 Alt",
+          "price": 2.1,
+          "prediction_probability_pct": 47.34,
+          "score": "2-2",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-02-19",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-02-20",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 6,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 48.48,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Mainz",
+          "away": "Hamburg",
+          "competition": "Bundesliga",
+          "market": "2,5 Alt",
+          "price": 2,
+          "prediction_probability_pct": 48.48,
+          "score": "1-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-02-21",
+      "games_with_results": 26,
+      "priced_games": 26,
+      "modeled_games": 26,
+      "has_coupon": true,
+      "total_odds": 1.9,
+      "model_probability_pct": 53.89,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Betis",
+          "away": "Vallecano",
+          "competition": "La Liga",
+          "market": "1",
+          "price": 1.9,
+          "prediction_probability_pct": 53.89,
+          "score": "1-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "games_with_results": 29,
+      "priced_games": 29,
+      "modeled_games": 29,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 52.64,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Freiburg",
+          "away": "M'gladbach",
+          "competition": "Bundesliga",
+          "market": "2,5 Üst",
+          "price": 1.88,
+          "prediction_probability_pct": 52.64,
+          "score": "2-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-02-23",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 5,
+      "has_coupon": true,
+      "total_odds": 2.1,
+      "model_probability_pct": 47.56,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Everton",
+          "away": "Man United",
+          "competition": "Premier League",
+          "market": "2,5 Alt",
+          "price": 2.1,
+          "prediction_probability_pct": 47.56,
+          "score": "0-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-02-24",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-02-25",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-02-26",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-02-27",
+      "games_with_results": 8,
+      "priced_games": 8,
+      "modeled_games": 8,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 51.15,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Augsburg",
+          "away": "FC Koln",
+          "competition": "Bundesliga",
+          "market": "2,5 Üst",
+          "price": 1.88,
+          "prediction_probability_pct": 51.15,
+          "score": "2-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-02-28",
+      "games_with_results": 27,
+      "priced_games": 27,
+      "modeled_games": 27,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 51.63,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Rennes",
+          "away": "Toulouse",
+          "competition": "Ligue 1",
+          "market": "2,5 Üst",
+          "price": 1.88,
+          "prediction_probability_pct": 51.63,
+          "score": "1-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "games_with_results": 28,
+      "priced_games": 28,
+      "modeled_games": 28,
+      "has_coupon": true,
+      "total_odds": 2.05,
+      "model_probability_pct": 52.07,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Lorient",
+          "away": "Auxerre",
+          "competition": "Ligue 1",
+          "market": "1",
+          "price": 2.05,
+          "prediction_probability_pct": 52.07,
+          "score": "2-2",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-03-02",
+      "games_with_results": 3,
+      "priced_games": 3,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 2.1,
+      "model_probability_pct": 46.99,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Pisa",
+          "away": "Bologna",
+          "competition": "Serie A",
+          "market": "2,5 Üst",
+          "price": 2.1,
+          "prediction_probability_pct": 46.99,
+          "score": "0-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "games_with_results": 4,
+      "priced_games": 4,
+      "modeled_games": 4,
+      "has_coupon": true,
+      "total_odds": 1.98,
+      "model_probability_pct": 49.99,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Everton",
+          "away": "Burnley",
+          "competition": "Premier League",
+          "market": "2,5 Üst",
+          "price": 1.98,
+          "prediction_probability_pct": 49.99,
+          "score": "2-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "games_with_results": 7,
+      "priced_games": 7,
+      "modeled_games": 7,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 50.89,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Fulham",
+          "away": "West Ham",
+          "competition": "Premier League",
+          "market": "1",
+          "price": 2,
+          "prediction_probability_pct": 50.89,
+          "score": "0-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 1,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 48.24,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Tottenham",
+          "away": "Crystal Palace",
+          "competition": "Premier League",
+          "market": "2,5 Alt",
+          "price": 2,
+          "prediction_probability_pct": 48.24,
+          "score": "1-3",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-03-06",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 5,
+      "has_coupon": true,
+      "total_odds": 1.884,
+      "model_probability_pct": 48.59,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Bayern Munich",
+          "away": "M'gladbach",
+          "competition": "Bundesliga",
+          "market": "1",
+          "price": 1.2,
+          "prediction_probability_pct": 79.47,
+          "score": "4-1",
+          "won": true
+        },
+        {
+          "home": "Napoli",
+          "away": "Torino",
+          "competition": "Serie A",
+          "market": "1",
+          "price": 1.57,
+          "prediction_probability_pct": 61.15,
+          "score": "2-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-03-07",
+      "games_with_results": 21,
+      "priced_games": 21,
+      "modeled_games": 21,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 52.72,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Levante",
+          "away": "Girona",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 1.88,
+          "prediction_probability_pct": 52.72,
+          "score": "1-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-03-08",
+      "games_with_results": 25,
+      "priced_games": 25,
+      "modeled_games": 25,
+      "has_coupon": true,
+      "total_odds": 1.93,
+      "model_probability_pct": 52.11,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Fiorentina",
+          "away": "Parma",
+          "competition": "Serie A",
+          "market": "2,5 Alt",
+          "price": 1.93,
+          "prediction_probability_pct": 52.11,
+          "score": "0-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-03-09",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 5,
+      "has_coupon": true,
+      "total_odds": 1.96,
+      "model_probability_pct": 49.79,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Kayserispor",
+          "away": "Trabzonspor",
+          "competition": "Süper Lig",
+          "market": "2",
+          "price": 1.96,
+          "prediction_probability_pct": 49.79,
+          "score": "1-3",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-03-10",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-03-11",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-03-12",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-03-13",
+      "games_with_results": 7,
+      "priced_games": 7,
+      "modeled_games": 7,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 50.58,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Alaves",
+          "away": "Villarreal",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 1.91,
+          "prediction_probability_pct": 50.58,
+          "score": "1-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-03-14",
+      "games_with_results": 28,
+      "priced_games": 28,
+      "modeled_games": 28,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 50.7,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Arsenal",
+          "away": "Everton",
+          "competition": "Premier League",
+          "market": "2,5 Alt",
+          "price": 1.88,
+          "prediction_probability_pct": 50.7,
+          "score": "2-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "games_with_results": 27,
+      "priced_games": 27,
+      "modeled_games": 27,
+      "has_coupon": true,
+      "total_odds": 1.9,
+      "model_probability_pct": 51.72,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Kasimpasa",
+          "away": "Eyupspor",
+          "competition": "Süper Lig",
+          "market": "2,5 Alt",
+          "price": 1.9,
+          "prediction_probability_pct": 51.72,
+          "score": "1-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-03-16",
+      "games_with_results": 3,
+      "priced_games": 3,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 52.45,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Cremonese",
+          "away": "Fiorentina",
+          "competition": "Serie A",
+          "market": "2,5 Alt",
+          "price": 1.91,
+          "prediction_probability_pct": 52.45,
+          "score": "1-4",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-03-17",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 1,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-03-18",
+      "games_with_results": 3,
+      "priced_games": 3,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 1.96,
+      "model_probability_pct": 42.36,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Alanyaspor",
+          "away": "Kocaelispor",
+          "competition": "Süper Lig",
+          "market": "1",
+          "price": 1.96,
+          "prediction_probability_pct": 42.36,
+          "score": "5-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-03-19",
+      "games_with_results": 3,
+      "priced_games": 3,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 1.95,
+      "model_probability_pct": 51.74,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Kayserispor",
+          "away": "Karagumruk",
+          "competition": "Süper Lig",
+          "market": "2,5 Alt",
+          "price": 1.95,
+          "prediction_probability_pct": 51.74,
+          "score": "1-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "games_with_results": 7,
+      "priced_games": 7,
+      "modeled_games": 7,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 50.59,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Villarreal",
+          "away": "Sociedad",
+          "competition": "La Liga",
+          "market": "1",
+          "price": 1.91,
+          "prediction_probability_pct": 50.59,
+          "score": "3-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-03-21",
+      "games_with_results": 23,
+      "priced_games": 23,
+      "modeled_games": 23,
+      "has_coupon": true,
+      "total_odds": 2.05,
+      "model_probability_pct": 51.67,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Parma",
+          "away": "Cremonese",
+          "competition": "Serie A",
+          "market": "1",
+          "price": 2.05,
+          "prediction_probability_pct": 51.67,
+          "score": "0-2",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "games_with_results": 25,
+      "priced_games": 25,
+      "modeled_games": 25,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 53.27,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Atalanta",
+          "away": "Verona",
+          "competition": "Serie A",
+          "market": "2,5 Üst",
+          "price": 1.91,
+          "prediction_probability_pct": 53.27,
+          "score": "1-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-03-23",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-03-24",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-03-25",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-03-26",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-03-27",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-03-28",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-03-29",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-03-30",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-03-31",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-04-01",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-04-02",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-04-03",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 2,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 47.48,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Vallecano",
+          "away": "Elche",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 2,
+          "prediction_probability_pct": 47.48,
+          "score": "1-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "games_with_results": 26,
+      "priced_games": 26,
+      "modeled_games": 26,
+      "has_coupon": true,
+      "total_odds": 1.9,
+      "model_probability_pct": 53.73,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Kasimpasa",
+          "away": "Kayserispor",
+          "competition": "Süper Lig",
+          "market": "2,5 Alt",
+          "price": 1.9,
+          "prediction_probability_pct": 53.73,
+          "score": "2-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "games_with_results": 22,
+      "priced_games": 22,
+      "modeled_games": 22,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 50.65,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Inter",
+          "away": "Roma",
+          "competition": "Serie A",
+          "market": "2,5 Alt",
+          "price": 1.91,
+          "prediction_probability_pct": 50.65,
+          "score": "5-2",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 6,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 51.18,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Juventus",
+          "away": "Genoa",
+          "competition": "Serie A",
+          "market": "2,5 Üst",
+          "price": 1.91,
+          "prediction_probability_pct": 51.18,
+          "score": "2-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-04-08",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 1,
+      "has_coupon": true,
+      "total_odds": 2.08,
+      "model_probability_pct": 48.11,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Goztep",
+          "away": "Galatasaray",
+          "competition": "Süper Lig",
+          "market": "2,5 Alt",
+          "price": 2.08,
+          "prediction_probability_pct": 48.11,
+          "score": "1-3",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-04-09",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 1,
+      "has_coupon": true,
+      "total_odds": 1.9,
+      "model_probability_pct": 50.24,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Rizespor",
+          "away": "Samsunspor",
+          "competition": "Süper Lig",
+          "market": "2,5 Alt",
+          "price": 1.9,
+          "prediction_probability_pct": 50.24,
+          "score": "4-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "games_with_results": 8,
+      "priced_games": 8,
+      "modeled_games": 8,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 50.01,
+      "correct": false,
+      "legs": [
+        {
+          "home": "West Ham",
+          "away": "Wolves",
+          "competition": "Premier League",
+          "market": "2,5 Alt",
+          "price": 2,
+          "prediction_probability_pct": 50.01,
+          "score": "4-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-04-11",
+      "games_with_results": 26,
+      "priced_games": 26,
+      "modeled_games": 26,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 54.43,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Sociedad",
+          "away": "Alaves",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 1.88,
+          "prediction_probability_pct": 54.43,
+          "score": "3-3",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "games_with_results": 25,
+      "priced_games": 25,
+      "modeled_games": 25,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 52.58,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Mainz",
+          "away": "Freiburg",
+          "competition": "Bundesliga",
+          "market": "2,5 Üst",
+          "price": 1.88,
+          "prediction_probability_pct": 52.58,
+          "score": "0-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 5,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 46.99,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Eyupspor",
+          "away": "Samsunspor",
+          "competition": "Süper Lig",
+          "market": "2,5 Üst",
+          "price": 2,
+          "prediction_probability_pct": 46.99,
+          "score": "1-2",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-04-15",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-04-16",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-04-17",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 6,
+      "has_coupon": true,
+      "total_odds": 2.03,
+      "model_probability_pct": 47.93,
+      "correct": false,
+      "legs": [
+        {
+          "home": "St Pauli",
+          "away": "FC Koln",
+          "competition": "Bundesliga",
+          "market": "2,5 Üst",
+          "price": 2.03,
+          "prediction_probability_pct": 47.93,
+          "score": "1-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-04-18",
+      "games_with_results": 19,
+      "priced_games": 19,
+      "modeled_games": 19,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 53.22,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Union Berlin",
+          "away": "Wolfsburg",
+          "competition": "Bundesliga",
+          "market": "2,5 Üst",
+          "price": 1.91,
+          "prediction_probability_pct": 53.22,
+          "score": "1-2",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "games_with_results": 19,
+      "priced_games": 19,
+      "modeled_games": 19,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 53.03,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Aston Villa",
+          "away": "Sunderland",
+          "competition": "Premier League",
+          "market": "2,5 Alt",
+          "price": 1.88,
+          "prediction_probability_pct": 53.03,
+          "score": "4-3",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-04-20",
+      "games_with_results": 3,
+      "priced_games": 3,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 1.93,
+      "model_probability_pct": 50.84,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Crystal Palace",
+          "away": "West Ham",
+          "competition": "Premier League",
+          "market": "2,5 Alt",
+          "price": 1.93,
+          "prediction_probability_pct": 50.84,
+          "score": "0-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-04-21",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 5,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 51.16,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Ath Bilbao",
+          "away": "Osasuna",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 1.88,
+          "prediction_probability_pct": 51.16,
+          "score": "1-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "games_with_results": 7,
+      "priced_games": 7,
+      "modeled_games": 7,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 48.52,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Bournemouth",
+          "away": "Leeds",
+          "competition": "Premier League",
+          "market": "1",
+          "price": 2,
+          "prediction_probability_pct": 48.52,
+          "score": "2-2",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-04-23",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 5,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 51.27,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Oviedo",
+          "away": "Villarreal",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 1.88,
+          "prediction_probability_pct": 51.27,
+          "score": "1-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 6,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 50.85,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Napoli",
+          "away": "Cremonese",
+          "competition": "Serie A",
+          "market": "2,5 Üst",
+          "price": 1.91,
+          "prediction_probability_pct": 50.85,
+          "score": "4-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-04-25",
+      "games_with_results": 28,
+      "priced_games": 28,
+      "modeled_games": 28,
+      "has_coupon": true,
+      "total_odds": 1.98,
+      "model_probability_pct": 52.59,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Getafe",
+          "away": "Barcelona",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 1.98,
+          "prediction_probability_pct": 52.59,
+          "score": "0-2",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "games_with_results": 19,
+      "priced_games": 19,
+      "modeled_games": 19,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 52.97,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Milan",
+          "away": "Juventus",
+          "competition": "Serie A",
+          "market": "2,5 Alt",
+          "price": 1.88,
+          "prediction_probability_pct": 52.97,
+          "score": "0-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-04-27",
+      "games_with_results": 7,
+      "priced_games": 7,
+      "modeled_games": 7,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 52.34,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Cagliari",
+          "away": "Atalanta",
+          "competition": "Serie A",
+          "market": "2,5 Alt",
+          "price": 1.91,
+          "prediction_probability_pct": 52.34,
+          "score": "3-2",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-04-28",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-04-29",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-04-30",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-05-01",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 5,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 49.23,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Girona",
+          "away": "Mallorca",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 2,
+          "prediction_probability_pct": 49.23,
+          "score": "0-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-05-02",
+      "games_with_results": 28,
+      "priced_games": 28,
+      "modeled_games": 28,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 50.99,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Union Berlin",
+          "away": "FC Koln",
+          "competition": "Bundesliga",
+          "market": "2,5 Üst",
+          "price": 1.91,
+          "prediction_probability_pct": 50.99,
+          "score": "2-2",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "games_with_results": 28,
+      "priced_games": 28,
+      "modeled_games": 28,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 55.29,
+      "correct": false,
+      "legs": [
+        {
+          "home": "M'gladbach",
+          "away": "Dortmund",
+          "competition": "Bundesliga",
+          "market": "2",
+          "price": 1.91,
+          "prediction_probability_pct": 55.29,
+          "score": "1-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-04",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 5,
+      "has_coupon": true,
+      "total_odds": 1.98,
+      "model_probability_pct": 51.19,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Sevilla",
+          "away": "Sociedad",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 1.98,
+          "prediction_probability_pct": 51.19,
+          "score": "1-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-05",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-05-06",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-05-07",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-05-08",
+      "games_with_results": 4,
+      "priced_games": 4,
+      "modeled_games": 4,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 50.41,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Torino",
+          "away": "Sassuolo",
+          "competition": "Serie A",
+          "market": "2,5 Alt",
+          "price": 1.91,
+          "prediction_probability_pct": 50.41,
+          "score": "2-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-09",
+      "games_with_results": 26,
+      "priced_games": 26,
+      "modeled_games": 26,
+      "has_coupon": true,
+      "total_odds": 2.05,
+      "model_probability_pct": 50.28,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Sevilla",
+          "away": "Espanol",
+          "competition": "La Liga",
+          "market": "1",
+          "price": 2.05,
+          "prediction_probability_pct": 50.28,
+          "score": "2-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "games_with_results": 33,
+      "priced_games": 33,
+      "modeled_games": 33,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 52.79,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Milan",
+          "away": "Atalanta",
+          "competition": "Serie A",
+          "market": "2,5 Alt",
+          "price": 2,
+          "prediction_probability_pct": 52.79,
+          "score": "2-3",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-11",
+      "games_with_results": 3,
+      "priced_games": 3,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 51.39,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Napoli",
+          "away": "Bologna",
+          "competition": "Serie A",
+          "market": "2,5 Alt",
+          "price": 1.88,
+          "prediction_probability_pct": 51.39,
+          "score": "2-3",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-12",
+      "games_with_results": 3,
+      "priced_games": 3,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 47.59,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Celta",
+          "away": "Levante",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 2,
+          "prediction_probability_pct": 47.59,
+          "score": "2-3",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-13",
+      "games_with_results": 7,
+      "priced_games": 7,
+      "modeled_games": 7,
+      "has_coupon": true,
+      "total_odds": 2.1,
+      "model_probability_pct": 52.38,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Villarreal",
+          "away": "Sevilla",
+          "competition": "La Liga",
+          "market": "1",
+          "price": 2.1,
+          "prediction_probability_pct": 52.38,
+          "score": "2-3",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-14",
+      "games_with_results": 3,
+      "priced_games": 3,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 1.93,
+      "model_probability_pct": 51.72,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Valencia",
+          "away": "Vallecano",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 1.93,
+          "prediction_probability_pct": 51.72,
+          "score": "1-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-05-15",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 2,
+      "has_coupon": true,
+      "total_odds": 2.1,
+      "model_probability_pct": 46.34,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Aston Villa",
+          "away": "Liverpool",
+          "competition": "Premier League",
+          "market": "2,5 Alt",
+          "price": 2.1,
+          "prediction_probability_pct": 46.34,
+          "score": "4-2",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-16",
+      "games_with_results": 12,
+      "priced_games": 12,
+      "modeled_games": 12,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 51.83,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Karagumruk",
+          "away": "Alanyaspor",
+          "competition": "Süper Lig",
+          "market": "2,5 Alt",
+          "price": 1.88,
+          "prediction_probability_pct": 51.83,
+          "score": "2-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-17",
+      "games_with_results": 49,
+      "priced_games": 49,
+      "modeled_games": 49,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 53.15,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Kasimpasa",
+          "away": "Galatasaray",
+          "competition": "Süper Lig",
+          "market": "2",
+          "price": 1.91,
+          "prediction_probability_pct": 53.15,
+          "score": "1-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-18",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 1,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-05-19",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 2,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 51.92,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Chelsea",
+          "away": "Tottenham",
+          "competition": "Premier League",
+          "market": "1",
+          "price": 1.91,
+          "prediction_probability_pct": 51.92,
+          "score": "2-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-05-20",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-05-21",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-05-22",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 1,
+      "has_coupon": true,
+      "total_odds": 2.2,
+      "model_probability_pct": 49.02,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Fiorentina",
+          "away": "Atalanta",
+          "competition": "Serie A",
+          "market": "2,5 Alt",
+          "price": 2.2,
+          "prediction_probability_pct": 49.02,
+          "score": "1-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-05-23",
+      "games_with_results": 11,
+      "priced_games": 11,
+      "modeled_games": 11,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 52.05,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Alaves",
+          "away": "Vallecano",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 1.88,
+          "prediction_probability_pct": 52.05,
+          "score": "1-2",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "games_with_results": 18,
+      "priced_games": 18,
+      "modeled_games": 18,
+      "has_coupon": true,
+      "total_odds": 1.95,
+      "model_probability_pct": 51.09,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Parma",
+          "away": "Sassuolo",
+          "competition": "Serie A",
+          "market": "2,5 Alt",
+          "price": 1.95,
+          "prediction_probability_pct": 51.09,
+          "score": "1-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-05-26",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-05-27",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-05-28",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-05-29",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-05-30",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-05-31",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-01",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-02",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-03",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-04",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-05",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-06",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-07",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-08",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-09",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-10",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-11",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-12",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-13",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-14",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-15",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-16",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-17",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-18",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-19",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-20",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-21",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-22",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-23",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-24",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-25",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-26",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-27",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-28",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-29",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-06-30",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-01",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-02",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-03",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-04",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-05",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-06",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-07",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-08",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-09",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-10",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-11",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-12",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-13",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-14",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-15",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-16",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-17",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-18",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-19",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-20",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-21",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-22",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-23",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-24",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-25",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-26",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-27",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-28",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-29",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-30",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-07-31",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-01",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-02",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-03",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-04",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-05",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-06",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-07",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-08",
+      "games_with_results": 4,
+      "priced_games": 4,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-09",
+      "games_with_results": 4,
+      "priced_games": 4,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-10",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-11",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-12",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-13",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-14",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-15",
+      "games_with_results": 10,
+      "priced_games": 10,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-16",
+      "games_with_results": 9,
+      "priced_games": 9,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-17",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-18",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-19",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-20",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-21",
+      "games_with_results": 4,
+      "priced_games": 4,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-22",
+      "games_with_results": 23,
+      "priced_games": 23,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-23",
+      "games_with_results": 20,
+      "priced_games": 20,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-24",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-25",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-26",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-27",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-28",
+      "games_with_results": 8,
+      "priced_games": 8,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-29",
+      "games_with_results": 28,
+      "priced_games": 28,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-30",
+      "games_with_results": 23,
+      "priced_games": 23,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-08-31",
+      "games_with_results": 7,
+      "priced_games": 7,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-01",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-02",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-03",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-04",
+      "games_with_results": 8,
+      "priced_games": 8,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-05",
+      "games_with_results": 27,
+      "priced_games": 27,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-06",
+      "games_with_results": 23,
+      "priced_games": 23,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-07",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-08",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-09",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-10",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-11",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-12",
+      "games_with_results": 33,
+      "priced_games": 33,
+      "modeled_games": 1,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-13",
+      "games_with_results": 21,
+      "priced_games": 21,
+      "modeled_games": 4,
+      "has_coupon": true,
+      "total_odds": 1.888,
+      "model_probability_pct": 45.85,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Excelsior",
+          "away": "Utrecht",
+          "competition": "Eredivisie",
+          "market": "2,5 Üst",
+          "price": 1.6,
+          "prediction_probability_pct": 59.63,
+          "score": "1-2",
+          "won": true
+        },
+        {
+          "home": "PSV Eindhoven",
+          "away": "Sparta Rotterdam",
+          "competition": "Eredivisie",
+          "market": "1",
+          "price": 1.18,
+          "prediction_probability_pct": 76.89,
+          "score": "4-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-15",
+      "games_with_results": 4,
+      "priced_games": 4,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 1.9,
+      "model_probability_pct": 50.13,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Vallecano",
+          "away": "Espanol",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 1.9,
+          "prediction_probability_pct": 50.13,
+          "score": "2-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "games_with_results": 3,
+      "priced_games": 3,
+      "modeled_games": 1,
+      "has_coupon": true,
+      "total_odds": 2.1,
+      "model_probability_pct": 45.25,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Ath Madrid",
+          "away": "Osasuna",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 2.1,
+          "prediction_probability_pct": 45.25,
+          "score": "4-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 1,
+      "has_coupon": true,
+      "total_odds": 2.2,
+      "model_probability_pct": 42.79,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Betis",
+          "away": "Getafe",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 2.2,
+          "prediction_probability_pct": 42.79,
+          "score": "1-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "games_with_results": 7,
+      "priced_games": 7,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 46.76,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Espanol",
+          "away": "Elche",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 2,
+          "prediction_probability_pct": 46.76,
+          "score": "1-3",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "games_with_results": 31,
+      "priced_games": 31,
+      "modeled_games": 8,
+      "has_coupon": true,
+      "total_odds": 1.9,
+      "model_probability_pct": 51.07,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Ath Bilbao",
+          "away": "Alaves",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 1.9,
+          "prediction_probability_pct": 51.07,
+          "score": "0-0",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "games_with_results": 28,
+      "priced_games": 28,
+      "modeled_games": 9,
+      "has_coupon": true,
+      "total_odds": 1.93,
+      "model_probability_pct": 50.69,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Valencia",
+          "away": "Sociedad",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 1.93,
+          "prediction_probability_pct": 50.69,
+          "score": "2-3",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-22",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-23",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-24",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-25",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-26",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-27",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-28",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-29",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-09-30",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-01",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-02",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-03",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-04",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-05",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-06",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-07",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-08",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-09",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 4,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 47.24,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Malaga",
+          "away": "Espanol",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 2,
+          "prediction_probability_pct": 47.24,
+          "score": "1-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "games_with_results": 31,
+      "priced_games": 31,
+      "modeled_games": 20,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 51.55,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Lorient",
+          "away": "Paris FC",
+          "competition": "Ligue 1",
+          "market": "2,5 Alt",
+          "price": 1.88,
+          "prediction_probability_pct": 51.55,
+          "score": "1-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "games_with_results": 24,
+      "priced_games": 24,
+      "modeled_games": 18,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 50.08,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Crystal Palace",
+          "away": "Nott'm Forest",
+          "competition": "Premier League",
+          "market": "2,5 Üst",
+          "price": 1.91,
+          "prediction_probability_pct": 50.08,
+          "score": "3-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 48.76,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Levante",
+          "away": "Sevilla",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 2,
+          "prediction_probability_pct": 48.76,
+          "score": "3-3",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-14",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-15",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-16",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 4,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 47.65,
+      "correct": true,
+      "legs": [
+        {
+          "home": "La Coruna",
+          "away": "Levante",
+          "competition": "La Liga",
+          "market": "2,5 Alt",
+          "price": 2,
+          "prediction_probability_pct": 47.65,
+          "score": "1-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-17",
+      "games_with_results": 28,
+      "priced_games": 28,
+      "modeled_games": 21,
+      "has_coupon": true,
+      "total_odds": 1.8908,
+      "model_probability_pct": 51.24,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Union Berlin",
+          "away": "Dortmund",
+          "competition": "Bundesliga",
+          "market": "X2",
+          "price": 1.16,
+          "prediction_probability_pct": 81.91,
+          "score": "0-0",
+          "won": true
+        },
+        {
+          "home": "Everton",
+          "away": "Chelsea",
+          "competition": "Premier League",
+          "market": "1X",
+          "price": 1.63,
+          "prediction_probability_pct": 62.56,
+          "score": "0-2",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "games_with_results": 27,
+      "priced_games": 27,
+      "modeled_games": 27,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 51.64,
+      "correct": true,
+      "legs": [
+        {
+          "home": "M'gladbach",
+          "away": "Hoffenheim",
+          "competition": "Bundesliga",
+          "market": "3,5 Alt",
+          "price": 1.91,
+          "prediction_probability_pct": 51.64,
+          "score": "1-2",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 48.06,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Parma",
+          "away": "Torino",
+          "competition": "Serie A",
+          "market": "KG Var",
+          "price": 2,
+          "prediction_probability_pct": 48.06,
+          "score": "0-3",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-21",
+      "games_with_results": 1,
+      "priced_games": 1,
+      "modeled_games": 1,
+      "has_coupon": true,
+      "total_odds": 2.09,
+      "model_probability_pct": 47.28,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Levante",
+          "away": "Ath Bilbao",
+          "competition": "La Liga",
+          "market": "2,5 Üst",
+          "price": 2.09,
+          "prediction_probability_pct": 47.28,
+          "score": "3-1",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "games_with_results": 0,
+      "priced_games": 0,
+      "modeled_games": 0,
+      "has_coupon": false
+    },
+    {
+      "date": "2026-10-23",
+      "games_with_results": 7,
+      "priced_games": 7,
+      "modeled_games": 7,
+      "has_coupon": true,
+      "total_odds": 1.8924,
+      "model_probability_pct": 49.44,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Stuttgart",
+          "away": "M'gladbach",
+          "competition": "Bundesliga",
+          "market": "12",
+          "price": 1.14,
+          "prediction_probability_pct": 82.64,
+          "score": "2-3",
+          "won": true
+        },
+        {
+          "home": "Alaves",
+          "away": "Malaga",
+          "competition": "La Liga",
+          "market": "1",
+          "price": 1.66,
+          "prediction_probability_pct": 59.82,
+          "score": "1-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-24",
+      "games_with_results": 25,
+      "priced_games": 25,
+      "modeled_games": 22,
+      "has_coupon": true,
+      "total_odds": 1.88,
+      "model_probability_pct": 54.87,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Como",
+          "away": "Sassuolo",
+          "competition": "Serie A",
+          "market": "3,5 Alt",
+          "price": 1.88,
+          "prediction_probability_pct": 54.87,
+          "score": "2-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "games_with_results": 29,
+      "priced_games": 29,
+      "modeled_games": 29,
+      "has_coupon": true,
+      "total_odds": 2,
+      "model_probability_pct": 53.14,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Atalanta",
+          "away": "Frosinone",
+          "competition": "Serie A",
+          "market": "3,5 Alt",
+          "price": 2,
+          "prediction_probability_pct": 53.14,
+          "score": "4-4",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 5,
+      "has_coupon": true,
+      "total_odds": 1.91,
+      "model_probability_pct": 50.42,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Rizespor",
+          "away": "Trabzonspor",
+          "competition": "Süper Lig",
+          "market": "1X",
+          "price": 1.91,
+          "prediction_probability_pct": 50.42,
+          "score": "3-4",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "games_with_results": 3,
+      "priced_games": 3,
+      "modeled_games": 3,
+      "has_coupon": true,
+      "total_odds": 2.05,
+      "model_probability_pct": 48.82,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Torino",
+          "away": "Como",
+          "competition": "Serie A",
+          "market": "1X",
+          "price": 2.05,
+          "prediction_probability_pct": 48.82,
+          "score": "1-3",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-28",
+      "games_with_results": 5,
+      "priced_games": 5,
+      "modeled_games": 5,
+      "has_coupon": true,
+      "total_odds": 1.89,
+      "model_probability_pct": 53.54,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Venezia",
+          "away": "Inter",
+          "competition": "Serie A",
+          "market": "3,5 Alt",
+          "price": 1.89,
+          "prediction_probability_pct": 53.54,
+          "score": "0-2",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "games_with_results": 2,
+      "priced_games": 2,
+      "modeled_games": 2,
+      "has_coupon": true,
+      "total_odds": 1.92,
+      "model_probability_pct": 53.55,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Frosinone",
+          "away": "Lecce",
+          "competition": "Serie A",
+          "market": "3,5 Alt",
+          "price": 1.92,
+          "prediction_probability_pct": 53.55,
+          "score": "5-1",
+          "won": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 6,
+      "has_coupon": true,
+      "total_odds": 1.9032,
+      "model_probability_pct": 48.37,
+      "correct": false,
+      "legs": [
+        {
+          "home": "Nice",
+          "away": "Rennes",
+          "competition": "Ligue 1",
+          "market": "3,5 Alt",
+          "price": 1.56,
+          "prediction_probability_pct": 62.99,
+          "score": "5-2",
+          "won": false
+        },
+        {
+          "home": "Konyaspor",
+          "away": "Galatasaray",
+          "competition": "Süper Lig",
+          "market": "12",
+          "price": 1.22,
+          "prediction_probability_pct": 76.78,
+          "score": "0-4",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "games_with_results": 30,
+      "priced_games": 30,
+      "modeled_games": 30,
+      "has_coupon": true,
+      "total_odds": 1.95,
+      "model_probability_pct": 52.47,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Bournemouth",
+          "away": "Leeds",
+          "competition": "Premier League",
+          "market": "2,5 Alt",
+          "price": 1.95,
+          "prediction_probability_pct": 52.47,
+          "score": "2-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "games_with_results": 24,
+      "priced_games": 24,
+      "modeled_games": 24,
+      "has_coupon": true,
+      "total_odds": 1.95,
+      "model_probability_pct": 53.27,
+      "correct": true,
+      "legs": [
+        {
+          "home": "Trabzonspor",
+          "away": "Gaziantep",
+          "competition": "Süper Lig",
+          "market": "3,5 Alt",
+          "price": 1.95,
+          "prediction_probability_pct": 53.27,
+          "score": "2-0",
+          "won": true
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "games_with_results": 6,
+      "priced_games": 6,
+      "modeled_games": 6,
+      "has_coupon": true,
+      "total_odds": 1.904,
+      "model_probability_pct": 50.12,
+      "correct": false,
+      "legs": [
+        {
+          "home": "La Coruna",
+          "away": "Osasuna",
+          "competition": "La Liga",
+          "market": "12",
+          "price": 1.36,
+          "prediction_probability_pct": 71.62,
+          "score": "2-1",
+          "won": true
+        },
+        {
+          "home": "Lorient",
+          "away": "Brest",
+          "competition": "Ligue 1",
+          "market": "1X",
+          "price": 1.4,
+          "prediction_probability_pct": 69.97,
+          "score": "0-2",
+          "won": false
+        }
+      ]
+    }
+  ]
+}
