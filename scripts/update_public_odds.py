@@ -42,6 +42,8 @@ class MarketParser(HTMLParser):
         self.heading_fragments = []
         self.section = ""
         self.title = ""
+        self.seen_title = False
+        self.after_title = []
         self.cell_type = None
         self.cell_fragments = []
         self.row = None
@@ -64,6 +66,8 @@ class MarketParser(HTMLParser):
     def handle_data(self, text):
         if self.skip:
             return
+        if self.seen_title and len(self.after_title) < 40:
+            self.after_title.append(text)
         if self.heading_type is not None:
             self.heading_fragments.append(text)
         if self.cell_type is not None:
@@ -77,7 +81,9 @@ class MarketParser(HTMLParser):
             return
         if tag in ("h1", "h2") and self.heading_type == tag:
             name = " ".join(" ".join(self.heading_fragments).split())
-            if tag == "h1": self.title = name
+            if tag == "h1":
+                self.title = name
+                self.seen_title = True
             else: self.section = name
             self.heading_type = None
         if tag in ("td", "th") and self.cell_type == tag:
@@ -155,10 +161,12 @@ def parse_match(page, url, day, captured):
     parser.feed(page)
     names = teams_from_title(parser.title)
     odds, probabilities, fair = convert(parser.rows)
+    kickoff = re.search(r"(?<!\d)(?:[01]\d|2[0-3]):[0-5]\d(?!\d)", " ".join(parser.after_title)[:220])
     if not names or len(odds) < 3 or not all(k in odds for k in ("1", "X", "2")):
         return None
     return {
         "date": day, "home": names[0], "away": names[1],
+        "kickoff_local": kickoff.group() if kickoff else None,
         "source": "Zirve Oran — uluslararası piyasa ortancası",
         "source_type": "international_bookmaker_median_not_turkish_iddaa",
         "source_mode": "published_snapshot",
