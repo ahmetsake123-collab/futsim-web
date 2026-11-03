@@ -1,6 +1,6 @@
 {
   "date": "2026-11-03",
-  "fetched_at_utc": "2026-11-03T09:26:39.838870+00:00",
+  "fetched_at_utc": "2026-11-03T09:27:04.028230+00:00",
   "source": "https://zirveoran.com",
   "price_type": "international market median; not Turkish official iddaa",
   "status": "ok",
@@ -14,7 +14,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/atletico-madrid-bayern-munchen-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 2.75,
         "X": 3.9,
@@ -73,7 +73,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/barcelona-aston-villa-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 1.28,
         "X": 6.95,
@@ -132,7 +132,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/birmingham-millwall-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 1.96,
         "X": 3.6,
@@ -191,7 +191,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/blackburn-stoke-city-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 2.62,
         "X": 3.3,
@@ -250,7 +250,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/bodo-glimt-lille-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 1.74,
         "X": 4.2,
@@ -309,7 +309,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/charlton-bolton-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 2.3,
         "X": 3.48,
@@ -368,7 +368,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/derby-norwich-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 3.4,
         "X": 3.58,
@@ -427,7 +427,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/feyenoord-inter-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 3.7,
         "X": 4.13,
@@ -486,7 +486,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/galatasaray-vfb-stuttgart-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 2.1,
         "X": 4.2,
@@ -545,7 +545,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/lask-linz-slovan-bratislava-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 1.35,
         "X": 5.68,
@@ -604,7 +604,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/manchester-united-as-roma-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 2.15,
         "X": 4.05,
@@ -663,7 +663,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/portsmouth-swansea-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 2.68,
         "X": 3.2,
@@ -722,7 +722,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/preston-sheffield-utd-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 3.56,
         "X": 3.59,
@@ -781,7 +781,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/qpr-burnley-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 2.0,
         "X": 3.62,
@@ -840,7 +840,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/shakhtar-donetsk-sporting-cp-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 3.53,
         "X": 3.74,
@@ -899,7 +899,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/villarreal-paris-saint-germain-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 4.33,
         "X": 4.5,
@@ -958,7 +958,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/watford-lincoln-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 2.5,
         "X": 3.32,
@@ -1017,7 +1017,7 @@
       "source_type": "international_bookmaker_median_not_turkish_iddaa",
       "source_mode": "published_snapshot",
       "source_url": "https://zirveoran.com/mac/west-brom-southampton-2026-11-03",
-      "captured_at": "2026-11-03T09:26:39.838870+00:00",
+      "captured_at": "2026-11-03T09:27:04.028230+00:00",
       "markets": {
         "1": 2.5,
         "X": 3.51,
