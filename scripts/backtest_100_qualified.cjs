@@ -8,6 +8,8 @@
 const fs=require('fs'),vm=require('vm');
 const input=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
 const output=process.argv[3];
+const shardIndex=Number(process.env.FUTSIM_SHARD_INDEX??-1),shardTotal=Number(process.env.FUTSIM_SHARD_COUNT??1);
+if(shardIndex>=0&&(shardTotal<1||shardIndex>=shardTotal))throw Error('Invalid shard config');
 const html=fs.readFileSync('docs/index.html','utf8');
 const inline=html.split('</script><script>');
 if(inline.length<4)throw Error('Cannot locate FUTSIM original engine');
@@ -129,6 +131,7 @@ const first=Date.parse(input.window_start+'T00:00:00Z');
 for(const m of input.current)add(playedByTeam,m);
 let scanned=0,qualified=0;
 for(let i=input.window_calendar_days-1;i>=0;i--){
+ if(shardIndex>=0&&i%shardTotal!==shardIndex)continue;
  const day=new Date(first+i*86400000).toISOString().slice(0,10);
  const matches=byDate.get(day)||[],models=[],eligible=matches.filter(x=>Object.keys(x.odds||{}).length>0);
  let simulated=0;
@@ -177,15 +180,15 @@ for(let i=input.window_calendar_days-1;i>=0;i--){
   if(chosen)qualified++;
  if(scanned%15===0||qualified>=input.required_coupon_days)
    console.log('FUTSIM latest-first',scanned,'calendar days scanned;',qualified,'qualified coupon days',flushTime());
-  if(qualified>=input.required_coupon_days)break;
+  if(shardIndex<0&&qualified>=input.required_coupon_days)break;
 }
 rolling.reverse();
 function flushTime(){return new Date().toISOString().slice(11,19);}
 const allCoupons=rolling.filter(x=>x.has_coupon);
 const required=input.required_coupon_days||100;
-const coupons=allCoupons.slice(-required);
+const coupons=shardIndex>=0?allCoupons:allCoupons.slice(-required);
 const firstCoupon=coupons.length?coupons[0].date:null;
-const selectedDays=firstCoupon?rolling.filter(x=>x.date>=firstCoupon):rolling;
+const selectedDays=shardIndex>=0?rolling:(firstCoupon?rolling.filter(x=>x.date>=firstCoupon):rolling);
 const wins=coupons.filter(x=>x.correct).length,losses=coupons.length-wins;
 let streak=0,maxStreak=0,maxStreakEnd=null,firstRunBalance=100,
  firstRunPeak=100,bestResetPeak=100,resetBalance=100,totalOddsProduct=1;
@@ -205,7 +208,8 @@ for(const c of coupons){
  }
 }
 const report={
- status:coupons.length===required?'completed_100_qualified_coupon_days':'insufficient_real_coupon_days',
+ status:shardIndex>=0?'partial_parallel_shard':coupons.length===required?'completed_100_qualified_coupon_days':'insufficient_real_coupon_days',
+ shard_index:shardIndex,shard_total:shardTotal,
  title:'CURRENT FUTSIM — last 100 actual daily ~2.00 coupons, extending across seasons',
  required_coupon_days:required,all_coupon_days_in_full_scan:allCoupons.length,
  calendar_days_scanned:rolling.length,
