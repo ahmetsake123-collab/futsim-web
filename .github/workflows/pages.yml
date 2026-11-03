@@ -1,4 +1,4 @@
-name: FUTSIM Weekly Monday Data & Pages
+name: FUTSIM Daily Coupon & Weekly Model Updates
 on:
   push:
     branches: [main]
@@ -32,35 +32,46 @@ jobs:
         with:
           python-version: "3.12"
       - name: Test 100+ unseen chronological matches first
+        if: github.event_name != 'push'
         run: python scripts/validate_walkforward.py || echo "::warning::Backtest source unavailable; earlier validation preserved"
       - name: Run second disjoint 500 historical predictions
+        if: github.event_name != 'push'
         run: python scripts/validate_second500.py
       - name: Audit entire 2025-26 season in seven leagues and UEFA Champions League
+        if: github.event_name != 'push'
         run: python scripts/train_full_season.py
       - name: Compare corner forecasting candidates on independent seasons
+        if: github.event_name != 'push'
         run: python scripts/optimize_corners.py
       - name: Update CC0 public results and attributed corners
+        if: github.event_name != 'push'
         run: python scripts/update_cc0.py || echo "::warning::Source unavailable; preserving last confirmed snapshot"
       - name: Cache strictly labeled pre-match news headlines
+        if: github.event_name != 'push'
         run: python scripts/build_prematch_research.py || echo "::warning::News RSS unavailable; previous archive preserved"
       - name: Verify free API-Football integration without credentials
+        if: github.event_name != 'push'
         run: |
           python -m py_compile scripts/update_api_football.py
           python scripts/update_api_football.py --self-test
       - name: Get optional free API-Football injuries and lineups
-        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        if: github.event_name != 'push'
         env:
           APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
         run: python scripts/update_api_football.py
       - name: Check optional public xG and player xA source, obey robots restrictions
+        if: github.event_name != 'push'
         run: python scripts/update_understat.py
       - name: Test free Premier League FPL xG and xA player feed
+        if: github.event_name != 'push'
         run: python scripts/update_fpl_xg.py
       - name: Import CC-BY coarse xG with date and coverage guards
+        if: github.event_name != 'push'
         run: |
           python -m pip install -q 'pyarrow>=17,<25' || echo "::warning::Parquet reader unavailable"
           python scripts/update_hf_xg.py
       - name: Materialize all-team Monday offline statistics
+        if: github.event_name != 'push'
         run: python scripts/build_weekly.py
       - name: Validate model, Python and published UI
         run: |
@@ -69,7 +80,10 @@ jobs:
           node scripts/test_xg_preserve.cjs
           node scripts/test_simple_ui.cjs
           node scripts/test_sim_insights.cjs
+          node --check docs/daily-coupon.js
+          python -c "from pathlib import Path; s=Path('docs/index.html').read_text(); assert 'daily-coupon.js' in s and 'daily-coupon.css' in s"
       - name: Save a verified nonempty update
+        if: github.event_name != 'push'
         run: |
           git config user.name "FUTSIM Data Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
