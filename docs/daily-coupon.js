@@ -45,7 +45,16 @@ function fixtureList(){
  var today=whenDay(),api=window.FUTSIM_API_FOOTBALL||{};
  var age=(Date.now()-Date.parse(api.fetched_at_utc||''))/3600000;
  var goodAPI=api.status==='connected'&&age>=0&&age<=39;
- var by=new Map();
+ var by=new Map(),started=new Set();
+ // A previously cached market quote must never revive a game already started.
+ for(var f of (api.fixtures||[])){
+  if(f.date!==today)continue;
+  var startedHome=team(f.home),startedAway=team(f.away);
+  if(!startedHome||!startedAway)continue;
+  var kick=Date.parse(f.kickoff);
+  if(!['NS','TBD'].includes(f.status)||(Number.isFinite(kick)&&kick<=Date.now()+120000))
+   started.add(today+'|'+startedHome.id+'|'+startedAway.id);
+ }
  if(goodAPI)for(var f of (api.fixtures||[])){
   if(f.date!==today||!['NS','TBD'].includes(f.status))continue;
   var kick=Date.parse(f.kickoff);
@@ -62,7 +71,14 @@ function fixtureList(){
   var h=team(row.home),a=team(row.away);
   if(!h||!a||h.id===a.id)continue;
   var key=today+'|'+h.id+'|'+a.id;
-  if(!by.has(key))by.set(key,{date:today,league:'Bugünün fikstürü',time:'Bugün',home:h.name,away:a.name,hid:h.id,aid:a.id,marketFixture:true});
+  if(started.has(key))continue;
+  var localTime=/^([01]\d|2[0-3]):[0-5]\d$/.test(row.kickoff_local||'')?row.kickoff_local:null;
+  if(localTime){
+   var when=Date.parse(today+'T'+localTime+':00+03:00');
+   if(Number.isFinite(when)&&when<=Date.now()+120000)continue;
+  }
+  // Without an API kickoff or a published time, avoid stale same-day quotes.
+  if(!by.has(key)&&localTime)by.set(key,{date:today,league:'Bugünün fikstürü',time:localTime,home:h.name,away:a.name,hid:h.id,aid:a.id,marketFixture:true});
  }
  return {rows:[...by.values()],fresh:goodAPI||Boolean(dailyMarket?.matches?.length),age:age};
 }
