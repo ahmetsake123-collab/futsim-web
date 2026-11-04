@@ -556,13 +556,6 @@
           "fixture_id": 1635656
         },
         {
-          "player": "V. Milinkovic-Savic",
-          "team": "Napoli",
-          "type": "Questionable",
-          "reason": "Muscle Injury",
-          "fixture_id": 1635656
-        },
-        {
           "player": "Gabriel Mec",
           "team": "FC Porto",
           "type": "Missing Fixture",
@@ -630,6 +623,13 @@
           "team": "Napoli",
           "type": "Missing Fixture",
           "reason": "Thigh Injury",
+          "fixture_id": 1635656
+        },
+        {
+          "player": "G. Di Lorenzo",
+          "team": "Napoli",
+          "type": "Missing Fixture",
+          "reason": "Muscle Injury",
           "fixture_id": 1635656
         }
       ],
@@ -843,6 +843,13 @@
     "1635707": {
       "injuries": [
         {
+          "player": "S. Lammers",
+          "team": "PSV Eindhoven",
+          "type": "Missing Fixture",
+          "reason": "Lacking Match Fitness",
+          "fixture_id": 1635707
+        },
+        {
           "player": "A. Nagalo",
           "team": "PSV Eindhoven",
           "type": "Missing Fixture",
@@ -871,16 +878,9 @@
           "fixture_id": 1635707
         },
         {
-          "player": "S. Lammers",
-          "team": "PSV Eindhoven",
-          "type": "Questionable",
-          "reason": "Lacking Match Fitness",
-          "fixture_id": 1635707
-        },
-        {
           "player": "P. Wanner",
           "team": "PSV Eindhoven",
-          "type": "Questionable",
+          "type": "Missing Fixture",
           "reason": "Foot Injury",
           "fixture_id": 1635707
         },
@@ -892,6 +892,13 @@
           "fixture_id": 1635707
         },
         {
+          "player": "S. Lammers",
+          "team": "PSV Eindhoven",
+          "type": "Missing Fixture",
+          "reason": "Lacking Match Fitness",
+          "fixture_id": 1635707
+        },
+        {
           "player": "A. Nagalo",
           "team": "PSV Eindhoven",
           "type": "Missing Fixture",
@@ -920,16 +927,9 @@
           "fixture_id": 1635707
         },
         {
-          "player": "S. Lammers",
-          "team": "PSV Eindhoven",
-          "type": "Questionable",
-          "reason": "Lacking Match Fitness",
-          "fixture_id": 1635707
-        },
-        {
           "player": "P. Wanner",
           "team": "PSV Eindhoven",
-          "type": "Questionable",
+          "type": "Missing Fixture",
           "reason": "Foot Injury",
           "fixture_id": 1635707
         },
@@ -976,13 +976,6 @@
           "fixture_id": 1635710
         },
         {
-          "player": "M. Esteve",
-          "team": "RB Leipzig",
-          "type": "Questionable",
-          "reason": "Knock",
-          "fixture_id": 1635710
-        },
-        {
           "player": "A. Semenyo",
           "team": "Manchester City",
           "type": "Missing Fixture",
@@ -1015,13 +1008,6 @@
           "team": "RB Leipzig",
           "type": "Missing Fixture",
           "reason": "Off the roster",
-          "fixture_id": 1635710
-        },
-        {
-          "player": "M. Esteve",
-          "team": "RB Leipzig",
-          "type": "Questionable",
-          "reason": "Knock",
           "fixture_id": 1635710
         },
         {
@@ -1074,6 +1060,13 @@
           "fixture_id": 1635726
         },
         {
+          "player": "I. Schranz",
+          "team": "Slavia Praha",
+          "type": "Missing Fixture",
+          "reason": "Illness",
+          "fixture_id": 1635726
+        },
+        {
           "player": "S. Isife",
           "team": "Slavia Praha",
           "type": "Questionable",
@@ -1085,20 +1078,6 @@
           "team": "Slavia Praha",
           "type": "Questionable",
           "reason": "Health problems",
-          "fixture_id": 1635726
-        },
-        {
-          "player": "L. Provod",
-          "team": "Slavia Praha",
-          "type": "Questionable",
-          "reason": "Injury",
-          "fixture_id": 1635726
-        },
-        {
-          "player": "I. Schranz",
-          "team": "Slavia Praha",
-          "type": "Questionable",
-          "reason": "Illness",
           "fixture_id": 1635726
         },
         {
@@ -1144,6 +1123,13 @@
           "fixture_id": 1635726
         },
         {
+          "player": "I. Schranz",
+          "team": "Slavia Praha",
+          "type": "Missing Fixture",
+          "reason": "Illness",
+          "fixture_id": 1635726
+        },
+        {
           "player": "S. Isife",
           "team": "Slavia Praha",
           "type": "Questionable",
@@ -1155,20 +1141,6 @@
           "team": "Slavia Praha",
           "type": "Questionable",
           "reason": "Health problems",
-          "fixture_id": 1635726
-        },
-        {
-          "player": "L. Provod",
-          "team": "Slavia Praha",
-          "type": "Questionable",
-          "reason": "Injury",
-          "fixture_id": 1635726
-        },
-        {
-          "player": "I. Schranz",
-          "team": "Slavia Praha",
-          "type": "Questionable",
-          "reason": "Illness",
           "fixture_id": 1635726
         },
         {
@@ -1190,10 +1162,10 @@
     "No verified xG/xA in this integration."
   ],
   "version": 1,
-  "fetched_at_utc": "2026-11-04T07:13:02.782581+00:00",
+  "fetched_at_utc": "2026-11-04T13:07:21.640491+00:00",
   "source": "https://www.api-football.com/",
   "request_count": 10,
-  "remaining_daily_requests": "90",
+  "remaining_daily_requests": "80",
   "message_count": 0,
   "errors_redacted": [],
   "timezone": "Europe/Istanbul",
