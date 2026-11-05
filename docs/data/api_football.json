@@ -990,10 +990,10 @@
     "No verified xG/xA in this integration."
   ],
   "version": 1,
-  "fetched_at_utc": "2026-11-05T07:17:45.771439+00:00",
+  "fetched_at_utc": "2026-11-05T13:14:00.003773+00:00",
   "source": "https://www.api-football.com/",
   "request_count": 9,
-  "remaining_daily_requests": "91",
+  "remaining_daily_requests": "82",
   "message_count": 0,
   "errors_redacted": [],
   "timezone": "Europe/Istanbul",
