@@ -1334,10 +1334,10 @@
     "No verified xG/xA in this integration."
   ],
   "version": 1,
-  "fetched_at_utc": "2026-11-06T07:14:37.487538+00:00",
+  "fetched_at_utc": "2026-11-06T13:07:46.178318+00:00",
   "source": "https://www.api-football.com/",
   "request_count": 10,
-  "remaining_daily_requests": "90",
+  "remaining_daily_requests": "80",
   "message_count": 0,
   "errors_redacted": [],
   "timezone": "Europe/Istanbul",
