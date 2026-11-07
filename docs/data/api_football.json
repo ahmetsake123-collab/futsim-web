@@ -11,7 +11,7 @@
       "away": "Kocaelispor",
       "home_id": 3588,
       "away_id": 7411,
-      "status": "NS",
+      "status": "FT",
       "source": "API-Football"
     },
     {
@@ -24,7 +24,7 @@
       "away": "Tottenham",
       "home_id": 63,
       "away_id": 47,
-      "status": "NS",
+      "status": "1H",
       "source": "API-Football"
     },
     {
@@ -770,19 +770,13 @@
     }
   ],
   "details": {
-    "1584460": {
-      "injuries": [],
-      "injuries_checked": true,
-      "lineups": null,
-      "lineups_checked": false
-    },
-    "1557463": {
-      "injuries": [],
-      "injuries_checked": true,
-      "lineups": null,
-      "lineups_checked": false
-    },
     "1570447": {
+      "injuries": [],
+      "injuries_checked": true,
+      "lineups": null,
+      "lineups_checked": false
+    },
+    "1584465": {
       "injuries": [],
       "injuries_checked": true,
       "lineups": null,
@@ -808,6 +802,12 @@
       "lineups": null,
       "lineups_checked": false
     },
+    "1557457": {
+      "injuries": [],
+      "injuries_checked": true,
+      "lineups": null,
+      "lineups_checked": false
+    },
     "1552217": {
       "injuries": [],
       "injuries_checked": true,
@@ -820,8 +820,16 @@
       "lineups": null,
       "lineups_checked": false
     },
-    "1584465": {
-      "injuries": [],
+    "1550195": {
+      "injuries": [
+        {
+          "player": "P. Pellegri",
+          "team": "Torino",
+          "type": "Missing Fixture",
+          "reason": "Jumpers Knee",
+          "fixture_id": 1550195
+        }
+      ],
       "injuries_checked": true,
       "lineups": null,
       "lineups_checked": false
@@ -833,12 +841,17 @@
     "No verified xG/xA in this integration."
   ],
   "version": 1,
-  "fetched_at_utc": "2026-11-07T06:55:47.395481+00:00",
+  "fetched_at_utc": "2026-11-07T12:54:08.637502+00:00",
   "source": "https://www.api-football.com/",
-  "request_count": 10,
-  "remaining_daily_requests": "90",
-  "message_count": 0,
-  "errors_redacted": [],
+  "request_count": 14,
+  "remaining_daily_requests": "80",
+  "message_count": 4,
+  "errors_redacted": [
+    "fixtures/lineups: HTTP 429 / access restricted or unavailable",
+    "fixtures/lineups: HTTP 429 / access restricted or unavailable",
+    "fixtures/lineups: HTTP 429 / access restricted or unavailable",
+    "fixtures/lineups: HTTP 429 / access restricted or unavailable"
+  ],
   "timezone": "Europe/Istanbul",
   "measured_xg": false,
   "measured_xa": false
