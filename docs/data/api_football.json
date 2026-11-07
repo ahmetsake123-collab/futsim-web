@@ -2,97 +2,6 @@
   "status": "connected",
   "fixtures": [
     {
-      "id": 1584462,
-      "date": "2026-11-06",
-      "kickoff": "2026-11-06T20:00:00+03:00",
-      "league": "Süper Lig",
-      "league_id": 203,
-      "home": "Gaziantep FK",
-      "away": "Kasımpaşa",
-      "home_id": 3573,
-      "away_id": 1004,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1552216,
-      "date": "2026-11-06",
-      "kickoff": "2026-11-06T22:00:00+03:00",
-      "league": "Eredivisie",
-      "league_id": 88,
-      "home": "Willem II",
-      "away": "PEC Zwolle",
-      "home_id": 195,
-      "away_id": 193,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1575218,
-      "date": "2026-11-06",
-      "kickoff": "2026-11-06T22:30:00+03:00",
-      "league": "Bundesliga",
-      "league_id": 78,
-      "home": "Hamburger SV",
-      "away": "Borussia Mönchengladbach",
-      "home_id": 175,
-      "away_id": 163,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1550196,
-      "date": "2026-11-06",
-      "kickoff": "2026-11-06T22:45:00+03:00",
-      "league": "Serie A",
-      "league_id": 135,
-      "home": "Venezia",
-      "away": "Udinese",
-      "home_id": 517,
-      "away_id": 494,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1552817,
-      "date": "2026-11-06",
-      "kickoff": "2026-11-06T22:45:00+03:00",
-      "league": "Ligue 1",
-      "league_id": 61,
-      "home": "Toulouse",
-      "away": "Strasbourg",
-      "home_id": 96,
-      "away_id": 95,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1557460,
-      "date": "2026-11-06",
-      "kickoff": "2026-11-06T23:00:00+03:00",
-      "league": "Premier League",
-      "league_id": 39,
-      "home": "Everton",
-      "away": "Coventry",
-      "home_id": 45,
-      "away_id": 1346,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1570450,
-      "date": "2026-11-06",
-      "kickoff": "2026-11-06T23:00:00+03:00",
-      "league": "La Liga",
-      "league_id": 140,
-      "home": "Sevilla",
-      "away": "Alaves",
-      "home_id": 536,
-      "away_id": 542,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
       "id": 1584460,
       "date": "2026-11-07",
       "kickoff": "2026-11-07T13:30:00+03:00",
@@ -429,899 +338,489 @@
       "away_id": 110,
       "status": "NS",
       "source": "API-Football"
+    },
+    {
+      "id": 1584464,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T13:30:00+03:00",
+      "league": "Süper Lig",
+      "league_id": 203,
+      "home": "Rizespor",
+      "away": "Erzurumspor FK",
+      "home_id": 1007,
+      "away_id": 1009,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1552221,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T14:15:00+03:00",
+      "league": "Eredivisie",
+      "league_id": 88,
+      "home": "Heerenveen",
+      "away": "Feyenoord",
+      "home_id": 210,
+      "away_id": 209,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1550193,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T14:30:00+03:00",
+      "league": "Serie A",
+      "league_id": 135,
+      "home": "Napoli",
+      "away": "Lazio",
+      "home_id": 492,
+      "away_id": 487,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1570445,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T16:00:00+03:00",
+      "league": "La Liga",
+      "league_id": 140,
+      "home": "Elche",
+      "away": "Real Betis",
+      "home_id": 797,
+      "away_id": 543,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1584459,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T16:00:00+03:00",
+      "league": "Süper Lig",
+      "league_id": 203,
+      "home": "Çorum FK",
+      "away": "Fenerbahçe",
+      "home_id": 6343,
+      "away_id": 611,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1552222,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T16:30:00+03:00",
+      "league": "Eredivisie",
+      "league_id": 88,
+      "home": "Twente",
+      "away": "Ajax",
+      "home_id": 415,
+      "away_id": 194,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1550190,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T17:00:00+03:00",
+      "league": "Serie A",
+      "league_id": 135,
+      "home": "Genoa",
+      "away": "AC Milan",
+      "home_id": 495,
+      "away_id": 489,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1550192,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T17:00:00+03:00",
+      "league": "Serie A",
+      "league_id": 135,
+      "home": "Monza",
+      "away": "Atalanta",
+      "home_id": 1579,
+      "away_id": 499,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1552816,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T17:00:00+03:00",
+      "league": "Ligue 1",
+      "league_id": 61,
+      "home": "Rennes",
+      "away": "Lille",
+      "home_id": 94,
+      "away_id": 79,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1557458,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T17:00:00+03:00",
+      "league": "Premier League",
+      "league_id": 39,
+      "home": "Brighton",
+      "away": "Brentford",
+      "home_id": 51,
+      "away_id": 55,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1557459,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T17:00:00+03:00",
+      "league": "Premier League",
+      "league_id": 39,
+      "home": "Crystal Palace",
+      "away": "Liverpool",
+      "home_id": 52,
+      "away_id": 40,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1557462,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T17:00:00+03:00",
+      "league": "Premier League",
+      "league_id": 39,
+      "home": "Ipswich",
+      "away": "Bournemouth",
+      "home_id": 57,
+      "away_id": 35,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1557466,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T17:00:00+03:00",
+      "league": "Premier League",
+      "league_id": 39,
+      "home": "Sunderland",
+      "away": "Chelsea",
+      "home_id": 746,
+      "away_id": 49,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1575219,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T17:30:00+03:00",
+      "league": "Bundesliga",
+      "league_id": 78,
+      "home": "1. FC Köln",
+      "away": "Bayer Leverkusen",
+      "home_id": 192,
+      "away_id": 168,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1570449,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T18:15:00+03:00",
+      "league": "La Liga",
+      "league_id": 140,
+      "home": "Real Sociedad",
+      "away": "Rayo Vallecano",
+      "home_id": 548,
+      "away_id": 728,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1584457,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T18:30:00+03:00",
+      "league": "Süper Lig",
+      "league_id": 203,
+      "home": "Alanyaspor",
+      "away": "Trabzonspor",
+      "home_id": 996,
+      "away_id": 998,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1552219,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T18:45:00+03:00",
+      "league": "Eredivisie",
+      "league_id": 88,
+      "home": "Cambuur",
+      "away": "PSV Eindhoven",
+      "home_id": 420,
+      "away_id": 197,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1552224,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T18:45:00+03:00",
+      "league": "Eredivisie",
+      "league_id": 88,
+      "home": "AZ Alkmaar",
+      "away": "Groningen",
+      "home_id": 201,
+      "away_id": 202,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1552810,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T19:15:00+03:00",
+      "league": "Ligue 1",
+      "league_id": 61,
+      "home": "Angers",
+      "away": "Nice",
+      "home_id": 77,
+      "away_id": 84,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1552812,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T19:15:00+03:00",
+      "league": "Ligue 1",
+      "league_id": 61,
+      "home": "Stade Brestois 29",
+      "away": "Lyon",
+      "home_id": 106,
+      "away_id": 80,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1552813,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T19:15:00+03:00",
+      "league": "Ligue 1",
+      "league_id": 61,
+      "home": "Le Havre",
+      "away": "Lorient",
+      "home_id": 111,
+      "away_id": 97,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1552814,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T19:15:00+03:00",
+      "league": "Ligue 1",
+      "league_id": 61,
+      "home": "Le Mans",
+      "away": "Monaco",
+      "home_id": 1298,
+      "away_id": 91,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1557464,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T19:30:00+03:00",
+      "league": "Premier League",
+      "league_id": 39,
+      "home": "Manchester United",
+      "away": "Aston Villa",
+      "home_id": 33,
+      "away_id": 66,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1575216,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T19:30:00+03:00",
+      "league": "Bundesliga",
+      "league_id": 78,
+      "home": "SC Freiburg",
+      "away": "Union Berlin",
+      "home_id": 160,
+      "away_id": 182,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1550191,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T20:00:00+03:00",
+      "league": "Serie A",
+      "league_id": 135,
+      "home": "Inter",
+      "away": "Como",
+      "home_id": 505,
+      "away_id": 895,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1570444,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T20:30:00+03:00",
+      "league": "La Liga",
+      "league_id": 140,
+      "home": "Celta Vigo",
+      "away": "Levante",
+      "home_id": 538,
+      "away_id": 539,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1570452,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T20:30:00+03:00",
+      "league": "La Liga",
+      "league_id": 140,
+      "home": "Villarreal",
+      "away": "Getafe",
+      "home_id": 533,
+      "away_id": 546,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1584458,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T21:00:00+03:00",
+      "league": "Süper Lig",
+      "league_id": 203,
+      "home": "Beşiktaş",
+      "away": "Gençlerbirliği S.K.",
+      "home_id": 549,
+      "away_id": 997,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1575215,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T21:30:00+03:00",
+      "league": "Bundesliga",
+      "league_id": 78,
+      "home": "1899 Hoffenheim",
+      "away": "FC Schalke 04",
+      "home_id": 167,
+      "away_id": 174,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1552223,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T22:00:00+03:00",
+      "league": "Eredivisie",
+      "league_id": 88,
+      "home": "Utrecht",
+      "away": "NEC Nijmegen",
+      "home_id": 207,
+      "away_id": 413,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1550189,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T22:45:00+03:00",
+      "league": "Serie A",
+      "league_id": 135,
+      "home": "Fiorentina",
+      "away": "Juventus",
+      "home_id": 502,
+      "away_id": 496,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1552818,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T22:45:00+03:00",
+      "league": "Ligue 1",
+      "league_id": 61,
+      "home": "Lens",
+      "away": "Marseille",
+      "home_id": 116,
+      "away_id": 81,
+      "status": "NS",
+      "source": "API-Football"
+    },
+    {
+      "id": 1570443,
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T23:00:00+03:00",
+      "league": "La Liga",
+      "league_id": 140,
+      "home": "Atletico Madrid",
+      "away": "Barcelona",
+      "home_id": 530,
+      "away_id": 529,
+      "status": "NS",
+      "source": "API-Football"
     }
   ],
   "details": {
-    "1584462": {
-      "injuries": [
-        {
-          "player": "F. Bavuk",
-          "team": "Gaziantep FK",
-          "type": "Missing Fixture",
-          "reason": "Hamstring Injury",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "N. Sangare",
-          "team": "Gaziantep FK",
-          "type": "Missing Fixture",
-          "reason": "Back Injury",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "S. Dursun",
-          "team": "Gaziantep FK",
-          "type": "Questionable",
-          "reason": "Inactive",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "S. Hansen",
-          "team": "Gaziantep FK",
-          "type": "Questionable",
-          "reason": "Inactive",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "A. Kizildag",
-          "team": "Gaziantep FK",
-          "type": "Questionable",
-          "reason": "Inactive",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "U. Meleke",
-          "team": "Gaziantep FK",
-          "type": "Questionable",
-          "reason": "Injury",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "O. Ozcicek",
-          "team": "Gaziantep FK",
-          "type": "Questionable",
-          "reason": "Inactive",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "K. Tobiasz",
-          "team": "Gaziantep FK",
-          "type": "Questionable",
-          "reason": "Inactive",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "K. Corekci",
-          "team": "Kasımpaşa",
-          "type": "Missing Fixture",
-          "reason": "Achilles Tendon Injury",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "G. Frimpong",
-          "team": "Kasımpaşa",
-          "type": "Missing Fixture",
-          "reason": "Injury",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "F. Diabate",
-          "team": "Kasımpaşa",
-          "type": "Questionable",
-          "reason": "Inactive",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "A. Karapo",
-          "team": "Kasımpaşa",
-          "type": "Questionable",
-          "reason": "Injury",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "K. Mouanga",
-          "team": "Kasımpaşa",
-          "type": "Questionable",
-          "reason": "Inactive",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "M. Ouanes",
-          "team": "Kasımpaşa",
-          "type": "Questionable",
-          "reason": "Muscle Injury",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "F. Bavuk",
-          "team": "Gaziantep FK",
-          "type": "Missing Fixture",
-          "reason": "Hamstring Injury",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "N. Sangare",
-          "team": "Gaziantep FK",
-          "type": "Missing Fixture",
-          "reason": "Back Injury",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "S. Dursun",
-          "team": "Gaziantep FK",
-          "type": "Questionable",
-          "reason": "Inactive",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "S. Hansen",
-          "team": "Gaziantep FK",
-          "type": "Questionable",
-          "reason": "Inactive",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "A. Kizildag",
-          "team": "Gaziantep FK",
-          "type": "Questionable",
-          "reason": "Inactive",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "U. Meleke",
-          "team": "Gaziantep FK",
-          "type": "Questionable",
-          "reason": "Injury",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "O. Ozcicek",
-          "team": "Gaziantep FK",
-          "type": "Questionable",
-          "reason": "Inactive",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "K. Tobiasz",
-          "team": "Gaziantep FK",
-          "type": "Questionable",
-          "reason": "Inactive",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "K. Corekci",
-          "team": "Kasımpaşa",
-          "type": "Missing Fixture",
-          "reason": "Achilles Tendon Injury",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "G. Frimpong",
-          "team": "Kasımpaşa",
-          "type": "Missing Fixture",
-          "reason": "Injury",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "F. Diabate",
-          "team": "Kasımpaşa",
-          "type": "Questionable",
-          "reason": "Inactive",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "A. Karapo",
-          "team": "Kasımpaşa",
-          "type": "Questionable",
-          "reason": "Injury",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "K. Mouanga",
-          "team": "Kasımpaşa",
-          "type": "Questionable",
-          "reason": "Inactive",
-          "fixture_id": 1584462
-        },
-        {
-          "player": "M. Ouanes",
-          "team": "Kasımpaşa",
-          "type": "Questionable",
-          "reason": "Muscle Injury",
-          "fixture_id": 1584462
-        }
-      ],
-      "injuries_checked": true,
-      "lineups": null,
-      "lineups_checked": false
-    },
-    "1552216": {
-      "injuries": [
-        {
-          "player": "J. Hoogma",
-          "team": "Willem II",
-          "type": "Missing Fixture",
-          "reason": "Knee Injury",
-          "fixture_id": 1552216
-        },
-        {
-          "player": "A. Lachkar",
-          "team": "Willem II",
-          "type": "Missing Fixture",
-          "reason": "Groin Injury",
-          "fixture_id": 1552216
-        },
-        {
-          "player": "S. Floranus",
-          "team": "PEC Zwolle",
-          "type": "Missing Fixture",
-          "reason": "Injury",
-          "fixture_id": 1552216
-        },
-        {
-          "player": "F. Krastev",
-          "team": "PEC Zwolle",
-          "type": "Missing Fixture",
-          "reason": "Achilles Tendon Injury",
-          "fixture_id": 1552216
-        },
-        {
-          "player": "G. Rahajaan",
-          "team": "PEC Zwolle",
-          "type": "Missing Fixture",
-          "reason": "Inactive",
-          "fixture_id": 1552216
-        },
-        {
-          "player": "J. Hoogma",
-          "team": "Willem II",
-          "type": "Missing Fixture",
-          "reason": "Knee Injury",
-          "fixture_id": 1552216
-        },
-        {
-          "player": "A. Lachkar",
-          "team": "Willem II",
-          "type": "Missing Fixture",
-          "reason": "Groin Injury",
-          "fixture_id": 1552216
-        },
-        {
-          "player": "S. Floranus",
-          "team": "PEC Zwolle",
-          "type": "Missing Fixture",
-          "reason": "Injury",
-          "fixture_id": 1552216
-        },
-        {
-          "player": "F. Krastev",
-          "team": "PEC Zwolle",
-          "type": "Missing Fixture",
-          "reason": "Achilles Tendon Injury",
-          "fixture_id": 1552216
-        },
-        {
-          "player": "G. Rahajaan",
-          "team": "PEC Zwolle",
-          "type": "Missing Fixture",
-          "reason": "Inactive",
-          "fixture_id": 1552216
-        }
-      ],
-      "injuries_checked": true,
-      "lineups": null,
-      "lineups_checked": false
-    },
-    "1575218": {
-      "injuries": [
-        {
-          "player": "B. Nadir",
-          "team": "Hamburger SV",
-          "type": "Missing Fixture",
-          "reason": "Muscle Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "N. Remberg",
-          "team": "Hamburger SV",
-          "type": "Missing Fixture",
-          "reason": "Knee Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "F. Vieira",
-          "team": "Hamburger SV",
-          "type": "Missing Fixture",
-          "reason": "Thigh Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "M. Vuskovic",
-          "team": "Hamburger SV",
-          "type": "Missing Fixture",
-          "reason": "Doping",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "N. Capaldo",
-          "team": "Hamburger SV",
-          "type": "Questionable",
-          "reason": "Muscle Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "Y. Poulsen",
-          "team": "Hamburger SV",
-          "type": "Questionable",
-          "reason": "Hip Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "H. Bolin",
-          "team": "Borussia Mönchengladbach",
-          "type": "Missing Fixture",
-          "reason": "Muscle Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "N. Kuhn",
-          "team": "Borussia Mönchengladbach",
-          "type": "Missing Fixture",
-          "reason": "Muscle Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "E. Leopold",
-          "team": "Borussia Mönchengladbach",
-          "type": "Missing Fixture",
-          "reason": "Knee Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "J. Leszczynski",
-          "team": "Borussia Mönchengladbach",
-          "type": "Missing Fixture",
-          "reason": "Knee Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "K. Diks",
-          "team": "Borussia Mönchengladbach",
-          "type": "Questionable",
-          "reason": "Personal Reasons",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "F. Fleck",
-          "team": "Borussia Mönchengladbach",
-          "type": "Questionable",
-          "reason": "Muscle Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "F. Honorat",
-          "team": "Borussia Mönchengladbach",
-          "type": "Questionable",
-          "reason": "Muscle Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "T. Kleindienst",
-          "team": "Borussia Mönchengladbach",
-          "type": "Questionable",
-          "reason": "Muscle Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "M. Nicolas",
-          "team": "Borussia Mönchengladbach",
-          "type": "Questionable",
-          "reason": "Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "B. Nadir",
-          "team": "Hamburger SV",
-          "type": "Missing Fixture",
-          "reason": "Muscle Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "N. Remberg",
-          "team": "Hamburger SV",
-          "type": "Missing Fixture",
-          "reason": "Knee Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "F. Vieira",
-          "team": "Hamburger SV",
-          "type": "Missing Fixture",
-          "reason": "Thigh Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "M. Vuskovic",
-          "team": "Hamburger SV",
-          "type": "Missing Fixture",
-          "reason": "Doping",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "N. Capaldo",
-          "team": "Hamburger SV",
-          "type": "Questionable",
-          "reason": "Muscle Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "Y. Poulsen",
-          "team": "Hamburger SV",
-          "type": "Questionable",
-          "reason": "Hip Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "H. Bolin",
-          "team": "Borussia Mönchengladbach",
-          "type": "Missing Fixture",
-          "reason": "Muscle Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "N. Kuhn",
-          "team": "Borussia Mönchengladbach",
-          "type": "Missing Fixture",
-          "reason": "Muscle Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "E. Leopold",
-          "team": "Borussia Mönchengladbach",
-          "type": "Missing Fixture",
-          "reason": "Knee Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "J. Leszczynski",
-          "team": "Borussia Mönchengladbach",
-          "type": "Missing Fixture",
-          "reason": "Knee Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "K. Diks",
-          "team": "Borussia Mönchengladbach",
-          "type": "Questionable",
-          "reason": "Personal Reasons",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "F. Fleck",
-          "team": "Borussia Mönchengladbach",
-          "type": "Questionable",
-          "reason": "Muscle Injury",
-          "fixture_id": 1575218
-        },
-        {
-          "player": "F. Honorat",
-          "team": "Borussia Mönchengladbach",
-          "type": "Questionable",
-          "reason": "Muscle Injury",
-          "fixture_id": 1575218
-        }
-      ],
-      "injuries_checked": true,
-      "lineups": null,
-      "lineups_checked": false
-    },
-    "1550196": {
-      "injuries": [
-        {
-          "player": "A. Adorante",
-          "team": "Venezia",
-          "type": "Missing Fixture",
-          "reason": "Hernia",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "B. Franjic",
-          "team": "Venezia",
-          "type": "Missing Fixture",
-          "reason": "Shoulder Injury",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "M. Sverko",
-          "team": "Venezia",
-          "type": "Missing Fixture",
-          "reason": "Hip Injury",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "T. Correia",
-          "team": "Venezia",
-          "type": "Questionable",
-          "reason": "Thigh Injury",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "D. Alaba",
-          "team": "Udinese",
-          "type": "Missing Fixture",
-          "reason": "Calf Injury",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "I. Gueye",
-          "team": "Udinese",
-          "type": "Missing Fixture",
-          "reason": "Ankle Injury",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "V. Bayo",
-          "team": "Udinese",
-          "type": "Questionable",
-          "reason": "Thigh Injury",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "O. Solet",
-          "team": "Udinese",
-          "type": "Questionable",
-          "reason": "Muscle Injury",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "A. Zanoli",
-          "team": "Udinese",
-          "type": "Questionable",
-          "reason": "Muscle Injury",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "A. Adorante",
-          "team": "Venezia",
-          "type": "Missing Fixture",
-          "reason": "Hernia",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "B. Franjic",
-          "team": "Venezia",
-          "type": "Missing Fixture",
-          "reason": "Shoulder Injury",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "M. Sverko",
-          "team": "Venezia",
-          "type": "Missing Fixture",
-          "reason": "Hip Injury",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "T. Correia",
-          "team": "Venezia",
-          "type": "Questionable",
-          "reason": "Thigh Injury",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "D. Alaba",
-          "team": "Udinese",
-          "type": "Missing Fixture",
-          "reason": "Calf Injury",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "I. Gueye",
-          "team": "Udinese",
-          "type": "Missing Fixture",
-          "reason": "Ankle Injury",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "V. Bayo",
-          "team": "Udinese",
-          "type": "Questionable",
-          "reason": "Thigh Injury",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "O. Solet",
-          "team": "Udinese",
-          "type": "Questionable",
-          "reason": "Muscle Injury",
-          "fixture_id": 1550196
-        },
-        {
-          "player": "A. Zanoli",
-          "team": "Udinese",
-          "type": "Questionable",
-          "reason": "Muscle Injury",
-          "fixture_id": 1550196
-        }
-      ],
-      "injuries_checked": true,
-      "lineups": null,
-      "lineups_checked": false
-    },
-    "1552817": {
-      "injuries": [
-        {
-          "player": "A. Donnum",
-          "team": "Toulouse",
-          "type": "Missing Fixture",
-          "reason": "Yellow Cards",
-          "fixture_id": 1552817
-        },
-        {
-          "player": "R. Messali",
-          "team": "Toulouse",
-          "type": "Missing Fixture",
-          "reason": "Thigh Injury",
-          "fixture_id": 1552817
-        },
-        {
-          "player": "M. Niflore",
-          "team": "Toulouse",
-          "type": "Questionable",
-          "reason": "Knee Injury",
-          "fixture_id": 1552817
-        },
-        {
-          "player": "J. Panichelli",
-          "team": "Strasbourg",
-          "type": "Missing Fixture",
-          "reason": "Knee Injury",
-          "fixture_id": 1552817
-        },
-        {
-          "player": "F. Balde",
-          "team": "Strasbourg",
-          "type": "Questionable",
-          "reason": "Leg Injury",
-          "fixture_id": 1552817
-        },
-        {
-          "player": "A. Donnum",
-          "team": "Toulouse",
-          "type": "Missing Fixture",
-          "reason": "Yellow Cards",
-          "fixture_id": 1552817
-        },
-        {
-          "player": "R. Messali",
-          "team": "Toulouse",
-          "type": "Missing Fixture",
-          "reason": "Thigh Injury",
-          "fixture_id": 1552817
-        },
-        {
-          "player": "M. Niflore",
-          "team": "Toulouse",
-          "type": "Questionable",
-          "reason": "Knee Injury",
-          "fixture_id": 1552817
-        },
-        {
-          "player": "J. Panichelli",
-          "team": "Strasbourg",
-          "type": "Missing Fixture",
-          "reason": "Knee Injury",
-          "fixture_id": 1552817
-        },
-        {
-          "player": "F. Balde",
-          "team": "Strasbourg",
-          "type": "Questionable",
-          "reason": "Leg Injury",
-          "fixture_id": 1552817
-        }
-      ],
-      "injuries_checked": true,
-      "lineups": null,
-      "lineups_checked": false
-    },
-    "1557460": {
-      "injuries": [
-        {
-          "player": "T. George",
-          "team": "Everton",
-          "type": "Questionable",
-          "reason": "Injury",
-          "fixture_id": 1557460
-        },
-        {
-          "player": "J. Grealish",
-          "team": "Everton",
-          "type": "Questionable",
-          "reason": "Coach's decision",
-          "fixture_id": 1557460
-        },
-        {
-          "player": "A. Amenda",
-          "team": "Coventry",
-          "type": "Missing Fixture",
-          "reason": "Calf Injury",
-          "fixture_id": 1557460
-        },
-        {
-          "player": "H. Wright",
-          "team": "Coventry",
-          "type": "Missing Fixture",
-          "reason": "Muscle Injury",
-          "fixture_id": 1557460
-        },
-        {
-          "player": "J. Eccles",
-          "team": "Coventry",
-          "type": "Questionable",
-          "reason": "Ankle Injury",
-          "fixture_id": 1557460
-        },
-        {
-          "player": "B. Thomas",
-          "team": "Coventry",
-          "type": "Questionable",
-          "reason": "Calf Injury",
-          "fixture_id": 1557460
-        },
-        {
-          "player": "L. Woolfenden",
-          "team": "Coventry",
-          "type": "Questionable",
-          "reason": "Knee Injury",
-          "fixture_id": 1557460
-        },
-        {
-          "player": "T. George",
-          "team": "Everton",
-          "type": "Questionable",
-          "reason": "Injury",
-          "fixture_id": 1557460
-        },
-        {
-          "player": "J. Grealish",
-          "team": "Everton",
-          "type": "Questionable",
-          "reason": "Coach's decision",
-          "fixture_id": 1557460
-        },
-        {
-          "player": "A. Amenda",
-          "team": "Coventry",
-          "type": "Missing Fixture",
-          "reason": "Calf Injury",
-          "fixture_id": 1557460
-        },
-        {
-          "player": "H. Wright",
-          "team": "Coventry",
-          "type": "Missing Fixture",
-          "reason": "Muscle Injury",
-          "fixture_id": 1557460
-        },
-        {
-          "player": "J. Eccles",
-          "team": "Coventry",
-          "type": "Questionable",
-          "reason": "Ankle Injury",
-          "fixture_id": 1557460
-        },
-        {
-          "player": "B. Thomas",
-          "team": "Coventry",
-          "type": "Questionable",
-          "reason": "Calf Injury",
-          "fixture_id": 1557460
-        },
-        {
-          "player": "L. Woolfenden",
-          "team": "Coventry",
-          "type": "Questionable",
-          "reason": "Knee Injury",
-          "fixture_id": 1557460
-        }
-      ],
-      "injuries_checked": true,
-      "lineups": null,
-      "lineups_checked": false
-    },
-    "1570450": {
-      "injuries": [
-        {
-          "player": "M. Bueno",
-          "team": "Sevilla",
-          "type": "Missing Fixture",
-          "reason": "Red Card",
-          "fixture_id": 1570450
-        },
-        {
-          "player": "Marcao",
-          "team": "Sevilla",
-          "type": "Missing Fixture",
-          "reason": "Muscle Injury",
-          "fixture_id": 1570450
-        },
-        {
-          "player": "Peque",
-          "team": "Sevilla",
-          "type": "Missing Fixture",
-          "reason": "Hamstring Injury",
-          "fixture_id": 1570450
-        },
-        {
-          "player": "I. Romero",
-          "team": "Sevilla",
-          "type": "Questionable",
-          "reason": "Knee Injury",
-          "fixture_id": 1570450
-        },
-        {
-          "player": "M. Sierra",
-          "team": "Sevilla",
-          "type": "Questionable",
-          "reason": "Shoulder Injury",
-          "fixture_id": 1570450
-        },
-        {
-          "player": "M. Rodriguez",
-          "team": "Alaves",
-          "type": "Missing Fixture",
-          "reason": "Ankle Injury",
-          "fixture_id": 1570450
-        },
-        {
-          "player": "M. Bueno",
-          "team": "Sevilla",
-          "type": "Missing Fixture",
-          "reason": "Red Card",
-          "fixture_id": 1570450
-        },
-        {
-          "player": "Marcao",
-          "team": "Sevilla",
-          "type": "Missing Fixture",
-          "reason": "Muscle Injury",
-          "fixture_id": 1570450
-        },
-        {
-          "player": "Peque",
-          "team": "Sevilla",
-          "type": "Missing Fixture",
-          "reason": "Hamstring Injury",
-          "fixture_id": 1570450
-        },
-        {
-          "player": "I. Romero",
-          "team": "Sevilla",
-          "type": "Questionable",
-          "reason": "Knee Injury",
-          "fixture_id": 1570450
-        },
-        {
-          "player": "M. Sierra",
-          "team": "Sevilla",
-          "type": "Questionable",
-          "reason": "Shoulder Injury",
-          "fixture_id": 1570450
-        },
-        {
-          "player": "M. Rodriguez",
-          "team": "Alaves",
-          "type": "Missing Fixture",
-          "reason": "Ankle Injury",
-          "fixture_id": 1570450
-        }
-      ],
-      "injuries_checked": true,
-      "lineups": null,
-      "lineups_checked": false
-    },
     "1584460": {
+      "injuries": [],
+      "injuries_checked": true,
+      "lineups": null,
+      "lineups_checked": false
+    },
+    "1557463": {
+      "injuries": [],
+      "injuries_checked": true,
+      "lineups": null,
+      "lineups_checked": false
+    },
+    "1570447": {
+      "injuries": [],
+      "injuries_checked": true,
+      "lineups": null,
+      "lineups_checked": false
+    },
+    "1550188": {
+      "injuries": [
+        {
+          "player": "Riyad Idrissi",
+          "team": "Cagliari",
+          "type": "Missing Fixture",
+          "reason": "Jumpers Knee",
+          "fixture_id": 1550188
+        }
+      ],
+      "injuries_checked": true,
+      "lineups": null,
+      "lineups_checked": false
+    },
+    "1575212": {
+      "injuries": [],
+      "injuries_checked": true,
+      "lineups": null,
+      "lineups_checked": false
+    },
+    "1552217": {
+      "injuries": [],
+      "injuries_checked": true,
+      "lineups": null,
+      "lineups_checked": false
+    },
+    "1552811": {
+      "injuries": [],
+      "injuries_checked": true,
+      "lineups": null,
+      "lineups_checked": false
+    },
+    "1584465": {
       "injuries": [],
       "injuries_checked": true,
       "lineups": null,
@@ -1334,10 +833,10 @@
     "No verified xG/xA in this integration."
   ],
   "version": 1,
-  "fetched_at_utc": "2026-11-06T13:07:46.178318+00:00",
+  "fetched_at_utc": "2026-11-07T06:55:47.395481+00:00",
   "source": "https://www.api-football.com/",
   "request_count": 10,
-  "remaining_daily_requests": "80",
+  "remaining_daily_requests": "90",
   "message_count": 0,
   "errors_redacted": [],
   "timezone": "Europe/Istanbul",
