@@ -11,7 +11,7 @@
       "away": "Erzurumspor FK",
       "home_id": 1007,
       "away_id": 1009,
-      "status": "NS",
+      "status": "FT",
       "source": "API-Football"
     },
     {
@@ -24,7 +24,7 @@
       "away": "Feyenoord",
       "home_id": 210,
       "away_id": 209,
-      "status": "NS",
+      "status": "2H",
       "source": "API-Football"
     },
     {
@@ -37,7 +37,7 @@
       "away": "Lazio",
       "home_id": 492,
       "away_id": 487,
-      "status": "NS",
+      "status": "2H",
       "source": "API-Football"
     },
     {
@@ -432,41 +432,34 @@
     }
   ],
   "details": {
-    "1584464": {
-      "injuries": [],
-      "injuries_checked": true,
-      "lineups": null,
-      "lineups_checked": false
-    },
-    "1552221": {
-      "injuries": [],
-      "injuries_checked": true,
-      "lineups": null,
-      "lineups_checked": false
-    },
-    "1550193": {
-      "injuries": [
-        {
-          "player": "Patric",
-          "team": "Lazio",
-          "type": "Missing Fixture",
-          "reason": "Sprained Ankle",
-          "fixture_id": 1550193
-        },
-        {
-          "player": "A. Buongiorno",
-          "team": "Napoli",
-          "type": "Missing Fixture",
-          "reason": "Jumpers Knee",
-          "fixture_id": 1550193
-        }
-      ],
-      "injuries_checked": true,
-      "lineups": null,
-      "lineups_checked": false
-    },
     "1570445": {
       "injuries": [],
+      "injuries_checked": true,
+      "lineups": null,
+      "lineups_checked": false
+    },
+    "1584459": {
+      "injuries": [],
+      "injuries_checked": true,
+      "lineups": null,
+      "lineups_checked": false
+    },
+    "1552222": {
+      "injuries": [],
+      "injuries_checked": true,
+      "lineups": null,
+      "lineups_checked": false
+    },
+    "1550190": {
+      "injuries": [
+        {
+          "player": "L. Venturino",
+          "team": "Genoa",
+          "type": "Missing Fixture",
+          "reason": "Jumpers Knee",
+          "fixture_id": 1550190
+        }
+      ],
       "injuries_checked": true,
       "lineups": null,
       "lineups_checked": false
@@ -489,8 +482,16 @@
       "lineups": null,
       "lineups_checked": false
     },
-    "1584459": {
-      "injuries": [],
+    "1550192": {
+      "injuries": [
+        {
+          "player": "I. Hien",
+          "team": "Atalanta",
+          "type": "Missing Fixture",
+          "reason": "Muscle Bruise",
+          "fixture_id": 1550192
+        }
+      ],
       "injuries_checked": true,
       "lineups": null,
       "lineups_checked": false
@@ -502,12 +503,17 @@
     "No verified xG/xA in this integration."
   ],
   "version": 1,
-  "fetched_at_utc": "2026-11-08T06:57:35.406930+00:00",
+  "fetched_at_utc": "2026-11-08T12:54:29.878302+00:00",
   "source": "https://www.api-football.com/",
-  "request_count": 10,
-  "remaining_daily_requests": "90",
-  "message_count": 0,
-  "errors_redacted": [],
+  "request_count": 14,
+  "remaining_daily_requests": "80",
+  "message_count": 4,
+  "errors_redacted": [
+    "fixtures/lineups: HTTP 429 / access restricted or unavailable",
+    "fixtures/lineups: HTTP 429 / access restricted or unavailable",
+    "fixtures/lineups: HTTP 429 / access restricted or unavailable",
+    "fixtures/lineups: HTTP 429 / access restricted or unavailable"
+  ],
   "timezone": "Europe/Istanbul",
   "measured_xg": false,
   "measured_xa": false
