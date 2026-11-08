@@ -2,344 +2,6 @@
   "status": "connected",
   "fixtures": [
     {
-      "id": 1584460,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T13:30:00+03:00",
-      "league": "Süper Lig",
-      "league_id": 203,
-      "home": "Eyüpspor",
-      "away": "Kocaelispor",
-      "home_id": 3588,
-      "away_id": 7411,
-      "status": "FT",
-      "source": "API-Football"
-    },
-    {
-      "id": 1557463,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T15:30:00+03:00",
-      "league": "Premier League",
-      "league_id": 39,
-      "home": "Leeds",
-      "away": "Tottenham",
-      "home_id": 63,
-      "away_id": 47,
-      "status": "1H",
-      "source": "API-Football"
-    },
-    {
-      "id": 1570447,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T16:00:00+03:00",
-      "league": "La Liga",
-      "league_id": 140,
-      "home": "Malaga",
-      "away": "Racing Santander",
-      "home_id": 535,
-      "away_id": 4665,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1584465,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T16:00:00+03:00",
-      "league": "Süper Lig",
-      "league_id": 203,
-      "home": "Samsunspor",
-      "away": "Konyaspor",
-      "home_id": 3603,
-      "away_id": 607,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1550188,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T17:00:00+03:00",
-      "league": "Serie A",
-      "league_id": 135,
-      "home": "Cagliari",
-      "away": "Frosinone",
-      "home_id": 490,
-      "away_id": 512,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1550195,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T17:00:00+03:00",
-      "league": "Serie A",
-      "league_id": 135,
-      "home": "Torino",
-      "away": "Lecce",
-      "home_id": 503,
-      "away_id": 867,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1575212,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T17:30:00+03:00",
-      "league": "Bundesliga",
-      "league_id": 78,
-      "home": "Borussia Dortmund",
-      "away": "SV Elversberg",
-      "home_id": 165,
-      "away_id": 1660,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1575213,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T17:30:00+03:00",
-      "league": "Bundesliga",
-      "league_id": 78,
-      "home": "RB Leipzig",
-      "away": "FC Augsburg",
-      "home_id": 173,
-      "away_id": 170,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1575217,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T17:30:00+03:00",
-      "league": "Bundesliga",
-      "league_id": 78,
-      "home": "FSV Mainz 05",
-      "away": "Bayern München",
-      "home_id": 164,
-      "away_id": 157,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1575220,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T17:30:00+03:00",
-      "league": "Bundesliga",
-      "league_id": 78,
-      "home": "SC Paderborn 07",
-      "away": "Eintracht Frankfurt",
-      "home_id": 185,
-      "away_id": 169,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1557457,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T18:00:00+03:00",
-      "league": "Premier League",
-      "league_id": 39,
-      "home": "Arsenal",
-      "away": "Hull City",
-      "home_id": 42,
-      "away_id": 64,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1557461,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T18:00:00+03:00",
-      "league": "Premier League",
-      "league_id": 39,
-      "home": "Fulham",
-      "away": "Newcastle",
-      "home_id": 36,
-      "away_id": 34,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1570446,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T18:15:00+03:00",
-      "league": "La Liga",
-      "league_id": 140,
-      "home": "Espanyol",
-      "away": "Deportivo La Coruna",
-      "home_id": 540,
-      "away_id": 544,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1552217,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T18:30:00+03:00",
-      "league": "Eredivisie",
-      "league_id": 88,
-      "home": "Fortuna Sittard",
-      "away": "Telstar",
-      "home_id": 205,
-      "away_id": 427,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1584461,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T19:00:00+03:00",
-      "league": "Süper Lig",
-      "league_id": 203,
-      "home": "Galatasaray",
-      "away": "Amed",
-      "home_id": 645,
-      "away_id": 3579,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1584463,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T19:00:00+03:00",
-      "league": "Süper Lig",
-      "league_id": 203,
-      "home": "Göztepe",
-      "away": "Başakşehir",
-      "home_id": 994,
-      "away_id": 564,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1550194,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T20:00:00+03:00",
-      "league": "Serie A",
-      "league_id": 135,
-      "home": "Parma",
-      "away": "Bologna",
-      "home_id": 523,
-      "away_id": 500,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1557465,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T20:30:00+03:00",
-      "league": "Premier League",
-      "league_id": 39,
-      "home": "Nottingham Forest",
-      "away": "Manchester City",
-      "home_id": 65,
-      "away_id": 50,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1570448,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T20:30:00+03:00",
-      "league": "La Liga",
-      "league_id": 140,
-      "home": "Osasuna",
-      "away": "Athletic Club",
-      "home_id": 727,
-      "away_id": 531,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1575214,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T20:30:00+03:00",
-      "league": "Bundesliga",
-      "league_id": 78,
-      "home": "VfB Stuttgart",
-      "away": "Werder Bremen",
-      "home_id": 172,
-      "away_id": 162,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1552220,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T20:45:00+03:00",
-      "league": "Eredivisie",
-      "league_id": 88,
-      "home": "ADO Den Haag",
-      "away": "Sparta Rotterdam",
-      "home_id": 198,
-      "away_id": 426,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1552811,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T21:00:00+03:00",
-      "league": "Ligue 1",
-      "league_id": 61,
-      "home": "Auxerre",
-      "away": "Paris FC",
-      "home_id": 108,
-      "away_id": 114,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1550187,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T22:45:00+03:00",
-      "league": "Serie A",
-      "league_id": 135,
-      "home": "AS Roma",
-      "away": "Sassuolo",
-      "home_id": 497,
-      "away_id": 488,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1552218,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T23:00:00+03:00",
-      "league": "Eredivisie",
-      "league_id": 88,
-      "home": "Excelsior",
-      "away": "GO Ahead Eagles",
-      "home_id": 196,
-      "away_id": 410,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1570451,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T23:00:00+03:00",
-      "league": "La Liga",
-      "league_id": 140,
-      "home": "Valencia",
-      "away": "Real Madrid",
-      "home_id": 532,
-      "away_id": 541,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
-      "id": 1552815,
-      "date": "2026-11-07",
-      "kickoff": "2026-11-07T23:05:00+03:00",
-      "league": "Ligue 1",
-      "league_id": 61,
-      "home": "Paris Saint Germain",
-      "away": "Estac Troyes",
-      "home_id": 85,
-      "away_id": 110,
-      "status": "NS",
-      "source": "API-Football"
-    },
-    {
       "id": 1584464,
       "date": "2026-11-08",
       "kickoff": "2026-11-08T13:30:00+03:00",
@@ -770,66 +432,65 @@
     }
   ],
   "details": {
-    "1570447": {
+    "1584464": {
       "injuries": [],
       "injuries_checked": true,
       "lineups": null,
       "lineups_checked": false
     },
-    "1584465": {
+    "1552221": {
       "injuries": [],
       "injuries_checked": true,
       "lineups": null,
       "lineups_checked": false
     },
-    "1550188": {
+    "1550193": {
       "injuries": [
         {
-          "player": "Riyad Idrissi",
-          "team": "Cagliari",
+          "player": "Patric",
+          "team": "Lazio",
+          "type": "Missing Fixture",
+          "reason": "Sprained Ankle",
+          "fixture_id": 1550193
+        },
+        {
+          "player": "A. Buongiorno",
+          "team": "Napoli",
           "type": "Missing Fixture",
           "reason": "Jumpers Knee",
-          "fixture_id": 1550188
+          "fixture_id": 1550193
         }
       ],
       "injuries_checked": true,
       "lineups": null,
       "lineups_checked": false
     },
-    "1575212": {
+    "1570445": {
       "injuries": [],
       "injuries_checked": true,
       "lineups": null,
       "lineups_checked": false
     },
-    "1557457": {
+    "1552816": {
       "injuries": [],
       "injuries_checked": true,
       "lineups": null,
       "lineups_checked": false
     },
-    "1552217": {
+    "1557458": {
       "injuries": [],
       "injuries_checked": true,
       "lineups": null,
       "lineups_checked": false
     },
-    "1552811": {
+    "1575219": {
       "injuries": [],
       "injuries_checked": true,
       "lineups": null,
       "lineups_checked": false
     },
-    "1550195": {
-      "injuries": [
-        {
-          "player": "P. Pellegri",
-          "team": "Torino",
-          "type": "Missing Fixture",
-          "reason": "Jumpers Knee",
-          "fixture_id": 1550195
-        }
-      ],
+    "1584459": {
+      "injuries": [],
       "injuries_checked": true,
       "lineups": null,
       "lineups_checked": false
@@ -841,17 +502,12 @@
     "No verified xG/xA in this integration."
   ],
   "version": 1,
-  "fetched_at_utc": "2026-11-07T12:54:08.637502+00:00",
+  "fetched_at_utc": "2026-11-08T06:57:35.406930+00:00",
   "source": "https://www.api-football.com/",
-  "request_count": 14,
-  "remaining_daily_requests": "80",
-  "message_count": 4,
-  "errors_redacted": [
-    "fixtures/lineups: HTTP 429 / access restricted or unavailable",
-    "fixtures/lineups: HTTP 429 / access restricted or unavailable",
-    "fixtures/lineups: HTTP 429 / access restricted or unavailable",
-    "fixtures/lineups: HTTP 429 / access restricted or unavailable"
-  ],
+  "request_count": 10,
+  "remaining_daily_requests": "90",
+  "message_count": 0,
+  "errors_redacted": [],
   "timezone": "Europe/Istanbul",
   "measured_xg": false,
   "measured_xa": false
