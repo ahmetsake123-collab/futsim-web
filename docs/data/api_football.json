@@ -1,17 +1,20 @@
 {
-  "status": "season_unavailable_or_no_fixtures",
+  "status": "api_error_or_season_restricted",
   "fixtures": [],
   "notes": [
     "API-Football ücretsiz hesapta 2026/27 erişimi veya uygun fikstür doğrulanamadı."
   ],
-  "successful_dates": 2,
+  "successful_dates": 0,
   "version": 1,
-  "fetched_at_utc": "2026-11-09T06:20:41.057772+00:00",
+  "fetched_at_utc": "2026-11-09T07:27:36.480761+00:00",
   "source": "https://www.api-football.com/",
   "request_count": 2,
-  "remaining_daily_requests": "98",
-  "message_count": 0,
-  "errors_redacted": [],
+  "remaining_daily_requests": "99",
+  "message_count": 2,
+  "errors_redacted": [
+    "fixtures: API returned error / access limitation",
+    "fixtures: API returned error / access limitation"
+  ],
   "timezone": "Europe/Istanbul",
   "measured_xg": false,
   "measured_xa": false
