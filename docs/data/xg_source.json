@@ -1,29 +1,29 @@
 {
-  "asof": "2026-11-02",
+  "asof": "2026-11-09",
   "source": "https://understat.com/",
   "method": "published observed shot-quality model; not FUTSIM xG estimates",
   "teams": [],
   "players": [],
   "coverage": {
     "Premier League": {
-      "status": "not_accessible",
-      "reason": "robots.txt not accessible"
+      "status": "unavailable",
+      "reason": "JSONDecodeError"
     },
     "La Liga": {
-      "status": "not_accessible",
-      "reason": "robots.txt not accessible"
+      "status": "unavailable",
+      "reason": "JSONDecodeError"
     },
     "Bundesliga": {
-      "status": "not_accessible",
-      "reason": "robots.txt not accessible"
+      "status": "unavailable",
+      "reason": "JSONDecodeError"
     },
     "Serie A": {
-      "status": "not_accessible",
-      "reason": "robots.txt not accessible"
+      "status": "unavailable",
+      "reason": "JSONDecodeError"
     },
     "Ligue 1": {
-      "status": "not_accessible",
-      "reason": "robots.txt not accessible"
+      "status": "unavailable",
+      "reason": "JSONDecodeError"
     }
   },
   "verified": false

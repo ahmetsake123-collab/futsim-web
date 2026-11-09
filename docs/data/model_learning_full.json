@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-11-02T06:14:40.049651+00:00",
+  "created_utc": "2026-11-09T06:19:50.814123+00:00",
   "season_train": "2024-25",
   "season_test": "2025-26",
   "competitions": [
@@ -34,14 +34,14 @@
       "Şampiyonlar Ligi": 186
     },
     "independent_2026_27": {
-      "Premier League": 80,
-      "Bundesliga": 63,
-      "La Liga": 99,
-      "Serie A": 90,
-      "Ligue 1": 72,
-      "Eredivisie": 90,
-      "Süper Lig": 81,
-      "Şampiyonlar Ligi": 54
+      "Premier League": 90,
+      "Bundesliga": 72,
+      "La Liga": 109,
+      "Serie A": 100,
+      "Ligue 1": 81,
+      "Eredivisie": 99,
+      "Süper Lig": 90,
+      "Şampiyonlar Ligi": 72
     }
   },
   "complete_test_matches": 2549,
@@ -99,56 +99,56 @@
   },
   "independent_2026_27": {
     "baseline": {
-      "n": 629,
-      "brier": 0.61474,
-      "log_loss": 1.02504,
-      "accuracy": 0.4801,
-      "correct": 302,
-      "over25_brier": 0.23719,
-      "btts_brier": 0.24144,
-      "home_goal_mae": 1.09772,
-      "away_goal_mae": 1.00263,
+      "n": 713,
+      "brier": 0.60805,
+      "log_loss": 1.01508,
+      "accuracy": 0.4965,
+      "correct": 354,
+      "over25_brier": 0.23627,
+      "btts_brier": 0.24303,
+      "home_goal_mae": 1.10847,
+      "away_goal_mae": 1.01586,
       "corner_over85": {
-        "n": 433,
-        "correct": 253,
-        "wrong": 180,
-        "accuracy": 0.5843,
-        "actual_over85": 252,
-        "actual_under85": 181,
-        "actual_over85_rate": 0.58199,
-        "predicted_over85_count": 410,
-        "predicted_under85_count": 23,
-        "brier": 0.24088,
+        "n": 499,
+        "correct": 294,
+        "wrong": 205,
+        "accuracy": 0.58918,
+        "actual_over85": 292,
+        "actual_under85": 207,
+        "actual_over85_rate": 0.58517,
+        "predicted_over85_count": 473,
+        "predicted_under85_count": 26,
+        "brier": 0.23931,
         "coin_flip_brier": 0.25,
-        "majority_class_baseline_accuracy": 0.58199
+        "majority_class_baseline_accuracy": 0.58517
       }
     },
     "candidate": {
-      "n": 629,
-      "brier": 0.61526,
-      "log_loss": 1.02523,
-      "accuracy": 0.4722,
-      "correct": 297,
-      "over25_brier": 0.23616,
-      "btts_brier": 0.2418,
-      "home_goal_mae": 1.08988,
-      "away_goal_mae": 1.0031,
+      "n": 713,
+      "brier": 0.60734,
+      "log_loss": 1.01371,
+      "accuracy": 0.4839,
+      "correct": 345,
+      "over25_brier": 0.23524,
+      "btts_brier": 0.24359,
+      "home_goal_mae": 1.10245,
+      "away_goal_mae": 1.01407,
       "corner_over85": {
-        "n": 433,
-        "correct": 253,
-        "wrong": 180,
-        "accuracy": 0.5843,
-        "actual_over85": 252,
-        "actual_under85": 181,
-        "actual_over85_rate": 0.58199,
-        "predicted_over85_count": 410,
-        "predicted_under85_count": 23,
-        "brier": 0.24088,
+        "n": 499,
+        "correct": 294,
+        "wrong": 205,
+        "accuracy": 0.58918,
+        "actual_over85": 292,
+        "actual_under85": 207,
+        "actual_over85_rate": 0.58517,
+        "predicted_over85_count": 473,
+        "predicted_under85_count": 26,
+        "brier": 0.23931,
         "coin_flip_brier": 0.25,
-        "majority_class_baseline_accuracy": 0.58199
+        "majority_class_baseline_accuracy": 0.58517
       }
     },
-    "n": 629
+    "n": 713
   },
   "per_competition": {
     "Premier League": {

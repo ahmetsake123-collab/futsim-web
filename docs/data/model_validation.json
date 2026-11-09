@@ -1,11 +1,11 @@
 {
-  "run_utc": "2026-11-02T06:13:28.007887+00:00",
+  "run_utc": "2026-11-09T06:17:56.938098+00:00",
   "method": "At least 100 next-match chronological walk-forward tests; 2025/26 prehistory, 2026/27 out-of-sample. After each prediction error, adjust using past ONLY; same-day excluded.",
   "source_results": "https://github.com/openfootball (public domain)",
   "source_corners": "https://github.com/oladeeayo/open-matchday (informational non-commercial, attribution)",
   "training_matches": 2156,
-  "available_test_matches": 635,
-  "extra_current_matches_from_attributed_source": 635,
+  "available_test_matches": 707,
+  "extra_current_matches_from_attributed_source": 707,
   "iterations": 500,
   "final_temperature": 0.8875,
   "goal_factors": {
@@ -28,13 +28,13 @@
   },
   "improved_over_baseline_brier": true,
   "corners": {
-    "n": 435,
-    "brier": 0.23386,
-    "baseline_brier": 0.23973,
-    "mean_absolute_corner_error": 2.645,
-    "actual_over85_frequency": 0.614,
-    "predicted_over85_mean": 0.594,
-    "source_matches": 635,
+    "n": 507,
+    "brier": 0.23555,
+    "baseline_brier": 0.24308,
+    "mean_absolute_corner_error": 2.647,
+    "actual_over85_frequency": 0.611,
+    "predicted_over85_mean": 0.593,
+    "source_matches": 707,
     "examples": [
       {
         "date": "2026-08-28",
@@ -85,65 +85,65 @@
         "baseline_brier": 0.11704
       },
       {
-        "date": "2026-11-01",
+        "date": "2026-11-08",
         "league": "Süper Lig",
-        "home": "amedspor",
-        "away": "eyupspor",
+        "home": "alanyaspor",
+        "away": "trabzonspor",
         "total_corners": 9,
         "actual_over85": 1,
-        "pred_over85": 0.5536,
-        "pred_total": 9.17,
-        "brier": 0.19927,
-        "baseline_brier": 0.16853
+        "pred_over85": 0.5254,
+        "pred_total": 8.9,
+        "brier": 0.22526,
+        "baseline_brier": 0.1756
       },
       {
-        "date": "2026-11-01",
+        "date": "2026-11-08",
         "league": "Süper Lig",
-        "home": "istanbul basaksehir",
-        "away": "samsunspor",
+        "home": "besiktas",
+        "away": "genclerbirligi",
+        "total_corners": 5,
+        "actual_over85": 0,
+        "pred_over85": 0.646,
+        "pred_total": 10.14,
+        "brier": 0.41732,
+        "baseline_brier": 0.33751
+      },
+      {
+        "date": "2026-11-08",
+        "league": "Süper Lig",
+        "home": "caykur rizespor",
+        "away": "erzurumspor",
         "total_corners": 10,
         "actual_over85": 1,
-        "pred_over85": 0.5841,
-        "pred_total": 9.48,
-        "brier": 0.17297,
-        "baseline_brier": 0.16853
+        "pred_over85": 0.5022,
+        "pred_total": 8.69,
+        "brier": 0.24784,
+        "baseline_brier": 0.1756
       },
       {
-        "date": "2026-11-01",
+        "date": "2026-11-08",
         "league": "Süper Lig",
-        "home": "kasimpasa",
-        "away": "besiktas",
-        "total_corners": 7,
+        "home": "corum",
+        "away": "fenerbahce",
+        "total_corners": 8,
         "actual_over85": 0,
-        "pred_over85": 0.6694,
-        "pred_total": 10.41,
-        "brier": 0.44811,
-        "baseline_brier": 0.34748
-      },
-      {
-        "date": "2026-11-01",
-        "league": "Süper Lig",
-        "home": "trabzonspor",
-        "away": "gaziantep",
-        "total_corners": 6,
-        "actual_over85": 0,
-        "pred_over85": 0.5397,
-        "pred_total": 9.04,
-        "brier": 0.29123,
-        "baseline_brier": 0.34748
+        "pred_over85": 0.6006,
+        "pred_total": 9.64,
+        "brier": 0.36076,
+        "baseline_brier": 0.33751
       }
     ],
     "warning": "Noncommercial attribution dataset; corner forecasts uncertain and do not imply positive betting value."
   },
-  "corner_records_matched": 635,
+  "corner_records_matched": 707,
   "corner_coverage_status": {
-    "Premier League": 89,
-    "Bundesliga": 72,
-    "La Liga": 108,
-    "Serie A": 98,
-    "Ligue 1": 80,
-    "Eredivisie": 99,
-    "Süper Lig": 89
+    "Premier League": 100,
+    "Bundesliga": 81,
+    "La Liga": 119,
+    "Serie A": 110,
+    "Ligue 1": 90,
+    "Eredivisie": 108,
+    "Süper Lig": 99
   },
   "calibration_bins": [
     {
