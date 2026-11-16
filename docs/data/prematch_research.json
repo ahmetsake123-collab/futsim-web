@@ -1,8 +1,143 @@
 {
-  "fetched_at_utc": "2026-11-09T06:20:40.779836+00:00",
+  "fetched_at_utc": "2026-11-16T06:36:05.808751+00:00",
   "source": "Google News RSS search headlines",
   "usage": "News headlines are not validated articles. Never modify winning probabilities or claim verified injuries using headlines alone.",
-  "searched_matches": 0,
-  "results": [],
+  "searched_matches": 14,
+  "results": [
+    {
+      "date": "2026-11-20",
+      "home": "bayern munich",
+      "away": "1 koln",
+      "league": "Bundesliga",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-11-20",
+      "home": "athletic club",
+      "away": "rcd espanyol de barcelona",
+      "league": "La Liga",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-11-20",
+      "home": "estac troyes",
+      "away": "havre athletic club",
+      "league": "Ligue 1",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-11-21",
+      "home": "manchester city",
+      "away": "fulham",
+      "league": "Premier League",
+      "headline_count": 1,
+      "headlines": [
+        {
+          "headline": "Manchester City vs Fulham: Predictions, Picks, Odds & Lineups - Squawka",
+          "source": "Squawka",
+          "published_at": "2026-11-15T02:05:45+00:00",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMzdrUDlSUlZUR0F4MUJPRW1udVBQNUdRVFFiMFhVUjF0OTMybmJiSmdFQ2h6b3pGdzY5RHcwSW9NYWUyVXh5WlBpa05iZm01TFNJUTRmN3FFZEJ1TFVjaHRBVmo0UXhFSUhVMVE1VmRmSDM2RjhBTHJjV0E0RG5ySDBCbmZIeHB1b256b3BkQWZPc0dOUVNlbkZMNzVOcmJPd3o4VWo2ZDBieEdNZGNNLQ?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "home": "aston villa",
+      "away": "sunderland",
+      "league": "Premier League",
+      "headline_count": 1,
+      "headlines": [
+        {
+          "headline": "Aston Villa injury news: Unai Emery suffers blow ahead of key Sunderland match - Sports Mole",
+          "source": "Sports Mole",
+          "published_at": "2026-11-12T11:51:52+00:00",
+          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQaUxxRWJBRWUzS0JhUVpoTktuX3Ewd0hFQ2w3T21IMEtOTFVvb2xNME0xQmQ1NmMyNHVoVkU5alhpYW96cE9LT1VaRHFmaERiLUpEZ2lZYzhJQnBINHBMTWM2TEdIZVdzU1NTM005emNBeGtUT2tqbndLZFRSQkhLdUIyRjU1Q01UbWpKXy1kNUczYzdJd0J4M3NMU2dvRjJGUUZOSExQdHo5U3lKdU9RUDJ1X0U5M2cyS2xIVHU4cWIyZFh5YmVSenJUbUw4ODk3U2pfYWg0TjdudnZnSmc4SkVsdUk?oc=5",
+          "headline_tags": [
+            "injury"
+          ],
+          "verification": "headline_only_not_confirmed"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "home": "bournemouth",
+      "away": "nottingham forest",
+      "league": "Premier League",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-11-21",
+      "home": "chelsea",
+      "away": "leeds united",
+      "league": "Premier League",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-11-21",
+      "home": "coventry",
+      "away": "crystal palace",
+      "league": "Premier League",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-11-21",
+      "home": "tottenham hotspur",
+      "away": "ipswich",
+      "league": "Premier League",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-11-21",
+      "home": "newcastle united",
+      "away": "arsenal",
+      "league": "Premier League",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-11-21",
+      "home": "1 union berlin",
+      "away": "rb leipzig",
+      "league": "Bundesliga",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-11-21",
+      "home": "bayer 04 leverkusen",
+      "away": "paderborn 07",
+      "league": "Bundesliga",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-11-21",
+      "home": "borussia monchengladbach",
+      "away": "borussia dortmund",
+      "league": "Bundesliga",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-11-21",
+      "home": "eintracht frankfurt",
+      "away": "tsg hoffenheim",
+      "league": "Bundesliga",
+      "headline_count": 0,
+      "headlines": []
+    }
+  ],
   "errors": []
 }
