@@ -1,11 +1,11 @@
 {
-  "run_utc": "2026-11-16T06:34:20.947472+00:00",
+  "run_utc": "2026-11-23T06:17:47.553736+00:00",
   "method": "At least 100 next-match chronological walk-forward tests; 2025/26 prehistory, 2026/27 out-of-sample. After each prediction error, adjust using past ONLY; same-day excluded.",
   "source_results": "https://github.com/openfootball (public domain)",
   "source_corners": "https://github.com/oladeeayo/open-matchday (informational non-commercial, attribution)",
   "training_matches": 2156,
-  "available_test_matches": 707,
-  "extra_current_matches_from_attributed_source": 707,
+  "available_test_matches": 761,
+  "extra_current_matches_from_attributed_source": 761,
   "iterations": 500,
   "final_temperature": 0.8875,
   "goal_factors": {
@@ -28,13 +28,13 @@
   },
   "improved_over_baseline_brier": true,
   "corners": {
-    "n": 507,
-    "brier": 0.23555,
-    "baseline_brier": 0.24308,
-    "mean_absolute_corner_error": 2.647,
-    "actual_over85_frequency": 0.611,
-    "predicted_over85_mean": 0.593,
-    "source_matches": 707,
+    "n": 560,
+    "brier": 0.23582,
+    "baseline_brier": 0.24282,
+    "mean_absolute_corner_error": 2.672,
+    "actual_over85_frequency": 0.616,
+    "predicted_over85_mean": 0.592,
+    "source_matches": 760,
     "examples": [
       {
         "date": "2026-08-28",
@@ -85,65 +85,65 @@
         "baseline_brier": 0.11704
       },
       {
-        "date": "2026-11-08",
-        "league": "Süper Lig",
-        "home": "alanyaspor",
-        "away": "trabzonspor",
-        "total_corners": 9,
-        "actual_over85": 1,
-        "pred_over85": 0.5254,
-        "pred_total": 8.9,
-        "brier": 0.22526,
-        "baseline_brier": 0.1756
-      },
-      {
-        "date": "2026-11-08",
-        "league": "Süper Lig",
-        "home": "besiktas",
-        "away": "genclerbirligi",
-        "total_corners": 5,
-        "actual_over85": 0,
-        "pred_over85": 0.646,
-        "pred_total": 10.14,
-        "brier": 0.41732,
-        "baseline_brier": 0.33751
-      },
-      {
-        "date": "2026-11-08",
-        "league": "Süper Lig",
-        "home": "caykur rizespor",
-        "away": "erzurumspor",
-        "total_corners": 10,
-        "actual_over85": 1,
-        "pred_over85": 0.5022,
-        "pred_total": 8.69,
-        "brier": 0.24784,
-        "baseline_brier": 0.1756
-      },
-      {
-        "date": "2026-11-08",
-        "league": "Süper Lig",
-        "home": "corum",
-        "away": "fenerbahce",
+        "date": "2026-11-22",
+        "league": "Serie A",
+        "home": "sassuolo",
+        "away": "genoa",
         "total_corners": 8,
         "actual_over85": 0,
-        "pred_over85": 0.6006,
-        "pred_total": 9.64,
-        "brier": 0.36076,
-        "baseline_brier": 0.33751
+        "pred_over85": 0.5916,
+        "pred_total": 9.55,
+        "brier": 0.34997,
+        "baseline_brier": 0.35614
+      },
+      {
+        "date": "2026-11-22",
+        "league": "Süper Lig",
+        "home": "erzurumspor",
+        "away": "goztepe",
+        "total_corners": 10,
+        "actual_over85": 1,
+        "pred_over85": 0.5376,
+        "pred_total": 9.02,
+        "brier": 0.21379,
+        "baseline_brier": 0.173
+      },
+      {
+        "date": "2026-11-22",
+        "league": "Süper Lig",
+        "home": "kasimpasa",
+        "away": "alanyaspor",
+        "total_corners": 5,
+        "actual_over85": 0,
+        "pred_over85": 0.5973,
+        "pred_total": 9.61,
+        "brier": 0.35679,
+        "baseline_brier": 0.34114
+      },
+      {
+        "date": "2026-11-22",
+        "league": "Süper Lig",
+        "home": "konyaspor",
+        "away": "besiktas",
+        "total_corners": 5,
+        "actual_over85": 0,
+        "pred_over85": 0.574,
+        "pred_total": 9.37,
+        "brier": 0.32953,
+        "baseline_brier": 0.34114
       }
     ],
     "warning": "Noncommercial attribution dataset; corner forecasts uncertain and do not imply positive betting value."
   },
-  "corner_records_matched": 707,
+  "corner_records_matched": 760,
   "corner_coverage_status": {
-    "Premier League": 100,
-    "Bundesliga": 81,
-    "La Liga": 119,
-    "Serie A": 110,
-    "Ligue 1": 90,
-    "Eredivisie": 108,
-    "Süper Lig": 99
+    "Premier League": 108,
+    "Bundesliga": 89,
+    "La Liga": 126,
+    "Serie A": 117,
+    "Ligue 1": 97,
+    "Eredivisie": 117,
+    "Süper Lig": 106
   },
   "calibration_bins": [
     {

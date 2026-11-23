@@ -1,45 +1,112 @@
 {
-  "fetched_at_utc": "2026-11-16T06:36:05.808751+00:00",
+  "fetched_at_utc": "2026-11-23T06:19:49.105024+00:00",
   "source": "Google News RSS search headlines",
   "usage": "News headlines are not validated articles. Never modify winning probabilities or claim verified injuries using headlines alone.",
   "searched_matches": 14,
   "results": [
     {
-      "date": "2026-11-20",
-      "home": "bayern munich",
-      "away": "1 koln",
-      "league": "Bundesliga",
-      "headline_count": 0,
-      "headlines": []
+      "date": "2026-11-23",
+      "home": "brentford",
+      "away": "everton",
+      "league": "Premier League",
+      "headline_count": 6,
+      "headlines": [
+        {
+          "headline": "Moyes Reveals Everton Team News For Brentford - Everton FC",
+          "source": "Everton FC",
+          "published_at": "2026-11-20T14:18:08+00:00",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPRXl5czB3bVZJRXVYS09uczZ6UThiYldIR0J6R3oxWmVyaTRNQ2FBRVM4U1hfeVcxdjc5ZEJKS2hibzg5S25rMG9TWEJBWEtKTTVQQXZ6TVNOVEJpMXBiOU5SRzVDSDMzR2tGb1BnZm9rZFdPWnR5UmtLcUJiNUVsUjRYcURvblA4azB4T1V0ekIzME4xUjNyTnFR?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Everton vs Brentford – Match preview and team news - ToffeeWeb",
+          "source": "ToffeeWeb",
+          "published_at": "2026-11-22T08:22:17+00:00",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOVU4xSkE0MF80WDVzemxKT0hfbVNZeXRqdFJONDdsZ2ozLXJPR1NsMjZzb0FNTjVLZHFrelBuUXZ4cE9hdHZDLVg3ZnFHN1JrRkhIenZBc2lEcWZuaHFpbm1hNGFIcTd4Rllrak1EUEZ5d0tsRE5fSWo0YVhKc2VhQ2x2ZEJldDY4b0dLN3lfNWxPbENhNlV3dA?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Brentford missing seven players for Everton as double injury blow confirmed - Liverpool Echo",
+          "source": "Liverpool Echo",
+          "published_at": "2026-11-20T16:50:08+00:00",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPR093N0VoOC0wbGcxMm5jRDNTNmh0QnhMbFNSbThtUU1ibFB3anctdVFYNkxTRE9UM2xfdFlwYXJqTzVwRm0yMzJiMTBmLUppeWpCV3gxZnYxc1dxVVpTNmxKbHdoOXlmeVFlWWRnd3JKdHZmNFp5R040ZWJkdXRURFdkTmE2SUtnWm4wYU9pU2FUdDM2dmN4VmpBSzY1dUhBZWhuNFZwb2ZERlMzTFHSAbMBQVVfeXFMUGlLS0tWS3lDZkRhbDdhQ0hWcEF0WTh2aXJuM2J4VERiUEM2cGhWcERISmFoelJiLUVDN0NqXzJuWDdJMklwSjZwQ0ZfRVR2ZjNLdUt6N1ZmeUpwdGNVMldNcy1ydWZneUNLUjdROUlYVU4tQUExdnNWdWVjMWhHX2pHRkl2WGswUlhFeEZjdVF5WWtCZGhBb1lNeEtYMTFSUkNZYmY3dG4wMi1mWGJGaElHbFk?oc=5",
+          "headline_tags": [
+            "injury"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Team News: Brentford vs. Everton injury, suspension list, predicted XIs - Sports Mole",
+          "source": "Sports Mole",
+          "published_at": "2026-11-22T20:00:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNeTFNUGRDZ0FJcTR3SUxKWjFjU24tcTY0NnNUSWhaSGdoWWlOUXVQNjRtZEhmZlZDci1YZWxacHBteHp5RGl0blNaNFF1UkpaNHF4ZmY1Vi1CRVp5RVZjOTBLTzBFT01DZjkwNXFWMThUMklnLTRuX3hJSmZUTkFfZDZ4Qy1SODdmZVAteGk2emRxYm5XUW00OW0xSnpNUmxVWXRpa2RLVkZsUHQzNGxBTk9reDFZVU9RVG5ZVEtDVU1CTUpxVmdMaklzMUdkRmpRNEg4NjF3?oc=5",
+          "headline_tags": [
+            "injury"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Brentford vs Everton Prediction, Lineups & Team News - RotoWire",
+          "source": "RotoWire",
+          "published_at": "2026-11-20T07:03:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQdGhYbTV0a3ZuTWlXa1RlbXg5NXBrVFUwQTU1MG9NX0hwVUozQU1GNDlNeVBGOWlxUlFTb0dablNxZ2MwQjB6akZHVHFZRHdmUHY1a3VMRlYtbkVPVlQtQjNnRmRWTVVpOHlBNFMxZDVqSTJxcm5QeUVJWWwzb1N1ZUZZcTIxVXp3OHZTUGR2RUNBNVhaQ3laYjEzZjZ0QkxkS3dPdTFDYnR3UQ?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Brentford v Everton: How to Watch, Team News and Match Details - Read Everton",
+          "source": "Read Everton",
+          "published_at": "2026-11-22T06:13:04+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOUWNzRWxDcHA2aDF4S2pwY3BoZ19vN3R6ckdhdTR4OWppNk5rdEQzN016Y1JqdDVXd1VtUllkMnJydkZHYWFMN3J4N1VnakZFZ2tHMWQwQjRiUzh3WERMdHdfbURZd3dDQjBHVWNDQmJodEZSZk8yeXcyVEZ5Ymx3NlBLSV9iTDhM?oc=5",
+          "headline_tags": [],
+          "verification": "headline_only_not_confirmed"
+        }
+      ]
     },
     {
-      "date": "2026-11-20",
-      "home": "athletic club",
-      "away": "rcd espanyol de barcelona",
+      "date": "2026-11-23",
+      "home": "levante ud",
+      "away": "elche",
       "league": "La Liga",
       "headline_count": 0,
       "headlines": []
     },
     {
-      "date": "2026-11-20",
-      "home": "estac troyes",
-      "away": "havre athletic club",
-      "league": "Ligue 1",
-      "headline_count": 0,
-      "headlines": []
-    },
-    {
-      "date": "2026-11-21",
-      "home": "manchester city",
-      "away": "fulham",
-      "league": "Premier League",
-      "headline_count": 1,
+      "date": "2026-11-23",
+      "home": "monza",
+      "away": "fiorentina",
+      "league": "Serie A",
+      "headline_count": 3,
       "headlines": [
         {
-          "headline": "Manchester City vs Fulham: Predictions, Picks, Odds & Lineups - Squawka",
-          "source": "Squawka",
-          "published_at": "2026-11-15T02:05:45+00:00",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMzdrUDlSUlZUR0F4MUJPRW1udVBQNUdRVFFiMFhVUjF0OTMybmJiSmdFQ2h6b3pGdzY5RHcwSW9NYWUyVXh5WlBpa05iZm01TFNJUTRmN3FFZEJ1TFVjaHRBVmo0UXhFSUhVMVE1VmRmSDM2RjhBTHJjV0E0RG5ySDBCbmZIeHB1b256b3BkQWZPc0dOUVNlbkZMNzVOcmJPd3o4VWo2ZDBieEdNZGNNLQ?oc=5",
+          "headline": "PREVIEW | Monza vs Fiorentina: team news, lineups, predictions (Serie A 23/11) - Yahoo Sports",
+          "source": "Yahoo Sports",
+          "published_at": "2026-11-22T03:10:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOYVZzWU44WDRSM2tfeVBsTWZNbnN0YURsRy1jeWJ4N01HU1dhNUpjRHBlNUlYSDY3U3BYVnFwTHVYUUl3Nnl3ZnRrSzQ0alcwaFpnZFA1QzZHbkx3NklqNEZ4azh4dmdibVM4U3VoYmNnOXR5OW1iYVM5R0lZUm5Cb2Yxd0ExR0da?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "Preview: Monza vs Fiorentina - prediction, team news, lineups - Sports Mole",
+          "source": "Sports Mole",
+          "published_at": "2026-11-21T09:32:47+00:00",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNNlE4TTBzdEdlUkJMUm9GUEJJbWJoLWgzcXFCemFLNTd0Uzh3SFJzQk9hSk5iVnFITnVsX09kNnVFOXNIMlZCaEhzVWg1R2dEYkdzQkFiTTByLWlBU2VGelkwWXRCZHJROTdVMnk0WGpQQTg0QTlqOHprX0tKVDhPVTZYZkZXVmNWempBSHJtckx5b3Z4Vl9SaUZidEtUMWtFVVA5WnU0VDhfWDl4Z2p4WXpR?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        },
+        {
+          "headline": "PREVIEW | Monza vs Fiorentina: team news, lineups, predictions (Serie A 23/11) - Playmakerstats",
+          "source": "Playmakerstats",
+          "published_at": "2026-11-22T04:14:43+00:00",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNQUl6RXBzNFBlX25CWm9tclFsaUJianBZX1pvZ0k0ZXJWXzlDZExWTllNN0JsWHFDakxZX2dfV2d1dWE3SFR5dnZPV1JLUWs3QVRoNFhWekpJUkpaRlgzRU1PU0c1c3lEV190Q2c5QVg1TjBPVm5ZYUM3dDBxN2pheHk1VTlJQl84WDJ2Ujc0VVc1eUMtTHRuQWxtNXdiYnRKcnRjcWlYSXRtWUxyYVZpalh1RmJ1Zw?oc=5",
           "headline_tags": [
             "rotation"
           ],
@@ -48,93 +115,112 @@
       ]
     },
     {
-      "date": "2026-11-21",
-      "home": "aston villa",
-      "away": "sunderland",
-      "league": "Premier League",
+      "date": "2026-11-23",
+      "home": "istanbul basaksehir",
+      "away": "corum",
+      "league": "Süper Lig",
       "headline_count": 1,
       "headlines": [
         {
-          "headline": "Aston Villa injury news: Unai Emery suffers blow ahead of key Sunderland match - Sports Mole",
+          "headline": "Preview: Istanbul Basaksehir vs Çorum Belediyespor - prediction, team news, lineups - Sports Mole",
           "source": "Sports Mole",
-          "published_at": "2026-11-12T11:51:52+00:00",
-          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQaUxxRWJBRWUzS0JhUVpoTktuX3Ewd0hFQ2w3T21IMEtOTFVvb2xNME0xQmQ1NmMyNHVoVkU5alhpYW96cE9LT1VaRHFmaERiLUpEZ2lZYzhJQnBINHBMTWM2TEdIZVdzU1NTM005emNBeGtUT2tqbndLZFRSQkhLdUIyRjU1Q01UbWpKXy1kNUczYzdJd0J4M3NMU2dvRjJGUUZOSExQdHo5U3lKdU9RUDJ1X0U5M2cyS2xIVHU4cWIyZFh5YmVSenJUbUw4ODk3U2pfYWg0TjdudnZnSmc4SkVsdUk?oc=5",
+          "published_at": "2026-11-21T10:50:51+00:00",
+          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPRXlKaERYWHA2cXp2RTRaaEdsNHlLTGxwMm1hS2RtSVh1ZjJGUEdXOUl1dVBwX2U1Z0czb2J0WXhmM3NyeEpMZzlJZWJuM2F2eldvRnlQOGcyRnlhem44ZGtDQ0VEMXoxTl9oRDFvT201NnJwMnFaN1VfeV92SXRHb19wTFFuWjE1WVdLUUpvUWt4SUN0azNNTjRyWFRMYmVpX193NEtPaXhmYnlGZG9sMGZScDlPUWpvZkNEOGxGUHhvcDJJc0R3di1KMmJDQWRwLUE?oc=5",
           "headline_tags": [
-            "injury"
+            "rotation"
           ],
           "verification": "headline_only_not_confirmed"
         }
       ]
     },
     {
-      "date": "2026-11-21",
-      "home": "bournemouth",
-      "away": "nottingham forest",
+      "date": "2026-11-27",
+      "home": "nottingham forest",
+      "away": "chelsea",
       "league": "Premier League",
-      "headline_count": 0,
-      "headlines": []
+      "headline_count": 1,
+      "headlines": [
+        {
+          "headline": "Nottingham Forest vs Chelsea: Predictions, Picks, Odds & Lineups - Squawka",
+          "source": "Squawka",
+          "published_at": "2026-11-21T00:46:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQa1FJZUJkUW05T3U2M25TeWI3Q3I3Z053T0s0YlVwTV9EbE5qSS1mU29vYjFoVm9vQW50aTBNYTJpUHhkQVBkbE5NZ2ViZENLV0NfdjhDbEpJVy1lUWphOHMzZXRaMl9nRUVqVU9IN3BkeWpvWEVkUWZubkdtY2JpOWlnenVmSGtGRXRGekdsT2hBQzVjSmtzLWtWLXN1eTBfck9od05ua21sM29iOGRzWTcwbm8?oc=5",
+          "headline_tags": [
+            "rotation"
+          ],
+          "verification": "headline_only_not_confirmed"
+        }
+      ]
     },
     {
-      "date": "2026-11-21",
-      "home": "chelsea",
-      "away": "leeds united",
-      "league": "Premier League",
-      "headline_count": 0,
-      "headlines": []
-    },
-    {
-      "date": "2026-11-21",
-      "home": "coventry",
-      "away": "crystal palace",
-      "league": "Premier League",
-      "headline_count": 0,
-      "headlines": []
-    },
-    {
-      "date": "2026-11-21",
-      "home": "tottenham hotspur",
-      "away": "ipswich",
-      "league": "Premier League",
-      "headline_count": 0,
-      "headlines": []
-    },
-    {
-      "date": "2026-11-21",
-      "home": "newcastle united",
-      "away": "arsenal",
-      "league": "Premier League",
-      "headline_count": 0,
-      "headlines": []
-    },
-    {
-      "date": "2026-11-21",
-      "home": "1 union berlin",
-      "away": "rb leipzig",
+      "date": "2026-11-27",
+      "home": "werder bremen",
+      "away": "borussia monchengladbach",
       "league": "Bundesliga",
       "headline_count": 0,
       "headlines": []
     },
     {
-      "date": "2026-11-21",
-      "home": "bayer 04 leverkusen",
-      "away": "paderborn 07",
-      "league": "Bundesliga",
+      "date": "2026-11-27",
+      "home": "levante ud",
+      "away": "r racing club",
+      "league": "La Liga",
       "headline_count": 0,
       "headlines": []
     },
     {
-      "date": "2026-11-21",
-      "home": "borussia monchengladbach",
-      "away": "borussia dortmund",
-      "league": "Bundesliga",
+      "date": "2026-11-27",
+      "home": "venezia",
+      "away": "bologna",
+      "league": "Serie A",
       "headline_count": 0,
       "headlines": []
     },
     {
-      "date": "2026-11-21",
-      "home": "eintracht frankfurt",
-      "away": "tsg hoffenheim",
-      "league": "Bundesliga",
+      "date": "2026-11-27",
+      "home": "stade brestois 29",
+      "away": "paris",
+      "league": "Ligue 1",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-11-27",
+      "home": "groningen",
+      "away": "willem ii",
+      "league": "Eredivisie",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-11-27",
+      "home": "alanyaspor",
+      "away": "konyaspor",
+      "league": "Süper Lig",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-11-27",
+      "home": "caykur rizespor",
+      "away": "kasimpasa",
+      "league": "Süper Lig",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-11-28",
+      "home": "leeds united",
+      "away": "coventry",
+      "league": "Premier League",
+      "headline_count": 0,
+      "headlines": []
+    },
+    {
+      "date": "2026-11-28",
+      "home": "manchester united",
+      "away": "brentford",
+      "league": "Premier League",
       "headline_count": 0,
       "headlines": []
     }
